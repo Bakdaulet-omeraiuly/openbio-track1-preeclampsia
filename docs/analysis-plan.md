@@ -56,3 +56,37 @@ Motivation: Ackerman et al. (2023) reported a glycolytic expression pattern in a
 3. Per-donor hypoxia and glycolysis scores vs gestational age, coloured by group (headline candidate)
 4. Robustness: hit overlap across S1–S4
 5. Marker-class summary (mean log2FC of markers per cell class)
+
+---
+
+## Addendum A (2026-11-14): written after seeing the primary results, before running these tests
+
+These analyses were proposed **after** the results of notebook 01 were seen (in particular the
+post hoc observation that FGR-only placentas also have high glycolysis scores). They are follow-up
+checks, not part of the original pre-registration, and are reported as such.
+
+### A1. Independent single-cell check (Admati/Skarbianskis pseudobulk, different donors)
+- Cell classes chosen in advance: `villous_cytotrophoblast`, `syncytiotrophoblast` (the trophoblast
+  compartment where FLT1/PGF dysregulation is reported). No other class will be examined for A1.
+- Comparison: `PE_early` (n = 10) vs `control_early` (n = 3), one column per donor. Exploratory.
+- (a) Direction concordance: for the 207 robust bulk hits expressed in the class (≥10 reads in ≥3 donors),
+  the fraction whose PE-minus-control difference in mean log2 CPM has the same sign as in bulk.
+  Null: exact permutation of the PE/control labels (all 286 splits of 13 donors into 10 + 3).
+- (b) Hypoxia and glycolysis scores per donor within each class (mean z of log2 CPM, z across the 13
+  donors). Statistic: difference in mean score PE − control; exact permutation p (286 splits).
+  Leave-one-donor-out to check dependence on a single donor.
+- Secondary (exploratory): all 26 donors, `score ~ PE + gestational age`.
+
+### A2. Is glycolysis a shared placental stress signal while hypoxia is more PE-linked?
+- Bulk data, 25 preterm samples (TB excluded). OLS `score ~ C(group, ref = iPTB) + gestational age + fetal sex`.
+- Report effect sizes with 95% CIs for EOPE, EOPE+FGR and FGR-only versus iPTB.
+- **Direct** contrasts (not "significant vs not significant"): EOPE − FGR-only, and
+  mean(EOPE, EOPE+FGR) − FGR-only, each with 95% CI. HC3 robust standard errors as a check.
+
+### A3. Are hypoxia and glycolysis separate signals?
+- Split the two Hallmark sets into: shared genes (65), hypoxia-only, glycolysis-only.
+- Repeat A2 for each of the three scores, and report the per-sample correlation between
+  hypoxia-only and glycolysis-only scores.
+
+Multiple testing: A1–A3 involve about 20 tests; all are reported, none is used alone as a
+confirmatory claim.
