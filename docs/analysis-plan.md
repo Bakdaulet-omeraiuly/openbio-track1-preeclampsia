@@ -193,3 +193,35 @@ Report pooled estimate, 95% CI, Cochran's Q and I². Random-effects (DerSimonian
 ### D3. Literature check (not a computation)
 PubMed search to calibrate novelty wording for (a) hypoxia vs glycolysis decomposition in placenta and
 (b) cell-type-resolved hypoxia–FLT1 coupling.
+
+---
+
+## Addendum E (2026-11-14): corrections + one new primary question, written before running
+
+### E0. Corrections to earlier code (methods fixes, not new hypotheses)
+- **P4** was judged on point estimates only. Now tested directly: per-sample difference
+  `glycolysis-only score − hypoxia-only score`, OLS on group, contrast EOPE vs control, two-sided p.
+- **Meta-analysis (D2)** derived standard errors from CIs with z = 1.96 although the CIs were
+  t-based (discovery df = 19). Now uses the model standard errors saved directly from each fit.
+  Note: discovery model is adjusted (GA, sex); replication is unadjusted (no covariates available).
+- **FDR summary (C3)** mixed one-sided, two-sided and empirical p-values. Now: two-sided p-values for
+  every parametric test in one BH family; empirical random-gene-set p-values reported separately.
+
+### E1. Primary new test: is the hypoxia–FLT1 coupling stronger in PE than in growth restriction?
+- **Primary cohort: GSE114691** (power: 40 PE [EO-PE + EO-PE+IUGR] vs 18 IUGR-only). Samples: PE and
+  IUGR-only only. Model: `FLT1_vst ~ hyp_z * PE` where `hyp_z` = Hallmark HYPOXIA score (FLT1 not in set)
+  standardised across these samples. Statistic: the `hyp_z:PE` interaction, two-sided, 95% CI;
+  HC3 robust SE as a check. Interpretation fixed in advance: interaction > 0 with p < 0.05 → coupling
+  stronger in PE; CI including 0 and excluding effects larger than the PE slope → similar coupling;
+  otherwise → inconclusive.
+- **Secondary: GSE203507**, PE (15) + FGR-only (5), same model + gestational age + fetal sex.
+  Underpowered (5 FGR); reported for direction only.
+- Also reported: Spearman(hypoxia, FLT1) separately within PE and within growth restriction in each cohort.
+
+### E2. Robustness (not separate hypotheses)
+- **Same genes in both cohorts:** recompute hypoxia-only, shared, glycolysis-only and hypoxia (all)
+  scores using only genes measured in both cohorts; repeat the A2/C1 headline contrasts and E1.
+- **Leave-one-out:** E1 interaction (each of 58 samples dropped); within-PE Spearman(hypoxia, FLT1) in
+  discovery (15), replication (40) and single-cell STB early-PE donors (10). Report range and any sign flip.
+- **Cell-composition alternative:** add a syncytiotrophoblast marker score (mean z of the marker-table
+  syncytiotrophoblast genes) as a covariate in E1.
