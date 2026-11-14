@@ -37,16 +37,17 @@ jupyter nbconvert --to notebook --execute --inplace 02_followup_pseudobulk_and_s
 jupyter nbconvert --to notebook --execute --inplace 03_stress_tests.ipynb
 jupyter nbconvert --to notebook --execute --inplace 05_external_replication.ipynb
 jupyter nbconvert --to notebook --execute --inplace 06_headline_figure.ipynb
+jupyter nbconvert --to notebook --execute --inplace 07_celltype_coupling_and_meta.ipynb
 ```
 
 The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: later notebooks read result files written by earlier ones. Notebook 05 also downloads GSE114691 counts from GEO and a transcript-to-gene table from Ensembl GRCh37 BioMart.
 
 Reproducibility details:
 
-- Notebook files: `notebooks/01_…` to `06_…`, run in order (about 10–15 minutes in total on a laptop)
+- Notebook files: `notebooks/01_…` to `07_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A, B and C before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–D before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
@@ -57,6 +58,7 @@ Reproducibility details:
 | `notebooks/03_stress_tests.ipynb` | Addendum B: random-gene-set null, FLT1 link, heterogeneity within PE, decidua, composition adjustment |
 | `notebooks/05_external_replication.ipynb` | Addendum C: pre-specified replication in GSE114691 (79 placentas), FLT1 within PE in single-cell data, FDR summary |
 | `notebooks/06_headline_figure.ipynb` | Headline figure (both cohorts) |
+| `notebooks/07_celltype_coupling_and_meta.ipynb` | Addendum D (post hoc): hypoxia–FLT1 coupling in 14 cell classes, two-cohort meta-analysis |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
 | `docs/article.md` | Science communication article |
@@ -71,9 +73,11 @@ Reproducibility details:
 - **Replication in 79 different patients (GSE114691), with predictions registered before running:** the hypoxia-only score is again higher in EOPE than preterm controls (+0.21, 0.06–0.37; beats 98% of random gene sets), glycolysis-only genes are lower, and the score tracks FLT1 within 40 PE placentas (rho = 0.59). **Not replicated:** PE vs growth-restriction-only (+0.11, −0.03 to 0.25); growth-restricted placentas show a weaker version of the signal.
 - The hypoxia score tracks FLT1 (sFlt-1 gene; not in the set) within PE (rho = 0.78) and in independent single-cell syncytiotrophoblast (rho = 0.72). In the independent pseudobulk data the hypoxia score is higher in early PE in both cytotrophoblast and syncytiotrophoblast (exploratory, 3 control donors). The gene browser places FLT1 and LEP mainly in syncytiotrophoblast/EVT.
 
+- Post hoc (Addendum D): pooling both cohorts gives a modest PE excess over growth restriction (+0.16, 0.04–0.28; I² = 40%). In the single-cell data, the hypoxia score tracks FLT1 specifically (FLT1 in the top 5% of all genes) in syncytiotrophoblast, extravillous trophoblast and endothelial cells.
+
 ## Limitations
 
-5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–C were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
+5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–D were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
 
 ## Presentation
 
@@ -84,6 +88,9 @@ Video link: [add your unlisted YouTube link]
 - Ackerman WE et al. (2023) Hypertension 80:1363–1374. [doi:10.1161/HYPERTENSIONAHA.122.20807](https://doi.org/10.1161/HYPERTENSIONAHA.122.20807) (GSE203507)
 - Admati I, Skarbianskis N et al. (2023) Med 4:687–709. [doi:10.1016/j.medj.2023.07.005](https://doi.org/10.1016/j.medj.2023.07.005) (single-cell data and gene browser)
 - Awamleh Z, Gloor GB, Han VKM (2019) BMC Med Genomics 12:91. [doi:10.1186/s12920-019-0548-x](https://doi.org/10.1186/s12920-019-0548-x) (GSE114691)
+- Zhang R et al. (2026) Curr Gene Ther. [doi:10.2174/0115665232535282261029093348](https://doi.org/10.2174/0115665232535282261029093348)
+- Piekos SN et al. (2025) Commun Biol 8:1239. [doi:10.1038/s42003-025-08631-6](https://doi.org/10.1038/s42003-025-08631-6)
+- Leavey K et al. (2016) Hypertension 68:137–47. [doi:10.1161/HYPERTENSIONAHA.116.07293](https://doi.org/10.1161/HYPERTENSIONAHA.116.07293)
 - Campbell KA et al. (2023) Commun Biol 6:264. [doi:10.1038/s42003-023-04623-6](https://doi.org/10.1038/s42003-023-04623-6)
 - Gerber HP et al. (1997) J Biol Chem 272:23659–67. [doi:10.1074/jbc.272.38.23659](https://doi.org/10.1074/jbc.272.38.23659)
 - Maynard SE et al. (2003) J Clin Invest 111:649–58. [doi:10.1172/JCI17189](https://doi.org/10.1172/JCI17189)

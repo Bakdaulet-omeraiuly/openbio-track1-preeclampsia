@@ -99,6 +99,18 @@ Within the 10 early-preeclampsia pregnancies alone, syncytiotrophoblast cells wi
 
 In the public gene browser from that study, FLT1 and LEP are made mainly by syncytiotrophoblast and invasive (extravillous) trophoblast and appear higher in early preeclampsia; other alarm genes such as NDRG1 and P4HA1 are active across all trophoblast types. A known worry is that preeclampsia placentas may simply contain *more* syncytiotrophoblast, which would raise these genes without any change in behaviour ([Campbell et al. 2023](https://doi.org/10.1038/s42003-023-04623-6)). Marker genes for each cell type did not move together in our data, and adjusting for estimated cell proportions did not shrink the effect, which points to changed behaviour rather than changed cell mix, though our cell-proportion estimates are rough.
 
+### Which cells link the alarm to FLT1? (exploratory)
+
+After seeing the results above, we asked one more question in the single-cell data: in each of 14 placental cell types, among preeclampsia pregnancies only, do cells with a louder alarm also make more FLT1? To make sure this was not just "everything rises together", we ranked FLT1 against all ~10,000 other genes in that cell type.
+
+![Two panels: left, the PE-minus-control difference in hypoxia score for 14 cell types; right, the correlation between hypoxia score and FLT1 in each cell type, with FLT1's rank among all genes.](../figures/fig10_celltype_flt1_coupling.png)
+
+Figure 8. Left: how much higher the alarm is in preeclampsia in each cell type. Right: how tightly the alarm goes with FLT1 within preeclampsia pregnancies; "top 1%" means FLT1 is among the 1% of genes most tightly linked to the alarm.
+
+The alarm was highest in the three trophoblast types. The link to FLT1 was strongest, and FLT1 ranked in the top few percent of all genes, in **syncytiotrophoblast, invasive (extravillous) trophoblast and the placenta's blood-vessel lining (endothelial cells)**, the cells that face or touch the mother's blood. With only 7–10 pregnancies per cell type, we could not show that these cell types differ reliably from the others, so we treat this as a lead for future work, not a result. Pooling our two bulk datasets also suggested a small extra alarm in preeclampsia compared with growth restriction alone (0.16, interval 0.04 to 0.28), but because the first dataset is where we found the effect, this pooled number is likely an overestimate.
+
+Our search of the literature suggests that separating the "sugar" and "low-oxygen" gene lists in this way has not been reported for these placenta datasets; a study published this month still describes similar changes as "glycolysis-related" ([Zhang et al. 2026](https://doi.org/10.2174/0115665232535282261029093348)). The link between low oxygen and FLT1 is supported by a large multi-omics study ([Piekos et al. 2025](https://doi.org/10.1038/s42003-025-08631-6)).
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.

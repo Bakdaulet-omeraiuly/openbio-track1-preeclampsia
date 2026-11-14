@@ -1,0 +1,4 @@
+comparison,n_shared_donors,rho_difference,boot_CI_low,boot_CI_high,boot_frac_le_0
+syncytiotrophoblast minus villous_cytotrophoblast,10,0.4363636363636363,-0.1308488075141757,1.2345679012345678,0.09509509509509509
+extravillous_trophoblast minus villous_cytotrophoblast,7,0.3571428571428573,-0.30188679245283,1.4074074074074077,0.21305285868392665
+endothelial_cell minus villous_cytotrophoblast,10,0.36363636363636365,-0.384801488833747,1.1156930333817128,0.18468468468468469
