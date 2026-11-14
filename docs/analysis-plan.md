@@ -131,3 +131,39 @@ diastolic BP, birthweight (lower bound of the 100 g bin), gestational age, and F
 - Refit the A2 hypoxia model adding estimated syncytiotrophoblast and villous cytotrophoblast
   proportions. Report whether the PE coefficient shrinks. Labelled exploratory (deconvolution across
   platforms is approximate).
+
+---
+
+## Addendum C (2026-11-14): external replication and final robustness, written before running
+
+### C1. Replication in a different patient cohort: GSE114691 (Awamleh et al. 2019)
+79 villous placentas (decidua removed): control = spontaneous preterm labour < 34 wk (n = 21),
+EO-PE (n = 20), EO-IUGR (n = 18), EO-PE + IUGR (n = 20); the paper reports no difference in
+gestational age at delivery between groups. GEO provides transcript-level counts and the group
+label only (no per-sample GA, sex or delivery mode), so models are unadjusted. This cohort was also
+used by Ackerman et al. 2023 for their module discovery, so it is "different patients", not a fully
+untouched validation set. Our specific claims (hypoxia-only vs glycolysis-only split, PE vs FGR
+contrast, FLT1 link) were derived only from GSE203507.
+
+Processing (fixed now): sum transcript counts to gene symbols using Ensembl GRCh37 BioMart
+(`ensembl_transcript_id` → `external_gene_name`); same low-count filter (≥10 reads in ≥5 samples),
+PyDESeq2 VST, z across all 79 samples, the same five gene-set scores as notebook 02.
+Model: `score ~ C(group, ref = control)`; contrasts as in A2 (EOPE vs control, EOPE+IUGR vs
+control, IUGR vs control, EOPE vs IUGR, mean(PE groups) vs IUGR).
+
+**Pre-specified predictions** (the claim fails if P1 or P2 fails):
+- P1: hypoxia-only score: EOPE − control > 0 (one-sided α = 0.05).
+- P2: hypoxia-only score: mean(PE groups) − IUGR > 0 (one-sided α = 0.05).
+- P3: shared-gene score behaves like P1/P2.
+- P4: glycolysis-only score: EOPE − control smaller than the hypoxia-only effect (report both CIs).
+- P5: within the 40 PE placentas, Spearman(hypoxia score, FLT1) > 0.
+- P6: random-gene-set null (1,000 expression-matched sets, seed 42) for P1 and P2.
+Labour in controls can raise hypoxia genes, which would bias against P1.
+
+### C2. FLT1 link within PE only, in the independent single-cell data
+Spearman(hypoxia score, FLT1) in syncytiotrophoblast pseudobulk among the 10 early-PE donors only
+(the A/B analysis pooled PE and controls). Secondary: all 17 PE donors (early + late).
+
+### C3. Multiple-testing summary
+Benjamini–Hochberg FDR across the family of headline tests (listed in notebook 05), reported next
+to raw p-values. Final full re-run from a fresh clone.
