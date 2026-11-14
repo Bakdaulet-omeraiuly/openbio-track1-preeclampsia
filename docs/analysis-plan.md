@@ -260,3 +260,37 @@ partial Spearman(module, FLT1 | hypoxia).
 The claim "a hypoxia-independent FLT1 program" is supported only if V1 and V3 pass.
 Known risk: the module may simply track syncytiotrophoblast abundance; reported via F3 and by repeating
 V1 with the STB marker score as an extra covariate.
+
+---
+
+## Addendum G (2026-11-14): villous stress → decidual response, written before running
+
+Question: at comparable villous hypoxia-response levels, do PE pregnancies show a stronger decidual
+inflammatory/vascular response than FGR-only pregnancies, and does a donor's villous stress carry
+information about *the same donor's* decidual response?
+
+Data: GSE203507 paired villous + decidua basalis samples (27 donors: EOPE 8, EOPE+FGR 4, FGR 5, iPTB 5,
+TB 5). Single cohort, no replication available → exploratory. Decidua basalis contains invading
+extravillous trophoblast, so trophoblast contamination is modelled explicitly.
+
+Scores (fixed now; no gene selection from results):
+- **Stress (villi):** Hallmark HYPOXIA score in villous tissue (as in notebooks 01–03).
+- **Response (decidua), primary:** Hallmark TNFA_SIGNALING_VIA_NFKB ∪ INFLAMMATORY_RESPONSE, **minus every
+  Hallmark HYPOXIA gene**. Secondary: Hallmark ANGIOGENESIS minus HYPOXIA genes ("vascular").
+  Decidual scores = mean z of VST across the 27 decidua samples.
+- **Trophoblast content (decidua):** mean z of marker-table genes for villous cytotrophoblast,
+  syncytiotrophoblast and extravillous trophoblast, measured in decidua.
+
+### G1 (primary): is the real donor pairing informative?
+Preterm pairs only (n = 22; TB excluded). Statistic: Spearman correlation between villous stress and
+decidual response after removing group means from both (group-centred) and regressing the decidual
+response on decidual trophoblast content. Null: permute decidua samples **within clinical group**
+10,000 times (seed 42). One-sided p (coupling > 0). "Cross-tissue coupling" is claimed only if p < 0.05.
+
+### G2 (secondary, underpowered: 12 PE vs 5 FGR-only)
+`decidual response ~ PE + villous stress + decidual trophoblast content + GA`, PE + FGR-only pairs.
+Report the PE coefficient with 95% CI, and report whether villous-stress ranges of the two groups overlap
+(common support). Not used for any confirmatory claim.
+
+### G3 (descriptive)
+Same as G1/G2 for the secondary (angiogenesis) response score; leave-one-donor-out range for G1.
