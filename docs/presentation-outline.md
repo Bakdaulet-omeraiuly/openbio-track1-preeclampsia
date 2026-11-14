@@ -36,19 +36,19 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 **Slide 5: volcano (fig2)** — Speaker A
 
-> 424 genes differ; 207 survive every robustness check. Known preeclampsia genes come out on top — FLT1 eight times higher, leptin about sixty times.
+> 424 genes differ; 207 survive every robustness check, including beating 1,000 random gene lists later on. FLT1 is eight times higher, leptin about sixty times.
 
 **Slide 6: group contrasts (fig6)** — Speaker B
 
-> We split the published "low oxygen" and "sugar burning" gene lists into shared genes, oxygen-only genes and sugar-only genes. Oxygen genes are up in preeclampsia — and up compared with placentas of small babies *without* preeclampsia. Sugar-only genes are not up at all. So the "glycolytic" placentas are really placentas with a low-oxygen alarm.
+> We split the published "low oxygen" and "sugar burning" gene lists into shared genes, oxygen-only genes and sugar-only genes. Oxygen genes are up in preeclampsia — in this dataset even compared with placentas of small babies *without* preeclampsia. Sugar-only genes are not up at all. So the "glycolytic" placentas are really placentas with a low-oxygen alarm.
 
-**Slide 7: random gene sets (fig7)** — Speaker B
+**Slide 7: replication (fig9 / headline)** — Speaker B
 
-> This is not just because many genes change: the real effect beats all 1,000 random gene lists of the same size.
+> Thirty placentas could be a fluke, so we wrote down six predictions and tested them in 79 different patients. The oxygen alarm was again higher in early preeclampsia, again beat random gene lists, and sugar-only genes actually fell. One prediction failed: preeclampsia versus growth restriction alone pointed the same way but wasn't clear — growth-restricted placentas show a weaker version too. We report that as not replicated.
 
 **Slide 8: FLT1 link (fig8)** — Speaker A
 
-> The alarm rises with FLT1, the gene for sFlt-1 — the protein measured in the clinical preeclampsia blood test. FLT1 is not on the oxygen list, and we see the same link in syncytiotrophoblast cells from a separate study.
+> The alarm rises with FLT1, the gene for sFlt-1 — the protein measured in the clinical preeclampsia blood test. FLT1 is not on the oxygen list, and the link repeats in all three datasets — including inside syncytiotrophoblast cells of preeclampsia donors alone.
 
 **Slide 9: single-cell + browser (fig5 + browser table)** — Speaker A
 
@@ -58,12 +58,12 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 **Slide 10: hypothesis**
 
-> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels.
+> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction may share a weaker version of this stress.
 >
-> **Limitations:** only 5 preterm controls and 3 single-cell controls; bulk tissue mixes cell types; labour and delivery type were not recorded; and the maternal-side tissue shows a similar signal, so we cannot call it purely placental. This is association, not cause.
+> **Limitations:** only 5 preterm controls in our main data and 3 single-cell controls; no per-patient details in the second study; bulk tissue mixes cell types; labour and delivery type were not recorded; and the maternal-side tissue shows a similar signal, so we cannot call it purely placental. This is association, not cause.
 >
-> **To test it:** repeat the same pre-specified scores in independent cohorts with preterm controls; stain these placentas for HIF and FLT1 and compare with the mother's sFlt-1/PlGF ratio; and grow trophoblast at low oxygen with and without HIF. If the oxygen score isn't higher in preeclampsia in new data — or is just as high in growth restriction — we're wrong.
+> **To test it:** a third cohort with recorded delivery mode, to settle preeclampsia versus growth restriction; stain these placentas for HIF and FLT1 and compare with the mother's sFlt-1/PlGF ratio; and grow trophoblast at low oxygen with and without HIF. If the oxygen score stops tracking FLT1 in new data, we're wrong.
 
 ## Final Slide (both on camera)
 
-Team names · Data: GSE203507 (Ackerman et al. 2023), Admati/Skarbianskis et al. 2023 · Repository: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
+Team names · Data: GSE203507 (Ackerman et al. 2023), GSE114691 (Awamleh et al. 2019), Admati/Skarbianskis et al. 2023 · Repository: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia

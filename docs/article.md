@@ -1,12 +1,12 @@
 # A Low-Oxygen Alarm in the Preeclampsia Placenta
 
-**In about half of early-preeclampsia placentas, genes that respond to low oxygen are switched on. Placentas of small babies without preeclampsia do not show this, and the alarm rises together with the gene behind the main blood test for the disease.**
+**In two separate groups of patients, a subset of early-preeclampsia placentas switch on genes that respond to low oxygen, and the alarm rises together with the gene behind the main blood test for the disease.**
 
 By [Team member 1] and [Team member 2]
 
-![Dot plot: one dot per placenta, five groups. Preeclampsia groups have several placentas with high low-oxygen scores; healthy and growth-restricted placentas are all low.](../figures/headline.png)
+![Two dot plots, one per patient group, showing a low-oxygen score for each placenta in four groups. In both, several preeclampsia placentas sit well above healthy early births; growth-restricted placentas are in between.](../figures/headline.png)
 
-Figure 1. Low-oxygen gene activity in each of 30 placentas. Each dot is one pregnancy; the black line is the middle value. Several preeclampsia placentas sit far above every healthy or growth-restricted placenta, but others look normal. (Data: GSE203507, Ackerman et al. 2023.)
+Figure 1. Low-oxygen gene activity in each placenta, in our main dataset (left, 25 early-delivered placentas) and in a different group of 79 patients (right). Each dot is one pregnancy; the black line is the middle value; the dotted line marks healthy early births. In both groups, some preeclampsia placentas sit far above healthy ones while others look normal. (Data: GSE203507, Ackerman et al. 2023; GSE114691, Awamleh et al. 2019.)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ A 2023 study of the placentas we analysed reported that some early-preeclampsia 
 
 ## The Data and Our Methods
 
-We used gene-activity measurements (RNA sequencing) from pieces of 30 placentas collected at delivery ([GSE203507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203507)): 15 with early preeclampsia (7 of them also with a small baby), 5 with a small baby but no preeclampsia ("fetal growth restriction"), 5 healthy pregnancies that delivered early, and 5 healthy full-term pregnancies. Each pregnancy contributes one sample. We checked our findings in an independent single-cell dataset of 26 pregnancies, where activity was measured separately in each type of placental cell ([Admati et al. 2023](https://doi.org/10.1016/j.medj.2023.07.005)), and in the maternal side of the same placentas (decidua). To avoid fooling ourselves, we wrote down our comparisons and cut-offs and saved them before running any test, and marked every analysis added later as such ([analysis plan](analysis-plan.md)). **The main limit is size: the key control group has only 5 placentas**, and the single-cell check has only 3 early control pregnancies, so our results are exploratory.
+We used gene-activity measurements (RNA sequencing) from pieces of 30 placentas collected at delivery ([GSE203507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203507)): 15 with early preeclampsia (7 of them also with a small baby), 5 with a small baby but no preeclampsia ("fetal growth restriction"), 5 healthy pregnancies that delivered early, and 5 healthy full-term pregnancies. Each pregnancy contributes one sample. We checked our findings in an independent single-cell dataset of 26 pregnancies, where activity was measured separately in each type of placental cell ([Admati et al. 2023](https://doi.org/10.1016/j.medj.2023.07.005)), in the maternal side of the same placentas (decidua), and finally in a different group of 79 patients studied by a different research group ([GSE114691](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691), [Awamleh et al. 2019](https://doi.org/10.1186/s12920-019-0548-x)), whose healthy controls also delivered early. To avoid fooling ourselves, we wrote down our comparisons and cut-offs and saved them before running any test, and marked every analysis added later as such ([analysis plan](analysis-plan.md)). **The main limit is size: the key control group has only 5 placentas**, and the single-cell check has only 3 early control pregnancies, so our results are exploratory.
 
 ## What We Found
 
@@ -45,7 +45,7 @@ We then averaged the activity of two published gene lists, 200 genes that cells 
 
 Figure 3. How much higher each score is in one group than another, after adjusting for delivery week and the baby's sex. Dots are the best estimate; lines are 95% confidence intervals (the range of plausible values). A line that does not cross zero means a clear difference.
 
-- **Low-oxygen-only genes** were higher in early preeclampsia than in early healthy placentas, and **higher than in growth-restricted placentas without preeclampsia** (difference 0.30, 95% interval 0.05 to 0.54). Growth-restricted placentas looked like healthy ones.
+- **Low-oxygen-only genes** were higher in early preeclampsia than in early healthy placentas, and in this dataset also **higher than in growth-restricted placentas without preeclampsia** (difference 0.30, 95% interval 0.05 to 0.54). Growth-restricted placentas looked like healthy ones. (The second group of patients, below, only partly agreed with this last point.)
 - **Shared genes** behaved the same way, and even more strongly.
 - **Sugar-only genes did not rise in preeclampsia** (0.07, interval −0.19 to 0.32).
 
@@ -67,13 +67,35 @@ Figure 4. Grey bars: the differences we would get with random gene lists. Red li
 
 Figure 5. Left: each placenta's low-oxygen score against its FLT1 activity. Right: the same in syncytiotrophoblast cells from a separate study of different women.
 
+### Does it hold up in different patients?
+
+A finding from 30 placentas could be a fluke. So, before looking, we wrote down six predictions and tested them in a second, larger study of 79 placentas: 20 early preeclampsia, 20 preeclampsia with a small baby, 18 small babies without preeclampsia, and 21 healthy pregnancies that went into labour early.
+
+![Two panels of score differences with 95% confidence intervals: our main dataset on the left and the new group of patients on the right.](../figures/fig9_replication_GSE114691.png)
+
+Figure 6. The same comparisons as Figure 3, in our main dataset (left) and in the new group of patients (right).
+
+What repeated:
+
+- **The low-oxygen alarm was higher in early preeclampsia than in healthy early births** (difference 0.21, 95% interval 0.06 to 0.37), and larger than for 98% of random gene lists.
+- **Sugar-only genes did not rise; they actually fell** (−0.20). The "sugar" story really is a low-oxygen story.
+- **The alarm again tracked FLT1** within the 40 preeclampsia placentas (rho = 0.59).
+
+What did not repeat clearly:
+
+- **Preeclampsia versus growth restriction alone.** The difference pointed the same way but was smaller and not statistically clear (0.11, interval −0.03 to 0.25), and growth-restricted placentas showed some of the alarm too. We had set this as a pass/fail test in advance, so we report it as **not replicated**. The fairest summary is that the alarm is strongest in preeclampsia but is probably not unique to it.
+
+One caveat makes this test harder, not easier: the healthy pregnancies in this study went into labour, and labour itself can briefly lower the placenta's oxygen.
+
 ### Which cells?
 
 The placenta's outer layer, the trophoblast, faces the mother's blood. In the independent single-cell data, the low-oxygen score was higher in early preeclampsia inside both main trophoblast cell types: the stem-like cytotrophoblast and the fused syncytiotrophoblast that makes hormones and sFlt-1. With only 3 control pregnancies, this was suggestive rather than conclusive (p = 0.15 and 0.08), but the direction never flipped when any single pregnancy was removed, and it was clearer when all 26 pregnancies were analysed with delivery week taken into account. The sugar score did not differ.
 
 ![Four dot plots of hypoxia and glycolysis scores in cytotrophoblast and syncytiotrophoblast for 3 control and 10 preeclampsia donors.](../figures/fig5_pseudobulk_trophoblast.png)
 
-Figure 6. Scores measured inside trophoblast cells in an independent single-cell dataset. Each dot is one pregnancy.
+Figure 7. Scores measured inside trophoblast cells in an independent single-cell dataset. Each dot is one pregnancy.
+
+Within the 10 early-preeclampsia pregnancies alone, syncytiotrophoblast cells with a louder low-oxygen alarm also made more FLT1 (rho = 0.84), so the link is not just a difference between sick and healthy groups.
 
 In the public gene browser from that study, FLT1 and LEP are made mainly by syncytiotrophoblast and invasive (extravillous) trophoblast and appear higher in early preeclampsia; other alarm genes such as NDRG1 and P4HA1 are active across all trophoblast types. A known worry is that preeclampsia placentas may simply contain *more* syncytiotrophoblast, which would raise these genes without any change in behaviour ([Campbell et al. 2023](https://doi.org/10.1038/s42003-023-04623-6)). Marker genes for each cell type did not move together in our data, and adjusting for estimated cell proportions did not shrink the effect, which points to changed behaviour rather than changed cell mix, though our cell-proportion estimates are rough.
 
@@ -85,18 +107,19 @@ In the public gene browser from that study, FLT1 and LEP are made mainly by sync
 
 ## Conclusions, Limitations and Next Steps
 
-Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is not seen in growth-restricted placentas without preeclampsia, it is larger than for random genes, it appears inside trophoblast cells in a separate study, and it rises with FLT1.
+Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. Whether it is specific to preeclampsia rather than shared with growth restriction remains open: yes in our main dataset, unclear in the second.
 
-**Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels.
+**Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels. Growth-restricted placentas may share a weaker version of the same stress.
 
-Limitations: very small control groups, bulk tissue that mixes cell types, delivery-related factors we could not measure, and gene activity that shows association, not cause. Several follow-up analyses were planned after we saw our first results; we labelled them as such.
+Limitations: small control groups in the main dataset, bulk tissue that mixes cell types, delivery-related factors we could not measure (and no per-patient details for the second study), and gene activity that shows association, not cause. Several follow-up analyses were planned after we saw our first results; we labelled them as such, and wrote down our predictions for the second study before testing them.
 
-Next steps: (1) repeat the exact same scores in independent placenta datasets with preterm controls; (2) stain the same placentas for the HIF protein and FLT1 and compare with the mother's blood sFlt-1/PlGF ratio; (3) grow trophoblast cells at low versus normal oxygen with and without HIF and check whether the low-oxygen genes and FLT1 rise together. If the low-oxygen score is not higher in preeclampsia in new data, or is just as high in growth restriction, our hypothesis is wrong.
+Next steps: (1) a third cohort with recorded delivery mode, to settle the preeclampsia-versus-growth-restriction question; (2) stain the same placentas for the HIF protein and FLT1 and compare with the mother's blood sFlt-1/PlGF ratio; (3) grow trophoblast cells at low versus normal oxygen with and without HIF and check whether the low-oxygen genes and FLT1 rise together. If the low-oxygen score stops tracking FLT1, or is not higher in preeclampsia in new data, our hypothesis is wrong.
 
 ## Data and Code
 
 - Repository: https://github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
 - Bulk RNA-seq: [GSE203507](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203507) (Ackerman et al. 2023), via the [OpenBio datathon data package](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/tree/main/track-01/data)
+- Replication cohort: [GSE114691](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691) (Awamleh et al. 2019); transcript-to-gene map from [Ensembl GRCh37 BioMart](https://grch37.ensembl.org/biomart/martview)
 - Single-cell pseudobulk: Admati/Skarbianskis et al. 2023, [figshare](https://figshare.com/articles/dataset/Placenta_PE_single_cell_RNAseq_dataset_Admati_Skarbianskis_et_al_/23264102) (CC BY 4.0)
 - Gene browser: [Zeisel lab placenta browser](https://storage.googleapis.com/www_zeisellab/PE_web/pe_web_test_v1.html)
 - Gene lists: MSigDB Hallmark v2024.1 ([GSEA-MSigDB](https://www.gsea-msigdb.org/gsea/msigdb))
