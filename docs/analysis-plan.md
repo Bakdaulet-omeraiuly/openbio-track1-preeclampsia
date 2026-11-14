@@ -90,3 +90,44 @@ checks, not part of the original pre-registration, and are reported as such.
 
 Multiple testing: A1–A3 involve about 20 tests; all are reported, none is used alone as a
 confirmatory claim.
+
+---
+
+## Addendum B (2026-11-14): written after Addendum A results, before running these tests
+
+Main claim being stress-tested: *a hypoxia-response program is higher in early-onset PE villous
+tissue than in preterm controls and FGR-only placentas.* Score definitions are as in notebooks 01/02
+(mean z of variance-stabilised expression; Hallmark v2024.1).
+
+### B1. Null calibration with random gene sets
+Is the hypoxia effect larger than for an arbitrary gene set of the same size and expression level?
+- 1,000 random gene sets per score, matched to the real set by expression decile (bins of mean VST).
+- Same OLS model as A2 on the 25 preterm samples; statistics: PE (EOPE) vs iPTB coefficient, and the
+  direct PE (both) − FGR-only contrast.
+- Empirical one-sided p = (1 + #random ≥ observed) / 1001. Scores: hypoxia (all), shared, hypoxia-only.
+- Seed 42.
+
+### B2. Link to a clinical biomarker gene (FLT1, encoding sFlt-1)
+FLT1 is **not** in HALLMARK_HYPOXIA, so the test is not circular.
+- Spearman correlation of FLT1 (VST) with the hypoxia score: within PE only (n = 15, primary) and
+  within the 20 PE + iPTB samples.
+- Exploratory replication in pseudobulk syncytiotrophoblast, 13 early donors (log2 CPM).
+
+### B3. Heterogeneity within PE (descriptive)
+Within the 15 PE placentas, Spearman correlation of the hypoxia score with: max systolic BP, max
+diastolic BP, birthweight (lower bound of the 100 g bin), gestational age, and FGR status
+(Mann–Whitney). All five reported; no multiplicity correction claimed as confirmatory.
+
+### B4. Where does the signal sit: placental villi vs maternal decidua?
+- Decidua basalis bulk (same study, 27 samples). Score computed within decidua (z across decidua samples).
+- Decidua PE (EOPE + EOPE+FGR) vs iPTB, same OLS covariates; compare with the villous estimate.
+- Direct test: mixed model `score ~ PE * tissue + gestational age + fetal sex + (1 | donor)` on
+  PE + iPTB samples from both tissues; the PE×tissue interaction is the statistic of interest.
+
+### B5. Exploratory: adjust for estimated cell composition
+- Signature: for each of the 14 pseudobulk cell classes, the 50 genes most specific to that class
+  (log2 CPM class mean minus max of other classes, across all 26 donors).
+- Estimate bulk proportions by non-negative least squares on CPM; normalise to sum 1.
+- Refit the A2 hypoxia model adding estimated syncytiotrophoblast and villous cytotrophoblast
+  proportions. Report whether the PE coefficient shrinks. Labelled exploratory (deconvolution across
+  platforms is approximate).
