@@ -1,0 +1,7 @@
+# Datathon data repo is cloned here by the notebook's setup cell
+openbio-datathon-2026/
+notebooks/results/
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+.venv/
