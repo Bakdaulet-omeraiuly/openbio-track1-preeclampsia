@@ -138,6 +138,7 @@ In the second dataset, the list tracked FLT1 almost perfectly after removing the
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
+- **Does the mother's side respond to the placenta's stress?** Because this dataset also sampled the maternal tissue the placenta attaches to (decidua) from 27 of the same pregnancies, we asked whether a pregnancy with a louder placental alarm also had more inflammation on the mother's side, and whether this was stronger in preeclampsia. It was not: matching each placenta to its own maternal tissue told us nothing beyond shuffled pairs (p = 0.61), and the two placentas with the most maternal-side inflammation came from growth-restricted pregnancies without preeclampsia. With so few growth-restricted pregnancies, this question stays open.
 - **Placenta or mother?** The maternal-side tissue (decidua) showed a similar rise. That tissue contains invading placental cells, so we cannot yet say whether the alarm is purely placental.
 - **Cause or consequence?** Labour and the delivery itself can briefly starve a placenta of oxygen. Our data did not record labour or delivery type for the bulk samples.
 
