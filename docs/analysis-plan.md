@@ -167,3 +167,29 @@ Spearman(hypoxia score, FLT1) in syncytiotrophoblast pseudobulk among the 10 ear
 ### C3. Multiple-testing summary
 Benjamini–Hochberg FDR across the family of headline tests (listed in notebook 05), reported next
 to raw p-values. Final full re-run from a fresh clone.
+
+---
+
+## Addendum D (2026-11-14): written after Addendum C results, before running
+
+Post hoc follow-ups (all labelled post hoc / exploratory in the write-up).
+
+### D1. In which cell types is the hypoxia program coupled to FLT1? (Admati/Skarbianskis pseudobulk)
+- All 14 cell classes. A donor-class column is used only if `n_cells ≥ 20`; a class is analysed only
+  if ≥ 6 donors remain in the donor set and FLT1 has ≥ 10 reads in ≥ 3 of them.
+- Hypoxia score: mean z (across included donors of that class) of log2 CPM of Hallmark HYPOXIA genes.
+- **Primary:** Spearman(hypoxia score, FLT1) within **early-PE donors** (up to 10). Secondary: all PE donors (up to 17).
+- **Specificity control:** in the same class and donors, compute Spearman(hypoxia score, gene) for every
+  expressed gene not in the hypoxia set; report FLT1's percentile. Coupling is called "FLT1-specific"
+  only if FLT1 is in the top 5% *and* rho > 0 with p < 0.05.
+- Caveat stated in advance: ambient RNA from syncytiotrophoblast can contaminate other cell classes.
+- D1b: per class, hypoxia score PE vs control on all donors, `score ~ PE + gestational age`; BH across classes.
+
+### D2. Two-cohort meta-analysis
+Fixed-effect inverse-variance pooling of the hypoxia-only contrasts (GSE203507 adjusted model from A2;
+GSE114691 unadjusted model from C1) for: EOPE vs preterm control, and PE (both) vs FGR/IUGR-only.
+Report pooled estimate, 95% CI, Cochran's Q and I². Random-effects (DerSimonian–Laird) as a check.
+
+### D3. Literature check (not a computation)
+PubMed search to calibrate novelty wording for (a) hypoxia vs glycolysis decomposition in placenta and
+(b) cell-type-resolved hypoxia–FLT1 coupling.
