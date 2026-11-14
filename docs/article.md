@@ -111,6 +111,16 @@ The alarm was highest in the three trophoblast types. The link to FLT1 was stron
 
 Our search of the literature suggests that separating the "sugar" and "low-oxygen" gene lists in this way has not been reported for these placenta datasets; a study published this month still describes similar changes as "glycolysis-related" ([Zhang et al. 2026](https://doi.org/10.2174/0115665232535282261029093348)). The link between low oxygen and FLT1 is supported by a large multi-omics study ([Piekos et al. 2025](https://doi.org/10.1038/s42003-025-08631-6)).
 
+### Is the link to FLT1 different in preeclampsia?
+
+Finally, we asked the question that matters most for telling preeclampsia apart from a small baby alone: for the same amount of low-oxygen alarm, does a preeclampsia placenta make more FLT1 than a growth-restricted one? We fixed the test in advance and ran it in the larger dataset (40 preeclampsia, 18 growth restriction).
+
+![Two scatter plots of FLT1 activity against the low-oxygen score, with separate lines for preeclampsia and growth restriction in each dataset.](../figures/fig11_coupling_PE_vs_FGR.png)
+
+Figure 9. Each dot is one placenta. The slope of each line shows how strongly FLT1 rises with the low-oxygen alarm in that group.
+
+The slopes were similar (correlation 0.59 in preeclampsia, 0.58 in growth restriction), so **the alarm-to-FLT1 link is not special to preeclampsia**: growth-restricted placentas convert low oxygen into FLT1 in the same way. What differed was the *starting point*: in the larger dataset, preeclampsia placentas had about twice as much FLT1 at the same alarm level. We had not planned to test that, and the small dataset did not show it, so it is a lead, not a finding. Together with the earlier results, this suggests that preeclampsia and growth restriction share the same oxygen-stress machinery, and that preeclampsia may differ in how much of it is switched on and in extra FLT1 coming from somewhere else.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
@@ -119,7 +129,7 @@ Our search of the literature suggests that separating the "sugar" and "low-oxyge
 
 ## Conclusions, Limitations and Next Steps
 
-Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. Whether it is specific to preeclampsia rather than shared with growth restriction remains open: yes in our main dataset, unclear in the second.
+Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction; what may set preeclampsia apart is how strongly it is switched on.
 
 **Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels. Growth-restricted placentas may share a weaker version of the same stress.
 

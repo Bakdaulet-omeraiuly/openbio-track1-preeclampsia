@@ -3,7 +3,7 @@ P1 hypoxia-only: EOPE > control,0.21253062374516551,0.003690051745608687,True
 P2 hypoxia-only: PE (both) > IUGR-only,0.11116305262624261,0.05849891453995358,False
 P3a shared: EOPE > control,0.3731131442636543,0.00040270764155059865,True
 P3b shared: PE (both) > IUGR-only,0.1923659299508911,0.02555454591278519,True
-P4 glycolysis-only EOPE effect < hypoxia-only EOPE effect,-0.4173678450081119,,True
+P4 glycolysis-only EOPE effect < hypoxia-only EOPE effect (direct test),-0.41736784500811186,1.2848667989938933e-05,True
 "P5 Spearman(hypoxia, FLT1) > 0 within PE (n=40)",0.5926829268292684,2.794439554572203e-05,True
 P6a P1 beats random gene sets,0.21253062374516551,0.016983016983016984,True
 P6b P2 beats random gene sets,0.11116305262624261,0.08891108891108891,False

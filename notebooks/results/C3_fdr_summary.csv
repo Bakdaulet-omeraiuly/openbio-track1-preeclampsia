@@ -1,18 +1,17 @@
-data,test,p,q_BH
-Discovery,hypoxia-only: EOPE vs preterm control,0.0036091874253917477,0.008961554239335383
-Discovery,hypoxia-only: PE vs FGR-only,0.02063219380268127,0.035074729464558155
-Discovery,shared: EOPE vs preterm control,0.0005934850772738348,0.002666238050291516
-Discovery,shared: PE vs FGR-only,0.012741149224102424,0.027074942101217653
-Discovery,glycolysis-only: EOPE vs preterm control,0.591089700760795,0.591089700760795
-Discovery,FLT1 ~ hypoxia within PE,0.0006273501294803567,0.002666238050291516
-Single-cell,"hypoxia in VCT, early PE vs control (perm)",0.15034965034965034,0.1703962703962704
-Single-cell,"hypoxia in STB, early PE vs control (perm)",0.08041958041958042,0.10516406670252824
-Single-cell,"FLT1 ~ hypoxia in STB, early PE only",0.0022200312259168433,0.007548106168117267
-Decidua,PE x tissue interaction,0.4512046489087548,0.47940493946555196
-Replication,P1 hypoxia-only: EOPE > control,0.003690051745608687,0.008961554239335383
-Replication,P2 hypoxia-only: PE (both) > IUGR-only,0.05849891453995358,0.08287346226493424
-Replication,P3a shared: EOPE > control,0.00040270764155059865,0.002666238050291516
-Replication,P3b shared: PE (both) > IUGR-only,0.02555454591278519,0.039493389137940746
-Replication,"P5 Spearman(hypoxia, FLT1) > 0 within PE (n=40)",2.794439554572203e-05,0.00047505472427727453
-Replication,P6a P1 beats random gene sets,0.016983016983016984,0.03207903207903208
-Replication,P6b P2 beats random gene sets,0.08891108891108891,0.10796346510632225
+data,test,p_two_sided,q_BH
+Discovery,hypoxia-only: EOPE vs preterm control,0.0036091874253917477,0.00824957125803828
+Discovery,hypoxia-only: PE vs FGR-only,0.02063219380268124,0.033011510084289986
+Discovery,shared: EOPE vs preterm control,0.0005934850772738348,0.002509400517921427
+Discovery,shared: PE vs FGR-only,0.012741149224102445,0.022650931953959903
+Discovery,glycolysis-only: EOPE vs preterm control,0.5910897007607951,0.5910897007607951
+Discovery,FLT1 ~ hypoxia within PE,0.0006273501294803567,0.002509400517921427
+Single-cell,"hypoxia in VCT, early PE vs control (perm)",0.15034965034965034,0.1718281718281718
+Single-cell,"hypoxia in STB, early PE vs control (perm)",0.08041958041958042,0.10722610722610722
+Single-cell,"FLT1 ~ hypoxia in STB, early PE only",0.0022200312259168433,0.0059200832691115824
+Decidua,PE x tissue interaction,0.4512046489087548,0.4812849588360051
+Replication,P1 hypoxia-only: EOPE vs control,0.007380103491217374,0.014760206982434748
+Replication,P2 hypoxia-only: PE (both) vs IUGR-only,0.11699782907990716,0.14399732809834728
+Replication,P3a shared: EOPE vs control,0.0008054152831011973,0.0025773289059238314
+Replication,P3b shared: PE (both) vs IUGR-only,0.05110909182557038,0.07434049720082964
+Replication,P4 glycolysis-only minus hypoxia-only: EOPE vs control,2.5697335979877866e-05,0.00041115737567804585
+Replication,P5 FLT1 ~ hypoxia within PE (n=40),5.588879109144406e-05,0.00044711032873155247
