@@ -1,56 +1,87 @@
-# [Team Name]: [Project Title]
+# [Team Name]: A Low-Oxygen Alarm in the Early-Preeclampsia Placenta
 
 OpenBio 2026 Datathon, Track 1: Maternal-Fetal Cell Communication in Preeclampsia
 
-> Copy this file into your submission folder and rename it `README.md`. Delete this note and every bracketed prompt before you submit.
+![Headline](figures/headline.png)
 
 ## Team
 
 | Name | Role |
 |---|---|
-| | |
+| [Team member 1] | [Analysis, ...] |
+| [Team member 2] | [Article, video, ...] |
 
 ## Research Question
 
-[One sentence. Example format: "In placental tissue, which genes differ between group A and group B after accounting for X?"]
+Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOPE) placentas persist when cases are compared with preterm controls (and adjusted for gestational age), are they specific to preeclampsia rather than fetal growth restriction, and which placental cell types plausibly carry them?
 
 ## Data Used
 
-- [ ] GSE203507 bulk RNA-seq (required)
-- [ ] Zeisel/Admati gene browser, for at least three genes (required)
-- [ ] Admati/Skarbianskis single-cell pseudobulk files (optional)
-- [ ] Other public data: [name and link]
+- [x] GSE203507 bulk RNA-seq, villous tissue, 30 donors (required)
+- [x] Zeisel/Admati gene browser: FLT1, LEP, HK2, NDRG1, P4HA1 (required) → [`notebooks/results/browser_lookups.csv`](notebooks/results/browser_lookups.csv)
+- [x] Admati/Skarbianskis single-cell pseudobulk files (optional extension)
+- [x] GSE203507 decidua basalis bulk RNA-seq (optional extension)
+- [x] Other public data: MSigDB Hallmark gene sets v2024.1 (HYPOXIA, GLYCOLYSIS), downloaded by the notebook from the [Broad data server](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/)
 
 ## How to Run
 
-1. The data package is in [`track-01/data`](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/tree/main/track-01/data) of the datathon repository. On Colab the first notebook cell downloads it.
-2. Install packages by following [Track 1 Setup](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/track-01/1-setup.md).
-3. Run `notebooks/track01_workflow.ipynb` top to bottom.
+```bash
+git clone https://github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia.git
+cd openbio-track1-preeclampsia
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt jupyter
+cd notebooks
+jupyter nbconvert --to notebook --execute --inplace 01_metabolic_stress_analysis.ipynb
+jupyter nbconvert --to notebook --execute --inplace 02_followup_pseudobulk_and_specificity.ipynb
+jupyter nbconvert --to notebook --execute --inplace 03_stress_tests.ipynb
+jupyter nbconvert --to notebook --execute --inplace 04_headline_figure.ipynb
+```
+
+The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: 02–04 read result files written by 01.
 
 Reproducibility details:
 
-- Notebook or script files:
-- Where we ran it (Colab or our own computer):
-- Random seeds, if any:
+- Notebook files: `notebooks/01_…` to `04_…`, run in order (about 5–10 minutes in total on a laptop)
+- Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
+- Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A and B before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
 | Path | Contents |
 |---|---|
-| `notebooks/` | The analysis notebook or script |
+| `notebooks/01_metabolic_stress_analysis.ipynb` | Pre-registered analysis: QC, PCA, PyDESeq2 PE vs preterm controls, sensitivity analyses S1–S4, hypoxia/glycolysis scores, marker table |
+| `notebooks/02_followup_pseudobulk_and_specificity.ipynb` | Addendum A: independent single-cell (pseudobulk) check, PE vs FGR-only direct contrasts, shared vs set-specific genes |
+| `notebooks/03_stress_tests.ipynb` | Addendum B: random-gene-set null, FLT1 link, heterogeneity within PE, decidua, composition adjustment |
+| `notebooks/04_headline_figure.ipynb` | Headline figure |
+| `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
-| `docs/article.md` | Science communication article, following the [HUDP article guide](https://github.com/Harvard-Undergraduate-OpenBio/openbio-datathon-2026/blob/main/docs/article-guide.md) |
-| `docs/analysis-plan.md` | The comparison, model and thresholds we chose |
+| `docs/article.md` | Science communication article |
+| `docs/analysis-plan.md` | Comparison, model, thresholds, and addenda |
 | `docs/hypothesis-card.md` | Our hypothesis and how to test it |
+| `docs/presentation-outline.md` | Video script |
 
 ## Key Findings
 
-[Two or three sentences: the comparison you ran, how many genes passed your thresholds and what the gene browser showed.]
+- Comparing 15 EOPE placentas with 5 gestational-age-appropriate preterm controls (`~ fetal sex + PE`), 424 genes pass padj < 0.05 and |log2FC| ≥ 1; 207 survive a gestational-age covariate and every leave-one-control-out refit.
+- A hypoxia score is higher in EOPE than in preterm controls (+0.54, 95% CI 0.24–0.84) and, in a direct contrast, than in FGR-only placentas (+0.35, 0.08–0.63). The "glycolysis" signal comes from genes shared with the hypoxia set; glycolysis-only genes do not rise in PE. The effect exceeds all 1,000 expression-matched random gene sets.
+- The hypoxia score tracks FLT1 (sFlt-1 gene; not in the set) within PE (rho = 0.78) and in independent single-cell syncytiotrophoblast (rho = 0.72). In the independent pseudobulk data the hypoxia score is higher in early PE in both cytotrophoblast and syncytiotrophoblast (exploratory, 3 control donors). The gene browser places FLT1 and LEP mainly in syncytiotrophoblast/EVT.
 
 ## Limitations
 
-[Number of samples, confounders such as gestational age, bulk tissue mixing many cell types, anything else that limits your claims.]
+5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. Expression data show association, not cause. Addenda A and B were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
 
 ## Presentation
 
 Video link: [add your unlisted YouTube link]
+
+## Citations
+
+- Ackerman WE et al. (2023) Hypertension 80:1363–1374. [doi:10.1161/HYPERTENSIONAHA.122.20807](https://doi.org/10.1161/HYPERTENSIONAHA.122.20807) (GSE203507)
+- Admati I, Skarbianskis N et al. (2023) Med 4:687–709. [doi:10.1016/j.medj.2023.07.005](https://doi.org/10.1016/j.medj.2023.07.005) (single-cell data and gene browser)
+- Campbell KA et al. (2023) Commun Biol 6:264. [doi:10.1038/s42003-023-04623-6](https://doi.org/10.1038/s42003-023-04623-6)
+- Gerber HP et al. (1997) J Biol Chem 272:23659–67. [doi:10.1074/jbc.272.38.23659](https://doi.org/10.1074/jbc.272.38.23659)
+- Maynard SE et al. (2003) J Clin Invest 111:649–58. [doi:10.1172/JCI17189](https://doi.org/10.1172/JCI17189)
+- Zeisler H et al. (2016) N Engl J Med 374:13–22. [doi:10.1056/NEJMoa1414838](https://doi.org/10.1056/NEJMoa1414838)
+- Liberzon A et al. (2015) The Molecular Signatures Database Hallmark gene set collection. Cell Syst 1:417–425. [doi:10.1016/j.cels.2015.12.004](https://doi.org/10.1016/j.cels.2015.12.004)
+- Muzellec B et al. (2023) PyDESeq2. Bioinformatics 39:btad547. [doi:10.1093/bioinformatics/btad547](https://doi.org/10.1093/bioinformatics/btad547)
