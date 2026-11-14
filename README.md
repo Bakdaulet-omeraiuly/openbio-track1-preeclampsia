@@ -59,8 +59,8 @@ Reproducibility details:
 | `notebooks/03_stress_tests.ipynb` | Addendum B: random-gene-set null, FLT1 link, heterogeneity within PE, decidua, composition adjustment |
 | `notebooks/05_external_replication.ipynb` | Addendum C: pre-specified replication in GSE114691 (79 placentas), FLT1 within PE in single-cell data, FDR summary |
 | `notebooks/06_headline_figure.ipynb` | Headline figure (both cohorts) |
-| `notebooks/08_coupling_PE_vs_FGR.ipynb` | Addendum E: pre-specified test of whether hypoxia–FLT1 coupling differs between PE and growth restriction; same-gene and leave-one-out robustness |
 | `notebooks/07_celltype_coupling_and_meta.ipynb` | Addendum D (post hoc): hypoxia–FLT1 coupling in 14 cell classes, two-cohort meta-analysis |
+| `notebooks/08_coupling_PE_vs_FGR.ipynb` | Addendum E: pre-specified test of whether hypoxia–FLT1 coupling differs between PE and growth restriction; same-gene and leave-one-out robustness |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
 | `docs/article.md` | Science communication article |
