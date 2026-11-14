@@ -97,6 +97,8 @@ Video link: [add your unlisted YouTube link]
 - Zhang R et al. (2026) Curr Gene Ther. [doi:10.2174/0115665232535282261029093348](https://doi.org/10.2174/0115665232535282261029093348)
 - Piekos SN et al. (2025) Commun Biol 8:1239. [doi:10.1038/s42003-025-08631-6](https://doi.org/10.1038/s42003-025-08631-6)
 - Leavey K et al. (2016) Hypertension 68:137–47. [doi:10.1161/HYPERTENSIONAHA.116.07293](https://doi.org/10.1161/HYPERTENSIONAHA.116.07293)
+- Zhao J et al. (2020) FASEB BioAdv 3:23–35. [doi:10.1096/fba.2020-00057](https://doi.org/10.1096/fba.2020-00057)
+- Iriyama T et al. (2015) Hypertension 65:1307–15. [doi:10.1161/HYPERTENSIONAHA.115.05314](https://doi.org/10.1161/HYPERTENSIONAHA.115.05314)
 - Campbell KA et al. (2023) Commun Biol 6:264. [doi:10.1038/s42003-023-04623-6](https://doi.org/10.1038/s42003-023-04623-6)
 - Gerber HP et al. (1997) J Biol Chem 272:23659–67. [doi:10.1074/jbc.272.38.23659](https://doi.org/10.1074/jbc.272.38.23659)
 - Maynard SE et al. (2003) J Clin Invest 111:649–58. [doi:10.1172/JCI17189](https://doi.org/10.1172/JCI17189)
