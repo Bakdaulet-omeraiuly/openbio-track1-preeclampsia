@@ -1,0 +1,6 @@
+prediction,estimate,p_one_sided,pass
+"V1 partial rho(module, FLT1 | hypoxia) > 0, 25 preterm",0.8869127851062207,3.916648156679186e-09,True
+"V2 module: PE (both) - FGR-only > 0 | hypoxia, GA, sex",0.5857325820066374,0.02378250337093537,True
+"V3 V1 beats 1,000 matched random 50-gene sets",0.4909823430864754,0.000999000999000999,True
+(robustness) V1 also adjusting for STB marker score,0.874190479755621,2.5055529527697226e-08,True
+"(descriptive) module: EOPE - preterm control | hypoxia, GA, sex",0.7152775355393589,0.023802870287970537,

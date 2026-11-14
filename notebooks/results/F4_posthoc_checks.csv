@@ -1,0 +1,6 @@
+check,n,partial_rho,p_one_sided
+"(a) clean module | hypoxia, 25 preterm",25,0.8744596096466248,1.1637667863520974e-08
+"(b) module | hypoxia + EVT markers, 25 preterm",25,0.8379919130891101,3.0160545933840115e-07
+"(a+b) clean module | hypoxia + EVT + STB, 25 preterm",25,0.8195424487651659,1.533071370843003e-06
+"(c) module | hypoxia, PE only (n=15)",15,0.9286104541959486,8.182489850164821e-07
+"(c) clean module | hypoxia + EVT, PE only (n=15)",15,0.9064998294005304,9.699564573700502e-06

@@ -39,16 +39,17 @@ jupyter nbconvert --to notebook --execute --inplace 05_external_replication.ipyn
 jupyter nbconvert --to notebook --execute --inplace 06_headline_figure.ipynb
 jupyter nbconvert --to notebook --execute --inplace 07_celltype_coupling_and_meta.ipynb
 jupyter nbconvert --to notebook --execute --inplace 08_coupling_PE_vs_FGR.ipynb
+jupyter nbconvert --to notebook --execute --inplace 09_hypoxia_independent_flt1_program.ipynb
 ```
 
 The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: later notebooks read result files written by earlier ones. Notebook 05 also downloads GSE114691 counts from GEO and a transcript-to-gene table from Ensembl GRCh37 BioMart.
 
 Reproducibility details:
 
-- Notebook files: `notebooks/01_…` to `08_…`, run in order (about 10–15 minutes in total on a laptop)
+- Notebook files: `notebooks/01_…` to `09_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–E before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–F before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
@@ -61,6 +62,7 @@ Reproducibility details:
 | `notebooks/06_headline_figure.ipynb` | Headline figure (both cohorts) |
 | `notebooks/07_celltype_coupling_and_meta.ipynb` | Addendum D (post hoc): hypoxia–FLT1 coupling in 14 cell classes, two-cohort meta-analysis |
 | `notebooks/08_coupling_PE_vs_FGR.ipynb` | Addendum E: pre-specified test of whether hypoxia–FLT1 coupling differs between PE and growth restriction; same-gene and leave-one-out robustness |
+| `notebooks/09_hypoxia_independent_flt1_program.ipynb` | Addendum F: hypoxia-independent FLT1 gene module, discovered in GSE114691 and validated in GSE203507 |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
 | `docs/article.md` | Science communication article |
@@ -77,10 +79,11 @@ Reproducibility details:
 
 - Post hoc (Addendum D): pooling both cohorts gives a modest PE excess over growth restriction (+0.16, 0.04–0.28; I² = 40%). In the single-cell data, the hypoxia score tracks FLT1 specifically (FLT1 in the top 5% of all genes) in syncytiotrophoblast, extravillous trophoblast and endothelial cells.
 - Pre-specified (Addendum E): the hypoxia → FLT1 coupling is **similar** in PE and growth restriction (GSE114691 interaction −0.31, 95% CI −0.92 to 0.29; within-group rho 0.59 vs 0.58). Descriptively, in GSE114691 PE placentas carry about 2× more FLT1 at the same hypoxia score; this offset was not seen in the small discovery cohort. Robust to using identical genes in both cohorts and to leave-one-out.
+- **Two-component FLT1 model (Addendum F, discovery → validation):** a 50-gene module that tracks FLT1 *beyond* the hypoxia score was derived in GSE114691 and validated in GSE203507 (partial rho = 0.89; above all 1,000 random gene sets; higher in PE than growth restriction at equal hypoxia, p = 0.024). It is the canonical PE gene set (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3…). Robust to EVT/STB marker adjustment and holds within PE alone. 'Independent' refers to the generic Hallmark hypoxia signature only.
 
 ## Limitations
 
-5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–E were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
+5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–F were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
 
 ## Presentation
 
