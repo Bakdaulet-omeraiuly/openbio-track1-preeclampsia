@@ -58,7 +58,7 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 **Slide 10: hypothesis**
 
-> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction may share a weaker version of this stress.
+> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction uses the same oxygen-to-FLT1 machinery — we tested that directly — so preeclampsia seems to switch on more of it rather than use it differently.
 >
 > **Limitations:** only 5 preterm controls in our main data and 3 single-cell controls; no per-patient details in the second study; bulk tissue mixes cell types; labour and delivery type were not recorded; and the maternal-side tissue shows a similar signal, so we cannot call it purely placental. This is association, not cause.
 >
