@@ -225,3 +225,38 @@ PubMed search to calibrate novelty wording for (a) hypoxia vs glycolysis decompo
   discovery (15), replication (40) and single-cell STB early-PE donors (10). Report range and any sign flip.
 - **Cell-composition alternative:** add a syncytiotrophoblast marker score (mean z of the marker-table
   syncytiotrophoblast genes) as a covariate in E1.
+
+---
+
+## Addendum F (2026-11-14): discovery → validation of a hypoxia-independent FLT1 program, written before running
+
+Motivation (post hoc, from E1): in GSE114691, PE placentas carried ~2× more FLT1 than growth-restricted
+placentas at the same hypoxia score. Question: which gene program accompanies FLT1 *beyond* hypoxia,
+and does it validate in an independent cohort?
+
+### F1. Discovery (GSE114691, all 79 samples; nothing from GSE203507 is used)
+- Hypoxia score = Hallmark HYPOXIA (all), as before. For FLT1 and for every expressed gene g, take the
+  residual from `expression ~ hypoxia score`. Spearman correlation of each gene's residual with the FLT1
+  residual (partial correlation given hypoxia).
+- **Module** = the 50 genes with the highest partial correlation, excluding FLT1 itself and any
+  Hallmark HYPOXIA gene. Frozen and saved to `results/F1_module_genes.csv` before validation.
+- Descriptive: overlap of the module with Hallmark sets (hypergeometric, BH) and with the known PE genes
+  LEP, ENG, INHA, PAPPA2, HTRA4, PGF.
+
+### F2. Validation in GSE203507 (independent patients; 25 preterm samples, TB excluded)
+Module score = mean z (VST, z across the 30 samples) of module genes measured in GSE203507.
+- **V1 (primary):** partial Spearman(module score, FLT1 | hypoxia score) across the 25 preterm samples > 0
+  (one-sided α = 0.05).
+- **V2:** `module ~ C(group) + hypoxia score + GA + fetal sex`; contrast mean(PE groups) − FGR-only > 0
+  (one-sided α = 0.05).
+- **V3 (null check):** V1 exceeds the 95th percentile of 1,000 random 50-gene sets matched by
+  expression decile (seed 42).
+
+### F3. Cell-type location (single-cell pseudobulk; descriptive)
+Mean CPM of module genes per cell class (all donors); fraction of module genes whose highest-expressing
+class is syncytiotrophoblast, EVT or another class. Within early-PE syncytiotrophoblast (10 donors):
+partial Spearman(module, FLT1 | hypoxia).
+
+The claim "a hypoxia-independent FLT1 program" is supported only if V1 and V3 pass.
+Known risk: the module may simply track syncytiotrophoblast abundance; reported via F3 and by repeating
+V1 with the STB marker score as an extra covariate.
