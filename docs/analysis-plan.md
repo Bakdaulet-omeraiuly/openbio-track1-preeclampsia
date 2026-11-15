@@ -341,6 +341,17 @@ from Addendum F (`results/F1_module_genes.csv`) is used unchanged.
 - Stop rule: if the module adds nothing beyond Blue/Black (F-test p ≥ 0.05 in both cohorts), the
   "distinct module" claim is dropped; the module is described as a compact proxy of the published program.
 
+### I1/I3 correction (2026-11-14): documented after external review and after the first I1 run
+- The original I1 score definition above is retained and labelled **overlap-free sensitivity**. It removes
+  information from the published modules and therefore is not the fairest primary baseline.
+- Corrected **primary** scores use every measured VT Blue/VT Black member except FLT1, including genes that
+  overlap our module. The same nested models, STB sensitivity and `|rho| > 0.9` non-identifiability rule apply.
+  Results from this correction are post-review, not pre-specified.
+- Gene symbols for I3 are audited against each target dataset. Exact matches are preferred; a `.` ↔ `-`
+  substitution is accepted only when it gives one unique target symbol. The audit separately records genes
+  absent from the raw dataset and genes present in raw data but removed by the expression filter. No broader
+  alias is inferred without an explicit mapping source.
+
 ### I2. Residual-permutation selection null (selection step repeated)
 - Discovery nuisance model (GSE114691): FLT1 and all genes residualised (rank-based) on hypoxia score +
   clinical group. Observed: top-50 non-hypoxia genes by correlation with FLT1's residual (this spec may

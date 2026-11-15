@@ -1,0 +1,251 @@
+analysis_set,source_symbol,target_dataset,mapped_symbol,mapping_method,present_in_raw,present_after_filter,included_in_score,exclusion_reason
+FLT1 module in differentiation reference,ZYG11A,GSE294617 reference,ZYG11A,exact,True,True,True,included
+FLT1 module in differentiation reference,PAPPA2,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,LEP,GSE294617 reference,LEP,exact,True,True,True,included
+FLT1 module in differentiation reference,GBA,GSE294617 reference,GBA,exact,True,True,True,included
+FLT1 module in differentiation reference,SPAG4,GSE294617 reference,SPAG4,exact,True,True,True,included
+FLT1 module in differentiation reference,ENG,GSE294617 reference,ENG,exact,True,True,True,included
+FLT1 module in differentiation reference,GBAP1,GSE294617 reference,GBAP1,exact,True,True,True,included
+FLT1 module in differentiation reference,INHBA,GSE294617 reference,INHBA,exact,True,True,True,included
+FLT1 module in differentiation reference,RP11-228B15.4,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,SIPA1L1,GSE294617 reference,SIPA1L1,exact,True,True,True,included
+FLT1 module in differentiation reference,RP11-631F7.1,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,SH3PXD2A,GSE294617 reference,SH3PXD2A,exact,True,True,True,included
+FLT1 module in differentiation reference,HTRA4,GSE294617 reference,HTRA4,exact,True,True,True,included
+FLT1 module in differentiation reference,LIMCH1,GSE294617 reference,LIMCH1,exact,True,True,True,included
+FLT1 module in differentiation reference,PPP1R1C,GSE294617 reference,PPP1R1C,exact,True,True,True,included
+FLT1 module in differentiation reference,FLT1P1,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,FSTL3,GSE294617 reference,FSTL3,exact,True,True,True,included
+FLT1 module in differentiation reference,PROCR,GSE294617 reference,PROCR,exact,True,True,True,included
+FLT1 module in differentiation reference,EBI3,GSE294617 reference,EBI3,exact,True,True,True,included
+FLT1 module in differentiation reference,OR10Y1P,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,SASH1,GSE294617 reference,SASH1,exact,True,True,True,included
+FLT1 module in differentiation reference,SLC6A8,GSE294617 reference,SLC6A8,exact,True,True,True,included
+FLT1 module in differentiation reference,RP11-141M3.5,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,MYO7B,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,PIK3AP1,GSE294617 reference,PIK3AP1,exact,True,True,True,included
+FLT1 module in differentiation reference,HTRA1,GSE294617 reference,HTRA1,exact,True,True,True,included
+FLT1 module in differentiation reference,OCRL,GSE294617 reference,OCRL,exact,True,True,True,included
+FLT1 module in differentiation reference,CCDC183,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,ADAM12,GSE294617 reference,ADAM12,exact,True,True,True,included
+FLT1 module in differentiation reference,INHBA-AS1,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,C10orf90,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,RP11-216L13.19,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,FOXJ3,GSE294617 reference,FOXJ3,exact,True,True,True,included
+FLT1 module in differentiation reference,CSNK2A2,GSE294617 reference,CSNK2A2,exact,True,True,True,included
+FLT1 module in differentiation reference,ARMS2,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,GUCA2A,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,MTX1,GSE294617 reference,MTX1,exact,True,True,True,included
+FLT1 module in differentiation reference,SSFA2,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,CCDC113,GSE294617 reference,CCDC113,exact,True,True,True,included
+FLT1 module in differentiation reference,PRRG1,GSE294617 reference,PRRG1,exact,True,True,True,included
+FLT1 module in differentiation reference,ERGIC1,GSE294617 reference,ERGIC1,exact,True,True,True,included
+FLT1 module in differentiation reference,PVRL4,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,TBC1D26,GSE294617 reference,,unmatched,False,False,False,absent_from_dataset_vocabulary
+FLT1 module in differentiation reference,TMEM59,GSE294617 reference,TMEM59,exact,True,True,True,included
+FLT1 module in differentiation reference,PNCK,GSE294617 reference,PNCK,exact,True,True,True,included
+FLT1 module in differentiation reference,BCL6,GSE294617 reference,BCL6,exact,True,True,True,included
+FLT1 module in differentiation reference,TET3,GSE294617 reference,TET3,exact,True,True,True,included
+FLT1 module in differentiation reference,SREBF1,GSE294617 reference,SREBF1,exact,True,True,True,included
+FLT1 module in differentiation reference,COG3,GSE294617 reference,COG3,exact,True,True,True,included
+FLT1 module in differentiation reference,CYP11A1,GSE294617 reference,CYP11A1,exact,True,True,True,included
+Differentiation score in bulk,CSH1,GSE203507,CSH1,exact,True,True,True,included
+Differentiation score in bulk,NOTUM,GSE203507,NOTUM,exact,True,True,True,included
+Differentiation score in bulk,LAMA4,GSE203507,LAMA4,exact,True,True,True,included
+Differentiation score in bulk,CSH2,GSE203507,CSH2,exact,True,True,True,included
+Differentiation score in bulk,PSG3,GSE203507,PSG3,exact,True,True,True,included
+Differentiation score in bulk,DIO2,GSE203507,DIO2,exact,True,True,True,included
+Differentiation score in bulk,ACAN,GSE203507,ACAN,exact,True,True,True,included
+Differentiation score in bulk,ISM2,GSE203507,ISM2,exact,True,True,True,included
+Differentiation score in bulk,CSF2RB,GSE203507,CSF2RB,exact,True,True,True,included
+Differentiation score in bulk,SLCO4A1,GSE203507,SLCO4A1,exact,True,True,True,included
+Differentiation score in bulk,LRRC32,GSE203507,LRRC32,exact,True,True,True,included
+Differentiation score in bulk,MMP2,GSE203507,MMP2,exact,True,True,True,included
+Differentiation score in bulk,MYCNUT,GSE203507,MYCNUT,exact,True,True,True,included
+Differentiation score in bulk,CGB5,GSE203507,CGB5,exact,True,True,True,included
+Differentiation score in bulk,CGB8,GSE203507,CGB8,exact,True,True,True,included
+Differentiation score in bulk,ACVRL1,GSE203507,ACVRL1,exact,True,True,True,included
+Differentiation score in bulk,ADAMTS20,GSE203507,ADAMTS20,exact,True,True,True,included
+Differentiation score in bulk,WIPF1,GSE203507,WIPF1,exact,True,True,True,included
+Differentiation score in bulk,COL21A1,GSE203507,COL21A1,exact,True,True,True,included
+Differentiation score in bulk,CGB3,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,GTF2I.AS1,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,PAPPA,GSE203507,PAPPA,exact,True,True,True,included
+Differentiation score in bulk,ITGA1,GSE203507,ITGA1,exact,True,True,True,included
+Differentiation score in bulk,HAPLN3,GSE203507,HAPLN3,exact,True,True,True,included
+Differentiation score in bulk,LVRN,GSE203507,LVRN,exact,True,True,True,included
+Differentiation score in bulk,COL27A1,GSE203507,COL27A1,exact,True,True,True,included
+Differentiation score in bulk,ANGPT4,GSE203507,ANGPT4,exact,True,False,False,present_in_raw_but_removed_by_expression_filter
+Differentiation score in bulk,FHOD3,GSE203507,FHOD3,exact,True,True,True,included
+Differentiation score in bulk,PLCD4,GSE203507,PLCD4,exact,True,True,True,included
+Differentiation score in bulk,GPR32,GSE203507,GPR32,exact,True,True,True,included
+Differentiation score in bulk,TNNI2,GSE203507,TNNI2,exact,True,True,True,included
+Differentiation score in bulk,TFPI,GSE203507,TFPI,exact,True,True,True,included
+Differentiation score in bulk,SLC6A2,GSE203507,SLC6A2,exact,True,True,True,included
+Differentiation score in bulk,MAMDC2,GSE203507,MAMDC2,exact,True,True,True,included
+Differentiation score in bulk,CRISPLD1,GSE203507,CRISPLD1,exact,True,True,True,included
+Differentiation score in bulk,CMKLR2,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,CGB7,GSE203507,CGB7,exact,True,True,True,included
+Differentiation score in bulk,PLAC4,GSE203507,PLAC4,exact,True,True,True,included
+Differentiation score in bulk,CGA,GSE203507,CGA,exact,True,True,True,included
+Differentiation score in bulk,ESAM,GSE203507,ESAM,exact,True,True,True,included
+Differentiation score in bulk,SEPTIN3,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,SYDE1,GSE203507,SYDE1,exact,True,True,True,included
+Differentiation score in bulk,IL10RA,GSE203507,IL10RA,exact,True,True,True,included
+Differentiation score in bulk,TREML2,GSE203507,TREML2,exact,True,True,True,included
+Differentiation score in bulk,NT5E,GSE203507,NT5E,exact,True,True,True,included
+Differentiation score in bulk,PDE6H,GSE203507,PDE6H,exact,True,False,False,present_in_raw_but_removed_by_expression_filter
+Differentiation score in bulk,MCAM,GSE203507,MCAM,exact,True,True,True,included
+Differentiation score in bulk,CPXM1,GSE203507,CPXM1,exact,True,True,True,included
+Differentiation score in bulk,TLE6,GSE203507,TLE6,exact,True,True,True,included
+Differentiation score in bulk,ENSG00000270977,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,ENSG00000268655,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,TCL6,GSE203507,TCL6,exact,True,True,True,included
+Differentiation score in bulk,GPR78,GSE203507,GPR78,exact,True,True,True,included
+Differentiation score in bulk,DACT2,GSE203507,DACT2,exact,True,True,True,included
+Differentiation score in bulk,PHYHIP,GSE203507,PHYHIP,exact,True,True,True,included
+Differentiation score in bulk,FLT4,GSE203507,FLT4,exact,True,True,True,included
+Differentiation score in bulk,ANTXR2,GSE203507,ANTXR2,exact,True,True,True,included
+Differentiation score in bulk,CORO6,GSE203507,CORO6,exact,True,True,True,included
+Differentiation score in bulk,PSG1,GSE203507,PSG1,exact,True,True,True,included
+Differentiation score in bulk,VGLL3,GSE203507,VGLL3,exact,True,True,True,included
+Differentiation score in bulk,PSG6,GSE203507,PSG6,exact,True,True,True,included
+Differentiation score in bulk,SLC25A15,GSE203507,SLC25A15,exact,True,True,True,included
+Differentiation score in bulk,ARHGEF16,GSE203507,ARHGEF16,exact,True,True,True,included
+Differentiation score in bulk,PSG4,GSE203507,PSG4,exact,True,True,True,included
+Differentiation score in bulk,HLA.G,GSE203507,HLA-G,dot_hyphen_normalization,True,True,True,included
+Differentiation score in bulk,SLC6A4,GSE203507,SLC6A4,exact,True,True,True,included
+Differentiation score in bulk,CPM,GSE203507,CPM,exact,True,True,True,included
+Differentiation score in bulk,PSG8,GSE203507,PSG8,exact,True,True,True,included
+Differentiation score in bulk,CD200,GSE203507,CD200,exact,True,True,True,included
+Differentiation score in bulk,FAT2,GSE203507,FAT2,exact,True,True,True,included
+Differentiation score in bulk,UBALD2,GSE203507,UBALD2,exact,True,True,True,included
+Differentiation score in bulk,GBP1,GSE203507,GBP1,exact,True,True,True,included
+Differentiation score in bulk,CCR1,GSE203507,CCR1,exact,True,True,True,included
+Differentiation score in bulk,MFSD2A,GSE203507,MFSD2A,exact,True,True,True,included
+Differentiation score in bulk,SEMA3B,GSE203507,SEMA3B,exact,True,True,True,included
+Differentiation score in bulk,MX1,GSE203507,MX1,exact,True,True,True,included
+Differentiation score in bulk,CHRM5,GSE203507,CHRM5,exact,True,True,True,included
+Differentiation score in bulk,NPR1,GSE203507,NPR1,exact,True,True,True,included
+Differentiation score in bulk,MMP15,GSE203507,MMP15,exact,True,True,True,included
+Differentiation score in bulk,AADACL3,GSE203507,AADACL3,exact,True,True,True,included
+Differentiation score in bulk,TNFAIP2,GSE203507,TNFAIP2,exact,True,True,True,included
+Differentiation score in bulk,SYT8,GSE203507,SYT8,exact,True,True,True,included
+Differentiation score in bulk,KISS1,GSE203507,KISS1,exact,True,True,True,included
+Differentiation score in bulk,CPED1,GSE203507,CPED1,exact,True,True,True,included
+Differentiation score in bulk,PSG9,GSE203507,PSG9,exact,True,True,True,included
+Differentiation score in bulk,CSGALNACT1,GSE203507,CSGALNACT1,exact,True,True,True,included
+Differentiation score in bulk,IL2RB,GSE203507,IL2RB,exact,True,True,True,included
+Differentiation score in bulk,ENSG00000270504,GSE203507,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,BCAR4,GSE203507,BCAR4,exact,True,True,True,included
+Differentiation score in bulk,ATP2B3,GSE203507,ATP2B3,exact,True,False,False,present_in_raw_but_removed_by_expression_filter
+Differentiation score in bulk,ADAM19,GSE203507,ADAM19,exact,True,True,True,included
+Differentiation score in bulk,FGFRL1,GSE203507,FGFRL1,exact,True,True,True,included
+Differentiation score in bulk,MFAP2,GSE203507,MFAP2,exact,True,True,True,included
+Differentiation score in bulk,GDF15,GSE203507,GDF15,exact,True,True,True,included
+Differentiation score in bulk,PDCD1LG2,GSE203507,PDCD1LG2,exact,True,True,True,included
+Differentiation score in bulk,GSTA3,GSE203507,GSTA3,exact,True,True,True,included
+Differentiation score in bulk,GH2,GSE203507,GH2,exact,True,True,True,included
+Differentiation score in bulk,LGALS3BP,GSE203507,LGALS3BP,exact,True,True,True,included
+Differentiation score in bulk,FAM43A,GSE203507,FAM43A,exact,True,True,True,included
+Differentiation score in bulk,SLC6A11,GSE203507,SLC6A11,exact,True,True,True,included
+Differentiation score in bulk,CSH1,GSE114691,CSH1,exact,True,True,True,included
+Differentiation score in bulk,NOTUM,GSE114691,NOTUM,exact,True,True,True,included
+Differentiation score in bulk,LAMA4,GSE114691,LAMA4,exact,True,True,True,included
+Differentiation score in bulk,CSH2,GSE114691,CSH2,exact,True,True,True,included
+Differentiation score in bulk,PSG3,GSE114691,PSG3,exact,True,True,True,included
+Differentiation score in bulk,DIO2,GSE114691,DIO2,exact,True,True,True,included
+Differentiation score in bulk,ACAN,GSE114691,ACAN,exact,True,True,True,included
+Differentiation score in bulk,ISM2,GSE114691,ISM2,exact,True,True,True,included
+Differentiation score in bulk,CSF2RB,GSE114691,CSF2RB,exact,True,True,True,included
+Differentiation score in bulk,SLCO4A1,GSE114691,SLCO4A1,exact,True,True,True,included
+Differentiation score in bulk,LRRC32,GSE114691,LRRC32,exact,True,True,True,included
+Differentiation score in bulk,MMP2,GSE114691,MMP2,exact,True,True,True,included
+Differentiation score in bulk,MYCNUT,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,CGB5,GSE114691,CGB5,exact,True,True,True,included
+Differentiation score in bulk,CGB8,GSE114691,CGB8,exact,True,True,True,included
+Differentiation score in bulk,ACVRL1,GSE114691,ACVRL1,exact,True,True,True,included
+Differentiation score in bulk,ADAMTS20,GSE114691,ADAMTS20,exact,True,True,True,included
+Differentiation score in bulk,WIPF1,GSE114691,WIPF1,exact,True,True,True,included
+Differentiation score in bulk,COL21A1,GSE114691,COL21A1,exact,True,True,True,included
+Differentiation score in bulk,CGB3,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,GTF2I.AS1,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,PAPPA,GSE114691,PAPPA,exact,True,True,True,included
+Differentiation score in bulk,ITGA1,GSE114691,ITGA1,exact,True,True,True,included
+Differentiation score in bulk,HAPLN3,GSE114691,HAPLN3,exact,True,True,True,included
+Differentiation score in bulk,LVRN,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,COL27A1,GSE114691,COL27A1,exact,True,True,True,included
+Differentiation score in bulk,ANGPT4,GSE114691,ANGPT4,exact,True,False,False,present_in_raw_but_removed_by_expression_filter
+Differentiation score in bulk,FHOD3,GSE114691,FHOD3,exact,True,True,True,included
+Differentiation score in bulk,PLCD4,GSE114691,PLCD4,exact,True,True,True,included
+Differentiation score in bulk,GPR32,GSE114691,GPR32,exact,True,True,True,included
+Differentiation score in bulk,TNNI2,GSE114691,TNNI2,exact,True,True,True,included
+Differentiation score in bulk,TFPI,GSE114691,TFPI,exact,True,True,True,included
+Differentiation score in bulk,SLC6A2,GSE114691,SLC6A2,exact,True,True,True,included
+Differentiation score in bulk,MAMDC2,GSE114691,MAMDC2,exact,True,True,True,included
+Differentiation score in bulk,CRISPLD1,GSE114691,CRISPLD1,exact,True,True,True,included
+Differentiation score in bulk,CMKLR2,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,CGB7,GSE114691,CGB7,exact,True,True,True,included
+Differentiation score in bulk,PLAC4,GSE114691,PLAC4,exact,True,True,True,included
+Differentiation score in bulk,CGA,GSE114691,CGA,exact,True,True,True,included
+Differentiation score in bulk,ESAM,GSE114691,ESAM,exact,True,True,True,included
+Differentiation score in bulk,SEPTIN3,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,SYDE1,GSE114691,SYDE1,exact,True,True,True,included
+Differentiation score in bulk,IL10RA,GSE114691,IL10RA,exact,True,True,True,included
+Differentiation score in bulk,TREML2,GSE114691,TREML2,exact,True,True,True,included
+Differentiation score in bulk,NT5E,GSE114691,NT5E,exact,True,True,True,included
+Differentiation score in bulk,PDE6H,GSE114691,PDE6H,exact,True,True,True,included
+Differentiation score in bulk,MCAM,GSE114691,MCAM,exact,True,True,True,included
+Differentiation score in bulk,CPXM1,GSE114691,CPXM1,exact,True,True,True,included
+Differentiation score in bulk,TLE6,GSE114691,TLE6,exact,True,True,True,included
+Differentiation score in bulk,ENSG00000270977,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,ENSG00000268655,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,TCL6,GSE114691,TCL6,exact,True,True,True,included
+Differentiation score in bulk,GPR78,GSE114691,GPR78,exact,True,True,True,included
+Differentiation score in bulk,DACT2,GSE114691,DACT2,exact,True,True,True,included
+Differentiation score in bulk,PHYHIP,GSE114691,PHYHIP,exact,True,True,True,included
+Differentiation score in bulk,FLT4,GSE114691,FLT4,exact,True,True,True,included
+Differentiation score in bulk,ANTXR2,GSE114691,ANTXR2,exact,True,True,True,included
+Differentiation score in bulk,CORO6,GSE114691,CORO6,exact,True,True,True,included
+Differentiation score in bulk,PSG1,GSE114691,PSG1,exact,True,True,True,included
+Differentiation score in bulk,VGLL3,GSE114691,VGLL3,exact,True,True,True,included
+Differentiation score in bulk,PSG6,GSE114691,PSG6,exact,True,True,True,included
+Differentiation score in bulk,SLC25A15,GSE114691,SLC25A15,exact,True,True,True,included
+Differentiation score in bulk,ARHGEF16,GSE114691,ARHGEF16,exact,True,True,True,included
+Differentiation score in bulk,PSG4,GSE114691,PSG4,exact,True,True,True,included
+Differentiation score in bulk,HLA.G,GSE114691,HLA-G,dot_hyphen_normalization,True,True,True,included
+Differentiation score in bulk,SLC6A4,GSE114691,SLC6A4,exact,True,True,True,included
+Differentiation score in bulk,CPM,GSE114691,CPM,exact,True,True,True,included
+Differentiation score in bulk,PSG8,GSE114691,PSG8,exact,True,True,True,included
+Differentiation score in bulk,CD200,GSE114691,CD200,exact,True,True,True,included
+Differentiation score in bulk,FAT2,GSE114691,FAT2,exact,True,True,True,included
+Differentiation score in bulk,UBALD2,GSE114691,UBALD2,exact,True,True,True,included
+Differentiation score in bulk,GBP1,GSE114691,GBP1,exact,True,True,True,included
+Differentiation score in bulk,CCR1,GSE114691,CCR1,exact,True,True,True,included
+Differentiation score in bulk,MFSD2A,GSE114691,MFSD2A,exact,True,True,True,included
+Differentiation score in bulk,SEMA3B,GSE114691,SEMA3B,exact,True,True,True,included
+Differentiation score in bulk,MX1,GSE114691,MX1,exact,True,True,True,included
+Differentiation score in bulk,CHRM5,GSE114691,CHRM5,exact,True,True,True,included
+Differentiation score in bulk,NPR1,GSE114691,NPR1,exact,True,True,True,included
+Differentiation score in bulk,MMP15,GSE114691,MMP15,exact,True,True,True,included
+Differentiation score in bulk,AADACL3,GSE114691,AADACL3,exact,True,True,True,included
+Differentiation score in bulk,TNFAIP2,GSE114691,TNFAIP2,exact,True,True,True,included
+Differentiation score in bulk,SYT8,GSE114691,SYT8,exact,True,True,True,included
+Differentiation score in bulk,KISS1,GSE114691,KISS1,exact,True,True,True,included
+Differentiation score in bulk,CPED1,GSE114691,CPED1,exact,True,True,True,included
+Differentiation score in bulk,PSG9,GSE114691,PSG9,exact,True,True,True,included
+Differentiation score in bulk,CSGALNACT1,GSE114691,CSGALNACT1,exact,True,True,True,included
+Differentiation score in bulk,IL2RB,GSE114691,IL2RB,exact,True,True,True,included
+Differentiation score in bulk,ENSG00000270504,GSE114691,,unmatched,False,False,False,absent_from_dataset_vocabulary
+Differentiation score in bulk,BCAR4,GSE114691,BCAR4,exact,True,True,True,included
+Differentiation score in bulk,ATP2B3,GSE114691,ATP2B3,exact,True,True,True,included
+Differentiation score in bulk,ADAM19,GSE114691,ADAM19,exact,True,True,True,included
+Differentiation score in bulk,FGFRL1,GSE114691,FGFRL1,exact,True,True,True,included
+Differentiation score in bulk,MFAP2,GSE114691,MFAP2,exact,True,True,True,included
+Differentiation score in bulk,GDF15,GSE114691,GDF15,exact,True,True,True,included
+Differentiation score in bulk,PDCD1LG2,GSE114691,PDCD1LG2,exact,True,True,True,included
+Differentiation score in bulk,GSTA3,GSE114691,GSTA3,exact,True,True,True,included
+Differentiation score in bulk,GH2,GSE114691,GH2,exact,True,True,True,included
+Differentiation score in bulk,LGALS3BP,GSE114691,LGALS3BP,exact,True,True,True,included
+Differentiation score in bulk,FAM43A,GSE114691,FAM43A,exact,True,True,True,included
+Differentiation score in bulk,SLC6A11,GSE114691,SLC6A11,exact,True,True,True,included

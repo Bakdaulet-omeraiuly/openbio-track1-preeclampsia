@@ -23,6 +23,7 @@ Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOP
 - [x] GSE203507 decidua basalis bulk RNA-seq (optional extension)
 - [x] Other public data: GSE114691 villous RNA-seq, 79 placentas ([GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691)), used for replication
 - [x] Other public data: GSE294617 CTB→EVT differentiation reference (CPM; Yong et al. 2025), used descriptively
+- [x] Other public data: Ackerman et al. 2023 Table S4 VT Blue/VT Black co-expression module assignments
 - [x] Other public data: MSigDB Hallmark gene sets v2024.1 (HYPOXIA, GLYCOLYSIS), downloaded by the notebook from the [Broad data server](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/)
 
 ## How to Run
@@ -69,7 +70,7 @@ Reproducibility details:
 | `notebooks/09_hypoxia_independent_flt1_program.ipynb` | Addendum F: FLT1 co-expression module beyond the Hallmark hypoxia score, built in GSE114691 and tested in GSE203507 |
 | `notebooks/10_villous_to_decidua.ipynb` | Addendum G: paired villous stress vs decidual (maternal-side) inflammatory response; negative result |
 | `notebooks/11_anchor_gene_null.ipynb` | Addendum H: selection-process null (same procedure for 300 random anchor genes) |
-| `notebooks/12_selection_null_and_differentiation.ipynb` | Addendum I: residual-permutation selection null; normal CTB→EVT differentiation reference (GSE294617) |
+| `notebooks/12_selection_null_and_differentiation.ipynb` | Addendum I: comparison with Ackerman VT Blue/Black modules; residual-permutation selection null; normal CTB→EVT differentiation reference (GSE294617) |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
 | `docs/article.md` | Science communication article |
@@ -86,7 +87,7 @@ Reproducibility details:
 
 - Post hoc (Addendum D): pooling both cohorts gives a modest PE excess over growth restriction (+0.16, 0.04–0.28; I² = 40%). In the single-cell data, the hypoxia score tracks FLT1 specifically (FLT1 in the top 5% of all genes) in syncytiotrophoblast, extravillous trophoblast and endothelial cells.
 - Pre-specified (Addendum E): the hypoxia → FLT1 coupling is **similar** in PE and growth restriction (GSE114691 interaction −0.31, 95% CI −0.92 to 0.29; within-group rho 0.59 vs 0.58). Descriptively, in GSE114691 PE placentas carry higher FLT1 at the same hypoxia score (+1.07 on the VST scale, not a fold change); this offset was not seen in the small discovery cohort. Robust to using identical genes in both cohorts and to leave-one-out.
-- **FLT1 co-expression beyond the Hallmark hypoxia score (Addenda F and H):** a 50-gene module built in GSE114691 and tested in GSE203507 (previously analysed, not used for building) tracks FLT1 after removing the hypoxia score (partial rho = 0.89). It is the canonical PE gene set (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3…). Against a selection-process null (same procedure for 300 random genes of similar expression) FLT1 ranks at the 95.7th percentile, just above the pre-set 95% bar; its PE > FGR shift is not FLT1-specific (76th percentile). Interpreted as reproducible co-expression, not a separate mechanism, and **not new**: it re-derives the FLT1/ENG/LEP 'VT Blue' vs HIF/glucose 'VT Black' module split already reported by Ackerman et al. 2023.
+- **FLT1 co-expression beyond the Hallmark hypoxia score (Addenda F, H and I):** a 50-gene module built in GSE114691 and tested in GSE203507 (previously analysed, not used for building) tracks FLT1 after removing the hypoxia score (partial rho = 0.89). It is the canonical PE gene set (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3…). Direct comparison with Ackerman Table S4 places 31/44 measured module genes in VT Blue (hypergeometric p = 3.3×10⁻²⁸) and only 3/44 in VT Black. A post-review correction used the full published scores, excluding only FLT1: in GSE203507 the module and VT Blue score crossed the pre-set non-identifiability threshold (rho = 0.94), so the significant nested model (ΔR² = 0.053) cannot establish a distinct contribution. In the module-building cohort the module added ΔR² = 0.123, but this is descriptive; the original overlap-free analysis is retained only as a sensitivity. Against a selection-process null (same procedure for 300 random genes of similar expression) FLT1 ranks at the 95.7th percentile, just above the pre-set 95% bar; its PE > FGR shift is not FLT1-specific (76th percentile). Interpreted as reproducible co-expression and a compact Blue-type signal, not a separate mechanism or a new discovery.
 - **Negative (Addendum G):** in 22 paired preterm pregnancies, villous hypoxia did not predict the same pregnancy's decidual inflammatory response beyond shuffled pairs (p = 0.61); PE vs FGR-only could not be answered (little overlap in stress levels, 5 FGR).
 
 ## Limitations
