@@ -64,10 +64,22 @@ rows.append({"analysis": "Secondary: body-read ratio", **fit(disease, "body_rati
 pe_only = disease[disease["disease_group"].isin(["Preeclampsia only"]) | (disease["PE"] == 0)]
 rows.append({"analysis": "Secondary: PE only vs IUGR only, junction ratio", **fit(pe_only, "junction_ratio")})
 rows.append({"analysis": "Descriptive: unadjusted junction ratio", **fit(disease, "junction_ratio", "PE")})
-exploratory = [{"analysis": f"Exploratory: {t} vs canonical", **fit(disease, f"expl_{t}")} for t in EXPLORATORY]
-adjusted = multipletests([row["p"] for row in exploratory], method="fdr_bh")[1]
-for row, q in zip(exploratory, adjusted):
-    row["BH_q"] = float(q)
+# Detection rule (added after the blinded gate, before this contrast was run): an exploratory transcript
+# is modelled only if >=70% of disease donors have >=5 uniquely aligned reads on each of its junctions,
+# mirroring gate criterion 2. Otherwise its "ratio" mostly reflects canonical depth and is not modelled.
+exploratory = []
+for t, markers in EXPLORATORY.items():
+    detected = float((disease[markers] >= 5).all(axis=1).mean())
+    if detected >= 0.70:
+        exploratory.append({"analysis": f"Exploratory: {t} vs canonical", "detected_fraction": detected,
+                            **fit(disease, f"expl_{t}")})
+    else:
+        exploratory.append({"analysis": f"Exploratory: {t} not detectable, not modelled",
+                            "detected_fraction": detected})
+tested = [row for row in exploratory if "p" in row]
+if tested:
+    for row, q in zip(tested, multipletests([row["p"] for row in tested], method="fdr_bh")[1]):
+        row["BH_q"] = float(q)
 result = pd.DataFrame(rows + exploratory)
 result.to_csv(HERE / "primary-contrast-results.csv", index=False)
 
