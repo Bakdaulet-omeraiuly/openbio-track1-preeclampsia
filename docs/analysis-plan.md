@@ -609,3 +609,9 @@ L-C4 is run only if the step 2 screen passed.
 
 **Cut-off.** If the run and the write-up are not finished by 13:00 EST, the plan is pushed as registered
 but not run.
+
+**Addendum L amendment, before step 3 was run.** The GSE35574 technical-repeat rule above, which strips
+trailing letters from `Sample id`, does not work for this file: most `Sample id` values are array
+barcodes. The repeats are instead marked by a `.rep` suffix on `!Sample_title`. There are 8 such arrays,
+which matches the series description. The rule is therefore: base id = `!Sample_title` without `.rep`,
+giving 86 placentas. This was found from metadata lines only, before any expression value was read.
