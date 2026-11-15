@@ -115,3 +115,79 @@ fixed here before any donor other than the group-blinded technical pilot (`SRR71
 9. **Covariates for the primary model (only if the gate passes).** `total_FLT1_CPM` = gene-level FLT1 CPM
    from the processed GSE114691 matrices; `hypoxia_score` = the same hypoxia score already used for
    GSE114691 in notebooks 05/08, unchanged.
+
+## Addendum J2: disease-versus-preterm-control replication in GSE203507 (written 2026-11-15, before any GSE203507 read was fetched)
+
+**Why this addendum exists.** In GSE114691, PE and IUGR-only placentas had higher median sFlt1-14 :
+canonical Flt1 junction ratios than controls (log2 medians: control 3.08, IUGR 4.26, PE 4.40, PE+IUGR 4.72).
+That was seen after the data were viewed and was not tested. Here it is tested once, in an independent
+cohort that has gestational-age-matched preterm controls. GSE203507 has not been used for isoform ratios
+before. It has been used extensively for gene-level FLT1, so it is not untouched for FLT1 itself.
+
+**Data.** The 30 villous-tissue runs of GSE203507 (PRJNA841082), 50-nt single-end:
+
+| Group | n |
+|---|---:|
+| EOPE | 8 |
+| EOPE+FGR | 7 |
+| FGR | 5 |
+| iPTB | 5 |
+| TB | 5 |
+
+No samples are excluded; notebook 01 also excluded none. Decidua runs are not used.
+
+**Processing.** Identical to Addendum J1: same marker definitions, the compiled filter, full-genome HISAT2,
+the same counting rules and the same `align_and_count.py`. The integrity check is that the dumped read
+count equals the ENA `read_count`.
+
+**Outcome.** The same junction ratio as Addendum J1:
+`log2((sFlt1-14 junction + 0.5) / (mean of the 2 canonical junctions + 0.5))`.
+
+**Coverage gate.** Group labels are not used, except for criterion 5.
+
+- Criteria 2 and 3: the same thresholds, applied to all 30 villous samples (≥70% of samples).
+- Criterion 4: the same rho ≥ 0.70, computed over the 30 samples.
+- Criterion 5: ≥60% usable in each of the disease group (n=20) and iPTB (n=5).
+- Criterion 1 is already met: the same markers and aligner.
+
+If the gate fails, no contrast is run.
+
+**Sample-join check (blocks the contrast).** The Spearman rho between our raw unique-FLT1-span read
+fraction and the processed-matrix FLT1 CPM (`track01_counts_vt.csv`) must be ≥ 0.90.
+
+**Primary contrast.**
+
+- Disease (EOPE + EOPE+FGR + FGR, n=20) versus iPTB (n=5).
+- Model: `junction_ratio ~ disease + ga_delivery_weeks + C(fetal_sex)`, classical OLS. These are the
+  covariates and the SE type already used for GSE203507 in this repo.
+- Test: the two-sided disease coefficient, alpha 0.05.
+- Predicted direction: positive.
+- TB is not in the primary model.
+
+**Sensitivity analyses for the primary contrast** (5 controls make classical SEs fragile):
+
+- (a) HC3 SEs;
+- (b) a label-permutation p-value for the disease coefficient in the primary model, with 10,000
+  permutations of disease/iPTB labels and a fixed seed of 0;
+- (c) an unadjusted Mann–Whitney test of the ratio, disease vs iPTB.
+
+**Secondary analyses.** Each uses the same covariates and classical OLS, and none is multiplicity-adjusted:
+
+1. PE (EOPE + EOPE+FGR, n=15) vs iPTB;
+2. FGR-only vs iPTB;
+3. PE vs FGR-only (n=15 vs 5): a replication of the J1 null;
+4. disease vs iPTB, additionally adjusting for `log2(FLT1 CPM + 1)` and `HALLMARK_HYPOXIA` from
+   `notebooks/results/pathway_scores.csv`. This asks whether any shift is explained by total FLT1 induction.
+
+**Descriptive only.** TB vs iPTB median ratio, as an indication of how much gestational age alone moves
+the ratio. No test is run.
+
+**Exploratory transcripts.** These follow the J1 detection rule.
+
+**Interpretation, fixed in advance.**
+
+- With 5 preterm controls, a null is **underpowered**, not a refutation.
+- A positive result would be a **replication** of a pattern seen descriptively in GSE114691. It would not
+  be called novel unless a literature check shows that higher placental sFlt1-14 relative to canonical
+  Flt1 in PE and FGR is unreported.
+- iPTB placentas are a preterm comparator, not healthy placentas: preterm birth has its own causes.
