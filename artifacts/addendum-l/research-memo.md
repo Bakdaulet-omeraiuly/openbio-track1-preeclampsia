@@ -64,3 +64,7 @@ Each hypothesis has to be separated from other explanations as follows:
 
 Other placenta cohorts were found but not used. GSE100415 and GSE98224 overlap the GSE75010 biobank.
 GSE234729 has no FGR group.
+
+## Status update (2026-11-15, after the run)
+
+GSE35574, GSE24129 and GSE147776 have now been used (Addendum L) and are no longer untouched. Results and the closing summary are in `results.md`.

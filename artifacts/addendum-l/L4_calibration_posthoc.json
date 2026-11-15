@@ -1,0 +1,63 @@
+{
+  "posthoc": true,
+  "hif2dep_genes_common": 79,
+  "random_pool": 13987,
+  "observed_pooled_partial_rho": 0.4176389273526038,
+  "null_median": -0.42510241151832473,
+  "null_95th": -0.142895079388591,
+  "percentile": 100.0,
+  "empirical_p": 0.000999000999000999,
+  "overlap_counts": {
+    "F1_module": 8,
+    "Ackerman_VT_blue_of_1001": 19,
+    "Ackerman_VT_black_of_391": 13
+  },
+  "overlap_genes": {
+    "F1_module": [
+      "CCDC183",
+      "FSTL3",
+      "HTRA1",
+      "LIMCH1",
+      "PNCK",
+      "PVRL4",
+      "RP11-216L13.19",
+      "SLC6A8"
+    ],
+    "Ackerman_VT_blue_of_1001": [
+      "ARRDC3",
+      "CCDC183",
+      "CORO2A",
+      "DSP",
+      "EFNB1",
+      "ERVH48-1",
+      "FSTL3",
+      "GLIS3",
+      "HTRA1",
+      "LIMCH1",
+      "MGAT3",
+      "MICAL3",
+      "PEG3",
+      "RAB11FIP4",
+      "SIGLEC6",
+      "STK24",
+      "SUV39H1",
+      "TNNT3",
+      "TRIM14"
+    ],
+    "Ackerman_VT_black_of_391": [
+      "AFAP1",
+      "COL17A1",
+      "CYFIP2",
+      "CYP2J2",
+      "DPP7",
+      "GPX3",
+      "ITIH5",
+      "MALRD1",
+      "PLEKHA2",
+      "PNCK",
+      "SLC6A8",
+      "SMARCA1",
+      "UBASH3B"
+    ]
+  }
+}
