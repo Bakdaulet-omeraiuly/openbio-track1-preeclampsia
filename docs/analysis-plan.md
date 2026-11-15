@@ -745,5 +745,7 @@ Details: `artifacts/addendum-v/results.md`.
 - **W1: not supported.** MVM coefficient +0.12 SD, p = 0.25, 7.9th percentile of random sets. Within
   hypertensive disorders: −0.01.
 - **Descriptive.** FLT1 is +0.61 and the HIF2dep program +0.46 with MVM.
+- **Post hoc calibration (`28e8ad3`, committed first).** HIF2dep is above all random sets; FLT1 is at the 98.6th
+  percentile of decile-matched genes. A lead.
 
 Details: `artifacts/addendum-w/results.md`.

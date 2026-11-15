@@ -33,6 +33,24 @@ Data: 168 placentas, 49 MVM and 119 nonMVM. Genes used: hyp_only 122, hyp_all 17
 The random gene sets themselves shift by about +0.2 with MVM (W1 null), so the W2 coefficients should be read
 against that background. No random-set null was run for W2.
 
+## Post hoc calibration of W2 (`w2_calibration_posthoc.py`, committed `28e8ad3` before running; a lead, not a confirmation)
+
+| Outcome | MVM coefficient | Random comparison | Position |
+|---|---|---|---|
+| HIF2dep program | +0.46 SD | 1,000 random sets of 83 genes (decile-matched): median +0.16, 95th pct +0.27 | **above all 1,000** |
+| FLT1 | +0.61 SD | 1,000 random genes from FLT1's expression decile: median +0.11, 95th pct +0.48 | **98.6th percentile** |
+| FLT1 genome-wide | — | all 17,128 expressed genes (median +0.05) | **rank 121** (99.3rd percentile) |
+| (for contrast, W1) generic `hyp_only` | +0.12 SD | random sets: median +0.20 | 7.9th percentile |
+
+**Post hoc reading.** With MVM, the **HIF-2 program and FLT1** shift beyond random expectation, while the
+**generic Hallmark hypoxia score** does not. This dissociation in tissue mirrors the genetic one in Addendum V,
+where HIF-2 loss removes FLT1 and the program and HIF-1 loss removes canonical hypoxia genes.
+
+- It was chosen after seeing W2, so it needs a pre-registered test in another cohort with histopathology before
+  it can count.
+- That FLT1 or sFlt-1 is higher with MVM is consistent with prior clinical-pathology reports. The program-level
+  contrast with generic hypoxia is our observation.
+
 ## Reading (by the rule written before the run)
 
 - **W1 is not supported.** Placentas with histological MVM do not carry a stronger *generic* hypoxia program than

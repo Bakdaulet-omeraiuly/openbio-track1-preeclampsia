@@ -298,8 +298,11 @@ vascular malperfusion"; [GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.c
   stronger general low-oxygen alarm. The difference was smaller than for most random gene lists.
 - Together with the earlier finding that the alarm did not track blood-flow scans of the mother's uterine
   arteries, this first link is **not supported** by our data.
-- In the same placentas, FLT1 and the HIF-2 program were higher with poor blood supply. That was not our planned
-  test, so we treat it as a lead.
+- In the same placentas, FLT1 and the HIF-2 program were higher with poor blood supply.
+  - In a check we added afterwards, this was larger than for any of 1,000 random gene lists (HIF-2 program), and
+    larger than for 98.6% of similar genes (FLT1).
+  - So poor blood supply seems to go with the HIF-2/FLT1 side of the response, not with the general alarm.
+  - That was not our planned test, so it needs repeating in another group of placentas before it counts.
 
 ## Unanswered Questions
 

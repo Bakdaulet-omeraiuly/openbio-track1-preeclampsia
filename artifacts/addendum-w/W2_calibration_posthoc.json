@@ -1,0 +1,20 @@
+{
+  "HIF2dep": {
+    "observed": 0.45833584063700966,
+    "random_median": 0.1644682992115456,
+    "random_p95": 0.26657216035337483,
+    "percentile": 100.0,
+    "calibrated": true
+  },
+  "FLT1": {
+    "observed": 0.6124239940880459,
+    "random_median": 0.11082000084246339,
+    "random_p95": 0.4809760794027352,
+    "percentile_in_decile": 98.6,
+    "calibrated": true,
+    "rank_among_all_genes": 121,
+    "n_genes": 17128,
+    "genome_percentile": 99.29355441382532
+  },
+  "all_genes_median_MVM_coef": 0.046737670827124045
+}
