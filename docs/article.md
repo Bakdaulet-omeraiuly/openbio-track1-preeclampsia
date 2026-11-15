@@ -139,6 +139,31 @@ A reviewer pointed out a catch: genes that move together in one study tend to mo
 
 **What we cannot say:** that this is a second, oxygen-independent biological source of FLT1, or that it is what makes preeclampsia different. It is also not new: the original study of our main dataset had already found that FLT1, ENG and LEP sit in one large gene group, separate from a smaller group of oxygen- and sugar-metabolism genes ([Ackerman et al. 2023](https://doi.org/10.1161/HYPERTENSIONAHA.122.20807)). We compared the lists directly: 31 of the 44 genes from our list that were measured in the main dataset belonged to Ackerman's large "VT Blue" group, while only three belonged to the HIF/glucose "VT Black" group. After an external review we corrected the main baseline to use the full published modules, excluding only FLT1. Our list and the full Blue score were so closely correlated in these patients (rho 0.94) that they crossed our pre-set threshold for being impossible to separate reliably. Thus our analysis reaches the same split by a different route and should be read as a compact Blue-type signal, not a distinct discovery. One important caution: "not captured" here refers only to a general, textbook list of low-oxygen genes. Placental cells may have their own oxygen responses that this list misses, and some of these genes (such as leptin) are known to respond to low oxygen in placental cells.
 
+### Which form of FLT1? (planned test, raw reads)
+
+FLT1 makes several RNA versions. The full-length one stays anchored in the cell membrane. Shorter versions are released into the blood. The version called **sFlt1-14** is made mainly by the placenta and is the main VEGF-blocking protein of the preeclampsia placenta ([Sela et al. 2008](https://doi.org/10.1161/CIRCRESAHA.108.171504)). Low oxygen raises it ([Thomas et al. 2009](https://doi.org/10.1210/jc.2009-0017)). So we asked: **does a preeclampsia placenta shift more of its FLT1 toward sFlt1-14 than a growth-restricted one?**
+
+The gene-level numbers released with the 79-placenta study cannot answer this. They do not say how reads shared between versions were assigned. We therefore went back to the raw sequencing reads of all 79 placentas, about 3.3 billion reads, and counted only reads that cross a splice junction found in exactly one version:
+
+- one junction unique to sFlt1-14;
+- two junctions unique to the full-length membrane form.
+
+Before looking at any patient group, we required enough reads in most placentas. That check passed: the typical placenta had about 1,000 sFlt1-14 reads and 40–50 reads per membrane-form junction.
+
+The outcome was the ratio of sFlt1-14 to the membrane form. We adjusted for total FLT1 and for the low-oxygen alarm.
+
+**The ratio did not differ between preeclampsia (40) and growth restriction alone (18)**: −0.06 on a log2 scale, 95% interval −0.52 to 0.40. In plain terms, this rules out a shift of more than about 1.4-fold in either direction.
+
+This fits the picture above: the FLT1 machinery looks shared by the two conditions. It also fits blood measurements of this protein, which are raised in early preeclampsia and in growth restriction ([Palmer et al. 2016](https://doi.org/10.1080/14767058.2016.1182975)).
+
+Three limits:
+
+- These are RNA counts, not protein released into the blood.
+- The reads are short (50 letters), so three rarer FLT1 versions could not be measured.
+- In these placentas, sFlt1-14 junction reads outnumbered membrane-form junction reads by roughly 20 to 1, in line with earlier reports that it dominates in the placenta.
+
+<!-- J2-RESULT -->
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
