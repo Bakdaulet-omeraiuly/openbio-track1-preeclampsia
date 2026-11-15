@@ -738,3 +738,12 @@ Details: `artifacts/addendum-u/results.md`.
   after adjustment.
 
 Details: `artifacts/addendum-v/results.md`.
+
+## Addendum W (2026-11-15): malperfusion → hypoxia (link 1)
+
+- **Commits.** Plan `7cd1559`; amendment 1 (ID parsing) was committed before any count was read.
+- **W1: not supported.** MVM coefficient +0.12 SD, p = 0.25, 7.9th percentile of random sets. Within
+  hypertensive disorders: −0.01.
+- **Descriptive.** FLT1 is +0.61 and the HIF2dep program +0.46 with MVM.
+
+Details: `artifacts/addendum-w/results.md`.

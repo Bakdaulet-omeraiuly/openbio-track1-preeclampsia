@@ -288,6 +288,19 @@ We ran three more tests, each with its prediction written down before the data w
   - Caution: all of these cells come from one person's stem-cell line, in an early, embryo-like model, not from
     term placentas.
 
+### Does poor blood supply to the placenta switch on the alarm? (planned, mostly negative)
+
+The starting assumption of our hypothesis is that poor maternal blood flow starves the placenta of oxygen. We
+tested it in 168 placentas whose pathologists had recorded signs of poor maternal blood supply ("maternal
+vascular malperfusion"; [GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303463)).
+
+- With disease type and stage of pregnancy taken into account, placentas with these signs did **not** have a
+  stronger general low-oxygen alarm. The difference was smaller than for most random gene lists.
+- Together with the earlier finding that the alarm did not track blood-flow scans of the mother's uterine
+  arteries, this first link is **not supported** by our data.
+- In the same placentas, FLT1 and the HIF-2 program were higher with poor blood supply. That was not our planned
+  test, so we treat it as a lead.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
