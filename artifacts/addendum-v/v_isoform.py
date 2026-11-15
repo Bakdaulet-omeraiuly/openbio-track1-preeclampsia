@@ -34,24 +34,35 @@ def fetch(d):
         print("ok", out.name)
 
 
+COLS = {
+    "GSE288288": {"null_hyp": ["KO_A03__Hypoxia", "KO_B01__Hypoxia", "KO_B02__Hypoxia", "CE_E06__Hypoxia", "CE_G07__Hypoxia",
+                               "CE_H06__Hypoxia", "PTC_A09__Hypoxia", "PTC_D10__Hypoxia", "PTC_G09__Hypoxia"],
+                  "null_norm": ["KO_A03__Normoxia", "KO_B01__Normoxia", "KO_B02__Normoxia", "CE_E06__Normoxia", "CE_G07__Normoxia",
+                                "CE_H06__Normoxia", "PTC_A09__Normoxia", "PTC_D10__Normoxia", "PTC_G09__Normoxia"],
+                  "wt_hyp": ["WT_1__Hypoxia", "WT_2__Hypoxia", "WT_3__Hypoxia"],
+                  "wt_norm": ["WT_1__Normoxia", "WT_2__Normoxia", "WT_3__Normoxia"]},
+    "GSE302997": {"null_hyp": ["HIF1a_PTC_A04_3_O2", "HIF1a_PTC_A05_3_O2", "HIF1a_PTC_A06_3_O2"],
+                  "null_norm": ["HIF1a_PTC_A04_20_O2", "HIF1a_PTC_A05_20_O2", "HIF1a_PTC_A06_20_O2"],
+                  "wt_hyp": ["KOLF2_2J_3_O2_REP1", "KOLF2_2J_3_O2_REP2", "KOLF2_2J_3_O2_REP3"],
+                  "wt_norm": ["KOLF2_2J_20_O2_REP1", "KOLF2_2J_20_O2_REP2", "KOLF2_2J_20_O2_REP3"]},
+}
+STRATEGY = {"KO": "Full coding length", "CE": "Critical exon", "PTC": "Termination codon"}
+
+
 def load(d, study):
-    c = pd.read_csv(d / URL[study].rsplit("/", 1)[1], index_col=0)
-    # gene identifier: use a symbol column if present, else the index
-    sym_col = next((x for x in c.columns if x.lower() in ("gene_name", "symbol", "gene_symbol", "genename", "gene")), None)
-    if sym_col is not None:
-        c = c.set_index(sym_col)
+    c = pd.read_csv(d / URL[study].rsplit("/", 1)[1], sep="\t", index_col=0)
     c = c.select_dtypes(include=[np.number])
-    meta = S[S.study == study].copy()
-
-    def match(row):
-        hits = [col for col in c.columns if row.title == col or row.title in col or col in row.title or row.gsm in col]
-        if len(hits) != 1:
-            hits = [col for col in c.columns if row.cell_line in col and (("hyp" in col.lower()) == (row.condition == "hypoxia"))]
-        return hits[0] if len(hits) == 1 else None
-
-    meta["col"] = meta.apply(match, axis=1)
-    assert meta["col"].notna().all() and meta["col"].is_unique, meta[meta["col"].isna()][["title", "cell_line"]]
-    c = c[meta["col"].tolist()]
+    rows = []
+    for group, prefixes in COLS[study].items():
+        for pre in prefixes:
+            hits = [col for col in c.columns if col.startswith(pre + "_")]
+            assert len(hits) == 1, (pre, hits)
+            strategy = STRATEGY.get(pre.split("_")[0], "Termination codon") if group.startswith("null") else "Not applicable"
+            rows.append({"col": hits[0], "gene": TARGET[study] if group.startswith("null") else "Not applicable",
+                         "strategy": strategy, "condition": "hypoxia" if group.endswith("hyp") else "normoxia"})
+    meta = pd.DataFrame(rows)
+    assert meta.col.is_unique
+    c = c[meta.col.tolist()]
     c = c.groupby(c.index).sum()
     return c, meta
 

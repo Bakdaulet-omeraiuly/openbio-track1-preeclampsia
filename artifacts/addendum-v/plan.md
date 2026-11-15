@@ -70,3 +70,25 @@ For each outcome (FLT1, then the program):
 - iPSC-derived "primitive syncytium" is an early, embryonic-like model, not term villous STB.
 - The two isoforms come from two studies (two batches), so they are compared through effect sizes, not directly.
 - 3 vs 3 gives low power for HIF1A.
+
+## Amendment 1 (before any count value was read; only the column headers and gene-ID column were viewed)
+
+The count files are **tab-separated**, and their column names do not match the GEO titles. Columns are mapped
+by an explicit rule:
+
+**Study 1 (EPAS1).**
+
+- Strategy prefix: `KO_` = full coding deletion, `CE_` = critical exon, `PTC_` = termination codon.
+- Then the well (the last part of the cell-line ID, e.g. A03), then `__Hypoxia` or `__Normoxia`.
+- Wild type: `WT_1..3__Hypoxia` and `WT_1..3__Normoxia`. All of these are in the same sequencing batch
+  (GT23-112xx/113xx).
+
+**Study 8 (HIF1A).**
+
+- `HIF1a_PTC_A04..A06_3_O2` (hypoxia) and `_20_O2` (normoxia).
+- GEO lists 6 wild-type normoxia samples from two lines, and they cannot be mapped to columns unambiguously.
+  Wild type is therefore the **same-batch** KOLF2.2J controls: `KOLF2_2J_3_O2_REP1..3` (hypoxia) and
+  `KOLF2_2J_20_O2_REP1..3` (normoxia), the GT25-000xx batch of the HIF1A samples.
+- This gives 3 vs 3 wild type, batch-matched.
+
+Everything else is unchanged.
