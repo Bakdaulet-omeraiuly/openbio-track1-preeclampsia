@@ -135,6 +135,12 @@ Reproducibility details:
   - **FLT1 is not bound** (nearest peak 123 kb), so FLT1's link to hypoxia in trophoblast may be indirect.
   - HIF isoform (1 vs 2) is not resolvable with ARNT.
   - Details: `artifacts/addendum-t/results.md`.
+- **Direct HIF targets in intact tissue (Addendum U, pre-registered, GSE319236 Visium):**
+  - **Supported.** The 20 ARNT-bound program genes track FLT1 within donor, beyond hypoxia, composition and
+    technical covariates: ρ 0.155, 18/19 donors, above all random sets.
+  - The unbound genes track it too (0.125, 19/19), so the route (direct target vs differentiation) is not
+    separated.
+  - Details: `artifacts/addendum-u/results.md`.
 - **Regulator and cell-state tests (Addendum O, pre-registered):** **O1 supported.** In GSE80995, ARNT (HIF-1β) shRNA in first-trimester CTB lowered the PT2385-defined program at 2% O2 (Δ −1.15 z, 5/5 donors, exact sign-flip p = 0.031, the minimum for 5 pairs; below all 1,000 random sets). The two independent perturbations agree. Every drug off-target effect is not excluded, since ARNT partners (HIF-1α, AhR) and differentiation are not separated. HIF-2 specificity is not shown. The program also fell at 20% O2 (−0.52 as labelled; −0.85 under the alternative, title-based labels, a sensitivity analysis). There was no consistent FLT1 fall after knockdown. **O2 not supported** (second session): within-STB pseudobulk partial rho 0.26 [−0.14, 0.59], so cell mix is not excluded. Details: `artifacts/addendum-o/results.md`, `artifacts/addendum-o2/results.md`.
 - **Fourth untouched cohort (Addendum P, GSE186257, RNA-seq, plan `d2be780`):** HIF2dep–FLT1 partial rho | hyp_all 0.40 [0.06, 0.65], Holm p = 0.011 (replicates L-C4). With STB + EVT marker adjustment it is 0.63 [0.35, 0.80]. Hypoxia–FLT1 within PE is 0.69. **Specificity not shown:** the unadjusted result is at the 83rd percentile of matched random sets (random median +0.23). Post hoc, after the marker adjustment it is above all random sets (median 0.00). Within PE only: 0.26 (not clear). Details: `artifacts/addendum-p/results.md`.
 - **HIF-2 vs HIF-1 specificity (Addendum Q, GSE324038, hypoxic human T cells; no trophoblast dataset exists):** **not shown.** The knockouts worked (HIF1A −1.19, EPAS1 −0.95) and Hallmark hypoxia was HIF-1-dominated. But the 59 expressed program genes fell with neither knockout (D = −0.09, 57th percentile of random sets). FLT1 fell with EPAS1-KO (−0.66) and rose with HIF1A-KO (+0.36), descriptively. Details: `artifacts/addendum-q/results.md`.

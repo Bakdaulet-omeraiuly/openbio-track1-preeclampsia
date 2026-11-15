@@ -716,3 +716,13 @@ Details: `artifacts/addendum-s/results.md`.
   isoform question (4b) stays untested.
 
 Details: `artifacts/addendum-t/results.md`.
+
+## Addendum U (2026-11-15): direct HIF targets vs FLT1 in intact tissue
+
+- **Commit.** The plan was committed before running (`9d121d3`).
+- **U1: supported.** The ARNT-bound program genes (20) track FLT1 within donor in Visium, beyond `hyp_all`,
+  composition and technical covariates: ρ 0.155, 18/19 donors, above all random sets.
+- **U2 (descriptive).** The unbound genes: 0.125, 19/19. Bound minus unbound is +0.03 (12/19 donors).
+- **Reading.** Direct HIF targets travel with FLT1 in human tissue. The route is not resolved.
+
+Details: `artifacts/addendum-u/results.md`.
