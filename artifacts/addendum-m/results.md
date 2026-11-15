@@ -37,10 +37,13 @@ Per cohort:
   preterm controls in this pre-registered test.
   - Counting the earlier cohorts with preterm controls (GSE203507, GSE114691, GSE75010), five of
     the six such cohorts are clearly positive. The chorionic-plate cohort (GSE66273) is about zero.
-  - **The result is fragile.** It fails two of the pre-specified sensitivity analyses:
+  - **The result is fragile.** In 3 of the 6 pre-specified sensitivity analyses, the 95% CI reaches or crosses
+    zero:
     - without GSE44711, the pooled estimate is +0.29 [−0.58, 1.16];
     - with the HELLP cases removed from GSE66273, it is +0.29 [−0.16, 0.74]. That non-HELLP subset is
-      about zero and carries much of the fixed-effect weight.
+      about zero and carries much of the fixed-effect weight;
+    - without GSE74341 it is +0.68 [0.00, 1.37], and with GSE44711 controls < 34 wk only it is +0.58
+      [−0.09, 1.24]. In both, the point estimate is essentially unchanged and the interval just reaches zero.
   - The chorionic-plate cohort (GSE66273) shows almost no difference.
   - With 27 PE vs 18 controls, the CI is wide (0.06 to 1.28 SD).
   - This does **not** test why L-C2 failed against term controls. That explanation stays untested.
