@@ -682,3 +682,25 @@ The plan and script were committed before any data were downloaded (`df0298c`); 
   link stands; contamination inflated the first estimate but did not create it.
 
 Details: `artifacts/addendum-r/results.md`.
+
+## Addendum S (2026-11-15): the same link in intact, never-dissociated tissue (GSE319236 Visium)
+
+- **Commits.** The plan and script were committed before any spatial file was downloaded (`5d385f3`); results
+  are in `fb02440`. One change was made before the download: DCN, a Hallmark hypoxia gene, was replaced by LUM
+  in the stroma markers. The script's assert caught it.
+- **Test.** Within-donor partial Spearman ρ(hypoxia score, FLT1) across in-tissue spots.
+  - Adjusted for spot composition: STB, endothelium, stroma, immune and erythrocyte marker scores.
+  - Adjusted for technical covariates: UMI, genes, mito, section.
+- **Result: S1 supported.** ρ 0.118, 18/19 donors, sign-flip p ≤ 1×10⁻⁴, 99.9th percentile of 1,000 random
+  sets.
+- **Sensitivity.** All three pre-specified sensitivities pass:
+  - without "ND": 0.116;
+  - technical covariates only: 0.140;
+  - STB-rich half of spots: 0.078, 18/19.
+- **S2 (descriptive).** HIF2dep | hypoxia: 0.170, 19/19.
+- **Reading.** Dissociation stress does not explain Addendum R.
+- **Limits.**
+  - Spots hold several cells, so composition is adjusted for, not removed.
+  - R and S come from the same donors: two designs, one cohort.
+
+Details: `artifacts/addendum-s/results.md`.

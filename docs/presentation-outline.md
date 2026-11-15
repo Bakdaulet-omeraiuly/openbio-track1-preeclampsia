@@ -60,7 +60,7 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 > Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction uses the same machinery.
 >
-> One worry about tissue data is that it only reflects which cells are present. So we went down to single cells, in twenty more placentas. Inside individual trophoblast cells of the same donor, the alarm still tracked FLT1, beyond every random gene list — and it survived when we kept only unambiguously trophoblast cells.
+> One worry about tissue data is that it only reflects which cells are present. So we went down to single cells, in twenty more placentas. Inside individual trophoblast cells of the same donor, the alarm still tracked FLT1, beyond every random gene list — and it survived when we kept only unambiguously trophoblast cells. In intact tissue slices from the same placentas, never broken into cells, the link held too.
 >
 > **We want to be clear about what we did not show.** Preeclampsia never separated from growth restriction. The alarm did not track the mother's blood-flow measurements or how ill she was. And when we tested whether the program prefers HIF-2 over HIF-1, it preferred neither. So we have a strongly replicated association and one causal step in cultured cells — not a causal chain in patients.
 >
