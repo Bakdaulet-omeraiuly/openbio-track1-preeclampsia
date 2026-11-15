@@ -80,6 +80,25 @@ Early-onset preeclampsia (EOPE) is thought to start with a poorly perfused place
 
 In a subset of early-onset PE pregnancies, the trophoblast experiences low or fluctuating oxygen (poor spiral-artery remodelling and malperfusion), stabilising HIF and switching on a canonical hypoxia program. Part of that program is glycolytic enzyme genes (robust hits in our data: HK2, LDHA, TPI1, P4HA1, ERO1A), which is why the subtype looks "glycolytic". The same HIF activation drives FLT1 transcription in syncytiotrophoblast (FLT1 has a HIF-responsive enhancer; Gerber et al. 1997), contributing to the excess sFlt-1 that causes maternal endothelial dysfunction (Maynard et al. 2003). Growth restriction without preeclampsia engages the same program, and converts it to FLT1 at a similar rate (Addendum E), consistent with shared placental malperfusion. What may distinguish preeclampsia is therefore **how much** hypoxia signalling there is, plus FLT1 variation that the generic hypoxia score does not explain and that FLT1 shares with the canonical PE gene module (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3 …) in two cohorts (Addendum F). Its replication is only modestly better than for modules built around random genes, and its PE > FGR shift is not FLT1-specific (Addendum H), so it is a lead about co-regulation, not evidence of a separate mechanism.
 
+### Evidence for each link in the chain (2026-11-15)
+
+The model above is a chain, and it is only as strong as its weakest link. Each link rests on different
+evidence. "Causal" below means a perturbation experiment in culture, run by other groups.
+
+| # | Link | What we have | Type |
+|---|---|---|---|
+| 1 | Malperfusion → placental hypoxia | Nothing of our own; literature only | not tested here |
+| 2 | Hypoxia program up in EOPE vs GA-matched preterm controls | Discovery, plus pre-registered replication in GSE114691 and GSE75010, plus Addendum M. Clearly positive in 5 of 6 preterm-control cohorts. M1 is **fragile**: its CI reaches or crosses 0 in 4 of 6 pre-specified sensitivities | association, replicated |
+| 3 | HIF activity → the HIF2dep program | **Causal in culture, twice and in agreement:** PT2385 lowers it (L1, 3 donors) and ARNT shRNA lowers it (O1, 5/5 donors, p = 0.031, beyond all random sets). ARNT also partners HIF-1α and AhR, and both treatments shift differentiation | causal in culture; isoform not resolved |
+| 4 | **HIF-2 (rather than HIF-1) → FLT1** | **Conflicting; the weakest link.** PT2385 lowers FLT1 (L1, log2FC −1.93), but ARNT shRNA did **not** lower FLT1 consistently (O1: 2 up, 2 down, 1 flat), and hypoxia itself lowers FLT1 in those first-trimester cells. Addendum Q found **no HIF isoform preference** for the program in hypoxic human T cells (57th percentile of random sets), though FLT1 itself was HIF-2-preferring there (descriptive). Prior literature supports HIF-2α (Sasagawa et al. 2018) | conflicting |
+| 5 | Hypoxia ↔ FLT1 in placental tissue | **Our strongest result.** Positive in 10/10 bulk cohorts, pre-registered in 9; pooled estimates 0.47–0.69. The HIF2dep–FLT1 partial link replicated in four untouched cohorts (L-C4 0.39; P1 0.40) | association, strongly replicated |
+| 5a | …within one cell type, rather than cell mix? | **Not established.** Within STB alone (O2) the link was 0.26 [−0.14, 0.59], not significant. Marker and deconvolution adjustments left the pooled estimate unchanged (L5, L6; P1-cs 0.63), but these are coarse proxies, and one small cohort turned negative under full adjustment | open |
+| 6 | sFlt-1 → maternal endothelial disease | Nothing of our own; literature only (Maynard et al. 2003) | not tested here |
+
+**Where the chain breaks.** Links 1 and 6 are borrowed from the literature. Link 4 is contradicted by our own
+data in one system. Link 5a is unresolved. So we have a well-replicated **association** (link 5) and a
+**culture-level causal step** (link 3) that are not joined into a causal chain in human placental tissue.
+
 **Working model (speculative):** placental FLT1 variation = (i) a component that follows the generic hypoxia/HIF signature and is shared by PE and growth restriction + (ii) a component shared with the canonical PE genes that this signature does not capture. Prediction: in trophoblast cultured at normal oxygen, perturbing a driver of component (ii) should change FLT1 together with LEP/ENG/PAPPA2 without changing Hallmark hypoxia genes; HIF knockdown should lower component (i) but leave (ii) largely intact.
 
 ## Why the Result Is Biologically Plausible
