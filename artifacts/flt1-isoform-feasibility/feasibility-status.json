@@ -4,7 +4,7 @@
   "reason": "Shared-read allocation, multi-mapping and effective-length handling are undocumented; the five processed rows are highly correlated with total FLT1 signal.",
   "annotation_structure_audit": "pass",
   "exact_50mer_uniqueness_against_grch37_cdna": "pass_for_all_predefined_markers",
-  "splice_aware_genome_aligner_confirmation": "pending",
+  "splice_aware_genome_aligner_confirmation": "pass (HISAT2, full GRCh37; primary junction markers 31/31 unique and correct; sFlt1-14 body 0.868, canonical body 0.987) - see hisat2-marker-mappability.json",
   "raw_donor_coverage_gate": "pending",
   "group_blinded_raw_pilot": {
     "run": "SRR7188846",
@@ -12,7 +12,10 @@
     "total_reads": 41160188,
     "invalid_fastq_records": 0,
     "sflt1_14_unique_terminal_junction_reads": 101,
-    "canonical_unique_internal_junction_reads": [4, 7],
+    "canonical_unique_internal_junction_reads": [
+      4,
+      7
+    ],
     "interpretation": "Raw marker signal is detectable, but one run cannot pass or fail the donor-level gate. One canonical junction is below the pre-specified 5-read threshold."
   },
   "sample_manifest": {
@@ -31,5 +34,7 @@
     "denominator": "mean of two ENST00000282397 canonical-specific internal junction counts"
   },
   "clinical_group_contrast_run": false,
-  "next_action": "Run splice-aware alignment and the group-blinded donor-coverage gate on external storage or compute; do not open the clinical contrast first."
+  "next_action": "Re-run align_and_count.py on the 79 candidate FASTQs (needs the HISAT2 GRCh37 index and more free RAM), then evaluate_gate.py; run primary_contrast.py only if the gate passes.",
+  "cohort_stage1_stream_filter": "complete: 79/79 runs fetched, read counts equal official SRA spots, candidate reads extracted",
+  "cohort_alignment": "pending: single-pass HISAT2 run was stopped by the host for low memory (8 GB machine) after ~26/79 runs; no per-donor counts written yet"
 }

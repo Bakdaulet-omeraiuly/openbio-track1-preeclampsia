@@ -1,0 +1,55 @@
+{
+  "method": "HISAT2 full GRCh37 genome, known splice sites Ensembl GRCh37.87, default scoring; a 50-mer is correct if uniquely aligned (NH=1) and counted for its own marker under the primary rule",
+  "markers": {
+    "ENST00000282397_terminal_body_1": {
+      "synthetic_50mers": 2733,
+      "unique_and_correct": 2696,
+      "fraction": 0.9865
+    },
+    "ENST00000282397_unique_junction_1": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000282397_unique_junction_2": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000541932_terminal_body_1": {
+      "synthetic_50mers": 493,
+      "unique_and_correct": 428,
+      "fraction": 0.8682
+    },
+    "ENST00000541932_unique_junction_1": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000539099_terminal_body_1": {
+      "synthetic_50mers": 26,
+      "unique_and_correct": 26,
+      "fraction": 1.0
+    },
+    "ENST00000539099_unique_junction_1": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000540678_unique_junction_1": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000540678_unique_junction_2": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    },
+    "ENST00000543394_unique_junction_1": {
+      "synthetic_50mers": 31,
+      "unique_and_correct": 31,
+      "fraction": 1.0
+    }
+  }
+}

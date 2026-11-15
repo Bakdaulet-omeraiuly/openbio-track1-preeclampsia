@@ -5,7 +5,7 @@ is read by this script.
 
 Usage:
   python align_and_count.py --work WORK --markers            # synthetic marker 50-mer confirmation
-  python align_and_count.py --work WORK --runs SRR1 SRR2 ...  # donors (default: every cand/*.fastq.gz)
+  python align_and_count.py --work WORK [--runs SRR1 SRR2 ...]  # donors (default: every cand/*.fastq.gz)
 """
 
 import argparse
@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import threading
 
 HERE = Path(__file__).resolve().parent
 CIGAR = re.compile(r"(\d+)([MIDNSHP=X])")
@@ -56,11 +57,16 @@ def parse_alignment(pos, cigar):
     return ref - 1, introns
 
 
-def count_sam(lines, marker_ids, junctions, bodies, name_hook=None):
-    counts = {m: 0 for m in marker_ids}
-    flank5 = {m: 0 for m in marker_ids if "junction" in m}
-    stats = {"aligned_records": 0, "unique_reads": 0, "unique_reads_in_flt1_span": 0,
-             "flt1_span_forward_strand": 0, "flt1_span_reverse_strand": 0}
+def new_tally(marker_ids):
+    return {"counts": {m: 0 for m in marker_ids},
+            "flank5": {m: 0 for m in marker_ids if "junction" in m},
+            "stats": {"aligned_records": 0, "unique_reads": 0, "unique_reads_in_flt1_span": 0,
+                      "flt1_span_forward_strand": 0, "flt1_span_reverse_strand": 0}}
+
+
+def count_sam(lines, marker_ids, junctions, bodies, keep_per_read=False):
+    """Tally markers per run. Read names are `RUN|original name`; the run is the text before the first `|`."""
+    tallies = {}
     per_read = {}
     for line in lines:
         if line.startswith("@"):
@@ -69,6 +75,11 @@ def count_sam(lines, marker_ids, junctions, bodies, name_hook=None):
         flag = int(fields[1])
         if flag & 4 or flag & 256 or flag & 2048:
             continue
+        run = fields[0].split("|", 1)[0]
+        tally = tallies.get(run)
+        if tally is None:
+            tally = tallies[run] = new_tally(marker_ids)
+        counts, flank5, stats = tally["counts"], tally["flank5"], tally["stats"]
         stats["aligned_records"] += 1
         nh = next((int(tag[5:]) for tag in fields[11:] if tag.startswith("NH:i:")), None)
         if nh != 1:
@@ -97,17 +108,32 @@ def count_sam(lines, marker_ids, junctions, bodies, name_hook=None):
                     hits.add(marker)
         for marker in hits:
             counts[marker] += 1
-        if name_hook is not None:
+        if keep_per_read:
             per_read[fields[0]] = hits
-    return counts, flank5, stats, per_read
+    return tallies, per_read
+
+
+def feed_runs(work, runs, sink):
+    """Write the candidate reads of every run to HISAT2's stdin, prefixing read names with the run."""
+    try:
+        for run in runs:
+            with gzip.open(work / "cand" / f"{run}.fastq.gz", "rt") as handle:
+                for number, line in enumerate(handle):
+                    if number % 4 == 0:
+                        line = f"@{run}|{line[1:].split()[0]}\n"
+                    sink.write(line)
+    finally:
+        sink.close()
 
 
 def hisat2(work, reads, fasta=False, threads=6):
+    """Start HISAT2; `reads` is a path, or "-" to read FASTQ from stdin."""
     command = [str(work / "env/bin/hisat2"), "-p", str(threads), "-x", str(work / "ref/grch37/genome"),
                "--known-splicesite-infile", str(work / "ref/splicesites.txt"), "--no-unal"]
     command += ["-f"] if fasta else []
     command += ["-U", str(reads)]
-    return subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    return subprocess.Popen(command, stdin=subprocess.PIPE if reads == "-" else None,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 
 parser = argparse.ArgumentParser()
@@ -121,7 +147,7 @@ marker_ids, junctions, bodies = load_markers()
 
 if args.markers:
     process = hisat2(work, work / "ref/marker-50mers.fa", fasta=True)
-    counts, flank5, stats, per_read = count_sam(process.stdout, marker_ids, junctions, bodies, name_hook=True)
+    _, per_read = count_sam(process.stdout, marker_ids, junctions, bodies, keep_per_read=True)
     log = process.stderr.read()
     process.wait()
     assert process.returncode == 0, log
@@ -145,20 +171,24 @@ if args.markers:
     (HERE / "hisat2-marker-mappability.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 else:
+    # One HISAT2 process for all runs: the 4 GB index is loaded once (8 GB RAM machine).
     runs = args.runs or sorted(p.name.split(".")[0] for p in (work / "cand").glob("*.fastq.gz"))
+    process = hisat2(work, "-")
+    feeder = threading.Thread(target=feed_runs, args=(work, runs, process.stdin))
+    feeder.start()
+    tallies, _ = count_sam(process.stdout, marker_ids, junctions, bodies)
+    log = process.stderr.read()
+    process.wait()
+    feeder.join()
+    assert process.returncode == 0, log
+    (work / "logs" / "hisat2-cohort.log").write_text(log)
     for run in runs:
-        out = work / "counts" / f"{run}.json"
-        if out.exists():
-            continue
-        process = hisat2(work, work / "cand" / f"{run}.fastq.gz")
-        counts, flank5, stats, _ = count_sam(process.stdout, marker_ids, junctions, bodies)
-        log = process.stderr.read()
-        process.wait()
-        assert process.returncode == 0, log
+        tally = tallies.get(run, new_tally(marker_ids))
         stage1 = json.loads((work / "logs" / f"{run}.json").read_text())
         result = {"run": run, "total_reads": stage1["total_reads"], "candidate_reads": stage1["candidate_reads"],
-                  "hisat2_unique_counts_flank10": counts, "hisat2_unique_junction_counts_flank5": flank5,
-                  "exact_50mer_counts": stage1["exact_marker_counts"], "alignment_stats": stats,
-                  "hisat2_summary": log.strip().splitlines()}
-        out.write_text(json.dumps(result, indent=2) + "\n")
-        print(run, {m: c for m, c in counts.items() if c}, flush=True)
+                  "hisat2_unique_counts_flank10": tally["counts"],
+                  "hisat2_unique_junction_counts_flank5": tally["flank5"],
+                  "exact_50mer_counts": stage1["exact_marker_counts"], "alignment_stats": tally["stats"]}
+        (work / "counts" / f"{run}.json").write_text(json.dumps(result, indent=2) + "\n")
+    print(log.strip())
+    print("runs written:", len(runs))
