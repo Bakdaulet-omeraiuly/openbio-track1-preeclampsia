@@ -321,3 +321,50 @@ unopened holdout.
 ### H2. Wording corrections (no analysis)
 - The +1.07 offset in E1 is on the VST scale; it is not reported as a fold change.
 - "Hypoxia-independent" is replaced by "not explained by the Hallmark hypoxia score".
+
+---
+
+## Addendum I (2026-11-14): does the FLT1 module add anything beyond known programs and differentiation? Written before running
+
+All analyses are exploratory (both bulk cohorts have been analysed many times). The frozen 50-gene module
+from Addendum F (`results/F1_module_genes.csv`) is used unchanged.
+
+### I1. Published Ackerman et al. 2023 modules (contingent on obtaining Table S4)
+- Gene lists for VT Blue and VT Black from Table S4; symbols matched to our data as-is; background = genes
+  measured in each cohort.
+- Overlap of our module with Blue and Black (counts, Jaccard, hypergeometric).
+- Scores: Blue score and Black score = mean z of member genes, **excluding FLT1 and excluding our module's
+  genes** (so predictors do not share genes with each other or with the outcome).
+- Model in each cohort (GSE203507 preterm n = 25; GSE114691 n = 79):
+  `FLT1 ~ hypoxia + Blue + Black + group (+ STB marker score)` vs the same + `module`; report ΔR² and the
+  nested F-test for adding the module. If |Spearman(module, Blue)| > 0.9 → "not identifiable".
+- Stop rule: if the module adds nothing beyond Blue/Black (F-test p ≥ 0.05 in both cohorts), the
+  "distinct module" claim is dropped; the module is described as a compact proxy of the published program.
+
+### I2. Residual-permutation selection null (selection step repeated)
+- Discovery nuisance model (GSE114691): FLT1 and all genes residualised (rank-based) on hypoxia score +
+  clinical group. Observed: top-50 non-hypoxia genes by correlation with FLT1's residual (this spec may
+  differ slightly from F1, which used hypoxia only; both reported).
+- Null: permute FLT1's residual **within clinical group** (500 permutations, seed 42), repeat selection,
+  freeze, evaluate V1 in GSE203507 (partial Spearman(module, FLT1 | hypoxia), 25 preterm). p = (1 + #null ≥ obs)/501.
+- Exchangeability assumption: within a clinical group, FLT1 residuals are exchangeable across donors under H0.
+- Separate inference on the frozen F1 module in GSE203507: donor bootstrap 95% CI (2,000, seed 42) and
+  leave-one-donor-out range for V1.
+
+### I3. Normal CTB → EVT differentiation reference (GSE294617; 3 donors × day 0/3/6; CPM, not counts)
+- Score rule: log2(CPM + 1); module score = mean over module genes present of the gene-centred values
+  (centred across the 9 samples). Same for Hallmark hypoxia score and FLT1.
+- Report each donor's trajectory and the day-6 minus day-0 change; direction consistency across 3 donors.
+  Context: fraction of 1,000 expression-matched random 50-gene sets (seed 42) with a larger mean d6 − d0.
+- **Differentiation score:** genes up at day 6 vs day 0 in all three donors, top 100 by mean log2 change,
+  **excluding FLT1, our module genes and Hallmark hypoxia genes**. In each bulk cohort, test whether the
+  module still tracks FLT1 after adding this score: partial Spearman(module, FLT1 | hypoxia, differentiation).
+- Interpretation fixed: if the module rises with normal CTB→EVT differentiation and the partial
+  correlation drops substantially (by > 50%) after adjusting for the differentiation score, differentiation
+  state is the leading explanation. A weak overlap is **not** evidence of PE specificity (early, in-vitro reference).
+
+### I4. Mechanism (text only)
+Candidate regulators are discussed, not tested; prior work (Iriyama 2015 HIF without hypoxia; Yong 2025
+FOXM1/CEBPB–sFLT1) is cited and not claimed.
+
+Stop rule for the whole line: whatever I1–I3 show, no further hypotheses are added in this project.
