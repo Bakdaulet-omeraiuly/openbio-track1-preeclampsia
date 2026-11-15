@@ -100,6 +100,39 @@ score has 3 markers on GPL6244, which has no ITGA1.
   could also be a mediator rather than a confounder, since HIF-2 is reported to impair
   syncytialisation. This check limits the claim less than feared, but it does not upgrade it.
 
+**Single-cell-reference deconvolution (`l6_deconvolution_posthoc.py`, `L6_deconvolution_posthoc.json`,
+`L6_estimated_proportions_*.csv`; committed before running, `abdbe7b`).**
+
+- **Reference:** the datathon single-cell pseudobulk, 14 cell classes.
+- **Method:** the existing Addendum B5 NNLS rule, giving 700 signature genes. Signature genes were
+  limited to genes on all three platforms, with HIF2dep, FLT1 and hypoxia genes removed.
+- **Not the pre-registered new-cohort test:** these are the same three cohorts as C4.
+- **Baseline:** reproduced L3.
+
+| Adjustment (PE + FGR-only) | Pooled partial rho [95% CI] | Per cohort (GSE35574 / GSE24129 / GSE147776) |
+|---|---|---|
+| hyp_all (L3 C4) | 0.39 [0.19, 0.57] | 0.34 / 0.44 / 0.49 |
+| hyp_all + STB + CTB proportions (primary) | **0.43 [0.21, 0.60]** | 0.40 / 0.37 / 0.52 |
+| hyp_all + STB + CTB + EVT proportions (secondary) | 0.34 [0.11, 0.53] | 0.40 / **−0.15** / 0.45 |
+
+- **Calibration under the primary adjustment:** observed 0.45 (79 common genes); random-set median
+  −0.33; 95th percentile −0.11; empirical p = 0.001.
+- **Reading, by the rule fixed before the run:** C4 is *not explained by deconvolution-estimated
+  STB/CTB proportions*.
+- **The STB axis is plausible.** The estimated STB proportion agrees with the STB marker score
+  (rho 0.68 / 0.78 / 0.97).
+- **The absolute proportions are not credible.** For example, the GSE147776 median Hofbauer fraction
+  is 0.35 and its CTB fraction is near 0, while the GSE35574 CTB fraction is 0.58. NNLS on log-scale
+  arrays turned back to linear values is rough, so only the rank of the STB estimate should be
+  trusted.
+- **A real caution.** GSE24129 is the cohort where estimated STB tracks HIF2dep (rho 0.55). There,
+  adding the EVT proportion as well turned the per-cohort link negative (−0.15). That cohort has only
+  16 placentas and 4 covariates, so the estimate is unstable, but it is exactly where composition
+  had leverage. Where composition varies with the program, we cannot rule it out.
+- **Overall.** Both composition checks (L5, L6) leave the pooled C4 link positive and above random
+  sets. Neither is decisive. The decisive test is still a new, pre-registered cohort with a better
+  composition estimate, or genetic EPAS1 knockdown.
+
 **Why C2 failed (post hoc reading, not tested).** GSE35574 controls are almost all term deliveries
 (median 38 weeks; 1 of 40 delivered before 34 weeks), while its PE placentas have a median of 34 weeks.
 The GA adjustment therefore extrapolates. The early-onset hypoxia signal may simply not be measurable
@@ -127,8 +160,10 @@ against term controls. This is an untested explanation.
 - **What this does not show.**
   - That HIF-2 directly causes FLT1 variation in vivo.
   - That the program is free of cell-composition effects. It contains syncytiotrophoblast genes. A
-    post hoc 3–4-marker STB adjustment did not weaken C4 (0.39 [0.18, 0.57]), but that is a coarse
-    proxy.
+    post hoc 3–4-marker STB adjustment (0.39 [0.18, 0.57]) and a single-cell-reference
+    deconvolution adjustment (0.43 [0.21, 0.60]) did not weaken pooled C4. Both are rough, and in
+    GSE24129, where estimated STB tracks the program, the full-composition model turned that
+    cohort's estimate negative (n = 16).
 - **Next decisive test.**
   - Genetic HIF-2 (EPAS1) knockdown in trophoblasts, with RNA-seq, to separate direct HIF-2 targets from
     differentiation effects.

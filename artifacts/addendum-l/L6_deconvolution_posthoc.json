@@ -1,0 +1,140 @@
+{
+  "posthoc": true,
+  "n_signature_genes": 700,
+  "signature_per_class_cap": 50,
+  "baseline_L3_C4": {
+    "pooled_rho": 0.3945216815608104,
+    "CI_low": 0.18556818216551546,
+    "CI_high": 0.5693392515266694,
+    "p_one_sided": 0.00018256736487642922,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.33826703669441877,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": 0.44117647058823534,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.4917293233082706,
+        "n": 20
+      }
+    }
+  },
+  "primary_hyp_STB_CTB": {
+    "pooled_rho": 0.425952074020186,
+    "CI_low": 0.2122143069974489,
+    "CI_high": 0.6007968326558957,
+    "p_one_sided": 9.810259784504005e-05,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.402281837804502,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": 0.3735294117647059,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.5218045112781955,
+        "n": 20
+      }
+    }
+  },
+  "secondary_hyp_STB_CTB_EVT": {
+    "pooled_rho": 0.3368185514230823,
+    "CI_low": 0.10510993721037534,
+    "CI_high": 0.5338394539635545,
+    "p_one_sided": 0.002523669554901131,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.402281837804502,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": -0.14705882352941177,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.4541353383458646,
+        "n": 20
+      }
+    }
+  },
+  "composition_summary": {
+    "GSE35574": {
+      "median_props_PE_FGR": {
+        "b_cell": 0.022,
+        "endothelial_cell": 0.036,
+        "extravillous_trophoblast": 0.0,
+        "hofbauer_cell": 0.098,
+        "macrophage": 0.0,
+        "monocyte": 0.0,
+        "nk_cell": 0.0,
+        "other_immune": 0.076,
+        "pericyte": 0.001,
+        "smooth_muscle_cell": 0.031,
+        "stromal_cell": 0.036,
+        "syncytiotrophoblast": 0.075,
+        "t_cell": 0.044,
+        "villous_cytotrophoblast": 0.576
+      },
+      "rho_STBprop_STBmarker": 0.677459142769041,
+      "rho_STBprop_HIF2dep": -0.16053037311131668,
+      "rho_STBprop_FLT1": 0.18828245451742212,
+      "rho_CTBprop_HIF2dep": -0.23860622880049334
+    },
+    "GSE24129": {
+      "median_props_PE_FGR": {
+        "b_cell": 0.019,
+        "endothelial_cell": 0.203,
+        "extravillous_trophoblast": 0.049,
+        "hofbauer_cell": 0.157,
+        "macrophage": 0.001,
+        "monocyte": 0.0,
+        "nk_cell": 0.014,
+        "other_immune": 0.0,
+        "pericyte": 0.03,
+        "smooth_muscle_cell": 0.025,
+        "stromal_cell": 0.039,
+        "syncytiotrophoblast": 0.165,
+        "t_cell": 0.008,
+        "villous_cytotrophoblast": 0.289
+      },
+      "rho_STBprop_STBmarker": 0.7764705882352941,
+      "rho_STBprop_HIF2dep": 0.5470588235294118,
+      "rho_STBprop_FLT1": 0.5558823529411765,
+      "rho_CTBprop_HIF2dep": 0.27941176470588236
+    },
+    "GSE147776": {
+      "median_props_PE_FGR": {
+        "b_cell": 0.0,
+        "endothelial_cell": 0.13,
+        "extravillous_trophoblast": 0.0,
+        "hofbauer_cell": 0.347,
+        "macrophage": 0.102,
+        "monocyte": 0.0,
+        "nk_cell": 0.0,
+        "other_immune": 0.0,
+        "pericyte": 0.048,
+        "smooth_muscle_cell": 0.047,
+        "stromal_cell": 0.164,
+        "syncytiotrophoblast": 0.043,
+        "t_cell": 0.0,
+        "villous_cytotrophoblast": 0.006
+      },
+      "rho_STBprop_STBmarker": 0.9654135338345864,
+      "rho_STBprop_HIF2dep": 0.3293233082706767,
+      "rho_STBprop_FLT1": 0.431578947368421,
+      "rho_CTBprop_HIF2dep": -0.059909416076211926
+    }
+  },
+  "calibration_adjusted": {
+    "observed_common_genes": 0.45373528535258373,
+    "null_median": -0.325037750850687,
+    "null_95th": -0.1086819104856678,
+    "empirical_p": 0.000999000999000999
+  },
+  "reading": "C4 not explained by deconvolution-estimated STB/CTB proportions"
+}
