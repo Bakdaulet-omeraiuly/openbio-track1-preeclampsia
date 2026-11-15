@@ -12,6 +12,8 @@ Team name: **404: Team Not Found** (one-person team)
 |---|---|
 | Bakdaulet Omertayev | Everything: analysis, pre-registration, article, video |
 
+**Video (4:49):** https://youtu.be/JrEa0kdsLOQ
+
 ## Research Question
 
 The question started from the "glycolytic" signal in early-onset preeclampsia (EOPE) placentas. Is it real
@@ -257,7 +259,7 @@ Reproducibility details:
 
 ## Presentation
 
-Video link: [add your unlisted YouTube link]
+Video link: https://youtu.be/JrEa0kdsLOQ
 
 ## Citations
 
