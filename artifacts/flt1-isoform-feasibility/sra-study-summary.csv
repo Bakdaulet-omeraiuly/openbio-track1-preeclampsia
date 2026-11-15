@@ -1,0 +1,2 @@
+study,runs,library_layout,median_read_length_nt,min_read_length_nt,max_read_length_nt,median_spots_per_run,total_bases,total_sra_size_gib
+SRP148556,79,SINGLE,50.0,50,58,41237545.0,162459681854,62.5673828125

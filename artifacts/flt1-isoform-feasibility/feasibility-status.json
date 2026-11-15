@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-11-15",
+  "processed_transcript_counts_valid_for_isoform_fraction": false,
+  "reason": "Shared-read allocation, multi-mapping and effective-length handling are undocumented; the five processed rows are highly correlated with total FLT1 signal.",
+  "annotation_structure_audit": "pass",
+  "exact_50mer_uniqueness_against_grch37_cdna": "pass_for_all_predefined_markers",
+  "splice_aware_genome_aligner_confirmation": "pending",
+  "raw_donor_coverage_gate": "pending",
+  "group_blinded_raw_pilot": {
+    "run": "SRR7188846",
+    "group_revealed_after_scan": "Control",
+    "total_reads": 41160188,
+    "invalid_fastq_records": 0,
+    "sflt1_14_unique_terminal_junction_reads": 101,
+    "canonical_unique_internal_junction_reads": [4, 7],
+    "interpretation": "Raw marker signal is detectable, but one run cannot pass or fail the donor-level gate. One canonical junction is below the pre-specified 5-read threshold."
+  },
+  "sample_manifest": {
+    "status": "pass_one_to_one_geo_sra_join",
+    "controls": 21,
+    "pe": 40,
+    "iugr_only": 18
+  },
+  "ena_fastq_manifest": {
+    "runs": 79,
+    "compressed_fastq_gib": 79.32,
+    "urls_and_md5_saved": true
+  },
+  "primary_targets": {
+    "numerator": "ENST00000541932 sFlt1-14 unique terminal junction",
+    "denominator": "mean of two ENST00000282397 canonical-specific internal junction counts"
+  },
+  "clinical_group_contrast_run": false,
+  "next_action": "Run splice-aware alignment and the group-blinded donor-coverage gate on external storage or compute; do not open the clinical contrast first."
+}

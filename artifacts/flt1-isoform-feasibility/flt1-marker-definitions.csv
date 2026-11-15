@@ -1,0 +1,11 @@
+marker_id,transcript,marker_type,chromosome,start_grch37,end_grch37,strand,primary_role,note
+ENST00000282397_terminal_body_1,ENST00000282397,unique_terminal_body_within_flt1,13,28874489,28877270,-1,secondary_cross_check,Full-genome 50-mer mappability still requires validation
+ENST00000282397_unique_junction_1,ENST00000282397,unique_splice_junction_within_flt1,13,28931823,28959021,-1,primary_denominator_component,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000282397_unique_junction_2,ENST00000282397,unique_splice_junction_within_flt1,13,28919689,28931690,-1,primary_denominator_component,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000541932_terminal_body_1,ENST00000541932,unique_terminal_body_within_flt1,13,28942234,28942800,-1,secondary_cross_check,Full-genome 50-mer mappability still requires validation
+ENST00000541932_unique_junction_1,ENST00000541932,unique_splice_junction_within_flt1,13,28942801,28959021,-1,primary_numerator,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000539099_terminal_body_1,ENST00000539099,unique_terminal_body_within_flt1,13,28973181,28973255,-1,exploratory,Full-genome 50-mer mappability still requires validation
+ENST00000539099_unique_junction_1,ENST00000539099,unique_splice_junction_within_flt1,13,28973256,28979916,-1,exploratory,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000540678_unique_junction_1,ENST00000540678,unique_splice_junction_within_flt1,13,28919979,28920353,-1,exploratory,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000540678_unique_junction_2,ENST00000540678,unique_splice_junction_within_flt1,13,28919689,28919916,-1,exploratory,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation
+ENST00000543394_unique_junction_1,ENST00000543394,unique_splice_junction_within_flt1,13,28896497,28896592,-1,exploratory,Coordinates are STAR-style intron boundaries; full-genome mappability still requires validation

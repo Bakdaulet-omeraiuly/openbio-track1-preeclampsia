@@ -347,6 +347,9 @@ from Addendum F (`results/F1_module_genes.csv`) is used unchanged.
 - Corrected **primary** scores use every measured VT Blue/VT Black member except FLT1, including genes that
   overlap our module. The same nested models, STB sensitivity and `|rho| > 0.9` non-identifiability rule apply.
   Results from this correction are post-review, not pre-specified.
+- Terminology correction after review: the implementation calls `|rho| > 0.9` **high collinearity**, not
+  non-identifiability. The original wording above is preserved as history; this threshold is a caution rule,
+  not a formal mathematical identifiability test.
 - Gene symbols for I3 are audited against each target dataset. Exact matches are preferred; a `.` ↔ `-`
   substitution is accepted only when it gives one unique target symbol. The audit separately records genes
   absent from the raw dataset and genes present in raw data but removed by the expression filter. No broader
@@ -379,3 +382,48 @@ Candidate regulators are discussed, not tested; prior work (Iriyama 2015 HIF wit
 FOXM1/CEBPB–sFLT1) is cited and not claimed.
 
 Stop rule for the whole line: whatever I1–I3 show, no further hypotheses are added in this project.
+
+---
+
+## Addendum J (2026-11-14): FLT1 transcript-form feasibility, written before any PE–FGR isoform contrast
+
+This is a separate molecular question from the FLT1 co-expression-module line. No group difference is
+tested until the measurement gate below passes.
+
+### J0. Annotation and processed-count audit
+- GRCh37 FLT1 transcript structures are compared across every annotated FLT1 transcript; exact protein
+  matches to curated UniProt isoforms provide names only, not RNA quantification validity.
+- Transcript-specific terminal exon bodies and junctions are listed. A coordinate-distinct exon is not
+  considered sequence-specific when its body lies inside another FLT1 exon.
+- GSE114691 processed transcript rows are inspected for presence, count structure and correlation, but are
+  not treated as isoform fractions because shared-read allocation, multi-mapping and length correction are
+  not documented.
+- Primary candidates are canonical Flt1 (`ENST00000282397`) and sFlt1-14 (`ENST00000541932`). sFlt1-14 is
+  measured by its unique terminal junction; canonical Flt1 uses the mean of two unique internal junctions
+  because its terminal splice boundary is shared with i15 and isoform 8. Other forms remain exploratory.
+  No `total soluble FLT1` quantity is defined because the annotation does not contain
+  exact matches for every curated soluble isoform.
+
+### J1. Raw-read feasibility gate, evaluated without group effects
+- Raw source: GSE114691 / SRP148556, 79 single-end runs, approximately 50-nt reads.
+- Primary markers must be uniquely mappable against the full GRCh37 genome/transcriptome, not merely unique
+  among the five FLT1 transcripts.
+- At least 70% of the 58 disease donors must have at least 5 reads for the sFlt1-14 junction and each of the
+  two canonical-specific internal junctions, plus at least 20 combined primary junction reads. Neither clinical group may have less than 60%
+  usable samples.
+- Length-normalized unique-body and junction ratios must correlate at rho ≥ 0.70, or one measure must be
+  fixed as primary with a documented technical reason before group effects are examined.
+- If the gate fails, the line stops with a measurement-limit conclusion; processed rows are not substituted.
+
+### J2. Conditional primary contrast, run only if J1 passes
+- Outcome: `log2((sFlt1-14 terminal-junction reads + 0.5) / (mean canonical-specific internal-junction reads + 0.5))`.
+- Population: PE (`PEONLY` + `PEIUGR`, n = 40) versus IUGR-only (n = 18).
+- Model: `isoform_log_ratio ~ PE + log2(total_FLT1_CPM + 1) + hypoxia_score`, HC3 robust standard errors;
+  two-sided PE coefficient, alpha 0.05.
+- Controls provide descriptive context only. Body-read ratios and probabilistic transcript abundance are
+  sensitivities. The other three annotated forms are exploratory and use BH correction as one family.
+- Interpretation is limited to RNA isoform composition at the resolution of 50-nt single-end data; it is
+  not equated with secreted protein abundance. A null result does not prove equal isoform biology.
+
+Implementation details and compute constraints are frozen in
+`artifacts/flt1-isoform-feasibility/raw-reanalysis-plan.md`.

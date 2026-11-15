@@ -1,0 +1,45 @@
+{
+  "ensembl_transcripts": [
+    {
+      "transcript": "ENST00000282397",
+      "protein": "ENSP00000282397",
+      "length_aa": 1338,
+      "exact_uniprot_matches": [{"id": "P17948-1", "names": ["1", "Flt1"]}]
+    },
+    {
+      "transcript": "ENST00000540678",
+      "protein": "ENSP00000443311",
+      "length_aa": 556,
+      "exact_uniprot_matches": [{"id": "P17948-5", "names": ["5", "i15"]}]
+    },
+    {
+      "transcript": "ENST00000543394",
+      "protein": "ENSP00000437841",
+      "length_aa": 361,
+      "exact_uniprot_matches": [{"id": "P17948-8", "names": ["8"]}]
+    },
+    {
+      "transcript": "ENST00000541932",
+      "protein": "ENSP00000437631",
+      "length_aa": 733,
+      "exact_uniprot_matches": [{"id": "P17948-3", "names": ["3", "sFlt1-14"]}]
+    },
+    {
+      "transcript": "ENST00000539099",
+      "protein": "ENSP00000442630",
+      "length_aa": 541,
+      "exact_uniprot_matches": [{"id": "P17948-4", "names": ["4"]}]
+    }
+  ],
+  "uniprot_isoforms": [
+    {"id": "P17948-1", "names": ["1", "Flt1"], "length_aa": 1338},
+    {"id": "P17948-2", "names": ["2", "sFlt1"], "length_aa": 687},
+    {"id": "P17948-3", "names": ["3", "sFlt1-14"], "length_aa": 733},
+    {"id": "P17948-4", "names": ["4"], "length_aa": 541},
+    {"id": "P17948-5", "names": ["5", "i15"], "length_aa": 556},
+    {"id": "P17948-6", "names": ["6", "i18"], "length_aa": 463},
+    {"id": "P17948-7", "names": ["7", "i21"], "length_aa": 343},
+    {"id": "P17948-8", "names": ["8"], "length_aa": 361}
+  ],
+  "interpretation": "Exact protein sequence annotation only; does not validate RNA isoform quantification."
+}

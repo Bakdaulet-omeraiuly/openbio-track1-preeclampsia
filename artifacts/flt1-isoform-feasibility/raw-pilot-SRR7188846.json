@@ -1,0 +1,48 @@
+{
+  "run": "SRR7188846",
+  "method": "exact unique 50-mer streamed FASTQ pilot; not splice-aware primary quantification",
+  "total_reads": 41160188,
+  "invalid_fastq_records": 0,
+  "marker_counts": {
+    "ENST00000282397_terminal_body_1": {
+      "reads_with_marker": 854,
+      "eligible_exact_unique_50mers": 2733
+    },
+    "ENST00000282397_unique_junction_1": {
+      "reads_with_marker": 4,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000282397_unique_junction_2": {
+      "reads_with_marker": 7,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000539099_terminal_body_1": {
+      "reads_with_marker": 0,
+      "eligible_exact_unique_50mers": 26
+    },
+    "ENST00000539099_unique_junction_1": {
+      "reads_with_marker": 0,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000540678_unique_junction_1": {
+      "reads_with_marker": 0,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000540678_unique_junction_2": {
+      "reads_with_marker": 0,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000541932_terminal_body_1": {
+      "reads_with_marker": 752,
+      "eligible_exact_unique_50mers": 493
+    },
+    "ENST00000541932_unique_junction_1": {
+      "reads_with_marker": 101,
+      "eligible_exact_unique_50mers": 31
+    },
+    "ENST00000543394_unique_junction_1": {
+      "reads_with_marker": 0,
+      "eligible_exact_unique_50mers": 31
+    }
+  }
+}
