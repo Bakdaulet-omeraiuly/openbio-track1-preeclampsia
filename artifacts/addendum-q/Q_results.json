@@ -1,0 +1,108 @@
+{
+  "n_genes_after_filter": 13552,
+  "coverage": {
+    "hif2dep_expressed": 59,
+    "hif2dep_genes": [
+      "ABCA2",
+      "AFAP1",
+      "ARRDC3",
+      "ASCL2",
+      "C10orf54",
+      "C9orf172",
+      "CCDC183",
+      "CCDC183-AS1",
+      "CCRN4L",
+      "CERK",
+      "CLIC3",
+      "CLSTN3",
+      "CNN2",
+      "CNPY4",
+      "CORO2A",
+      "CYFIP2",
+      "DPP7",
+      "ECI2",
+      "EDARADD",
+      "EFNB1",
+      "EMILIN2",
+      "ERVH48-1",
+      "FHL2",
+      "FSTL3",
+      "GFOD1",
+      "GPX3",
+      "HMHA1",
+      "ICA1L",
+      "LOXL2",
+      "METTL7A",
+      "MGAT3",
+      "MICAL3",
+      "MMP11",
+      "MTSS1L",
+      "MTUS1",
+      "NOG",
+      "PDIA5",
+      "PLEKHA2",
+      "PPP2R2B",
+      "PXN",
+      "RAB11FIP4",
+      "RASGRF2",
+      "RP11-216L13.19",
+      "SLC25A37",
+      "SLC5A3",
+      "SLC6A8",
+      "SPNS2",
+      "STK24",
+      "SUV39H1",
+      "TMEM141",
+      "TMTC4",
+      "TNFSF10",
+      "TNNT3",
+      "TPM1",
+      "TRAM2",
+      "TRIM14",
+      "TSPAN18",
+      "UBASH3B",
+      "ZNF703"
+    ],
+    "hyp_all_expressed": 145
+  },
+  "gate_pass": true,
+  "single_genes": {
+    "HIF1A": {
+      "delta_HIF1KO": -1.1915987877643002,
+      "delta_HIF2KO": -0.20721703515440654
+    },
+    "EPAS1": {
+      "delta_HIF1KO": -0.03266377686670818,
+      "delta_HIF2KO": -0.9508162682400598
+    },
+    "FLT1": {
+      "delta_HIF1KO": 0.3639836770101968,
+      "delta_HIF2KO": -0.6639204831946095
+    }
+  },
+  "positive_control_hyp_all": {
+    "delta_HIF1KO": -0.7303088355538583,
+    "delta_HIF2KO": -0.17441525630388446,
+    "D_hyp_all": 0.5558935792499737,
+    "pass": true
+  },
+  "Q1": {
+    "delta_HIF1KO": 0.21430766954094083,
+    "delta_HIF2KO": 0.12316141899648289,
+    "D": -0.09114625054445796,
+    "per_donor_D": {
+      "36": -0.020874925812515766,
+      "38": -0.19141048254317006,
+      "42": -0.21803564353336907,
+      "43": 0.06573604971122307
+    },
+    "n_donors_D_negative": 3,
+    "p_signflip_one_sided": 0.1875
+  },
+  "Q1_calibration": {
+    "null_median": -0.11621606942628412,
+    "null_5th": -0.3229106662970784,
+    "percentile_of_observed": 56.8
+  },
+  "reading": "not shown"
+}

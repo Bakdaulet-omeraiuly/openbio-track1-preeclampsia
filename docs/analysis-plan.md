@@ -656,3 +656,14 @@ The plan and script were committed before running (`d2be780`); the cohort is GSE
 - **Specificity not shown:** the unadjusted result sits at the 83rd percentile of random sets.
 
 Details: `artifacts/addendum-p/results.md`.
+
+## Addendum Q (2026-11-15): HIF-1α vs HIF-2α knockout in hypoxic human T cells (GSE324038)
+
+The plan and script were committed before running (`3c98efb`). This is not trophoblast, because no
+trophoblast dataset exists.
+
+- **Q1 not shown:** the program did not fall with either knockout. D = −0.09, at the 57th percentile of
+  random sets.
+- The positive control passed.
+
+Details: `artifacts/addendum-q/results.md`.

@@ -87,6 +87,8 @@ perturbation-defined HIF-2 program. Absence from a targeted search is not proof 
 
 - **Addendum P (fourth untouched cohort, RNA-seq).** The link replicates (0.40) and survives marker adjustment (0.63). It is not specific against random sets without adjustment (83rd percentile), and it is not clear within PE alone. This adds replication, not mechanism.
 
+- **Addendum Q (HIF-1α vs HIF-2α knockout, T cells).** No support for HIF-2 specificity of the program: it fell with neither knockout. Either its HIF dependence is trophoblast-specific, or it is not made of direct HIF targets. The claim stays "PT2385- and ARNT-sensitive program", not "HIF-2 program".
+
 ## What would raise the novelty
 
 Not another positive correlation, but evidence that separates the link from cell state and ties it to a
