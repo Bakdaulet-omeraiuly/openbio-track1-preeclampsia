@@ -23,6 +23,7 @@ gmt = {l.split("\t")[0]: l.rstrip("\n").split("\t")[2:] for l in open(ROOT / "da
 HYP, GLY = set(gmt["HALLMARK_HYPOXIA"]), set(gmt["HALLMARK_GLYCOLYSIS"])
 HIF2 = set((ROOT / "artifacts/addendum-l/L1_HIF2dep_genes.txt").read_text().split())
 META = pd.read_csv(HERE / "samples.tsv", sep="\t", dtype=str)
+META = META[~META.title.str.startswith("miRNA_")].reset_index(drop=True)  # amendment 1: mRNA libraries only
 FORMULA = "y ~ infarct + C(sex) + C(chorio) + C(fvni) + C(smoke) + mage + bmi"
 
 

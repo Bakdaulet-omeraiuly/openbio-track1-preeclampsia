@@ -68,3 +68,11 @@ that it ranks lower than X1.
   - Preeclampsia is unrecorded and may mediate the effect.
 - **Only one supported.** Reported as partial.
 - **Neither.** "The Addendum W lead does not replicate." Link 1 then stays unsupported.
+
+## Amendment 1 (the run stopped at file loading, before any analysis; no expression value was used)
+
+The GEO series lists both **mRNA** and **miRNA** libraries, with titles prefixed `miRNA_`. `samples.tsv`
+therefore double-counted subjects, and the counts quoted above (127/616 and 92/359) included miRNA entries.
+
+The analysis now uses **mRNA libraries only**, i.e. titles without the `miRNA_` prefix. The mRNA counts are
+recomputed by the script and reported in the results. Nothing else changes.
