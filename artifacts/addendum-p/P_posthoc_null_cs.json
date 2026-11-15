@@ -1,0 +1,14 @@
+{
+  "cs_hyp_STB_EVT": {
+    "observed": 0.625974025974026,
+    "null_median": 0.00045836516424751714,
+    "null_p95": 0.3158899923605805,
+    "percentile_of_observed": 100.0
+  },
+  "PE_only_hyp": {
+    "observed": 0.2567521367521367,
+    "null_median": 0.4112820512820513,
+    "null_p95": 0.6704957264957263,
+    "percentile_of_observed": 26.8
+  }
+}

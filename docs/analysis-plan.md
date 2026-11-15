@@ -645,3 +645,14 @@ Plan and script: `artifacts/addendum-n/` (`494bde1`, committed before running). 
   This is supported. A sample-label amendment changes only the normoxia numbers.
 - **O2** (`artifacts/addendum-o2/`, run by the second session; plan `8abfcc1`). Primary: within-STB
   pseudobulk partial rho 0.26 [−0.14, 0.59]. This is not supported.
+
+## Addendum P (2026-11-15): GSE186257, fourth untouched cohort
+
+The plan and script were committed before running (`d2be780`); the cohort is GSE186257.
+
+- **P1 (replicates L-C4):** 0.40 [0.06, 0.65], Holm p = 0.011.
+- **P2:** 0.69.
+- **P1 adjusted for STB/EVT markers:** 0.63.
+- **Specificity not shown:** the unadjusted result sits at the 83rd percentile of random sets.
+
+Details: `artifacts/addendum-p/results.md`.

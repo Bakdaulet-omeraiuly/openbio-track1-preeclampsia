@@ -1,0 +1,78 @@
+{
+  "n_genes": {
+    "hif2dep": 85,
+    "hyp_all": 179,
+    "stb_markers": [
+      "CGA",
+      "ERVW-1",
+      "PSG1",
+      "CGB3",
+      "CGB5",
+      "CGB8"
+    ],
+    "evt_markers": [
+      "CEACAM1",
+      "HLA-G",
+      "ITGA1",
+      "MMP2"
+    ]
+  },
+  "group_counts": {
+    "PE": 26,
+    "control": 10,
+    "SGA": 8
+  },
+  "P1": {
+    "rho": 0.39740259740259737,
+    "n": 34,
+    "CI_low": 0.06263309547433368,
+    "CI_high": 0.6517908384992561,
+    "p_perm_one_sided": 0.010698930106989302,
+    "holm_p": 0.010698930106989302
+  },
+  "P2": {
+    "rho": 0.6916239316239315,
+    "n": 26,
+    "CI_low": 0.41561019272039906,
+    "CI_high": 0.8509952713468718,
+    "p_perm_one_sided": 9.999000099990002e-05,
+    "holm_p": 0.00019998000199980003
+  },
+  "P1_cs_STB_EVT": {
+    "rho": 0.625974025974026,
+    "n": 34,
+    "CI_low": 0.3490515889299343,
+    "CI_high": 0.8023497471484861,
+    "p_perm_one_sided": 0.00019998000199980003
+  },
+  "P1_PE_only": {
+    "rho": 0.2567521367521367,
+    "n": 26,
+    "CI_low": -0.1540099116383741,
+    "CI_high": 0.5918453990164968,
+    "p_perm_one_sided": 0.10058994100589941
+  },
+  "desc_rho_hif2dep_stb_in_disease": 0.18105423987776928,
+  "desc_rho_hif2dep_evt_in_disease": 0.5446906035141329,
+  "desc_hyp_only_PE_vs_control": {
+    "estimate": 0.05939298307239792,
+    "CI_low": -0.1643834416013819,
+    "CI_high": 0.2831694077461777,
+    "p_two_sided": 0.5928329725824593
+  },
+  "desc_hyp_only_PE_vs_SGA": {
+    "estimate": 0.12181277893247139,
+    "CI_low": -0.11418737768738216,
+    "CI_high": 0.35781293555232496,
+    "p_two_sided": 0.3006124485372787
+  },
+  "desc_P1_random_set_null": {
+    "median": 0.23009931245225362,
+    "p95": 0.483911382734912,
+    "percentile_of_observed": 83.2
+  },
+  "reading": {
+    "P1": "replicates",
+    "P1_cs": "not explained by marker scores"
+  }
+}

@@ -85,6 +85,8 @@ perturbation-defined HIF-2 program. Absence from a targeted search is not proof 
 - **Cell state, not resolved.** The within-STB link was the same direction but not significant (O2: 0.26 [−0.14, 0.59]).
 - **The claim is not upgraded.** Suggested wording: "A trophoblast program defined by PT2385, and also lowered in an independent ARNT-knockdown experiment, is associated with FLT1 expression in clinical placentas. Its HIF-2 specificity and its independence from cell state are not established."
 
+- **Addendum P (fourth untouched cohort, RNA-seq).** The link replicates (0.40) and survives marker adjustment (0.63). It is not specific against random sets without adjustment (83rd percentile), and it is not clear within PE alone. This adds replication, not mechanism.
+
 ## What would raise the novelty
 
 Not another positive correlation, but evidence that separates the link from cell state and ties it to a
