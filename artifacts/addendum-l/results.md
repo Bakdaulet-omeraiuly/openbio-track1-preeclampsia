@@ -69,6 +69,28 @@ partial correlation.
 
 So C4 is not simply the Blue-type module again.
 
+**STB-marker adjustment (`l5_stb_adjustment_posthoc.py`, `L5_stb_adjustment_posthoc.json`; committed
+before running, `ba1135a`).** The covariate is the datathon marker matrix's syncytiotrophoblast class
+(CGA, CGB, ERVW-1, PSG1). None of these are HIF2dep genes. CGB uses a fixed alias rule
+(CGB/CGB3/CGB5/CGB8), and GSE35574 has no ERVW-1 probe, so only 3 to 4 genes are available. The
+baseline reproduced L3 exactly (0.34 / 0.44 / 0.49, pooled 0.39). Pooled intervals use n − 3 − k
+weights.
+
+| Adjustment (PE + FGR-only) | Pooled partial rho [95% CI] | Per cohort |
+|---|---|---|
+| hyp_all (L3 C4) | 0.39 [0.19, 0.57] | 0.34 / 0.44 / 0.49 |
+| hyp_all + STB (primary) | 0.39 [0.18, 0.57] | 0.36 / 0.31 / 0.52 |
+| hyp_all + STB + EVT (secondary) | 0.42 [0.20, 0.60] | 0.46 / 0.24 / 0.44 |
+
+- **Calibration under the same adjustment:** observed 0.43 (79 common genes); random-set median −0.38;
+  95th percentile −0.15; empirical p = 0.001.
+- **The STB score correlates with FLT1** (rho 0.30 to 0.43) **but inconsistently with HIF2dep** (−0.05,
+  0.36, 0.35).
+- **Reading, by the rule fixed before the run:** C4 is *not explained by this STB marker score*. That
+  is not the same as "free of composition", because 3 to 4 markers are a coarse proxy. STB content
+  could also be a mediator rather than a confounder, since HIF-2 is reported to impair
+  syncytialisation. This check limits the claim less than feared, but it does not upgrade it.
+
 **Why C2 failed (post hoc reading, not tested).** GSE35574 controls are almost all term deliveries
 (median 38 weeks; 1 of 40 delivered before 34 weeks), while its PE placentas have a median of 34 weeks.
 The GA adjustment therefore extrapolates. The early-onset hypoxia signal may simply not be measurable
@@ -95,9 +117,12 @@ against term controls. This is an untested explanation.
   - No PE-vs-FGR difference was found, now with 42 FGR-only placentas: −0.19 SD [−0.56, 0.19].
 - **What this does not show.**
   - That HIF-2 directly causes FLT1 variation in vivo.
-  - That the program is free of cell-composition effects; for example, it contains
-    syncytiotrophoblast genes.
+  - That the program is free of cell-composition effects. It contains syncytiotrophoblast genes. A
+    post hoc 3–4-marker STB adjustment did not weaken C4 (0.39 [0.18, 0.57]), but that is a coarse
+    proxy.
 - **Next decisive test.**
   - Genetic HIF-2 (EPAS1) knockdown in trophoblasts, with RNA-seq, to separate direct HIF-2 targets from
     differentiation effects.
-  - Repeating C4 with a syncytiotrophoblast-content covariate, pre-registered, in a new cohort.
+  - Repeating C4 in a new cohort, pre-registered, with a better composition covariate, e.g.
+    deconvolution against a placental single-cell reference. The post hoc marker check above is not
+    that test.

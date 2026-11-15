@@ -1,0 +1,127 @@
+{
+  "posthoc": true,
+  "markers_used": {
+    "GSE35574": {
+      "STB": [
+        "CGA",
+        "CGB(CGB5+CGB8)",
+        "PSG1"
+      ],
+      "EVT": [
+        "CEACAM1",
+        "HLA-G",
+        "ITGA1",
+        "MMP2"
+      ]
+    },
+    "GSE24129": {
+      "STB": [
+        "CGA",
+        "CGB(CGB+CGB5)",
+        "ERVW-1",
+        "PSG1"
+      ],
+      "EVT": [
+        "CEACAM1",
+        "HLA-G",
+        "MMP2"
+      ]
+    },
+    "GSE147776": {
+      "STB": [
+        "CGA",
+        "CGB(CGB)",
+        "ERVW-1",
+        "PSG1"
+      ],
+      "EVT": [
+        "CEACAM1",
+        "HLA-G",
+        "ITGA1",
+        "MMP2"
+      ]
+    }
+  },
+  "baseline_L3_C4": {
+    "pooled_rho": 0.3945216815608104,
+    "CI_low": 0.18556818216551546,
+    "CI_high": 0.5693392515266694,
+    "p_one_sided": 0.00018256736487642922,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.33826703669441877,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": 0.44117647058823534,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.4917293233082706,
+        "n": 20
+      }
+    }
+  },
+  "primary_hyp_plus_STB": {
+    "pooled_rho": 0.3939890708965343,
+    "CI_low": 0.1802572427189256,
+    "CI_high": 0.5721935937753942,
+    "p_one_sided": 0.0002462517429926425,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.36392229417206284,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": 0.3147058823529411,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.5203007518796992,
+        "n": 20
+      }
+    }
+  },
+  "secondary_hyp_plus_STB_plus_EVT": {
+    "pooled_rho": 0.418965820200876,
+    "CI_low": 0.20407875069589676,
+    "CI_high": 0.5953346019814785,
+    "p_one_sided": 0.00012897026133562584,
+    "per_cohort": {
+      "GSE35574": {
+        "rho": 0.45556583410422447,
+        "n": 46
+      },
+      "GSE24129": {
+        "rho": 0.2441176470588235,
+        "n": 16
+      },
+      "GSE147776": {
+        "rho": 0.4360902255639097,
+        "n": 20
+      }
+    }
+  },
+  "descriptive_STB_correlations": {
+    "GSE35574": {
+      "rho_STB_HIF2dep": -0.051618871415356156,
+      "rho_STB_FLT1": 0.3033610854147394
+    },
+    "GSE24129": {
+      "rho_STB_HIF2dep": 0.36470588235294116,
+      "rho_STB_FLT1": 0.36470588235294116
+    },
+    "GSE147776": {
+      "rho_STB_HIF2dep": 0.3488721804511278,
+      "rho_STB_FLT1": 0.4285714285714286
+    }
+  },
+  "calibration_adjusted": {
+    "observed_common_genes": 0.4250606306599645,
+    "n_common_hif2dep": 79,
+    "null_median": -0.3822485725880389,
+    "null_95th": -0.15436724926111725,
+    "empirical_p": 0.000999000999000999
+  },
+  "reading": "C4 not explained by this STB marker score"
+}
