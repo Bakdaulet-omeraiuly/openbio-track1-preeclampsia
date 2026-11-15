@@ -1,0 +1,70 @@
+{
+  "n_peaks": 1812,
+  "n_universe": 12819,
+  "window_10000": {
+    "base_rate_universe": 0.06786800842499414,
+    "T0_hypoxia": {
+      "n_genes": 174,
+      "fraction_bound": 0.3448275862068966,
+      "null_median": 0.07471264367816093,
+      "null_p95": 0.10919540229885058,
+      "empirical_p": 0.000999000999000999,
+      "fold_vs_null_median": 4.615384615384615
+    },
+    "T1_hif2dep": {
+      "n_genes": 82,
+      "fraction_bound": 0.24390243902439024,
+      "null_median": 0.07317073170731707,
+      "null_p95": 0.13414634146341464,
+      "empirical_p": 0.000999000999000999,
+      "fold_vs_null_median": 3.3333333333333335
+    },
+    "FLT1_bound": false,
+    "T0_passed": true,
+    "T1_supported": true
+  },
+  "window_5000": {
+    "base_rate_universe": 0.05491848038068492,
+    "T0_hypoxia": {
+      "n_genes": 174,
+      "fraction_bound": 0.3333333333333333,
+      "null_median": 0.06321839080459771,
+      "null_p95": 0.09195402298850575,
+      "empirical_p": 0.000999000999000999,
+      "fold_vs_null_median": 5.272727272727272
+    },
+    "T1_hif2dep": {
+      "n_genes": 82,
+      "fraction_bound": 0.14634146341463414,
+      "null_median": 0.06097560975609756,
+      "null_p95": 0.12195121951219512,
+      "empirical_p": 0.008991008991008992,
+      "fold_vs_null_median": 2.4
+    },
+    "FLT1_bound": false
+  },
+  "window_50000": {
+    "base_rate_universe": 0.16678368047429595,
+    "T0_hypoxia": {
+      "n_genes": 174,
+      "fraction_bound": 0.47126436781609193,
+      "null_median": 0.1839080459770115,
+      "null_p95": 0.22988505747126436,
+      "empirical_p": 0.000999000999000999,
+      "fold_vs_null_median": 2.5625
+    },
+    "T1_hif2dep": {
+      "n_genes": 82,
+      "fraction_bound": 0.4268292682926829,
+      "null_median": 0.1951219512195122,
+      "null_p95": 0.2682926829268293,
+      "empirical_p": 0.000999000999000999,
+      "fold_vs_null_median": 2.1875
+    },
+    "FLT1_bound": false
+  },
+  "T2_FLT1": {
+    "nearest_peak_bp_from_any_TSS": 123341,
+    "in_universe": true
+  }
+}
