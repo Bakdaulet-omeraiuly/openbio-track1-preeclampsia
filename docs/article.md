@@ -206,6 +206,10 @@ Experiments in trophoblast cells show that low oxygen raises FLT1 mainly through
   - The low-oxygen score was not clearly higher in preeclampsia than in controls. In the largest new dataset it was lower. There, almost all controls were born at term, while the preeclampsia placentas were born earlier. This is a possible but untested reason.
   - Preeclampsia again did not clearly differ from growth restriction alone, now with 42 growth-restricted placentas: −0.19 standard deviations, interval −0.56 to 0.19.
 
+![Left: dot-and-interval plot of the HIF-2 program's link with FLT1 in three new datasets, before and after cell-mix adjustments. Right: histogram of 1,000 random gene sets, all below the HIF-2 program.](../figures/fig16_hif2_program_flt1.png)
+
+Figure 11. Left: the link between the HIF-2-dependent genes and FLT1, after removing the general low-oxygen score. Black diamonds show the three new datasets pooled, with the 95% interval; coloured shapes show each dataset. The top row is the planned test. The rows below add cell-mix adjustments chosen after seeing it. Right: the same link for 1,000 random gene sets of similar activity (blue bars) and for the HIF-2 program (black line).
+
 **What this means.** A trophoblast program that depends on HIF-2 activity moves with placental FLT1 in six groups of patients. In the three groups opened only for this test, that link was planned in advance. This is consistent with the cell experiments, but it is not proof that HIF-2 drives FLT1 in pregnant women. Four days of the drug may also change how the cells mature, and the program includes some syncytiotrophoblast genes. Two rough cell-mix adjustments did not explain the pooled link, but in one small dataset they did, so differences in cell make-up remain possible. Details: `artifacts/addendum-l/results.md`.
 
 ## Unanswered Questions
