@@ -667,3 +667,17 @@ trophoblast dataset exists.
 - The positive control passed.
 
 Details: `artifacts/addendum-q/results.md`.
+
+## Addendum R (2026-11-15): cell-level hypoxia–FLT1 link in GSE319236 (run by the second session)
+
+The plan and script were committed before any data were downloaded (`df0298c`); results `f26e975`.
+
+- **R1 supported in marker-selected barcodes:** within donor and within barcodes called STB, mean ρ 0.137,
+  19/20 donors, sign-flip p = 1×10⁻⁴, above all 1,000 random sets. The feasibility gate passed (20/20 donors
+  with ≥ 30 STB cells).
+- **Sensitivity:** passes without FND and under stricter STB calling; control-only 0.045 does not meet the
+  random-set condition, but control STB has far lower FLT1 and more zeros, which attenuates Spearman.
+- A post hoc STB-state adjustment (committed before running, `f948085`) left it at 0.135.
+- **Pending:** a cell-purity check, because the STB markers used are also high-abundance ambient transcripts.
+
+Details: `artifacts/addendum-r/results.md`.

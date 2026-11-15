@@ -75,6 +75,7 @@ Early-onset preeclampsia (EOPE) is thought to start with a poorly perfused place
 20. **Fourth untouched cohort (Addendum P, GSE186257, RNA-seq):** the HIF2dep–FLT1 link replicates (0.40 [0.06, 0.65], Holm p = 0.011) and stays positive after STB/EVT marker adjustment (0.63). Hypoxia–FLT1 within PE is 0.69. Specificity against random gene sets is not shown without adjustment (83rd percentile). Within PE alone the link is 0.26 (not clear).
 
 21. **HIF-1 vs HIF-2 (Addendum Q, hypoxic human T cells, GSE324038):** HIF-2 specificity of the program is not shown. The knockouts worked, but the expressed program genes fell with neither (57th percentile of random sets). FLT1 itself was HIF-2-preferring (descriptive). Trophoblast HIF-2 specificity remains untested.
+22. **Cell-level link (Addendum R, pre-registered, GSE319236 scRNA-seq, 20 donors; provisional):** within donor and within barcodes called STB, the hypoxia score tracks FLT1 (mean ρ 0.137, 19/20 donors, sign-flip p = 1×10⁻⁴, above all 1,000 random sets; 0.135 after an STB-state adjustment). The HIF2dep program likewise (ρ 0.240, 20/20, descriptive). FLT1 is higher in PE STB (p = 0.0006) while the mean hypoxia score is not (p = 0.19). **Pending:** STB was called by ≥ 3 of 6 markers that are also ambient transcripts, so a purity check is running. The pre-specified control-only sensitivity did not meet the random-set condition (0.045), but control STB has far lower FLT1 and more zeros, which attenuates Spearman, so that split is not interpretable as a disease difference. Limits: association across cells; dissociation stress; STB barcodes may be fragments; small per-cell ρ; one cohort.
 
 ## Proposed Mechanism
 
@@ -92,12 +93,14 @@ evidence. "Causal" below means a perturbation experiment in culture, run by othe
 | 3 | HIF activity → the HIF2dep program | **Causal in culture, twice and in agreement:** PT2385 lowers it (L1, 3 donors) and ARNT shRNA lowers it (O1, 5/5 donors, p = 0.031, beyond all random sets). ARNT also partners HIF-1α and AhR, and both treatments shift differentiation | causal in culture; isoform not resolved |
 | 4 | **HIF-2 (rather than HIF-1) → FLT1** | **Conflicting; the weakest link.** PT2385 lowers FLT1 (L1, log2FC −1.93), but ARNT shRNA did **not** lower FLT1 consistently (O1: 2 up, 2 down, 1 flat), and hypoxia itself lowers FLT1 in those first-trimester cells. Addendum Q found **no HIF isoform preference** for the program in hypoxic human T cells (57th percentile of random sets), though FLT1 itself was HIF-2-preferring there (descriptive). Prior literature supports HIF-2α (Sasagawa et al. 2018) | conflicting |
 | 5 | Hypoxia ↔ FLT1 in placental tissue | **Our strongest result.** Positive in 10/10 bulk cohorts, pre-registered in 9; pooled estimates 0.47–0.69. The HIF2dep–FLT1 partial link replicated in four untouched cohorts (L-C4 0.39; P1 0.40) | association, strongly replicated |
-| 5a | …within one cell type, rather than cell mix? | **Not established.** Within STB alone (O2) the link was 0.26 [−0.14, 0.59], not significant. Marker and deconvolution adjustments left the pooled estimate unchanged (L5, L6; P1-cs 0.63), but these are coarse proxies, and one small cohort turned negative under full adjustment | open |
+| 5a | …within one cell type, rather than cell mix? | **Supported in marker-selected barcodes; purity check pending (Addendum R).** In an independent scRNA-seq cohort (GSE319236, 20 donors), within donor and within barcodes called STB, hypoxia tracked FLT1: mean ρ 0.137, 19/20 donors, sign-flip p = 1×10⁻⁴, above all 1,000 random sets; 0.135 after an STB-state adjustment. **Caveat:** STB was called by ≥ 3 of 6 markers that are also high-abundance ambient transcripts, so doublets and other lineages may pass; a purity check is running. At pseudobulk level (O2) the link was 0.26 [−0.14, 0.59], not significant. Marker and deconvolution adjustments left the bulk estimate unchanged (L5, L6; P1-cs 0.63) | association; provisional |
 | 6 | sFlt-1 → maternal endothelial disease | Nothing of our own; literature only (Maynard et al. 2003) | not tested here |
 
 **Where the chain breaks.** Links 1 and 6 are borrowed from the literature. Link 4 is contradicted by our own
-data in one system. Link 5a is unresolved. So we have a well-replicated **association** (link 5) and a
-**culture-level causal step** (link 3) that are not joined into a causal chain in human placental tissue.
+data in one system. So we have a well-replicated **association** (link 5), which provisionally also holds
+inside single cells of one cell type (link 5a), and a **culture-level causal step** (link 3) — but these are
+not joined into a causal chain in human placental tissue, because the step that would join them (link 4) is
+the one that failed.
 
 **Working model (speculative):** placental FLT1 variation = (i) a component that follows the generic hypoxia/HIF signature and is shared by PE and growth restriction + (ii) a component shared with the canonical PE genes that this signature does not capture. Prediction: in trophoblast cultured at normal oxygen, perturbing a driver of component (ii) should change FLT1 together with LEP/ENG/PAPPA2 without changing Hallmark hypoxia genes; HIF knockdown should lower component (i) but leave (ii) largely intact.
 
@@ -146,7 +149,8 @@ If confirmed, a placental hypoxia score could define a "hypoxic" EOPE subgroup e
 - **Low** for the hypoxia score as a marker of clinical severity or measured perfusion (Addendum N null).
 - **Low** for specificity versus growth restriction (discovery yes; not clear in GSE114691, GSE75010 or the 42 FGR-only placentas of Addendum L).
 - **Low–medium** for the FLT1 co-expression module being special (passes the selection-process null only at the 95.7th percentile; PE > FGR shift not FLT1-specific; 'beyond hypoxia' refers only to the generic HIF signature).
-- **Low–medium** for trophoblast localisation and the HIF mechanism.
+- **Low–medium, provisional** for trophoblast localisation: the coupling holds within barcodes called STB in the same donor, in an independent scRNA-seq cohort (Addendum R, 19/20 donors), but in one cohort only and with a cell-purity check still pending.
+- **Low–medium** for the HIF mechanism itself, and **low** for HIF-2 specificity (Addendum Q found no isoform preference).
 
 - Small groups (5 preterm controls, 5 FGR-only; 3 early controls in the single-cell data).
 - Bulk tissue mixes cell types; deconvolution across platforms is approximate.
