@@ -67,7 +67,7 @@ Early-onset preeclampsia (EOPE) is thought to start with a poorly perfused place
 
 15. **Third cohort (Addendum K, GSE75010, 157 placentas, opened once):** hyp_only is higher in early PE than in <34-week non-PE, non-FGR deliveries (+0.23 [0.06, 0.41] with labour adjustment, Holm p = 0.013; labour nearly separates the groups). Hypoxia–FLT1 within PE rho = 0.58. PE vs FGR-only: 0.04 (underpowered).
 16. **HIF-2 program (Addendum L, three untouched cohorts, 138 placentas):** the 100 genes most lowered by HIF-2 blockade in hypoxic trophoblasts (GSE216799) track FLT1 beyond the Hallmark hypoxia score: pooled partial rho 0.39 [0.19, 0.57], Holm p = 5×10⁻⁴. Post hoc, this is above 1,000/1,000 random sets and unchanged after STB-marker and deconvolution adjustments, but negative in one small cohort under full adjustment. **Not supported:** PE vs mostly-term controls (Holm p = 0.09); PE vs FGR-only (−0.19 SD [−0.56, 0.19], 42 FGR-only).
-17. **Matched-preterm-control replication (Addendum M, three untouched small cohorts, run once):** hyp_only is higher in PE (+0.67 SD [0.06, 1.28], Holm p = 0.033). This leans on GSE44711; without it, +0.29 [−0.58, 1.16]. Hypoxia–FLT1 within PE is 0.47 [0.05, 0.75], positive in 9/9 bulk cohorts tested. Post hoc: placental FLT1:PGF is higher in PE.
+17. **Matched-preterm-control replication (Addendum M, three untouched small cohorts, run once):** hyp_only is higher in PE (+0.67 SD [0.06, 1.28], Holm p = 0.033). Supported but fragile: it leans on GSE44711 (without it +0.29 [−0.58, 1.16]) and is also +0.29 [−0.16, 0.74] without the GSE66273 HELLP cases. Hypoxia–FLT1 within PE is 0.47 [0.05, 0.75]. M3 (HIF2dep, PE-only, 0.45) is descriptive and not a replication of L-C4. Post hoc: placental FLT1:PGF is higher in PE, but the cohort ordering is the inverse of M1, so it does not support the hypoxia result.
 18. **Clinical anchors (Addendum N, exploratory, GSE75010):** the hypoxia score did not track uterine-artery Doppler PI (rho −0.01, n = 52) or severity within PE. Late-onset PE was also raised (+0.16 [0.02, 0.31]). The score reads as a placental cell-state marker tied to FLT1, not a severity or perfusion readout.
 
 ## Proposed Mechanism
@@ -115,8 +115,8 @@ If confirmed, a placental hypoxia score could define a "hypoxic" EOPE subgroup e
 
 ## Confidence Level and Limitations
 
-- **Medium–high** for "hypoxia program higher in a subset of EOPE than in preterm controls" and "the glycolytic signal is the hypoxia program" (replicated in a second cohort).
-- **High** for the hypoxia–FLT1 coupling within PE (positive in 9/9 bulk cohorts; registered before running in 8 of them: GSE114691, GSE75010, and the three Addendum L and three Addendum M cohorts).
+- **Medium–high** for "hypoxia program higher in a subset of EOPE than in preterm controls" (pre-registered replications in GSE114691 and GSE75010; Addendum M supported but fragile) and "the glycolytic signal is the hypoxia program" (replicated in a second cohort).
+- **High** for the hypoxia–FLT1 coupling within PE (pooled estimates 0.47–0.62 in the pre-registered tests; sign count positive in 9/9 bulk cohorts, some weak; registered before running in 8 of them: GSE114691, GSE75010, and the three Addendum L and three Addendum M cohorts).
 - **Medium–high** for a HIF-2-dependent trophoblast program tracking FLT1 beyond the generic hypoxia score (Addendum L; composition not excluded).
 - **Low** for the hypoxia score as a marker of clinical severity or measured perfusion (Addendum N null).
 - **Low** for specificity versus growth restriction (discovery yes; not clear in GSE114691, GSE75010 or the 42 FGR-only placentas of Addendum L).
