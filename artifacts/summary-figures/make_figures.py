@@ -94,28 +94,28 @@ for i, panel in enumerate(["HIF-2α (EPAS1) removed", "HIF-1α (HIF1A) removed"]
         if j == 0: ax.set_ylabel(panel, fontsize=10, color=INK)
         ax.grid(axis="y", color=GRID, lw=0.8); ax.set_axisbelow(True)
 fig.suptitle("At low oxygen, removing HIF-2 erases FLT1; removing HIF-1 does not", x=0.02, ha="left", fontsize=12.5, color=INK)
-fig.text(0.02, 0.005, "Stem-cell-derived placental cells (one cell line), 3% oxygen; each dot is one culture. Scores are standardised within each study, so compare within a row only. Data: GSE288288, GSE302997.", fontsize=8, color=MUTED)
-fig.tight_layout(rect=(0, 0.03, 1, 0.95)); fig.savefig(FIG / "fig19_hif2_vs_hif1.png", dpi=200); plt.close(fig)
+fig.text(0.02, 0.005, "Stem-cell-derived placental cells (one cell line), 3% oxygen; each dot is one culture. Data: GSE288288, GSE302997.\nScores are standardised within each study, so compare within a row only.", fontsize=8, color=MUTED)
+fig.tight_layout(rect=(0, 0.05, 1, 0.95)); fig.savefig(FIG / "fig19_hif2_vs_hif1.png", dpi=200); plt.close(fig)
 
 # ---- fig20: the chain, link by link
-links = [("1", "Poor maternal blood supply → low-oxygen program", "Not supported (2 pathology cohorts, Doppler)", "no"),
-         ("2", "Program higher in early preeclampsia", "Supported, fragile (5 of 6 matched cohorts)", "part"),
-         ("3", "HIF → program", "Supported in cells: drug, knockdown, DNA binding, knockout", "yes"),
-         ("4", "HIF-2 (not HIF-1) → FLT1", "Supported in stem-cell model; confirms Sasagawa 2018", "yes"),
-         ("5", "Program ↔ FLT1 in placentas", "Supported: 10/10 cohorts, within cells, intact tissue", "yes"),
-         ("6", "Placental FLT1 → mother's disease", "Not supported in our data; literature only", "no")]
-fig, ax = plt.subplots(figsize=(11, 4.6)); ax.axis("off")
+links = [("1", "Alarm higher with pathology signs of poor blood supply?", "No association found (2 pathology cohorts; Doppler)", "no"),
+         ("2", "Alarm higher in early preeclampsia vs same-stage births?", "Yes, but fragile (5 of 6 matched cohorts)", "part"),
+         ("3", "Does HIF drive the program genes in placental cells?", "Yes: drug, knockdown, ARNT binding, knockout", "yes"),
+         ("4", "Is it HIF-2 (not HIF-1) that FLT1 needs?", "Yes, in a stem-cell model (one line); confirms Sasagawa 2018", "yes"),
+         ("5", "Do the alarm and FLT1 rise together in placentas?", "Yes: 10/10 cohorts; within cells and intact tissue", "yes"),
+         ("6", "Does placental FLT1 RNA track the mother's illness?", "No clear association in our data", "no")]
+fig, ax = plt.subplots(figsize=(9.5, 6.6)); ax.axis("off")
 mark = {"yes": ("✔", BLUE), "part": ("~", "#eda100"), "no": ("✘", ORANGE)}
 for i, (k, link, ev, st) in enumerate(links):
-    y = 1 - i * 0.165
+    y = 0.95 - i * 0.15
     sym, col = mark[st]
-    ax.text(0.0, y, k, fontsize=13, color=MUTED, va="center", fontweight="bold")
-    ax.text(0.04, y, link, fontsize=11, color=INK, va="center")
-    ax.text(0.47, y, sym, fontsize=15, color=col, va="center", fontweight="bold")
-    ax.text(0.50, y, ev, fontsize=10, color=INK, va="center")
-ax.set_ylim(0.0, 1.08)
-ax.set_title("What held up, link by link", loc="left", fontsize=12.5, color=INK)
-ax.text(0.0, -0.02, "✔ supported   ~ supported but fragile   ✘ not supported.  Links 3–5 are tested in different systems (cells, stem-cell model, tissue).",
+    ax.text(0.0, y, k, fontsize=13, color=MUTED, va="center", fontweight="bold", transform=ax.transAxes)
+    ax.text(0.05, y, link, fontsize=11.5, color=INK, va="center", transform=ax.transAxes)
+    ax.text(0.05, y - 0.055, sym, fontsize=14, color=col, va="center", fontweight="bold", transform=ax.transAxes)
+    ax.text(0.09, y - 0.055, ev, fontsize=10, color=INK, va="center", transform=ax.transAxes)
+ax.set_title("Six questions we tested", loc="left", fontsize=12.5, color=INK)
+ax.text(0.0, -0.02, "✔ supported   ~ supported but fragile   ✘ not supported (no association found, not proof of none)\n"
+        "Questions 3–4: cell experiments; 5: patient tissue; 1, 2, 6: patient groups. FLT1 is measured as RNA, not sFlt-1 protein.",
         fontsize=8.5, color=MUTED, transform=ax.transAxes)
 fig.tight_layout(); fig.savefig(FIG / "fig20_chain_evidence.png", dpi=200); plt.close(fig)
 print("ok")

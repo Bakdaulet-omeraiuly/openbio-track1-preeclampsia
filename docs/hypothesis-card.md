@@ -47,7 +47,8 @@ The full, numbered list of all 29 results, with every number, is in
 5. **Within one placenta (GSE319236):**
    - single trophoblast cells: 19/20 donors pre-registered; 17/19 after a post hoc purity filter;
    - intact Visium tissue, composition-adjusted: 18/19.
-   - Neither cell mix nor dissociation explains the link.
+   - This makes cell mix and dissociation stress unlikely as the whole explanation. These results use the
+     generic hypoxia score; the HIF2dep-program versions (R2, S2, U) are descriptive.
 6. **Mechanism in culture:**
    - the program falls with PT2385 and with ARNT shRNA;
    - ARNT binds 24% of program genes vs 7% expected, but not FLT1;
@@ -87,15 +88,15 @@ evidence. "Causal" below means a perturbation experiment in culture, run by othe
 | 3 | HIF activity → the HIF2dep program | **Causal in culture, twice and in agreement:** PT2385 lowers it (L1, 3 donors) and ARNT shRNA lowers it (O1, 5/5 donors, p = 0.031, beyond all random sets). ARNT also partners HIF-1α and AhR, and both treatments shift differentiation. **ARNT binds near 24% of program genes vs 7% expected (Addendum T, ChIP-seq), so part of the program is direct** | causal in culture + direct binding; isoform not resolved |
 | 4 | **HIF-2 (rather than HIF-1) → FLT1** | **Now supported in a trophoblast model (Addendum V):** EPAS1-null syncytium loses FLT1 (−5.46 log2) and the program, while HIF1A-null does not (genetic double dissociation, 3% O2). Earlier evidence was **conflicting**: PT2385 lowers FLT1 (L1, log2FC −1.93), but ARNT shRNA did **not** lower FLT1 consistently (O1: 2 up, 2 down, 1 flat), and hypoxia itself lowers FLT1 in those first-trimester cells. Addendum Q found **no HIF isoform preference** for the program in hypoxic human T cells (57th percentile of random sets), though FLT1 itself was HIF-2-preferring there (descriptive). Prior literature supports HIF-2α (Sasagawa et al. 2018). **Addendum T: in trophoblast at 1% O2, ARNT does not bind near FLT1 (nearest peak 123 kb), although it binds a quarter of the program, so FLT1 may be an indirect target there** | **HIF-2-dependent in iPSC syncytium (genetic); possibly indirect; not yet shown in term STB** |
 | 5 | Hypoxia ↔ FLT1 in placental tissue | **Our strongest result.** Positive in 10/10 bulk cohorts, pre-registered in 9; pooled estimates 0.47–0.69. The HIF2dep–FLT1 partial link replicated in four untouched cohorts (L-C4 0.39; P1 0.40) | association, strongly replicated |
-| 5a | …within one cell type, rather than cell mix? | **Supported within donor at cell level, in one independent scRNA-seq cohort (Addendum R, GSE319236).** In marker-pure trophoblast barcodes (KRT7+, negative for 5 lineage markers): ρ 0.099, 17/19 donors, sign-flip p = 6×10⁻⁴, above all 1,000 random sets. Contamination inflated the first estimate (0.137 in marker-selected barcodes) but did not create it. **Dissociation stress ruled out:** in intact, never-dissociated tissue of the same donors (Addendum S, Visium), the link holds after adjusting for spot composition (ρ 0.118, 18/19, 99.9th percentile of random sets). One cohort, two designs. At pseudobulk level (O2) the link was 0.26 [−0.14, 0.59], not significant. Marker and deconvolution adjustments left the bulk estimate unchanged (L5, L6; P1-cs 0.63) | association, supported in one cohort |
+| 5a | …within one cell type, rather than cell mix? | **Supported within donor at cell level, in one independent scRNA-seq cohort (Addendum R, GSE319236).** In marker-pure trophoblast barcodes (KRT7+, negative for 5 lineage markers): ρ 0.099, 17/19 donors, sign-flip p = 6×10⁻⁴, above all 1,000 random sets. Contamination inflated the first estimate (0.137 in marker-selected barcodes) but did not create it. **Dissociation stress made unlikely as the whole explanation (not excluded):** in intact, never-dissociated tissue of the same donors (Addendum S, Visium), the link holds after adjusting for spot composition (ρ 0.118, 18/19, 99.9th percentile of random sets). One cohort, two designs. At pseudobulk level (O2) the link was 0.26 [−0.14, 0.59], not significant. Marker and deconvolution adjustments left the bulk estimate unchanged (L5, L6; P1-cs 0.63) | association, supported in one cohort |
 | 6 | sFlt-1 → maternal endothelial disease | Causal step: literature only (Maynard et al. 2003). **Placental end tested (Addendum Y): not supported.** FLT1 does not clearly track BP, proteinuria or HELLP within PE, nor separate PE from hypertension alone (p = 0.093); it is already up with hypertension alone | literature; placental-end association **not supported** |
 
 **Where the chain breaks.** Links 1 and 6 are borrowed from the literature. Link 4 is contradicted by our own
 data in one system. So we have a well-replicated **association** (link 5) that also holds
 inside single cells of one purified cell type and in intact tissue (link 5a), and a **culture-level causal step** (link 3) — but
 these are not joined into a causal chain in human placental tissue, because the step that would join them
-(link 4) is the one that failed. Addenda T and U narrow the gap. HIF binds a quarter of the program directly in
-trophoblast, but not FLT1. In intact placenta those direct targets travel with FLT1 within each donor. That fits
+(link 4) is the one that failed. Addenda T and U narrow the gap. ARNT (the HIF-β subunit shared by HIF-1 and HIF-2) binds near a quarter of the program genes in
+trophoblast, but not near FLT1. In intact placenta those direct targets travel with FLT1 within each donor. That fits
 FLT1 being an **indirect** target of the HIF program in trophoblast. It is an association, and it does not tell
 direct-target and differentiation routes apart. **Addendum V closes most of link 4 in a trophoblast model:** genetic
 loss of HIF-2α, but not HIF-1α, removes FLT1 and the program in hypoxic iPSC syncytium. The chain is now supported
@@ -127,7 +128,7 @@ tested in a single system in term placenta.
 | Growth restriction rather than PE | Discovery: direct PE − FGR-only contrast positive, FGR-only ≈ preterm controls. Replication: same direction but not significant, and IUGR-only modestly elevated. **Partly supported alternative**: the program is shared with FGR to some degree. |
 | Labour in controls (replication) | GSE114691 controls are spontaneous preterm labour, which can itself induce hypoxia genes; this would bias toward the null. Per-sample delivery mode is not public, so we could not adjust. |
 | Gene-set artifact | Beats 1,000 expression-matched random sets. |
-| Dissociation stress (single-cell data) | Addendum S: the within-donor link also holds in never-dissociated tissue (Visium), after adjusting for spot composition. Ruled out as the explanation. |
+| Dissociation stress (single-cell data) | Addendum S: the within-donor link also holds in never-dissociated tissue (Visium), after adjusting for spot composition. Made unlikely as the whole explanation, though not excluded. |
 | Signal is maternal/systemic, not trophoblast-specific | Decidua shows a similar effect; decidua basalis contains invading extravillous trophoblast, so this does not separate the two. |
 | Single influential donors | Leave-one-out in bulk and pseudobulk; direction stable. |
 
@@ -136,7 +137,7 @@ tested in a single system in term placenta.
 1. **Further cohorts (computational):** we already did this for GSE114691 (above). Done since: GSE75010 (Addendum K), three untouched cohorts (L), three GA-matched cohorts (M) and GSE186257 (P). GSE148241 was screened and not usable (no preterm controls). Still open: a cohort, with labour included as a covariate, and a pooled PE − FGR estimate across cohorts to decide whether the PE-specific part is real but small or absent.
 2. **Tissue validation:** in the same placentas, immunostain HIF-1α/HIF-2α and FLT1 in syncytiotrophoblast, and measure maternal serum sFlt-1:PlGF; prediction: "hypoxia-high" placentas have higher nuclear HIF in syncytium and higher maternal sFlt-1.
 3. **Causal test in vitro** (partly done: Addendum V used EPAS1- and HIF1A-null iPSC syncytium at 3% O2; still needed in primary term trophoblast, with sFlt-1 protein measured): primary trophoblast or trophoblast stem-cell-derived syncytium cultured at 1–2% vs 8% O2, ± HIF knockdown; prediction: hypoxia raises the hypoxia-only and shared genes and FLT1, and HIF knockdown abolishes both, while glycolysis-only genes change little.
-4. **Falsification** (the "equally high in FGR-only" condition has in effect been met, so the PE-specific part of the original hypothesis is refuted; the remaining conditions still apply): the hypothesis is wrong if, in an independent cohort with preterm controls, the hypoxia-only score is not higher in EOPE, or is equally high in FGR-only, or does not track FLT1.
+4. **Falsification.** PE vs FGR-only showed no difference in any replication cohort. No difference is not the same as equality, so the PE-specific part is **not supported**, rather than refuted. The remaining conditions still apply: the hypothesis is wrong if, in an independent cohort with preterm controls, the hypoxia-only score is not higher in EOPE, or is equally high in FGR-only, or does not track FLT1.
 
 ## Potential Intervention Relevance
 

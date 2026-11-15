@@ -26,7 +26,7 @@ malperfusion → placental hypoxia program → HIF → FLT1 (sFlt-1) → materna
 Rows from Addendum C onward were pre-registered, with the plan committed before the data were opened. Rows from
 the main dataset (notebooks 01–03) were partly planned after the first results. Post hoc steps are marked.
 
-| Link | Result | Where |
+| Question | Result | Where |
 |---|---|---|
 | "Glycolytic" signal = hypoxia program (post hoc split) | Hypoxia-only genes up in EOPE vs preterm controls; glycolysis-only genes not; beats 1,000 random sets | notebooks 01–03 |
 | EOPE > GA-matched preterm controls | 5 of 6 cohorts; **fragile** in the pooled small cohorts (Addendum M) | 05, K, M |
@@ -75,6 +75,7 @@ jupyter nbconvert --to notebook --execute --inplace 09_hypoxia_independent_flt1_
 jupyter nbconvert --to notebook --execute --inplace 10_villous_to_decidua.ipynb
 jupyter nbconvert --to notebook --execute --inplace 11_anchor_gene_null.ipynb
 jupyter nbconvert --to notebook --execute --inplace 12_selection_null_and_differentiation.ipynb
+cd ..   # back to the repository root; all commands below run from here
 ```
 
 The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: later notebooks read result files written by earlier ones. Notebook 05 also downloads GSE114691 counts from GEO and a transcript-to-gene table from Ensembl GRCh37 BioMart.
@@ -95,8 +96,7 @@ python artifacts/addendum-l/l6_deconvolution_posthoc.py external_cohorts
 **Addenda M–Q.**
 
 - M, N and O1 use files from `fetch_external_cohorts.sh`.
-- P and Q need one GEO supplementary file each: GSE186257 normalised counts, and GSE324038 RSEM counts. The
-  URLs are in each `plan.md`.
+- P and Q need GEO files, which the `curl` lines below download.
 - O2 uses the datathon pseudobulk.
 
 ```bash
@@ -105,8 +105,12 @@ python artifacts/addendum-m/m4_flt1_pgf_posthoc.py external_cohorts
 python artifacts/addendum-n/n_explore.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
 python artifacts/addendum-o/o1_arnt.py external_cohorts/GSE80995_series_matrix.txt.gz external_cohorts/GPL10558.txt
 python artifacts/addendum-o2/o2_within_celltype.py
-python artifacts/addendum-p/p_confirm.py GSE186257_series_matrix.txt.gz GSE186257_Plac_samples_DESEq2_norm_filtered.txt.gz
-python artifacts/addendum-q/q_hif1_vs_hif2.py GSE324038_Project_Knm32.rsem_genes_expected_count.txt.gz
+mkdir -p pq_data
+curl -fsSL -o pq_data/GSE186257_series_matrix.txt.gz https://ftp.ncbi.nlm.nih.gov/geo/series/GSE186nnn/GSE186257/matrix/GSE186257_series_matrix.txt.gz
+curl -fsSL -o pq_data/GSE186257_Plac_samples_DESEq2_norm_filtered.txt.gz https://ftp.ncbi.nlm.nih.gov/geo/series/GSE186nnn/GSE186257/suppl/GSE186257_Plac_samples_DESEq2_norm_filtered.txt.gz
+curl -fsSL -o pq_data/GSE324038_Project_Knm32.rsem_genes_expected_count.txt.gz https://ftp.ncbi.nlm.nih.gov/geo/series/GSE324nnn/GSE324038/suppl/GSE324038_Project_Knm32.rsem_genes_expected_count.txt.gz
+python artifacts/addendum-p/p_confirm.py pq_data/GSE186257_series_matrix.txt.gz pq_data/GSE186257_Plac_samples_DESEq2_norm_filtered.txt.gz
+python artifacts/addendum-q/q_hif1_vs_hif2.py pq_data/GSE324038_Project_Knm32.rsem_genes_expected_count.txt.gz
 ```
 
 **Addenda R–Y (single-cell, spatial, ChIP, knockouts, pathology, maternal disease).** Each script has a
@@ -190,7 +194,7 @@ Reproducibility details:
     endothelium, stroma, immune, erythrocyte markers) and technical covariates.
   - ρ 0.118, 18/19 donors, sign-flip p ≤ 1×10⁻⁴, 99.9th percentile of 1,000 random sets.
   - All 3 sensitivities pass, including the STB-rich half of spots (0.078).
-  - **This rules out dissociation stress as the explanation for Addendum R.**
+  - This makes dissociation stress unlikely as the whole explanation for Addendum R (it does not exclude it).
   - Limits: spots mix several cells, so composition is adjusted for, not removed; same donors as R.
   - Details: `artifacts/addendum-s/results.md`.
 - **Direct HIF binding (Addendum T, pre-registered, GSE209936 ARNT ChIP-seq, BeWo at 1% O2):**

@@ -68,9 +68,9 @@ figure. Times are cumulative. Rehearse once with a timer.
 
 **Slide 8: what did not hold (fig20)**
 
-> Now the honest part. Poor blood supply, judged by a pathologist in two separate cohorts, did not switch on
-> the general alarm — although FLT1 itself was higher. Placental FLT1 did not track how sick the mother was.
-> And preeclampsia was higher than growth restriction only in my main dataset — never again in later groups.
+> Now the honest part. In two separate cohorts, I found no association between pathologist-recorded poor
+> blood supply and the general alarm, though FLT1 itself was higher. Placental FLT1 did not track how sick the
+> mother was. And preeclampsia was higher than growth restriction only in my main dataset, not in later groups.
 
 ## Discussion (3:45 to 5:00)
 

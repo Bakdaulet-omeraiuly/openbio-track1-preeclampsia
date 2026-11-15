@@ -30,6 +30,16 @@ The textbook story is a chain of six links:
    ([Zeisler et al. 2016](https://doi.org/10.1056/NEJMoa1414838)).
 6. sFlt-1 damages the mother's blood vessels.
 
+Gene-activity data cannot test every link as written. They measure FLT1 RNA, not released sFlt-1 protein, and
+they cannot show harm to the mother. We therefore turned the chain into **six testable questions** (Figure 6):
+
+1. Is the alarm higher where pathology shows poor blood supply?
+2. Is the alarm higher in early preeclampsia than in births at the same stage?
+3. Does HIF drive the alarm genes in placental cells?
+4. Is it HIF-2 (rather than HIF-1) that FLT1 needs?
+5. Do the alarm and FLT1 rise together in placentas?
+6. Does placental FLT1 track how sick the mother is?
+
 A 2023 study of our main placentas described a "sugar-burning" (glycolytic) pattern in some early-preeclampsia
 placentas ([Ackerman et al. 2023](https://doi.org/10.1161/HYPERTENSIONAHA.122.20807)). We set out to test that
 signal, and then each link of the chain, with public data.
@@ -121,10 +131,10 @@ HIF-2 in placental cells. In three patient groups we had never opened, those gen
 general alarm (0.39, interval 0.19 to 0.57), more than all 1,000 random gene lists. A fourth group repeated it
 (0.40).
 
-### It is not just a mix of cell types, and not an artefact of handling
+### Probably not just a mix of cell types, nor an artefact of handling
 
 A piece of placenta mixes many cell types. So two placentas could differ simply because one has more of the
-cells that make both the alarm genes and FLT1. To rule this out, we compared within each of 20 placentas from a
+cells that make both the alarm genes and FLT1. To test this, we compared within each of 20 placentas from a
 new study ([GSE319236](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE319236)), using two designs. Its
 authors had already reported hypoxia signals in preeclampsia; what we add is the within-placenta test.
 
@@ -167,7 +177,8 @@ Each dot is one culture, and the black lines are averages. Data: GSE288288, GSE3
 
 ### What did not hold up
 
-- **Poor blood supply did not switch on the general alarm.** In 168 placentas examined by pathologists,
+- **We found no association between poor blood supply and the general alarm** after adjusting for disease type,
+  stage and other factors. This is not proof that there is none. In 168 placentas examined by pathologists,
   49 with signs of poor maternal blood supply ([GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303463)), and in
   extremely premature placentas with infarcts (dead patches from poor blood supply;
   [GSE154829](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154829)), the general alarm was not higher.
@@ -179,9 +190,14 @@ Each dot is one culture, and the black lines are averages. Data: GSE288288, GSE3
   pressure **without** preeclampsia.
 - **Preeclampsia did not separate from growth restriction** beyond our main dataset (see above).
 
-![Six-row summary: links 3, 4 and 5 supported, link 2 supported but fragile, links 1 and 6 not supported.](../figures/fig20_chain_evidence.png)
+![Six questions with verdicts: questions 3, 4 and 5 supported, question 2 supported but fragile, questions 1 and 6 no association found.](../figures/fig20_chain_evidence.png)
 
-Figure 6. The six links of the textbook chain and what our tests showed for each.
+Figure 6. The six questions we tested (see Introduction) and what we found.
+
+- Questions 3 and 4 come from cell experiments.
+- Question 5 comes from patient tissue.
+- The rest come from patient groups.
+- FLT1 was measured as RNA; released sFlt-1 protein was not measured.
 
 ## Unanswered Questions
 
@@ -195,14 +211,18 @@ Figure 6. The six links of the textbook chain and what our tests showed for each
 
 **What held up.** The middle of the chain is strong:
 
-- In placental cells, HIF-2 is needed for a program of genes and for FLT1, and a HIF protein binds many of the program genes.
-- In patients' placentas, that program rises and falls with FLT1 in every group we examined, inside single cells
-  and in intact tissue.
+- **In placental cells:** HIF-2 is needed for FLT1 and for a drug-defined HIF-2 gene program, and a HIF protein
+  binds many of that program's genes.
+- **In patients' placentas:** the general low-oxygen alarm rises and falls with FLT1 in every group we examined,
+  and within single cells and intact tissue of the same placentas.
+  - The HIF-2 program itself tracked FLT1 beyond the general alarm in four patient groups.
+  - Its within-placenta checks were descriptive only.
+  - These are two related but separate findings.
 
 **What did not.** We could not show the two ends of the chain in our data:
 
-- that poor blood supply switches on the alarm;
-- that placental FLT1 reflects how sick the mother is.
+- an association between pathology signs of poor blood supply and the alarm;
+- that placental FLT1 RNA reflects how sick the mother is.
 
 We also found nothing specific to preeclampsia rather than growth restriction. These are honest negatives, not
 failures to look. The two ends rest on earlier animal and clinical studies
@@ -211,7 +231,8 @@ failures to look. The two ends rest on earlier animal and clinical studies
 **What is new.** The low-oxygen → HIF-2 → FLT1 biology was known. Our contributions are:
 
 - a planned, ten-group replication of the alarm–FLT1 link, with its weak points reported;
-- showing that this link holds within single cells and intact tissue of the same placentas;
+- showing that the alarm–FLT1 link holds within single cells and intact tissue of the same placentas, which
+  makes cell mix and handling stress unlikely as the whole explanation;
 - linking a drug-defined HIF-2 program to FLT1 in patients, with genetic evidence that HIF-2 (not HIF-1) is
   needed for both;
 - clear negatives for the first and last links.
