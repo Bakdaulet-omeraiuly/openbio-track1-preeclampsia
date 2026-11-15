@@ -24,6 +24,7 @@ Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOP
 - [x] Other public data: GSE114691 villous RNA-seq, 79 placentas ([GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691)), used for replication
 - [x] Other public data: GSE294617 CTB→EVT differentiation reference (CPM; Yong et al. 2025), used descriptively
 - [x] Other public data: Ackerman et al. 2023 Table S4 VT Blue/VT Black co-expression module assignments
+- [x] Other public data (Addenda K–N): GSE75010 (157 placentas), GSE35574, GSE24129, GSE147776, GSE44711, GSE74341, GSE66273 (array cohorts), GSE216799 (PT2385 vs DMSO in hypoxic cytotrophoblasts; Colson et al. 2023). Downloaded by `artifacts/fetch_external_cohorts.sh`
 - [x] Other public data: MSigDB Hallmark gene sets v2024.1 (HYPOXIA, GLYCOLYSIS), downloaded by the notebook from the [Broad data server](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/)
 
 ## How to Run
@@ -91,6 +92,7 @@ Reproducibility details:
 | `docs/article.md` | Science communication article |
 | `docs/analysis-plan.md` | Comparison, model, thresholds, and addenda |
 | `docs/hypothesis-card.md` | Our hypothesis and how to test it |
+| `docs/novelty-audit.md` | What is known, what is replication, what may be new (targeted PubMed search) |
 | `docs/presentation-outline.md` | Video script |
 | `artifacts/addendum-k/` | Addendum K: seven-program mechanism screen and one-time GSE75010 confirmation |
 | `artifacts/addendum-l/` | Addendum L: HIF-2 program from GSE216799, screen, one-time confirmation in GSE35574/GSE24129/GSE147776, post hoc calibration and composition checks (`results.md`) |
@@ -98,6 +100,9 @@ Reproducibility details:
 | `artifacts/flt1-isoform-feasibility/` | FLT1 transcript/exon audit, processed-count diagnostics, SRA metadata, raw-reanalysis plan (Addendum J1), cohort marker counts, coverage gate and the pre-specified PE–FGR isoform contrast (null) |
 
 ## Key Findings
+
+**How to read the novelty** (`docs/novelty-audit.md`): the HIF-2 → FLT1 biology is known. Our contributions are (1) a pre-registered, multi-cohort replication of the hypoxia–FLT1 association, with its weak points reported, and (2) linking a perturbation-defined trophoblast HIF-2 program to placental FLT1 in clinical cohorts (Addendum L), which a targeted PubMed search did not find done before. This is not a new PE mechanism, and the program is not PE-specific.
+
 
 - Comparing 15 EOPE placentas with 5 gestational-age-appropriate preterm controls (`~ fetal sex + PE`), 424 genes pass padj < 0.05 and |log2FC| ≥ 1; 207 survive a gestational-age covariate and every leave-one-control-out refit.
 - Discovery: a hypoxia score is higher in EOPE than in preterm controls (+0.54, 95% CI 0.24–0.84) and, in a direct contrast, than in FGR-only placentas (+0.35, 0.08–0.63). The "glycolysis" signal comes from genes shared with the hypoxia set; glycolysis-only genes do not rise in PE. The effect exceeds all 1,000 expression-matched random gene sets.
