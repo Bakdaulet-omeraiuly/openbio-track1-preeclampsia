@@ -1,0 +1,110 @@
+{
+  "primary_STB": {
+    "cell_class": "syncytiotrophoblast",
+    "n": 26,
+    "groups": {
+      "PE_early": 10,
+      "PE_late": 7,
+      "control_late": 6,
+      "control_early": 3
+    },
+    "n_hif2dep_genes": 67,
+    "n_hyp_genes": 146,
+    "partial_rho": 0.2581196581196581,
+    "approx_CI": [
+      -0.14359608970091087,
+      0.5868062734854161
+    ],
+    "p_perm_one_sided": 0.10988901109889011,
+    "supported": false
+  },
+  "S1_STB_clinical_covariates": {
+    "cell_class": "syncytiotrophoblast",
+    "n": 26,
+    "groups": {
+      "PE_early": 10,
+      "PE_late": 7,
+      "control_late": 6,
+      "control_early": 3
+    },
+    "n_hif2dep_genes": 67,
+    "n_hyp_genes": 146,
+    "partial_rho": 0.31897435897435894,
+    "approx_CI": [
+      -0.10734921221023104,
+      0.6462161048530063
+    ]
+  },
+  "S2_VCT": {
+    "cell_class": "villous_cytotrophoblast",
+    "n": 26,
+    "groups": {
+      "PE_early": 10,
+      "PE_late": 7,
+      "control_late": 6,
+      "control_early": 3
+    },
+    "n_hif2dep_genes": 88,
+    "n_hyp_genes": 167,
+    "partial_rho": 0.5658119658119657,
+    "approx_CI": [
+      0.22854410691610727,
+      0.7818177487148399
+    ]
+  },
+  "S2_EVT": {
+    "cell_class": "extravillous_trophoblast",
+    "n": 15,
+    "groups": {
+      "PE_early": 7,
+      "PE_late": 5,
+      "control_late": 2,
+      "control_early": 1
+    },
+    "n_hif2dep_genes": 84,
+    "n_hyp_genes": 156,
+    "partial_rho": -0.5428571428571428,
+    "approx_CI": [
+      -0.8255505460259047,
+      -0.04236901833006042
+    ]
+  },
+  "S3_STB_random_null": {
+    "cell_class": "syncytiotrophoblast",
+    "n": 26,
+    "groups": {
+      "PE_early": 10,
+      "PE_late": 7,
+      "control_late": 6,
+      "control_early": 3
+    },
+    "n_hif2dep_genes": 67,
+    "n_hyp_genes": 146,
+    "partial_rho": 0.2581196581196581,
+    "approx_CI": [
+      -0.14359608970091087,
+      0.5868062734854161
+    ],
+    "random_null": {
+      "median": -0.347008547008547,
+      "p95": -0.1398290598290598,
+      "percentile_of_observed": 100.0,
+      "empirical_p": 0.000999000999000999
+    }
+  },
+  "S4_STB_PE_only": {
+    "cell_class": "syncytiotrophoblast",
+    "n": 17,
+    "groups": {
+      "PE_early": 10,
+      "PE_late": 7
+    },
+    "n_hif2dep_genes": 67,
+    "n_hyp_genes": 142,
+    "partial_rho": 0.20833333333333337,
+    "approx_CI": [
+      -0.3026221681536574,
+      0.6262731005189103
+    ]
+  }
+}
