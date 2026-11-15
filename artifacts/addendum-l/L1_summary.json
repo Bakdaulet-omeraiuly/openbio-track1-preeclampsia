@@ -1,0 +1,32 @@
+{
+  "genes_tested": 17168,
+  "FLT1": {
+    "log2FoldChange": -1.9282817776922452,
+    "stat": -18.250995968297726,
+    "pvalue": 2.031712538670707e-74,
+    "padj": 1.712395051342961e-71
+  },
+  "HIF2dep_size": 100,
+  "HIF2dep_top10": [
+    "SPNS2",
+    "HMHA1",
+    "RP11-216L13.19",
+    "EMILIN2",
+    "AGXT",
+    "GPX3",
+    "MTUS1",
+    "SIGLEC6",
+    "ERVH48-1",
+    "CELSR1"
+  ],
+  "HIF2dep_max_stat": -9.307201207686276,
+  "F1_genes_present": 47,
+  "F1_score_paired_difference_PT2385_minus_DMSO": {
+    "P1": -0.2804905598296885,
+    "P2": -0.49910757939232353,
+    "P3": -0.4882798054759125
+  },
+  "F1_fraction_negative_LFC": 0.5957446808510638,
+  "all_genes_fraction_negative_LFC": 0.5064072693383038,
+  "note": "n = 3 placentas; descriptive only"
+}
