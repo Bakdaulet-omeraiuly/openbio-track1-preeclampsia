@@ -227,6 +227,25 @@ Figure 11. Left: the link between the HIF-2-dependent genes and FLT1, after remo
 
 **What this means.** A trophoblast program that depends on HIF-2 activity moves with placental FLT1 in six groups of patients. In the three groups opened only for this test, that link was planned in advance. This is consistent with the cell experiments, but it is not proof that HIF-2 drives FLT1 in pregnant women. Four days of the drug may also change how the cells mature, and the program includes some syncytiotrophoblast genes. Two rough cell-mix adjustments did not explain the pooled link, but in one small dataset they did, so differences in cell make-up remain possible. Details: `artifacts/addendum-l/results.md`.
 
+### Three more small datasets with matched preterm controls (planned)
+
+Most controls in the Addendum L datasets were born at term, so the low-oxygen score could not be fairly compared there. We therefore found three more public datasets in which the controls were also born preterm, wrote the tests down before downloading any gene data, and ran them once:
+
+- [GSE44711](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE44711): 8 early preeclampsia vs 8 matched controls;
+- [GSE74341](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE74341): 7 vs 5;
+- [GSE66273](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE66273): 12 vs 5, sampled from the chorionic plate rather than the villi.
+
+Results:
+
+- **The low-oxygen score was higher in preeclampsia** (pooled +0.67 standard deviations, interval 0.06 to 1.28; it survived correction for the two planned tests).
+  - **Caution:** this rests mostly on the largest villous dataset (+1.05). Without it, the estimate was +0.29 with an interval crossing zero (−0.58 to 1.16).
+  - The chorionic-plate dataset showed almost no difference (+0.07).
+  - Across all six of our datasets with preterm controls, the difference points the same way.
+- **The low-oxygen score again tracked FLT1 within preeclampsia** (pooled correlation 0.47, interval 0.05 to 0.75). This link is now positive in all nine datasets we have tested it in.
+- **Unplanned, after seeing the data:** the placental FLT1-to-PGF ratio was higher in preeclampsia. PGF is the gene for PlGF, so this ratio mirrors the clinical sFlt-1/PlGF blood test (pooled villous difference +1.67 on a log2 scale, interval 0.51 to 2.83). This confirms that these datasets carry the known preeclampsia signature. In the chorionic-plate dataset the ratio was raised while the low-oxygen score was not, so not every preeclampsia placenta carries the alarm, which fits our "subset" reading. We did not test that.
+
+These datasets are small, so these results support, but cannot settle, the main finding. Details: `artifacts/addendum-m/results.md`.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
@@ -236,7 +255,7 @@ Figure 11. Left: the link between the HIF-2-dependent genes and FLT1, after remo
 
 ## Conclusions, Limitations and Next Steps
 
-Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients and, with labour taken into account, in a third group of 157, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction. What may set preeclampsia apart is how strongly it is switched on, FLT1 also shares variation with the classic preeclampsia genes that the general low-oxygen signature does not capture; this pattern, built in one group of patients, held in the other, but whether it reflects a separate mechanism is unknown. A program of genes that depend on HIF-2 activity in trophoblasts also tracks FLT1 beyond the general low-oxygen signal in three further datasets. In those same datasets, however, the low-oxygen score was not clearly higher in preeclampsia than in controls, and preeclampsia still did not differ clearly from growth restriction.
+Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients and, with labour taken into account, in a third group of 157, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction. What may set preeclampsia apart is how strongly it is switched on, FLT1 also shares variation with the classic preeclampsia genes that the general low-oxygen signature does not capture; this pattern, built in one group of patients, held in the other, but whether it reflects a separate mechanism is unknown. A program of genes that depend on HIF-2 activity in trophoblasts also tracks FLT1 beyond the general low-oxygen signal in three further datasets. In those same datasets, however, the low-oxygen score was not clearly higher in preeclampsia than in controls, and preeclampsia still did not differ clearly from growth restriction. In three further small datasets with controls born at the same stage, planned in advance, the alarm was again higher in preeclampsia, although that result leans mainly on one dataset, and it again tracked FLT1. In the third dataset, the alarm did not follow the mother's Doppler blood-flow measurements or clinical severity.
 
 **Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels. Growth-restricted placentas may share a weaker version of the same stress.
 

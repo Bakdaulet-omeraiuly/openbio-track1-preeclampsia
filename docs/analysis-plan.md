@@ -631,6 +631,8 @@ GSE74341 and GSE66273 (chorionic plate, with a pre-specified leave-it-out sensit
   - M2: hyp_all–FLT1 rho within PE.
 - **Descriptive:** M3, the HIF2dep partial rho within PE.
 
+**Outcome** (`c3df572`): M1 and M2 were supported (M1 leans on GSE44711). FLT1:PGF was added post hoc as descriptive only. See `artifacts/addendum-m/results.md`.
+
 ## Addendum N (2026-11-15): clinical anchors in GSE75010, exploratory
 
 Plan and script: `artifacts/addendum-n/` (`494bde1`, committed before running). Results:
