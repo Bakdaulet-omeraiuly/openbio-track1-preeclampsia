@@ -1,6 +1,6 @@
 # A Low-Oxygen Alarm in the Preeclampsia Placenta
 
-**In two separate groups of patients, a subset of early-preeclampsia placentas switch on genes that respond to low oxygen, and the alarm rises together with the gene behind the main blood test for the disease.**
+**In three separate groups of patients, a subset of early-preeclampsia placentas switch on genes that respond to low oxygen, and the alarm rises together with the gene behind the main blood test for the disease.**
 
 By [Team member 1] and [Team member 2]
 
