@@ -45,6 +45,7 @@ def load(d):
         col[r.gsm] = hits[0]
     num = num[[col[g] for g in m.gsm]]
     num.columns = m.gsm.tolist()
+    num.index = [str(i).split("$", 1)[1] if "$" in str(i) else str(i) for i in num.index]
     if not set(["FLT1"]) & set(num.index):  # Ensembl IDs: map with the repo table
         mp = pd.read_csv(ROOT / "data_external/ensembl_gene_id_to_name_GRCh37.87.tsv", sep="\t", header=None, names=["id", "sym"])
         mp = mp.drop_duplicates("id").set_index("id")["sym"]

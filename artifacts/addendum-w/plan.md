@@ -65,3 +65,8 @@ within nonMVM.
   - It is still association: MVM and expression come from the same placenta at delivery.
 - **W1 not supported.** "No MVM effect on the hypoxia program beyond disease and GA in this cohort." Link 1 then
   remains literature-only and is weakened. This would be consistent with the null Doppler result (N).
+
+## Amendment 1 (before any count value was read; only the header row and the ID column were viewed)
+
+Gene IDs are written as `ENSG…$SYMBOL`. The symbol is taken after `$`, and counts of duplicated symbols are
+summed. Sample columns are the GEO titles (e.g. P1007).
