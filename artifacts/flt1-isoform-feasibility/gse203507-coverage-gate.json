@@ -1,0 +1,48 @@
+{
+  "population": "30 GSE203507 villous samples (labels used only for criterion 5)",
+  "criterion_2_each_primary_junction_ge5": {
+    "fraction": 0.9,
+    "pass": true
+  },
+  "criterion_3_depth_ge20": {
+    "fraction": 1.0,
+    "pass": true
+  },
+  "criterion_4_body_vs_junction_rho": {
+    "rho": 0.677,
+    "pass": false
+  },
+  "criterion_5_usable_per_group": {
+    "groups": {
+      "disease": {
+        "n": 20,
+        "usable": 20,
+        "fraction": 1.0
+      },
+      "iPTB": {
+        "n": 5,
+        "usable": 3,
+        "fraction": 0.6
+      }
+    },
+    "pass": true
+  },
+  "sample_join_check": {
+    "spearman_rho_raw_flt1_fraction_vs_processed_flt1_cpm": 0.9902,
+    "pass": true
+  },
+  "coverage_median": {
+    "ENST00000541932_unique_junction_1": 264.0,
+    "ENST00000282397_unique_junction_1": 19.5,
+    "ENST00000282397_unique_junction_2": 34.5,
+    "ENST00000541932_terminal_body_1": 3563.0,
+    "ENST00000282397_terminal_body_1": 1491.0
+  },
+  "coverage_min": {
+    "ENST00000541932_unique_junction_1": 35.0,
+    "ENST00000282397_unique_junction_1": 4.0,
+    "ENST00000282397_unique_junction_2": 4.0
+  },
+  "strand_reverse_fraction": 0.0005,
+  "gate_pass": false
+}

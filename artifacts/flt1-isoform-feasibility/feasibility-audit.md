@@ -183,3 +183,32 @@ does not show that circulating protein is the same in the two groups.
 **Descriptive only, not pre-specified.** Both disease groups have higher median junction ratios than
 controls: control 3.08, IUGR-only 4.26, PE-only 4.40, PE+IUGR 4.72 (log2). Controls may differ in
 gestational age and other factors, so no test was run and this is not a finding.
+
+## Addendum J2 result (2026-11-15): GSE203507 gate not passed, so the contrast was not run
+
+All 30 GSE203507 villous runs were processed with the J1 pipeline unchanged. Every read count matched
+ENA `read_count`.
+
+**Sample-join check: passed.** Spearman rho = 0.990 between the raw unique-FLT1-read fraction and the
+processed FLT1 CPM.
+
+**Coverage gate (`gse203507-coverage-gate.json`): failed** on criterion 4.
+
+| Criterion | Result | Outcome |
+|---|---|---|
+| 2: each primary junction ≥5 reads | 90% of samples | pass |
+| 3: primary junction depth ≥20 | 100% of samples | pass |
+| 4: body ratio vs junction ratio, Spearman rho | 0.677 (threshold 0.70) | **fail** |
+| 5: usable samples per group | disease 20/20; iPTB 3/5 (= 60%, at the threshold) | pass |
+
+Median reads per sample: sFlt1-14 junction 264; canonical junctions 19.5 and 34.5. These are lower than
+in GSE114691, and the minimum canonical junction count was 4.
+
+As pre-specified, **the disease-versus-iPTB contrast was not run**. No group-wise ratio was computed or
+viewed. The thresholds were not relaxed. We also did not invoke the plan's option to explain a criterion-4
+failure technically after seeing it.
+
+**Conclusion.** The available 50-nt single-end GSE203507 data do not support a reliable test of
+isoform composition. The higher sFlt1-14 : canonical ratio seen in GSE114691 disease groups relative to
+controls therefore remains **descriptive and untested**. GSE114691 controls also delivered preterm, so
+that pattern is not explained simply by term-versus-preterm delivery. It is still not a finding.

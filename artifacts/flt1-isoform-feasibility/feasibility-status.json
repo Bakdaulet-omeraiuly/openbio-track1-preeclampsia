@@ -34,7 +34,7 @@
     "denominator": "mean of two ENST00000282397 canonical-specific internal junction counts"
   },
   "clinical_group_contrast_run": true,
-  "next_action": "None required for the submission. Descriptive only: both PE and IUGR-only have higher ratios than controls; not pre-specified, controls may differ in gestational age.",
+  "next_action": "Disease-vs-control isoform pattern remains descriptive (GSE114691 only). Needs a deeper or longer-read cohort.",
   "cohort_stage1_stream_filter": "complete: 79/79 runs fetched, read counts equal official SRA spots, candidate reads extracted",
   "cohort_alignment": "complete: 79/79 runs, HISAT2 full GRCh37, unique alignments only (cohort-marker-counts.csv)",
   "primary_result": {
@@ -48,5 +48,11 @@
     ],
     "p": 0.788,
     "interpretation": "No detectable difference in sFlt1-14 : canonical Flt1 junction ratio between PE and IUGR-only placentas after adjusting for total FLT1 and hypoxia score."
+  },
+  "addendum_J2_gse203507": {
+    "gate_pass": false,
+    "failed_criterion": "4 (body vs junction rho 0.677 < 0.70)",
+    "sample_join_rho": 0.99,
+    "contrast_run": false
   }
 }

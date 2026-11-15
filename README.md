@@ -97,7 +97,7 @@ Reproducibility details:
   and 38–52 canonical junction reads per donor. The model adjusted for total FLT1 and the hypoxia score.
   The sFlt1-14 : Flt1 RNA ratio did not differ between PE (n=40) and growth-restriction-only (n=18)
   placentas: −0.06 log2, 95% CI −0.52 to 0.40, p=0.79. Both disease groups have higher ratios than
-  controls descriptively; this was not tested. Details: `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
+  controls descriptively. A pre-specified GSE203507 replication (Addendum J2, disease vs GA-matched preterm controls) was not run because its blinded coverage gate failed (body-vs-junction rho 0.68 < 0.70), so this remains untested. Details: `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
 
 ## Limitations
 

@@ -162,7 +162,11 @@ Three limits:
 - The reads are short (50 letters), so three rarer FLT1 versions could not be measured.
 - In these placentas, sFlt1-14 junction reads outnumbered membrane-form junction reads by roughly 20 to 1, in line with earlier reports that it dominates in the placenta.
 
-<!-- J2-RESULT -->
+We also noticed something we had not planned to look at: in the 79-placenta study, both preeclampsia and growth-restricted placentas had a higher sFlt1-14 share than healthy early births. Because we saw this only after looking, we wrote a separate test in advance and ran it in our main dataset, whose preterm controls were delivered at the same stage of pregnancy.
+
+That test had the same rule: before comparing any groups, the reads had to pass a quality check. **They did not.** The two ways of measuring the ratio, junction reads and reads inside the unique exon, agreed less closely than the bar we had set (0.68 against 0.70). This dataset had about four times fewer sFlt1-14 junction reads per placenta, and at that depth the two measures became too noisy.
+
+Following our rule, we did not run the comparison, and we did not look at the group ratios. The higher sFlt1-14 share in disease therefore stays an untested observation, and a question for a cohort with deeper or longer sequencing reads.
 
 ## Unanswered Questions
 
