@@ -439,3 +439,86 @@ and the result of the primary contrast was null. See `artifacts/flt1-isoform-fea
 Addendum J2, the GSE203507 disease-versus-preterm-control isoform replication, was committed (`cec7e47`)
 before any GSE203507 read was fetched. Its blinded coverage gate failed on criterion 4 (rho 0.677 < 0.70),
 so the contrast was not run. See `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
+
+## Addendum K (2026-11-15, 07:50 EST): mechanism screen in the two used cohorts, then one confirmation in an untouched cohort (GSE75010)
+
+**Status of data at writing.** GSE75010 (Leavey et al. 2016; 157 placentas, Affymetrix HuGene 1.0 ST,
+GPL6244) has never been used in this repository. Only its `!Sample_` metadata lines were read, to count
+groups:
+
+| Group | n | Detail |
+|---|---:|---|
+| PE | 80 | 26 with IUGR; 49 delivered <34 wk |
+| non-PE | 77 | 14 with IUGR; 27 non-IUGR delivered <34 wk; 15 chorioamnionitis |
+
+No expression value was viewed. The series matrix file sits in a scratch folder and is not opened
+beyond the metadata lines until the screen winner is committed.
+
+**Processing of GSE75010 (fixed now).**
+
+- Use the deposited series-matrix values. If the maximum value is above 100, apply log2(x + 1);
+  otherwise use the values as they are.
+- Map probesets to genes with the GPL6244 `gene_assignment` column, taking the first gene symbol.
+- Drop probesets without a symbol, then average the probesets of each gene.
+- Score = the mean of per-gene z-scores across all 157 samples, the same rule as notebooks 01/05.
+- GA = `ga (week)` + `ga (day)`/7; sex = `infant gender`; labour proxy = `attempted vaginal delivery`.
+
+**Family A: replication of article claims, unchanged.** Gene sets are as in notebook 01: `hyp_only` =
+HALLMARK_HYPOXIA − HALLMARK_GLYCOLYSIS, `gly_only` = the reverse, `hyp_all` = HALLMARK_HYPOXIA, all from
+MSigDB v2024.1. The covariates are GA + sex + labour proxy (OLS).
+
+| Test | Comparison | Prediction / criterion |
+|---|---|---|
+| A1 | `hyp_only`, PE delivered <34 wk vs non-PE non-IUGR delivered <34 wk | PE higher; one-sided p < 0.05 |
+| A2 | `gly_only`, same contrast as A1 | Not raised: one-sided p(>0) ≥ 0.05, reported descriptively |
+| A3 | Spearman(`hyp_all`, FLT1) within all 80 PE | rho > 0; one-sided p < 0.05 |
+| A4 | `hyp_only`, all PE (80) vs non-PE IUGR (14) | PE higher; one-sided p < 0.05. This is the test that did not replicate in GSE114691 |
+
+Sensitivity analyses for Family A:
+
+- excluding chorioamnionitis cases;
+- dropping the labour covariate.
+
+**Family B: screen, then one confirmation.**
+
+- **Closed candidate list.** Seven sets from MSigDB Hallmark v2024.1, each with HALLMARK_HYPOXIA genes
+  removed so that they are not redundant with Family A:
+  - UNFOLDED_PROTEIN_RESPONSE
+  - REACTIVE_OXYGEN_SPECIES_PATHWAY
+  - TNFA_SIGNALING_VIA_NFKB
+  - OXIDATIVE_PHOSPHORYLATION
+  - MTORC1_SIGNALING
+  - P53_PATHWAY
+  - COMPLEMENT
+- **Screen target.** PE (with or without FGR) versus FGR-only, i.e. what separates PE from growth
+  restriction:
+  - GSE203507: `score ~ PE + ga_delivery_weeks + C(fetal_sex)` (15 vs 5);
+  - GSE114691: `score ~ PE` (40 vs 18), on the same VST/z-score pipeline as notebook 05.
+- **Metric.** The t statistic of the PE coefficient in each cohort.
+- **Selection rule.** Among candidates whose t has the same sign in both cohorts, choose the one with the
+  largest min(|t|). If no candidate has the same sign in both, Family B stops.
+- **Reporting.** The screen is reported only as a ranking. These two cohorts have been heavily viewed,
+  so screen results are not findings.
+- **Confirmation (B1).** In GSE75010, the winner is tested as all PE (80) vs non-PE IUGR (14), with
+  covariates GA + sex + labour proxy (OLS). The test is one-sided in the screen's direction.
+
+**Multiplicity.** Holm correction across A1, A3, A4 and B1 at a one-sided alpha of 0.05. A2 and the
+sensitivity analyses are descriptive.
+
+**Order.**
+
+1. Commit this plan.
+2. Run the screen.
+3. Commit the winner.
+4. Open the GSE75010 expression values once and run Families A and B in a single script.
+
+**Cut-off.** If the run and the write-up are not finished by 14:00 EST, the plan is pushed as registered
+but not run, and the article is not changed.
+
+**Interpretation.**
+
+- A positive A1 or A3 replicates claims already in the article in a third cohort.
+- A positive A4 or B1 would be the first replicated PE-versus-FGR difference in this project. It would
+  still be called a replication of association, not mechanism. Novelty is not claimed until the cohort's
+  own paper (Leavey et al. 2016) has been checked for the same result.
+- 14 IUGR-only placentas make a null result for A4 and B1 underpowered, not a refutation.
