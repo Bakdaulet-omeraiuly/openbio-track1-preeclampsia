@@ -76,6 +76,15 @@ perturbation-defined HIF-2 program. Absence from a targeted search is not proof 
 - "We discovered a new mechanism of preeclampsia."
 - "We found a PE-specific pathway."
 
+## Update after Addendum O (same day)
+
+- **Regulator, partly addressed.**
+  - The PT2385-defined program also falls with genetic ARNT knockdown, in a different lab and at a different gestational stage (O1). So it is HIF-complex-dependent, not a drug artefact.
+  - It is not shown to be HIF-2α-specific: ARNT also partners HIF-1α and AhR, and EPAS1 mRNA rose.
+  - The regulator → FLT1 step was not testable, because hypoxia lowers FLT1 in those cells.
+- **Cell state, not resolved.** The within-STB link was the same direction but not significant (O2: 0.26 [−0.14, 0.59]).
+- **The claim is not upgraded.** It is still an association in patients, now with a genetically supported regulator dependence of the program itself.
+
 ## What would raise the novelty
 
 Not another positive correlation, but evidence that separates the link from cell state and ties it to a

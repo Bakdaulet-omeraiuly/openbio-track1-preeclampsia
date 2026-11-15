@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Download the public GEO files used by Addenda K, L and M into DIR (default: ./external_cohorts).
+# Download the public GEO files used by Addenda K, L, M and O into DIR (default: ./external_cohorts).
 # Usage: bash artifacts/fetch_external_cohorts.sh [DIR]
 # Then:
 #   python artifacts/addendum-l/l1_hif2_program.py DIR/GSE216799_raw_counts.tsv.gz DIR/GSE216799_series_matrix.txt.gz
@@ -24,6 +24,8 @@ get "$GEO/GSE75nnn/GSE75010/matrix/GSE75010_series_matrix.txt.gz" GSE75010_serie
 get "$GEO/GSE44nnn/GSE44711/matrix/GSE44711_series_matrix.txt.gz" GSE44711_series_matrix.txt.gz
 get "$GEO/GSE74nnn/GSE74341/matrix/GSE74341_series_matrix.txt.gz" GSE74341_series_matrix.txt.gz
 get "$GEO/GSE66nnn/GSE66273/matrix/GSE66273_series_matrix.txt.gz" GSE66273_series_matrix.txt.gz
+# Addendum O1 (checksum in artifacts/addendum-o/inputs.sha256; uses GPL10558)
+get "$GEO/GSE80nnn/GSE80995/matrix/GSE80995_series_matrix.txt.gz" GSE80995_series_matrix.txt.gz
 for gpl in GPL6102 GPL6244 GPL20844 GPL10558 GPL16699 GPL4133; do
   get "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=$gpl&targ=self&form=text&view=data" "$gpl.txt"
 done

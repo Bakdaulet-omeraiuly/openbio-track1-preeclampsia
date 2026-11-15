@@ -637,3 +637,11 @@ GSE74341 and GSE66273 (chorionic plate, with a pre-specified leave-it-out sensit
 
 Plan and script: `artifacts/addendum-n/` (`494bde1`, committed before running). Results:
 `artifacts/addendum-n/results.md`. The Doppler and severity associations were null.
+
+## Addendum O (2026-11-15): separating the HIF2dep–FLT1 link from cell state, and testing regulator dependence
+
+- **O1** (`artifacts/addendum-o/`; plan and script committed before running, `a823f57`). Primary: GSE80995
+  ARNT shRNA in first-trimester CTB lowered HIF2dep at 2% O2 (5/5 donors, p = 0.031, beyond all random sets).
+  This is supported. A sample-label amendment changes only the normoxia numbers.
+- **O2** (`artifacts/addendum-o2/`, run by the second session; plan `8abfcc1`). Primary: within-STB
+  pseudobulk partial rho 0.26 [−0.14, 0.59]. This is not supported.
