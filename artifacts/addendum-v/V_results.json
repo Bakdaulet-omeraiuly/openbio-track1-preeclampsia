@@ -1,0 +1,496 @@
+{
+  "GSE288288": {
+    "n": {
+      "wt_hyp": 3,
+      "wt_norm": 3,
+      "null_hyp": 9,
+      "null_norm": 9
+    },
+    "n_genes_program": 87,
+    "n_genes_hyp": 170,
+    "gate1_wt_hypoxia_raises_hyp_all": {
+      "diff": 0.5798582819728455,
+      "p": 0.020943318591749888
+    },
+    "gate1_passed": true,
+    "gate2_target_mrna_null_vs_wt_hyp": {
+      "diff": -3.1461788837922073,
+      "p": 8.952333428464397e-06
+    },
+    "wt_hypoxia_effect_on_FLT1": {
+      "diff": 3.595667741666918,
+      "p_two_sided": 0.07364012571404316
+    },
+    "null_vs_wt_at_3pct_FLT1": {
+      "diff": -5.458055029012261,
+      "p_one_sided_lower": 3.973424294249029e-05
+    },
+    "interaction_FLT1": -5.321337438403772,
+    "null_vs_wt_at_3pct_program": {
+      "diff": -1.2787554513338748,
+      "p_one_sided_lower": 2.556355709784556e-05
+    },
+    "interaction_program": -0.8264176138979678,
+    "null_vs_wt_at_3pct_hyp_all": {
+      "diff": 0.3371127590070481,
+      "p_one_sided_lower": 0.9929832661914227
+    },
+    "interaction_hyp_all": 0.029791496744797974,
+    "sens_a_full_deletion_only": {
+      "FLT1": {
+        "diff": -5.624785604109114,
+        "p_one_sided_lower": 0.00031429996457637454
+      },
+      "program": {
+        "diff": -1.2164442440274041,
+        "p_one_sided_lower": 0.00025660751357780193
+      },
+      "hyp_all": {
+        "diff": 0.285821826986193,
+        "p_one_sided_lower": 0.8710149912974298
+      }
+    },
+    "per_sample": [
+      {
+        "column": "KO_A03__Hypoxia_GT23-11303_TGACGAAT-GCCTACTG_S33_L001",
+        "program": -0.007755248106586384,
+        "hyp_all": -0.025880794570555993,
+        "FLT1": 3.439577960322607,
+        "target": 6.072224834357638,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "KO_B01__Hypoxia_GT23-11304_TAATACAG-GTGAATAT_S26_L001",
+        "program": 0.23632469356264557,
+        "hyp_all": 0.5846235174996607,
+        "FLT1": 3.0604383389442096,
+        "target": 5.599959988540798,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "KO_B02__Hypoxia_GT23-11305_CGGCGTGA-ACAGGCGC_S18_L001",
+        "program": 0.25985111581818415,
+        "hyp_all": 0.4435219070607814,
+        "FLT1": 2.6771780319583978,
+        "target": 5.27354546407323,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "CE_E06__Hypoxia_GT23-11306_ATGTAAGT-CATAGAGT_S38_L001",
+        "program": 0.36016673321537324,
+        "hyp_all": 0.2644007586869082,
+        "FLT1": 2.7601708808405356,
+        "target": 6.741217210651608,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "CE_G07__Hypoxia_GT23-11307_GCACGGAC-TGCGAGAC_S17_L001",
+        "program": -0.06355421878615779,
+        "hyp_all": 0.5909809158807969,
+        "FLT1": 2.7722880037291135,
+        "target": 7.577333335391706,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "CE_H06__Hypoxia_GT23-11308_GGTACCTT-GACGTCTT_S19_L001",
+        "program": -0.2928530862440804,
+        "hyp_all": 0.4501573866370906,
+        "FLT1": 2.144972646602376,
+        "target": 7.49418800213056,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_A09__Hypoxia_GT23-11309_AACGTTCC-AGTACTCC_S30_L001",
+        "program": 0.03223352043273739,
+        "hyp_all": 0.3899618225815341,
+        "FLT1": 3.3752770809513337,
+        "target": 8.045105789126792,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_D10__Hypoxia_GT23-11310_GCAGAATT-TGGCCGGT_S22_L001",
+        "program": 0.31745401362279846,
+        "hyp_all": 0.35032994201257783,
+        "FLT1": 5.422630172953316,
+        "target": 8.15897272879092,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_G09__Hypoxia_GT23-11311_ATGAGGCC-CAATTAAC_S28_L001",
+        "program": 0.06259329454957947,
+        "hyp_all": 0.42031682236856077,
+        "FLT1": 3.3796250532454333,
+        "target": 8.14740138222074,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "KO_A03__Normoxia_GT23-11291_AAGTCCAA-TACTCATA_S31_L001",
+        "program": -0.5957580569746369,
+        "hyp_all": -0.7862168923664705,
+        "FLT1": 3.224300775426586,
+        "target": 5.397116999741514,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "KO_B01__Normoxia_GT23-11292_ATCCACTG-ACGCACCT_S24_L001",
+        "program": -0.37352527281726616,
+        "hyp_all": -0.1325321498787498,
+        "FLT1": 4.847236272803496,
+        "target": 5.858132165090743,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "KO_B02__Normoxia_GT23-11293_CTGCTTCC-GATCTATC_S63_L002",
+        "program": -0.7181775327782887,
+        "hyp_all": -0.33539278591584937,
+        "FLT1": 5.335849329859195,
+        "target": 6.25265679667435,
+        "gene": "EPAS1",
+        "strategy": "Full coding length",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "CE_E06__Normoxia_GT23-11294_CAAGCTAG-CGCTATGT_S35_L001",
+        "program": -0.517415238823289,
+        "hyp_all": -0.13844731672041122,
+        "FLT1": 4.915257045773613,
+        "target": 7.687998394271791,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "CE_G07__Normoxia_GT23-11295_TGGATCGA-TATCGCAC_S25_L001",
+        "program": -0.4517146162070659,
+        "hyp_all": 0.1165015094960403,
+        "FLT1": 5.585729293872887,
+        "target": 8.194973927324273,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "CE_H06__Normoxia_GT23-11296_AGTTCAGG-TCTGTTGG_S20_L001",
+        "program": -0.48795458556145604,
+        "hyp_all": -0.058530244624834415,
+        "FLT1": 5.1103986286818825,
+        "target": 7.788133840794465,
+        "gene": "EPAS1",
+        "strategy": "Critical exon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_A09__Normoxia_GT23-11297_GACCTGAA-CTCACCAA_S16_L001",
+        "program": -0.769508030884596,
+        "hyp_all": -0.4141062055945818,
+        "FLT1": 5.077319251897249,
+        "target": 8.12446350212842,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_D10__Normoxia_GT23-11298_TCTCTACT-GAACCGCG_S32_L001",
+        "program": -0.3875960733415761,
+        "hyp_all": -0.10012522656524359,
+        "FLT1": 5.334226100248903,
+        "target": 8.72707213082452,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "PTC_G09__Normoxia_GT23-11299_CTCTCGTC-AGGTTATA_S23_L001",
+        "program": -0.4977713104083286,
+        "hyp_all": -0.16958641813133704,
+        "FLT1": 5.132868741615201,
+        "target": 8.266241003429457,
+        "gene": "EPAS1",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "WT_1__Hypoxia_GT23-11300_CCAAGTCT-TCATCCTT_S29_L001",
+        "program": 1.4287815921947387,
+        "hyp_all": 0.07096737443042504,
+        "FLT1": 8.873337610299021,
+        "target": 10.252456251504665,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "WT_2__Hypoxia_GT23-11301_TTGGACTC-CTGCTTCC_S37_L001",
+        "program": 1.49002756482313,
+        "hyp_all": 0.15861815923814818,
+        "FLT1": 9.207830811077974,
+        "target": 10.324448278095877,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "WT_3__Hypoxia_GT23-11302_CAGTAGGC-ATTCGTCA_S34_L001",
+        "program": 1.2189441363385867,
+        "hyp_all": -0.08478638463726619,
+        "FLT1": 7.970382722175566,
+        "target": 9.898281700204079,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "WT_1__Normoxia_GT23-11288_CCGCGGTT-CTAGCGCT_S39_L001",
+        "program": -0.04836695987734696,
+        "hyp_all": -0.5526337392315401,
+        "FLT1": 5.086411793370638,
+        "target": 10.25026059856227,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      },
+      {
+        "column": "WT_2__Normoxia_GT23-11289_TTATAACC-TCGATATC_S27_L001",
+        "program": 0.21099991955293818,
+        "hyp_all": -0.2639626692321739,
+        "FLT1": 7.039298877459847,
+        "target": 10.821902676174876,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      },
+      {
+        "column": "WT_3__Normoxia_GT23-11290_GGACTTGG-CGTCTGCG_S36_L001",
+        "program": -0.40542635330003796,
+        "hyp_all": -0.7781792884235156,
+        "FLT1": 3.13883724772132,
+        "target": 9.781445747315633,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      }
+    ]
+  },
+  "GSE302997": {
+    "n": {
+      "wt_hyp": 3,
+      "wt_norm": 3,
+      "null_hyp": 3,
+      "null_norm": 3
+    },
+    "n_genes_program": 86,
+    "n_genes_hyp": 167,
+    "gate1_wt_hypoxia_raises_hyp_all": {
+      "diff": 0.8383995353768618,
+      "p": 0.00020478994212851746
+    },
+    "gate1_passed": true,
+    "gate2_target_mrna_null_vs_wt_hyp": {
+      "diff": -2.1140940857185626,
+      "p": 3.227232796924481e-05
+    },
+    "wt_hypoxia_effect_on_FLT1": {
+      "diff": 3.6419271450498676,
+      "p_two_sided": 0.012644717354387379
+    },
+    "null_vs_wt_at_3pct_FLT1": {
+      "diff": 0.8695893695492929,
+      "p_one_sided_lower": 0.9991310165013426
+    },
+    "interaction_FLT1": 0.5716539441754782,
+    "null_vs_wt_at_3pct_program": {
+      "diff": 0.4048635210965237,
+      "p_one_sided_lower": 0.9913393198550287
+    },
+    "interaction_program": 0.30026628016806745,
+    "null_vs_wt_at_3pct_hyp_all": {
+      "diff": -0.393729040165226,
+      "p_one_sided_lower": 0.008642111062516894
+    },
+    "interaction_hyp_all": -0.4024100869561495,
+    "per_sample": [
+      {
+        "column": "HIF1a_PTC_A04_3_O2_GT25-00010_GACCTGAA-CTCACCAA_S729_L004",
+        "program": 0.5257299975744847,
+        "hyp_all": 0.20444814789366447,
+        "FLT1": 8.490937076897039,
+        "target": 5.269911170666122,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "HIF1a_PTC_A05_3_O2_GT25-00011_TCTCTACT-GAACCGCG_S700_L004",
+        "program": 0.7552598692133841,
+        "hyp_all": 0.19260852384234053,
+        "FLT1": 8.48961423441116,
+        "target": 5.220085029904783,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "HIF1a_PTC_A06_3_O2_GT25-00012_CTCTCGTC-AGGTTATA_S708_L004",
+        "program": 0.6235976700753245,
+        "hyp_all": -0.031858494135662524,
+        "FLT1": 8.398530042189066,
+        "target": 5.017809895774613,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "hypoxia",
+        "null": true
+      },
+      {
+        "column": "HIF1a_PTC_A04_20_O2_GT25-00025_ACTAAGAT-CCGCGGTT_S705_L004",
+        "program": -0.25363474731165103,
+        "hyp_all": -0.30445993666153215,
+        "FLT1": 4.631517006753437,
+        "target": 4.30992223235235,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "HIF1a_PTC_A05_20_O2_GT25-00026_GTCGGAGC-TTATAACC_S706_L004",
+        "program": -0.352453661685004,
+        "hyp_all": -0.30321720284136905,
+        "FLT1": 3.811466862801759,
+        "target": 3.967183674636521,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "HIF1a_PTC_A06_20_O2_GT25-00027_CTTGGTAT-GGACTTGG_S726_L004",
+        "program": -0.534307984829065,
+        "hyp_all": -0.3350930281588934,
+        "FLT1": 4.295354216266031,
+        "target": 3.790353205712031,
+        "gene": "HIF1A",
+        "strategy": "Termination codon",
+        "condition": "normoxia",
+        "null": true
+      },
+      {
+        "column": "KOLF2_2J_3_O2_REP1_GT25-00022_AACGTTCC-AGTACTCC_S714_L004",
+        "program": 0.3016163371207714,
+        "hyp_all": 0.46914369801875183,
+        "FLT1": 7.6281226469117644,
+        "target": 7.181549095504503,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "KOLF2_2J_3_O2_REP2_GT25-00023_GCAGAATT-TGGCCGGT_S707_L004",
+        "program": 0.07530430406562429,
+        "hyp_all": 0.45356220590729257,
+        "FLT1": 7.460741797217512,
+        "target": 7.345235493485265,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "KOLF2_2J_3_O2_REP3_GT25-00024_ATGAGGCC-CAATTAAC_S721_L004",
+        "program": 0.31307633238722654,
+        "hyp_all": 0.623679394169976,
+        "FLT1": 7.681448800720108,
+        "target": 7.32330376451144,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "hypoxia",
+        "null": false
+      },
+      {
+        "column": "KOLF2_2J_20_O2_REP1_GT25-00037_GGCATTCT-CAAGCTAG_S710_L004",
+        "program": -0.5274178934412992,
+        "hyp_all": -0.2455836129870092,
+        "FLT1": 4.033188481604247,
+        "target": 7.910865000861849,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      },
+      {
+        "column": "KOLF2_2J_20_O2_REP2_GT25-00038_AATGCCTC-TGGATCGA_S730_L004",
+        "program": -0.4542869292442071,
+        "hyp_all": -0.35869971453413374,
+        "FLT1": 3.150795907819621,
+        "target": 7.9911825429087475,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      },
+      {
+        "column": "KOLF2_2J_20_O2_REP3_GT25-00039_TACCGAGG-AGTTCAGG_S703_L004",
+        "program": -0.47248329392558225,
+        "hyp_all": -0.3645299805134222,
+        "FLT1": 4.660547420275912,
+        "target": 7.833808171191394,
+        "gene": "Not applicable",
+        "strategy": "Not applicable",
+        "condition": "normoxia",
+        "null": false
+      }
+    ]
+  },
+  "isoform_reading": {
+    "FLT1": "HIF-2-preferring",
+    "program": "HIF-2-preferring"
+  }
+}
