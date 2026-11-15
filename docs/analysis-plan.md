@@ -427,3 +427,9 @@ tested until the measurement gate below passes.
 
 Implementation details and compute constraints are frozen in
 `artifacts/flt1-isoform-feasibility/raw-reanalysis-plan.md`.
+
+### Addendum J1 pointer (2026-11-15)
+
+The local execution protocol (Addendum J1) was committed before any cohort run was processed. It is
+recorded in `artifacts/flt1-isoform-feasibility/raw-reanalysis-plan.md`, commit `d90d8ce`. The gate passed,
+and the result of the primary contrast was null. See `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.

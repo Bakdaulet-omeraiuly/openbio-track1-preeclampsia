@@ -54,7 +54,7 @@ Reproducibility details:
 - Notebook files: `notebooks/01_…` to `12_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–I before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–J1 before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
@@ -77,7 +77,7 @@ Reproducibility details:
 | `docs/analysis-plan.md` | Comparison, model, thresholds, and addenda |
 | `docs/hypothesis-card.md` | Our hypothesis and how to test it |
 | `docs/presentation-outline.md` | Video script |
-| `artifacts/flt1-isoform-feasibility/` | FLT1 transcript/exon audit, processed-count diagnostics, SRA metadata and the conditional raw-reanalysis plan; no PE–FGR isoform result |
+| `artifacts/flt1-isoform-feasibility/` | FLT1 transcript/exon audit, processed-count diagnostics, SRA metadata, raw-reanalysis plan (Addendum J1), cohort marker counts, coverage gate and the pre-specified PE–FGR isoform contrast (null) |
 
 ## Key Findings
 
@@ -90,7 +90,14 @@ Reproducibility details:
 - Pre-specified (Addendum E): the hypoxia → FLT1 coupling is **similar** in PE and growth restriction (GSE114691 interaction −0.31, 95% CI −0.92 to 0.29; within-group rho 0.59 vs 0.58). Descriptively, in GSE114691 PE placentas carry higher FLT1 at the same hypoxia score (+1.07 on the VST scale, not a fold change); this offset was not seen in the small discovery cohort. Robust to using identical genes in both cohorts and to leave-one-out.
 - **FLT1 co-expression beyond the Hallmark hypoxia score (Addenda F, H and I):** a 50-gene module built in GSE114691 and tested in GSE203507 (previously analysed, not used for building) tracks FLT1 after removing the hypoxia score (partial rho = 0.89). It is the canonical PE gene set (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3…). Direct comparison with Ackerman Table S4 places 31/44 measured module genes in VT Blue (hypergeometric p = 3.3×10⁻²⁸) and only 3/44 in VT Black. A post-review correction used the full published scores, excluding only FLT1: in GSE203507 the module and VT Blue score crossed the pre-set high-collinearity caution threshold (rho = 0.94), so the significant nested model (ΔR² = 0.053) cannot establish a distinct biological contribution. In the module-building cohort the module added ΔR² = 0.123, but this is descriptive; the original overlap-free analysis is retained only as a sensitivity. Against a selection-process null (same procedure for 300 random genes of similar expression) FLT1 ranks at the 95.7th percentile, just above the pre-set 95% bar; its PE > FGR shift is not FLT1-specific (76th percentile). Interpreted as reproducible co-expression and a compact Blue-type signal, not a separate mechanism or a new discovery.
 - **Negative (Addendum G):** in 22 paired preterm pregnancies, villous hypoxia did not predict the same pregnancy's decidual inflammatory response beyond shuffled pairs (p = 0.61); PE vs FGR-only could not be answered (little overlap in stress levels, 5 FGR).
-- **New direction, feasibility only (Addendum J):** GRCh37 and GSE114691 contain five annotated FLT1 transcript rows. sFlt1-14 has a unique terminal exon body/junction; canonical Flt1 has a unique terminal body and two unique internal junctions, while its terminal junction is shared with i15/isoform 8. All predefined primary markers contain exact 50-mers unique in the full Ensembl GRCh37 cDNA reference. A label-blinded 41.2M-read pilot—later mapped to `Control1`—detected the sFlt1-14 junction (101 reads) and both canonical junctions (4/7 reads), showing raw signal but borderline canonical coverage. The 79 libraries are short 50-nt single-end reads and the submitted processed counts do not document ambiguous-read allocation. No PE–FGR isoform difference has been tested; splice-aware alignment and the full donor-level coverage gate remain required.
+- **FLT1 transcript forms (Addenda J/J1): pre-specified null.** We re-processed the raw reads of all 79
+  GSE114691 placentas: candidate extraction, then full-genome HISAT2, counting unique reads only. We then
+  counted the junction unique to sFlt1-14 and the two junctions unique to canonical Flt1. A coverage gate
+  ran before any group comparison, without group labels, and passed: median 1,042 sFlt1-14 junction reads
+  and 38–52 canonical junction reads per donor. The model adjusted for total FLT1 and the hypoxia score.
+  The sFlt1-14 : Flt1 RNA ratio did not differ between PE (n=40) and growth-restriction-only (n=18)
+  placentas: −0.06 log2, 95% CI −0.52 to 0.40, p=0.79. Both disease groups have higher ratios than
+  controls descriptively; this was not tested. Details: `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
 
 ## Limitations
 

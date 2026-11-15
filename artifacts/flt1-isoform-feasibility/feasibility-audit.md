@@ -2,6 +2,8 @@
 
 Бұл құжат аннотацияны, processed counts құрылымын және raw reanalysis мүмкіндігін тексереді. PE–FGR айырмашылығы есептелген жоқ.
 
+> **2026-11-15 жаңарту:** cohort alignment, coverage gate (өтті) және алдын ала бекітілген PE–FGR contrast (null) орындалды. Төмендегі «Cohort result» бөлімін қараңыз.
+
 ## Қолдағы annotation
 
 2026-11-14 күні Ensembl GRCh37 REST endpoint-інен алынған `ENSG00000102755` annotation-ында бес protein-coding FLT1 transcript бар. Олар processed GSE114691 кестелерінде де бар. Protein sequence audit төмендегі exact сәйкестіктерді берді:
@@ -77,7 +79,7 @@ GEO GSE114691 raw data-ны SRA `SRP148556` арқылы береді. Ресм�
 
 50-nt single-end reads толық isoform reconstruction үшін әлсіз. sFlt1-14 үшін unique terminal body және terminal junction бар. Canonical Flt1 үшін unique terminal body және екі unique internal junction бар, бірақ terminal junction-ның өзі unique емес. i15 және isoform 8 басқа unique internal exon/junction evidence-ке тәуелді және exploratory болып қалады.
 
-Жергілікті дискіде шамамен 12 GiB бос орын бар; толық 79-run reanalysis бұл компьютерде қауіпсіз орындалмайды. Бір run-ды stream/process/delete тәсілімен немесе жеткілікті storage бар external compute-та орындау қажет.
+Жергілікті дискіде шамамен 12 GiB бос орын бар; толық 79-run reanalysis бұл компьютерде қауіпсіз орындалмайды. Бір run-ды stream/process/delete тәсілімен немесе жеткілікті storage бар external compute-та орындау қажет. *(2026-11-15: stream/process/delete тәсілімен жергілікті түрде орындалды, Addendum J1.)*
 
 Көздер:
 
@@ -88,7 +90,7 @@ GEO GSE114691 raw data-ны SRA `SRP148556` арқылы береді. Ресм�
 
 ## Шешім
 
-Бағыт **raw-data feasibility stage-ке өтеді**, бірақ processed transcript counts-пен топтық айырмашылық есептелмейді. Annotation және exact cDNA 50-mer gate өтті; splice-aware genome alignment және donor-level raw coverage gate әлі pending.
+Бағыт **raw-data feasibility stage-ке өтеді**, бірақ processed transcript counts-пен топтық айырмашылық есептелмейді. Annotation және exact cDNA 50-mer gate өтті; splice-aware genome alignment және donor-level raw coverage gate әлі pending. *(2026-11-15: екеуі де орындалды, gate өтті; «Cohort result» бөлімін қараңыз.)*
 
 Primary molecular target ретінде canonical Flt1 (`ENST00000282397`) пен sFlt1-14 (`ENST00000541932`) таңдалады. sFlt1-14 unique terminal junction арқылы, canonical Flt1 unique internal junction-дардың орташа evidence-і арқылы өлшенеді; unique body counts secondary cross-check болады. Қалған үш annotated transcript exploratory feasibility targets ретінде ғана сақталады.
 
@@ -147,6 +149,21 @@ consistent with a reverse-stranded library.
 **Exploratory transcripts.** ENST00000539099, ENST00000540678 and ENST00000543394 had ≥5 junction reads
 in 0% of donors. They are reported as not detectable and were not modelled. This detection rule was
 committed before the contrast was run.
+
+**Sample-join check, label-free.** The covariates come from a GEO description-to-matrix-column join
+(`build_covariates.py`). That join was checked against the data: across 79 runs, Spearman rho between
+our raw unique-FLT1-read fraction and the processed-matrix FLT1 CPM was 0.999; with shuffled
+assignment it was 0.07.
+
+**Disclosed deviations.**
+
+- The primary n = 58 model keeps one IUGR-only donor that fell below 5 reads on one canonical junction.
+  This follows the pre-specified 40 vs 18 population; no n = 57 model was run.
+- The exploratory detection rule replaces the plan's "BH over three transcripts". It was chosen after
+  seeing the label-free exploratory counts and before the contrast was run.
+
+**Software.** HISAT2 2.2.3, sra-tools 3.4.1 (`fastq-dump`), bioconda osx-arm64; prebuilt HISAT2 `grch37`
+index; Ensembl GRCh37.87 GTF splice sites; Ensembl GRCh37 cDNA for markers and bait.
 
 **Primary contrast (`primary-contrast-results.csv`), run once.**
 Model: `junction_ratio ~ PE + log2(FLT1 CPM + 1) + hypoxia_score`, HC3 standard errors, 40 PE vs 18 IUGR-only.
