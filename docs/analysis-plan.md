@@ -524,3 +524,88 @@ but not run, and the article is not changed.
 - 14 IUGR-only placentas make a null result for A4 and B1 underpowered, not a refutation.
 
 _Correction (added after the run): the heading time "07:50 EST" is a typo. The git timestamp of commit `167cddc` is authoritative for when this plan was committed; the screen and confirmation commits follow it._
+
+## Addendum L (2026-11-15): HIF-2 program and PE-vs-FGR in untouched cohorts
+
+Background and data search: `artifacts/addendum-l/research-memo.md`.
+
+**Data status at writing.** For GSE216799, GSE35574, GSE24129 and GSE147776, only `!Sample_` metadata
+lines and the GPL annotation headers have been read; no expression value has been viewed. All earlier
+results stay in the repository unchanged; this addendum adds to them and replaces nothing.
+
+**Step 1: perturbation-defined HIF-2 program (GSE216799; raw counts; 3 placentas × DMSO/PT2385 at 2.5% O2).**
+
+- Donor = the `!Sample_description` prefix (P1/P2/P3). Keep genes with ≥10 counts in ≥3 samples.
+- Run PyDESeq2 with design `~ donor + treatment`, contrast PT2385 vs DMSO.
+- Define **HIF2dep** as the 100 genes with the most negative Wald statistic. FLT1 and all
+  HALLMARK_HYPOXIA genes are excluded before ranking, so HIF2dep cannot overlap the generic hypoxia score.
+- Descriptive only (n = 3):
+  - FLT1 log2 fold change, with the expectation that it is negative;
+  - the paired difference in the F1 module score (the 50 genes in
+    `notebooks/results/F1_module_genes.csv`) between PT2385 and DMSO, with z-scores taken over the
+    6 samples (tests H2);
+  - the fraction of F1 genes with negative fold change, compared with all tested genes.
+
+**Step 2: screen of H1 in the used cohorts (GSE114691, GSE203507 villous, GSE75010).**
+
+- Population: disease placentas only, i.e. PE (with or without FGR) plus FGR-only (58, 20 and 94
+  placentas).
+- Scores use the same per-gene z-score/mean rule as before (VST for RNA-seq; the Addendum K processing
+  for GSE75010).
+- Statistic: the partial Spearman correlation between the HIF2dep score and FLT1, after residualising
+  both on `hyp_all` with OLS.
+- **Screen passes** only if the correlation is positive in all three cohorts *and* the fixed-effect
+  Fisher-z pooled one-sided p is below 0.05. Otherwise H1 stops and is reported as not supported.
+- These cohorts are heavily viewed, so the screen is not a finding.
+
+**Step 3: confirmation in the untouched cohorts, opened once, in one script.**
+
+*Processing.*
+
+- Use the series-matrix values; apply log2(x+1) if the maximum is above 100.
+- Map probes to genes and average per gene. Symbol columns: GPL6102 `Symbol`; GPL6244 the first symbol
+  of `gene_assignment`; GPL20844 `GENE_SYMBOL`.
+- GSE35574 technical repeats: base id = `Sample id` with trailing letters removed. Arrays sharing a base
+  id are averaged.
+- Within each cohort: z-score genes, take set means, then standardise each score to SD 1 across all
+  samples of that cohort. Coefficients are therefore in within-cohort SD units.
+
+*Groups.* PE = all PE, including PE+IUGR. FGR-only = normotensive IUGR/FGR. Control = control.
+
+*Models within each cohort* (OLS, PE coefficient):
+
+| Cohort | Model |
+|---|---|
+| GSE35574 | `score ~ PE + GA + C(sex) + C(labour) + C(batch)` |
+| GSE24129 | `score ~ PE` |
+| GSE147776 | `score ~ PE` |
+
+*Pooling.* Inverse-variance fixed effect across cohorts; DerSimonian–Laird random effects as a sensitivity
+analysis.
+
+*Tests.*
+
+| Test | Question | Contrast / statistic | Sidedness |
+|---|---|---|---|
+| **L-C1** (H3, primary) | PE specificity | `hyp_only`, PE vs FGR-only | Two-sided; earlier cohorts disagreed on direction |
+| **L-C2** | Replication | `hyp_only`, PE vs control | One-sided, PE higher |
+| **L-C3** | Replication | Spearman(`hyp_all`, FLT1) within PE, pooled by Fisher z | One-sided, positive |
+| **L-C4** (H1) | Mechanism | HIF2dep–FLT1 partial Spearman within PE + FGR-only, pooled | One-sided, positive |
+
+L-C4 is run only if the step 2 screen passed.
+
+*Multiplicity.* Holm correction across the tests that are run (alpha 0.05).
+
+*Sensitivity.* GSE35574 without the labour and batch covariates; leave-one-cohort-out pooled estimates.
+
+**Interpretation, fixed now.**
+
+- A null L-C1 with a 95% interval is reported as **no clear difference**, with the interval as the bound.
+  It does not establish equality.
+- L-C4, if positive, is evidence that a trophoblast HIF-2-dependent program tracks placental FLT1 beyond
+  generic hypoxia. It is an association with a perturbation-defined program, not proof of HIF-2
+  dependence in vivo.
+- RNA is not equated with secreted sFlt-1 protein.
+
+**Cut-off.** If the run and the write-up are not finished by 13:00 EST, the plan is pushed as registered
+but not run.
