@@ -2,7 +2,7 @@
 
 ## Title
 
-A placental low-oxygen program, not a separate glycolytic switch, is higher in a subset of early-onset preeclampsia placentas than in gestational-age-matched preterm births. It tracks FLT1 (the sFlt-1 gene) in 10 bulk cohorts and within single trophoblast cells and intact tissue. A HIF-2-dependent sub-program tracks FLT1 beyond it in 4 cohorts, and FLT1 needs HIF-2 in a trophoblast model. It is shared with growth restriction rather than specific to preeclampsia.
+A placental low-oxygen program, not a separate glycolytic switch, is higher in a subset of early-onset preeclampsia placentas than in gestational-age-matched preterm births. It tracks FLT1 (the sFlt-1 gene) in 10 bulk cohorts and within single trophoblast cells and intact tissue. A HIF-2-dependent sub-program tracks FLT1 beyond it in 3 untouched cohorts (weaker support in a fourth), and FLT1 needs HIF-2 in a trophoblast model. It is shared with growth restriction rather than specific to preeclampsia.
 
 ## Clinical/Biological Problem
 
