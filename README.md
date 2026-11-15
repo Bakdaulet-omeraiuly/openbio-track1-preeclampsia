@@ -52,7 +52,7 @@ The first notebook clones the official datathon data package at a **pinned commi
 **External cohorts (Addenda K and L).** These scripts read public GEO files that are not in the datathon package:
 
 ```bash
-bash artifacts/fetch_external_cohorts.sh external_cohorts   # ~260 MB; SHA-256 in artifacts/external_cohorts.sha256
+bash artifacts/fetch_external_cohorts.sh external_cohorts   # ~270 MB on disk; SHA-256 in artifacts/external_cohorts.sha256
 python artifacts/addendum-k/k_confirm_gse75010.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
 python artifacts/addendum-l/l1_hif2_program.py external_cohorts/GSE216799_raw_counts.tsv.gz external_cohorts/GSE216799_series_matrix.txt.gz
 python artifacts/addendum-l/l2_screen.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
