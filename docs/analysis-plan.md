@@ -672,12 +672,13 @@ Details: `artifacts/addendum-q/results.md`.
 
 The plan and script were committed before any data were downloaded (`df0298c`); results `f26e975`.
 
-- **R1 supported in marker-selected barcodes:** within donor and within barcodes called STB, mean ρ 0.137,
-  19/20 donors, sign-flip p = 1×10⁻⁴, above all 1,000 random sets. The feasibility gate passed (20/20 donors
-  with ≥ 30 STB cells).
+- **R1 supported:** within donor and within barcodes called STB, mean ρ 0.137, 19/20 donors, sign-flip
+  p ≤ 1×10⁻⁴, above all 1,000 random sets. The feasibility gate passed (20/20 donors with ≥ 30 STB cells).
 - **Sensitivity:** passes without FND and under stricter STB calling; control-only 0.045 does not meet the
   random-set condition, but control STB has far lower FLT1 and more zeros, which attenuates Spearman.
 - A post hoc STB-state adjustment (committed before running, `f948085`) left it at 0.135.
-- **Pending:** a cell-purity check, because the STB markers used are also high-abundance ambient transcripts.
+- **Post hoc purity check** (rule committed before running, `d4d2c18`; result `6d0efaa`): restricted to
+  KRT7+, lineage-marker-negative barcodes, ρ = 0.099, 17/19 donors, p = 6×10⁻⁴, above all random sets. The
+  link stands; contamination inflated the first estimate but did not create it.
 
 Details: `artifacts/addendum-r/results.md`.
