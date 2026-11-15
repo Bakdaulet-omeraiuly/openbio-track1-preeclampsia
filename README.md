@@ -1,4 +1,4 @@
-# [Team Name]: A Low-Oxygen Alarm in the Early-Preeclampsia Placenta
+# 404: Team Not Found — A Low-Oxygen Alarm in the Early-Preeclampsia Placenta
 
 OpenBio 2026 Datathon, Track 1: Maternal-Fetal Cell Communication in Preeclampsia
 
@@ -6,14 +6,42 @@ OpenBio 2026 Datathon, Track 1: Maternal-Fetal Cell Communication in Preeclampsi
 
 ## Team
 
+Team name: **404: Team Not Found** (one-person team)
+
 | Name | Role |
 |---|---|
-| [Team member 1] | [Analysis, ...] |
-| [Team member 2] | [Article, video, ...] |
+| Bakdaulet Omertayev | Everything: analysis, pre-registration, article, video |
 
 ## Research Question
 
-Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOPE) placentas persist when cases are compared with preterm controls (and adjusted for gestational age), are they specific to preeclampsia rather than fetal growth restriction, and which placental cell types plausibly carry them?
+The question started from the "glycolytic" signal in early-onset preeclampsia (EOPE) placentas. Is it real
+against preterm controls, is it specific to preeclampsia, and which cells carry it?
+
+It became a test of each link in the textbook chain:
+
+malperfusion → placental hypoxia program → HIF → FLT1 (sFlt-1) → maternal disease.
+
+## Results at a Glance
+
+Every row below was a pre-registered test, with its plan committed before the data were opened, unless marked
+*post hoc*.
+
+| Link | Result | Where |
+|---|---|---|
+| "Glycolytic" signal = hypoxia program | Hypoxia-only genes up in EOPE vs preterm controls; glycolysis-only genes not; beats 1,000 random sets | notebooks 01–03 |
+| EOPE > GA-matched preterm controls | 5 of 6 cohorts; **fragile** in the pooled small cohorts (Addendum M) | 05, K, M |
+| Specific to PE vs growth restriction? | **No** (−0.19 SD [−0.56, 0.19], 42 FGR placentas) | L |
+| Hypoxia ↔ FLT1 within PE | **10/10 cohorts**, 9 pre-registered; pooled 0.47–0.69 (**headline figure**) | C, K, L, M, P |
+| HIF-2 program ↔ FLT1 beyond generic hypoxia | 0.39 [0.19, 0.57] in 3 untouched cohorts; replicated (0.40) | L, P |
+| Within one placenta: single cells | 17/19 donors, pure trophoblast barcodes, above all random sets | R |
+| Within one placenta: intact tissue | 18/19 donors, composition-adjusted, 99.9th percentile | S |
+| HIF binds the program (ChIP) | 24% vs 7% expected; **FLT1 itself not bound** | T |
+| HIF-2 vs HIF-1 (iPSC syncytium, 3% O2) | EPAS1-null: FLT1 −5.5 log2, program down; HIF1A-null: neither (confirms Sasagawa 2018 for FLT1) | V |
+| Malperfusion → hypoxia program | **Not supported** (MVM n = 168; infarct, ELGAN; Doppler). FLT1 *is* up with malperfusion lesions (pre-registered in ELGAN) | N, W, X |
+| Placental FLT1 → maternal severity | **Not supported** (BP, proteinuria, HELLP, PE vs hypertension alone) | Y |
+
+Article: [`docs/article.md`](docs/article.md) (short). Full log: [`docs/supplementary-results.md`](docs/supplementary-results.md).
+Hypothesis: [`docs/hypothesis-card.md`](docs/hypothesis-card.md).
 
 ## Data Used
 
@@ -25,6 +53,7 @@ Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOP
 - [x] Other public data: GSE294617 CTB→EVT differentiation reference (CPM; Yong et al. 2025), used descriptively
 - [x] Other public data: Ackerman et al. 2023 Table S4 VT Blue/VT Black co-expression module assignments
 - [x] Other public data (Addenda K–N): GSE75010 (157 placentas), GSE35574, GSE24129, GSE147776, GSE44711, GSE74341, GSE66273 (array cohorts), GSE216799 (PT2385 vs DMSO in hypoxic cytotrophoblasts; Colson et al. 2023). Downloaded by `artifacts/fetch_external_cohorts.sh`
+- [x] Other public data (Addenda O–Y): GSE80995 (ARNT shRNA), GSE186257, GSE324038 (HIF KO T cells), GSE319236 (placental scRNA-seq + Visium), GSE209936 (ARNT ChIP-seq), GSE288288 + GSE302997 (EPAS1/HIF1A-null iPSC syncytium), GSE303463 (MVM pathology), GSE154829 (ELGAN, infarcts). Each addendum's script downloads its own files (`fetch` command) and records SHA-256 in `inputs.sha256`.
 - [x] Other public data: MSigDB Hallmark gene sets v2024.1 (HYPOXIA, GLYCOLYSIS), downloaded by the notebook from the [Broad data server](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/)
 
 ## How to Run
@@ -63,6 +92,22 @@ python artifacts/addendum-l/l5_stb_adjustment_posthoc.py external_cohorts
 python artifacts/addendum-l/l6_deconvolution_posthoc.py external_cohorts
 ```
 
+**Addenda R–Y (single-cell, spatial, ChIP, knockouts, pathology, maternal disease).** Each script has a
+`fetch DIR` and a `run DIR` step; inputs are checksummed in its folder:
+
+```bash
+python artifacts/addendum-r/r_within_donor.py fetch r_data && python artifacts/addendum-r/r_within_donor.py run r_data
+python artifacts/addendum-r/r3_purity_posthoc.py r_data                      # post hoc purity check
+python artifacts/addendum-s/s_spatial.py fetch s_data && python artifacts/addendum-s/s_spatial.py run s_data
+python artifacts/addendum-t/t_chip.py fetch t_data && python artifacts/addendum-t/t_chip.py run t_data
+python artifacts/addendum-u/u0_make_lists.py t_data && python artifacts/addendum-u/u_direct_targets.py s_data
+python artifacts/addendum-v/v_isoform.py fetch v_data && python artifacts/addendum-v/v_isoform.py run v_data
+python artifacts/addendum-w/w_mvm.py fetch w_data && python artifacts/addendum-w/w_mvm.py run w_data
+python artifacts/addendum-x/x_infarct.py fetch x_data && python artifacts/addendum-x/x_infarct.py run x_data
+python artifacts/addendum-y/y_maternal.py external_cohorts w_data
+python artifacts/summary-figures/make_figures.py                             # fig17-fig20 and headline.png
+```
+
 On 2026-11-15 we re-downloaded every file. Each one matched the checksums of the files we had analysed. Re-running K and L1–L6 on the fresh files reproduced every committed result file byte for byte. The FLT1 isoform analysis (J1/J2) re-processes raw SRA reads and needs HISAT2, samtools and sra-tools. Its steps are in `artifacts/flt1-isoform-feasibility/`.
 
 Reproducibility details:
@@ -70,7 +115,7 @@ Reproducibility details:
 - Notebook files: `notebooks/01_…` to `12_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–L before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–Y before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
@@ -80,7 +125,7 @@ Reproducibility details:
 | `notebooks/02_followup_pseudobulk_and_specificity.ipynb` | Addendum A: independent single-cell (pseudobulk) check, PE vs FGR-only direct contrasts, shared vs set-specific genes |
 | `notebooks/03_stress_tests.ipynb` | Addendum B: random-gene-set null, FLT1 link, heterogeneity within PE, decidua, composition adjustment |
 | `notebooks/05_external_replication.ipynb` | Addendum C: pre-specified replication in GSE114691 (79 placentas), FLT1 within PE in single-cell data, FDR summary |
-| `notebooks/06_headline_figure.ipynb` | Headline figure (both cohorts) |
+| `notebooks/06_headline_figure.ipynb` | Per-placenta hypoxia scores in two cohorts (`figures/fig0_group_scores.png`) |
 | `notebooks/07_celltype_coupling_and_meta.ipynb` | Addendum D (post hoc): hypoxia–FLT1 coupling in 14 cell classes, two-cohort meta-analysis |
 | `notebooks/08_coupling_PE_vs_FGR.ipynb` | Addendum E: pre-specified test of whether hypoxia–FLT1 coupling differs between PE and growth restriction; same-gene and leave-one-out robustness |
 | `notebooks/09_hypoxia_independent_flt1_program.ipynb` | Addendum F: FLT1 co-expression module beyond the Hallmark hypoxia score, built in GSE114691 and tested in GSE203507 |
@@ -88,14 +133,17 @@ Reproducibility details:
 | `notebooks/11_anchor_gene_null.ipynb` | Addendum H: selection-process null (same procedure for 300 random anchor genes) |
 | `notebooks/12_selection_null_and_differentiation.ipynb` | Addendum I: comparison with Ackerman VT Blue/Black modules; residual-permutation selection null; normal CTB→EVT differentiation reference (GSE294617) |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
-| `figures/` | Exported graphs, including `headline.png` |
-| `docs/article.md` | Science communication article |
+| `figures/` | Exported graphs. `headline.png` (= fig17, hypoxia–FLT1 in 10 cohorts) and fig18–fig20 are made by `artifacts/summary-figures/make_figures.py` |
+| `docs/article.md` | Science communication article (short, ~2,000 words) |
+| `docs/supplementary-results.md` | Full analysis log (the long article), every planned and unplanned test |
 | `docs/analysis-plan.md` | Comparison, model, thresholds, and addenda |
 | `docs/hypothesis-card.md` | Our hypothesis and how to test it |
 | `docs/novelty-audit.md` | What is known, what is replication, what may be new (targeted PubMed search) |
 | `docs/presentation-outline.md` | Video script |
 | `artifacts/addendum-k/` | Addendum K: seven-program mechanism screen and one-time GSE75010 confirmation |
 | `artifacts/addendum-l/` | Addendum L: HIF-2 program from GSE216799, screen, one-time confirmation in GSE35574/GSE24129/GSE147776, post hoc calibration and composition checks (`results.md`) |
+| `artifacts/addendum-m/` … `artifacts/addendum-y/` | One folder per later addendum: `plan.md` (committed before data), script, `results.md`, result JSON, input checksums |
+| `artifacts/summary-figures/` | Script for the summary figures (fig17–fig20, headline) |
 | `artifacts/fetch_external_cohorts.sh` | Downloads the GEO files used by Addenda K and L |
 | `artifacts/flt1-isoform-feasibility/` | FLT1 transcript/exon audit, processed-count diagnostics, SRA metadata, raw-reanalysis plan (Addendum J1), cohort marker counts, coverage gate and the pre-specified PE–FGR isoform contrast (null) |
 

@@ -16,6 +16,19 @@ Early-onset preeclampsia (EOPE) is thought to start with a poorly perfused place
 - Zeisel/Admati gene browser for FLT1, LEP, HK2, NDRG1, P4HA1.
 - MSigDB Hallmark HYPOXIA and GLYCOLYSIS (v2024.1).
 - Replication: GSE114691 villous bulk RNA-seq, 79 donors (20 EO-PE, 20 EO-PE+IUGR, 18 EO-IUGR, 21 preterm-labour controls; Awamleh et al. 2019, [doi:10.1186/s12920-019-0548-x](https://doi.org/10.1186/s12920-019-0548-x)).
+- Later pre-registered cohorts and experiments, each with its plan committed before the data were opened:
+  - **Bulk patient cohorts:** GSE75010, GSE35574, GSE24129, GSE147776, GSE44711, GSE74341, GSE66273,
+    GSE186257 (hypoxia–FLT1, 10 cohorts in total).
+  - **Single-cell and spatial:** GSE319236 scRNA-seq and Visium (within-donor, cell-level and intact-tissue
+    link).
+  - **Cell experiments:**
+    - GSE216799: PT2385 HIF-2 inhibitor; defines the HIF2dep program;
+    - GSE80995: ARNT shRNA;
+    - GSE209936: ARNT ChIP-seq;
+    - GSE288288 + GSE302997: EPAS1- and HIF1A-null iPSC syncytium;
+    - GSE324038: HIF-KO T cells.
+  - **Pathology:** GSE303463 (MVM) and GSE154829 (ELGAN, infarcts).
+  - **Maternal severity:** GSE75010 clinical variables.
 
 ## Observed Result
 
@@ -85,6 +98,19 @@ Early-onset preeclampsia (EOPE) is thought to start with a poorly perfused place
 29. **Placental FLT1 vs maternal disease (Addendum Y, pre-registered; link 6):** **not supported.** Within 80 PE placentas of GSE75010, FLT1 was positive but not significant after Holm for maximum systolic BP (+0.11), diastolic BP (+0.16), proteinuria (+0.19, nominal p = 0.044, Holm 0.17) and HELLP (+0.05). In GSE303463, PE + siPE vs hypertension alone was +0.32 SD, p = 0.093, 94.8th percentile of random genes. Descriptively, FLT1 is already raised in hypertension without PE vs normal (+0.68, p = 0.0007), so placental FLT1 marks hypertensive pregnancy generally rather than PE's endothelial disease. The sFlt-1 → endothelium step remains literature-only.
 
 ## Proposed Mechanism
+
+**Current hypothesis (2026-11-15, after Addenda R–Y).** In a subset of early-onset preeclampsia, and in growth
+restriction, trophoblast runs a **HIF-2-dependent program** that keeps FLT1 high.
+
+- **Strongly supported:**
+  - links 3–5 (see the table below);
+  - the link holds within single cells and intact tissue.
+- **Not supported in our data:**
+  - what switches the program on in patients: malperfusion did not raise the generic hypoxia score, although
+    FLT1 was raised with malperfusion lesions;
+  - whether placental FLT1 explains maternal disease severity.
+
+The paragraph below is the original mechanism statement, kept for the record.
 
 In a subset of early-onset PE pregnancies, the trophoblast experiences low or fluctuating oxygen (poor spiral-artery remodelling and malperfusion), stabilising HIF and switching on a canonical hypoxia program. Part of that program is glycolytic enzyme genes (robust hits in our data: HK2, LDHA, TPI1, P4HA1, ERO1A), which is why the subtype looks "glycolytic". The same HIF activation drives FLT1 transcription in syncytiotrophoblast (FLT1 has a HIF-responsive enhancer; Gerber et al. 1997), contributing to the excess sFlt-1 that causes maternal endothelial dysfunction (Maynard et al. 2003). Growth restriction without preeclampsia engages the same program, and converts it to FLT1 at a similar rate (Addendum E), consistent with shared placental malperfusion. What may distinguish preeclampsia is therefore **how much** hypoxia signalling there is, plus FLT1 variation that the generic hypoxia score does not explain and that FLT1 shares with the canonical PE gene module (LEP, ENG, PAPPA2, HTRA4, INHBA, FSTL3 …) in two cohorts (Addendum F). Its replication is only modestly better than for modules built around random genes, and its PE > FGR shift is not FLT1-specific (Addendum H), so it is a lead about co-regulation, not evidence of a separate mechanism.
 

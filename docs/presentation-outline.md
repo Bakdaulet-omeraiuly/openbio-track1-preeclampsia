@@ -1,71 +1,98 @@
 # Presentation Script (5:00 max)
 
-Two speakers: **A** and **B**. Every member must appear or speak. Times are cumulative. Speak slowly; this script is ~763 spoken words, about 4:55 at 155 words per minute — rehearse with a timer at a calm pace.
+**Speaker:** Bakdaulet Omertayev (team 404: Team Not Found, one-person team), on camera at the start and the end.
+
+The spoken text below is about 480 words, roughly 3:15 at 155 words per minute. That leaves time to pause on each
+figure. Times are cumulative. Rehearse once with a timer.
 
 ---
 
-## Introduction (0:00 to 0:45) — Speaker A
+## Introduction (0:00 to 0:45)
 
-**Slide 1: title + headline figure**
+**Slide 1: title + headline figure (`figures/headline.png`, the alarm vs FLT1 in 10 patient groups)**
 
-> Preeclampsia is a pregnancy disorder where the mother's blood pressure becomes dangerously high. The only cure is delivering the placenta, so the early form — before 34 weeks — often means a very premature baby.
+> Hi, I'm Bakdaulet, and this is team 404: Team Not Found — a team of one.
 >
-> Doctors think it starts in the placenta, possibly when it runs short of oxygen. A 2023 study of the placentas we analysed found that some looked like they had switched how they burn sugar.
+> Preeclampsia is a pregnancy disorder where the mother's blood pressure becomes dangerously high. The only cure
+> is delivering the placenta, so the early form often means a very premature baby.
 >
-> We asked: does that signal hold up against the right controls, is it specific to preeclampsia, is it really about sugar or about oxygen, and which cells carry it?
->
-> Data: RNA sequencing of 30 placentas (GSE203507), an independent single-cell study of 26 pregnancies, and two more patient groups of 79 and 157 placentas.
+> The textbook story is a chain: poor blood supply starves the placenta of oxygen, an oxygen sensor called HIF
+> switches on the gene FLT1, and its protein, sFlt-1 — the one in the clinical blood test — damages the
+> mother's vessels. I tested that chain, link by link, with public data.
 
-## Methodology (0:45 to 1:45) — Speaker B
+## Methodology (0:45 to 1:45)
 
-**Slide 2: groups table (15 PE, 5 FGR-only, 5 preterm controls, 5 term controls)**
+**Slide 2: data — 30 main placentas; then 10 patient groups, single-cell, intact tissue, ChIP, knockouts, pathology**
 
-> Preeclampsia forces early delivery, so comparing with full-term placentas confuses disease with timing. Our main comparison was 15 early-preeclampsia placentas against 5 healthy placentas delivered at 30 to 33 weeks, adjusting for the baby's sex — and in a sensitivity analysis, for the exact delivery week.
+> My main dataset is RNA sequencing of 30 placentas. Preeclampsia forces early delivery, so I compared
+> preeclampsia with healthy placentas delivered at the same stage, adjusting for delivery week and the baby's sex.
+> Each pregnancy counts once.
 >
-> We used DESeq2 with cut-offs fixed in advance: adjusted p below 0.05 and at least a two-fold change.
+> **Slide 3: git history — "plan committed before data"**
 >
-> **Slide 3: "Pre-registered" screenshot of the git history**
->
-> We committed our analysis plan before running any test, and every later analysis was registered before we ran it. Each pregnancy counts once. We checked robustness by dropping each control in turn, by comparing against random gene sets, and in a second, independent dataset.
+> Then the rule I kept all the way through: before opening any new dataset, I committed my prediction and pass
+> rule to the repository, and I report every result, including failures. And every gene score is checked
+> against a thousand random gene lists, so "any list would do" can't fool me.
 
 ## Results (1:45 to 3:45)
 
-**Slide 4: PCA (fig1)** — Speaker A
+**Slide 4: sugar vs oxygen (fig6)**
 
-> On a map of overall gene activity, preeclampsia placentas spread out to the right, while early and full-term healthy placentas overlap — so disease, not just timing, drives the big pattern.
+> A 2023 study called some early-preeclampsia placentas "glycolytic". When I split the sugar genes from the
+> oxygen genes, only the oxygen genes were up. It's a low-oxygen alarm.
 
-**Slide 5: volcano (fig2)** — Speaker A
+**Slide 5: headline — alarm vs FLT1 in 10 groups (fig17)**
 
-> 424 genes differ; 207 survive every robustness check. FLT1 is eight times higher, leptin about sixty times.
+> And that alarm rises with FLT1 — in all ten patient groups I tested, nine of them with the prediction written
+> down first. That's my strongest result.
 
-**Slide 6: group contrasts (fig6)** — Speaker B
+**Slide 6: within one placenta (fig18)**
 
-> We split the published "low oxygen" and "sugar burning" gene lists into shared genes, oxygen-only genes and sugar-only genes. Oxygen genes are up in preeclampsia — in this dataset even compared with placentas of small babies *without* preeclampsia. Sugar-only genes are not up at all. So the "glycolytic" placentas are really placentas with a low-oxygen alarm.
+> Tissue mixes cell types, so I looked inside single placentas. Among single trophoblast cells, and in intact
+> tissue slices never broken into cells, spots with more alarm carried more FLT1 — in seventeen and eighteen of
+> nineteen placentas.
 
-**Slide 7: replication across cohorts (fig9 / headline)** — Speaker B
+**Slide 7: HIF-2 vs HIF-1 (fig19)**
 
-> Thirty placentas could be a fluke. So each time, we wrote the predictions down first, then opened a group we had never touched. We did that with 79 patients, then 157, then six more datasets — ten in all. The oxygen alarm was again higher in early preeclampsia than in births at the same stage, in five of our six matched comparisons. But one prediction failed every time: preeclampsia never clearly differed from growth restriction alone, even with 42 growth-restricted placentas. We report that as not replicated.
+> Which sensor? In stem-cell-derived placental cells at low oxygen, removing HIF-2 cut FLT1 about forty-fold;
+> removing HIF-1 did not. That confirms an earlier study, and HIF binds a quarter of the program genes directly
+> — but not FLT1 itself.
 
-**Slide 8: FLT1 link (fig8)** — Speaker A
+**Slide 8: what did not hold (fig20)**
 
-> The alarm rises with FLT1, the gene for sFlt-1 — the protein measured in the clinical preeclampsia blood test. FLT1 is not on the oxygen list. This is our most robust result: it held in all ten datasets, and we had registered the prediction in nine of them.
+> Now the honest part. Poor blood supply, judged by a pathologist in two separate cohorts, did not switch on
+> the general alarm — although FLT1 itself was higher. Placental FLT1 did not track how sick the mother was.
+> And preeclampsia never separated from growth restriction.
 
-**Slide 9: the HIF-2 program (fig16)** — Speaker A
+## Discussion (3:45 to 5:00)
 
-> Then we went one step toward mechanism. Textbook oxygen gene lists aren't built from placenta. So we took a published experiment where a drug blocks HIF-2 in placental cells, kept the hundred genes the drug switched off most, and asked whether those genes track FLT1 in patients. They did — in four separate groups of placentas we had never opened, beyond the general oxygen score. And in a different experiment, where the HIF machinery was disabled genetically instead of by drug, the same genes fell in all five donors.
+**Slide 9: hypothesis**
 
-## Discussion (3:45 to 5:00) — Speaker B
-
-**Slide 10: hypothesis**
-
-> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction uses the same machinery.
+> So my hypothesis is narrower than the textbook. In a subset of early preeclampsia, and in growth
+> restriction, placental cells run a HIF-2-dependent program that keeps FLT1 high. The middle of the chain is
+> strong. The two ends — what switches it on, and whether it explains the mother's illness — are not shown in
+> these data.
 >
-> One worry about tissue data is that it only reflects which cells are present. So we went down to single cells, in twenty more placentas. Inside individual trophoblast cells of the same donor, the alarm still tracked FLT1, beyond every random gene list — and it survived when we kept only unambiguously trophoblast cells. In intact tissue slices from the same placentas, never broken into cells, the link held too.
+> Limits: small groups, tissue taken at delivery, one stem-cell line for the HIF test, and association, not
+> cause, in patients.
 >
-> **We want to be clear about what we did not show.** Preeclampsia never separated from growth restriction. The alarm did not track the mother's blood-flow measurements or how ill she was. In stem-cell-derived placental cells, removing HIF-2 erased FLT1 and the program; removing HIF-1 did not. That repeats a known result, in one cell line. So the links hold one by one, in different systems, but not yet as one causal chain in patients.
+> **Slide 10: next test**
 >
-> **The decisive next test** is a wet-lab one: switch off HIF-2 in cells from term placentas, at low oxygen, and measure released sFlt-1. If the oxygen score stops tracking FLT1 in new data, we're wrong.
+> The decisive next experiment: remove HIF-2 in cells from term placentas at low oxygen and measure the sFlt-1
+> they release. If FLT1 stays unchanged, or if the alarm stops tracking FLT1 in new placentas, I'm wrong.
+>
+> Thanks for watching.
 
-## Final Slide (both on camera)
+## Final Slide (on camera)
 
-Team names · Data: GSE203507 (Ackerman et al. 2023), GSE114691 (Awamleh et al. 2019), GSE75010 (Leavey et al. 2016), Admati/Skarbianskis et al. 2023, plus GSE35574, GSE24129, GSE147776, GSE44711, GSE74341, GSE66273, GSE186257 and the perturbation sets GSE216799 and GSE80995 · Repository: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
+Bakdaulet Omertayev · team 404: Team Not Found · Repository:
+github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
+
+Data:
+
+- **Main data:** GSE203507 (Ackerman et al. 2023).
+- **Patient groups:** GSE114691, GSE75010, GSE35574, GSE24129, GSE147776, GSE44711, GSE74341, GSE66273,
+  GSE186257.
+- **Single-cell and spatial:** Admati/Skarbianskis 2023, GSE319236.
+- **Cell experiments:** GSE216799, GSE80995, GSE209936, GSE288288, GSE302997.
+- **Pathology:** GSE303463, GSE154829.
