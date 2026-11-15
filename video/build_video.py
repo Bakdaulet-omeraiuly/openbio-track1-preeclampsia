@@ -66,14 +66,20 @@ for s in slides:
     vf = (f"scale=3840:-1,zoompan=z='min(zoom+0.00025,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps=30,"
           f"fade=t=in:st=0:d=0.5,fade=t=out:st={d - 0.5:.2f}:d=0.5,format=yuv420p")
     run([FF, "-y", "-loop", "1", "-i", str(png), "-i", str(aiff), "-filter_complex",
-         f"[0:v]{vf}[v];[1:a]adelay=400|400,apad[a]", "-map", "[v]", "-map", "[a]", "-t", f"{d:.2f}",
+         f"[0:v]{vf}[v];[1:a]adelay=400|400,loudnorm=I=-18:TP=-1.5:LRA=11,aresample=48000,apad[a]", "-map", "[v]", "-map", "[a]", "-t", f"{d:.2f}",
          "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", str(mp4)])
     clips.append(mp4); print(f"{s['id']}: {d:.1f}s")
 
 
 def norm(src, dst):
-    run([FF, "-y", "-i", str(src), "-vf", f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:color=0xfcfcfb,fps=30,format=yuv420p",
-         "-c:v", "libx264", "-crf", "20", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", str(dst)])
+    """Author clip: HDR (HLG) phone video -> SDR; vertical video centred on a blurred copy of itself; first audio track."""
+    tone = ("zscale=tin=arib-std-b67:min=bt2020nc:pin=bt2020:t=linear:npl=100,format=gbrpf32le,"
+            "zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
+    vf = (f"[0:v:0]{tone},fps=30,split[a][b];"
+          f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=30,eq=brightness=-0.08[bg];"
+          f"[b]scale=-2:{H}[fg];[bg][fg]overlay=(W-w)/2:0,format=yuv420p,fade=t=in:st=0:d=0.4[v]")
+    run([FF, "-y", "-i", str(src), "-filter_complex", vf, "-map", "[v]", "-map", "0:a:0", "-af", "loudnorm=I=-18:TP=-1.5:LRA=11,aresample=48000",
+         "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", str(dst)])
     return dst
 
 
