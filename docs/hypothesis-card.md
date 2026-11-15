@@ -120,7 +120,7 @@ If confirmed, a placental hypoxia score could define a "hypoxic" EOPE subgroup e
 ## Confidence Level and Limitations
 
 - **Medium–high** for "hypoxia program higher in a subset of EOPE than in preterm controls" (pre-registered replications in GSE114691 and GSE75010; Addendum M supported but fragile) and "the glycolytic signal is the hypoxia program" (replicated in a second cohort).
-- **High** for the hypoxia–FLT1 coupling within PE (pooled estimates 0.47–0.62 in the pre-registered tests; sign count positive in 9/9 bulk cohorts, some weak; registered before running in 8 of them: GSE114691, GSE75010, and the three Addendum L and three Addendum M cohorts).
+- **High** for the hypoxia–FLT1 coupling within PE (pooled estimates 0.47–0.62 in the pre-registered tests; sign count positive in 10/10 bulk cohorts, some weak; registered before running in 9 of them: GSE114691, GSE75010, the three Addendum L and three Addendum M cohorts, and GSE186257 (Addendum P, rho 0.69)).
 - **Medium–high** for a trophoblast program lowered by HIF-2 inhibition, and also lowered by ARNT shRNA in an independent experiment (Addendum O1; not proven HIF-2-specific, direct or free of cell state), tracking FLT1 beyond the generic hypoxia score (Addendum L; composition not excluded).
 - **Low** for the hypoxia score as a marker of clinical severity or measured perfusion (Addendum N null).
 - **Low** for specificity versus growth restriction (discovery yes; not clear in GSE114691, GSE75010 or the 42 FGR-only placentas of Addendum L).
