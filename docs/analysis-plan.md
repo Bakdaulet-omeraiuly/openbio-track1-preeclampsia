@@ -726,3 +726,15 @@ Details: `artifacts/addendum-t/results.md`.
 - **Reading.** Direct HIF targets travel with FLT1 in human tissue. The route is not resolved.
 
 Details: `artifacts/addendum-u/results.md`.
+
+## Addendum V (2026-11-15): HIF-2 vs HIF-1 in trophoblast (link 4b)
+
+- **Commits.** Plan `f9939dc`; amendments 1–2 (column mapping, ID mapping) were committed before any count value
+  was read.
+- **Result: HIF-2-preferring** for both FLT1 and the program, by the fixed rule.
+  - EPAS1-null at 3% O2: FLT1 −5.46 log2 (p = 4×10⁻⁵), program −1.28 (p = 3×10⁻⁵).
+  - HIF1A-null: neither lowered; Hallmark hypoxia lowered (−0.39, p = 0.009), as expected for HIF-1.
+- **Post hoc differentiation check (committed first).** EPAS1-null cells are more STB-like; FLT1 is still −6.22
+  after adjustment.
+
+Details: `artifacts/addendum-v/results.md`.
