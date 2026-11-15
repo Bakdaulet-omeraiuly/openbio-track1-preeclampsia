@@ -63,7 +63,12 @@ def load(d, study):
     meta = pd.DataFrame(rows)
     assert meta.col.is_unique
     c = c[meta.col.tolist()]
-    c = c.groupby(c.index).sum()
+    m = pd.read_csv(ROOT / "data_external/ensembl_gene_id_to_name_GRCh37.87.tsv", sep="\t", header=None, names=["id", "sym"])
+    m = m.drop_duplicates("id").set_index("id")["sym"]
+    ids = c.index.astype(str).str.split(".").str[0]
+    sym = pd.Series(ids, index=c.index).map(m)
+    c = c[sym.notna().values].groupby(sym.dropna().values).sum()
+    assert {"FLT1", "EPAS1", "HIF1A"} <= set(c.index)
     return c, meta
 
 

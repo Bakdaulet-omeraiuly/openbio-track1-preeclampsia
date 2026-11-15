@@ -92,3 +92,10 @@ by an explicit rule:
 - This gives 3 vs 3 wild type, batch-matched.
 
 Everything else is unchanged.
+
+## Amendment 2 (before any count value was read)
+
+The count tables are indexed by Ensembl gene ID. IDs are mapped to symbols with
+`data_external/ensembl_gene_id_to_name_GRCh37.87.tsv` (version suffixes are stripped). Counts of IDs that share
+a symbol are summed, and unmapped IDs are dropped. GRCh37 symbols cover the stable IDs used here. The script
+asserts that FLT1, EPAS1 and HIF1A map.
