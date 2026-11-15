@@ -99,9 +99,13 @@ for s in slides:
     d = dur(aiff) + 1.0
     n = len(states)
     # reveal times: first state at 0, the rest spread over the first 75% of the narration
-    starts = [0.0] + [0.6 + (d * 0.75 - 0.6) * k / max(n - 1, 1) for k in range(1, n)]
+    # figure (if any) appears at 1.0 s; bullets are spread from 1.0 s to 70% of the narration
+    if s.get("fig") and not s.get("bullets"):
+        starts = [0.0, 1.0]
+    else:
+        starts = [0.0] + [1.0 + (d * 0.70 - 1.0) * (k - 1) / max(n - 2, 1) for k in range(1, n)]
     segs = [(starts[k + 1] if k + 1 < n else d) - starts[k] for k in range(n)]
-    XF = 0.5
+    XF = 0.9
     cmd = [FF, "-y"]
     for k, (p, sd) in enumerate(zip(states, segs)):
         cmd += ["-loop", "1", "-t", f"{sd + (XF if k + 1 < n else 0):.3f}", "-i", str(p)]
@@ -109,8 +113,8 @@ for s in slides:
     chain, last, off = [], "0:v", 0.0
     for k in range(1, n):
         off += segs[k - 1]
-        chain.append(f"[{last}][{k}:v]xfade=transition=fade:duration={XF}:offset={off - XF + XF:.3f}[x{k}]" if False else
-                     f"[{'0:v' if k == 1 else f'x{k-1}'}][{k}:v]xfade=transition=fade:duration={XF}:offset={off:.3f}[x{k}]")
+        tr = "wiperight" if (s.get("fig") and k == 1) else "smoothup"
+        chain.append(f"[{'0:v' if k == 1 else f'x{k-1}'}][{k}:v]xfade=transition={tr}:duration={XF}:offset={off:.3f}[x{k}]")
     vlast = f"x{n-1}" if n > 1 else "0:v"
     fc = ";".join(chain + [f"[{vlast}]fps=30,format=yuv420p,fade=t=in:st=0:d=0.4,fade=t=out:st={d - 0.4:.2f}:d=0.4[v]",
                            f"[{n}:a]adelay=300|300,loudnorm=I=-18:TP=-1.5:LRA=11,aresample=48000,apad[a]"])
@@ -143,6 +147,6 @@ for name in ("outro",):
         if (HERE / f"{name}{ext}").exists():
             seq.append(norm(HERE / f"{name}{ext}", OUT / f"{name}_norm.mp4")); break
 (OUT / "list.txt").write_text("".join(f"file '{p}'\n" for p in seq))
-final = HERE / "presentation.mp4"
+final = HERE / os.environ.get("OUTNAME", "presentation.mp4")
 run([FF, "-y", "-f", "concat", "-safe", "0", "-i", str(OUT / "list.txt"), "-c:v", "libx264", "-crf", "20", "-c:a", "aac", "-b:a", "160k", str(final)])
 print("total", round(dur(final), 1), "s ->", final, "| intro/outro included:", [p.name for p in seq if "norm" in p.name])
