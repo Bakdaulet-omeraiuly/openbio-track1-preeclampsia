@@ -32,7 +32,7 @@ the main dataset (notebooks 01–03) were partly planned after the first results
 | EOPE > GA-matched preterm controls | 5 of 6 cohorts; **fragile** in the pooled small cohorts (Addendum M) | 05, K, M |
 | Specific to PE vs growth restriction? | **No** (−0.19 SD [−0.56, 0.19], 42 FGR placentas) | L |
 | Hypoxia ↔ FLT1 within PE | **10/10 cohorts**, 9 pre-registered; pooled 0.47–0.69 (**headline figure**) | C, K, L, M, P |
-| HIF-2 program ↔ FLT1 beyond generic hypoxia | 0.39 [0.19, 0.57] in 3 untouched cohorts; replicated (0.40) | L, P |
+| **HIF-2 program ↔ FLT1 beyond generic hypoxia (most novel)** | 0.39 [0.19, 0.57] in 3 untouched cohorts, above all random sets. GSE186257 (P): 0.40, but n = 34 (26 PE + 8 SGA-only), 83rd percentile of random sets, PE-only 0.26 (p ≈ 0.10), so weaker support | L, P |
 | Within one placenta: single cells | 19/20 donors pre-registered; 17/19 with the post hoc purity filter; above all random sets | R |
 | Within one placenta: intact tissue | 18/19 donors, composition-adjusted, 99.9th percentile | S |
 | HIF binds the program (ChIP) | 24% vs 7% expected; **FLT1 itself not bound** | T |

@@ -43,7 +43,7 @@ The full, numbered list of all 29 results, with every number, is in
 3. **PE vs growth restriction:** higher in the discovery cohort (+0.30) only. It is not replicated in any later
    cohort (−0.19 SD [−0.56, 0.19], 42 FGR placentas).
 4. **Hypoxia ↔ FLT1 within PE:** positive in **10/10 bulk cohorts**, 9 pre-registered, pooled 0.47–0.69. A
-   HIF-2-inhibitor-defined program tracks FLT1 beyond generic hypoxia in 4 cohorts (L-C4 0.39, P 0.40).
+   HIF-2-inhibitor-defined program tracks FLT1 beyond generic hypoxia in 3 untouched cohorts (L-C4 0.39, above all random sets). P (GSE186257) gives 0.40, but with weaker support: n = 34 (26 PE + 8 SGA-only, not confirmed FGR), 83rd percentile of random sets, and PE-only 0.26 (p ≈ 0.10).
 5. **Within one placenta (GSE319236):**
    - single trophoblast cells: 19/20 donors pre-registered; 17/19 after a post hoc purity filter;
    - intact Visium tissue, composition-adjusted: 18/19.

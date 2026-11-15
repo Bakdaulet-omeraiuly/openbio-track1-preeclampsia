@@ -14,6 +14,18 @@ studied by different research teams.
 - All ten are positive. The combined estimates in the planned tests were 0.47–0.69.
 - In four small groups the interval crosses zero on its own; the pattern across groups carries the evidence.
 
+**Our most novel finding, in one paragraph.**
+
+- Genes that fall when a drug blocks HIF-2 in placental cells track FLT1 in patients' placentas, **beyond the
+  general low-oxygen alarm**.
+  - We tested this in three patient groups we had never opened, with the prediction written down first.
+  - It beat all 1,000 random gene lists.
+- The same gene program falls when the HIF-2α gene is removed in stem-cell-derived placental cells, and HIF-1α
+  removal does not do this.
+- Connecting a cell-experiment program to FLT1 in patients was not found in our targeted literature search.
+- **Limit:** the two kinds of evidence come from different systems, so this does not show that the program
+  causes FLT1 in patients.
+
 ## Introduction
 
 Preeclampsia is a pregnancy disorder in which the mother's blood pressure rises dangerously, often with kidney or
@@ -128,8 +140,14 @@ Figure 1 shows this across all ten groups.
 
 We also built a sharper gene list from a published experiment: the 100 genes that fall most when a drug blocks
 HIF-2 in placental cells. In three patient groups we had never opened, those genes tracked FLT1 **beyond** the
-general alarm (0.39, interval 0.19 to 0.57), more than all 1,000 random gene lists. A fourth group repeated it
-(0.40).
+general alarm (0.39, interval 0.19 to 0.57), more than all 1,000 random gene lists.
+
+A fourth RNA-sequencing group gave 0.40, but this is weaker support:
+
+- the test used 34 placentas (26 preeclampsia plus 8 small-for-age babies, which is not the same as confirmed
+  growth restriction);
+- against random gene lists it ranked only at the 83rd percentile;
+- within preeclampsia alone it was 0.26 (p ≈ 0.10).
 
 ### Probably not just a mix of cell types, nor an artefact of handling
 
@@ -215,7 +233,8 @@ Figure 6. The six questions we tested (see Introduction) and what we found.
   binds many of that program's genes.
 - **In patients' placentas:** the general low-oxygen alarm rises and falls with FLT1 in every group we examined,
   and within single cells and intact tissue of the same placentas.
-  - The HIF-2 program itself tracked FLT1 beyond the general alarm in four patient groups.
+  - The HIF-2 program itself tracked FLT1 beyond the general alarm in three untouched patient groups, with weaker
+    support in a fourth.
   - Its within-placenta checks were descriptive only.
   - These are two related but separate findings.
 
