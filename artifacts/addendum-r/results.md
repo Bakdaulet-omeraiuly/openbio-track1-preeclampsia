@@ -15,7 +15,7 @@ genes.
 |---|---|
 | Mean ρ across 20 donors | **0.137** |
 | Donors with ρ > 0 | **19 / 20** (the one negative: FLJ, −0.01) |
-| Sign-flip p (one-sided, 10,000 draws) | **0.0001** |
+| Sign-flip p (one-sided, 10,000 draws) | **≤ 1e-4** (the floor of 10,000 draws) |
 | 1,000 random gene sets (decile-matched) | median −0.036, 95th percentile 0.038; observed above **all 1,000** |
 | **Verdict (both pre-specified conditions)** | **Supported** |
 
@@ -54,21 +54,25 @@ The link is **not explained by this STB-identity score.**
 ## Reading (by the rules written before the run)
 
 - **R1 is supported.** Within individual placentas, syncytiotrophoblast cells with a stronger hypoxia program
-  carry more FLT1, beyond technical covariation and beyond random gene sets. Comparing cells of one type inside
-  one person removes cell mix. This answers link 5a, which had not been established in O2's pseudobulk test,
-  with a different design: cell level and within donor.
-- **The coupling is stronger in PE than in controls.**
-  - PE donors: 0.23, 10/10.
-  - Control donors: 0.045, not beyond random sets.
-  - This is a descriptive split, not a pre-specified contrast.
+  carry more FLT1, beyond technical covariation and beyond random gene sets.
+  - The result **survives the purity check below**, on KRT7+ barcodes with no lineage marker.
+  - This **supports link 5a in one cohort**, with a different design from O2's pseudobulk test: cell level and
+    within donor.
+- **PE vs control split (0.23 vs 0.045): not interpretable.**
+  - FLT1 is much lower in control STB: in pure barcodes it is detected in a median of 16% of cells vs 37% in
+    PE.
+  - More zeros attenuate a Spearman correlation, so this split is not a disease difference. It is not carried
+    into the hypothesis card.
 - **R2:** the HIF2dep program tracks FLT1 beyond the generic hypoxia score within cells (20/20 donors). This
   matches bulk L-C4, but it is descriptive.
 
 ## Limits
 
 - This is association across cells, not cause.
-- **Dissociation.** These are dissociated scRNA-seq cells, and dissociation stress can induce hypoxia-like genes.
-  That would add noise, but it is not expected to track FLT1 specifically.
+- **Dissociation stress is a real alternative, not just noise.** Dissociation can induce hypoxia and stress
+  genes, and **FLT1 is itself hypoxia-inducible**. Cells stressed more during processing could therefore raise
+  both, giving a within-cell link that does not exist in vivo. This dataset cannot rule that out. Single-nucleus
+  data or spatial or in situ data from intact tissue would.
 - **STB in scRNA-seq.** STB is a syncytium. "STB cells" here are barcodes with ≥ 3 STB markers, which may be
   fragments or STB-attached nuclei.
 - **Effect size.** Per-cell ρ values are small (about 0.14). Single-cell data are sparse, so the
@@ -76,3 +80,25 @@ The link is **not explained by this STB-identity score.**
 - **Missing metadata.** Onset group and GA are not in the GEO metadata. The donor code FND was taken as "FD" (PE),
   and the result holds without it.
 - **One cohort.** Replication in a second single-nucleus or single-cell PE dataset would be the next test.
+
+## Post hoc purity check (`r3_purity_posthoc.py`, committed `d4d2c18` before running)
+
+**Why.** A marker-only diagnostic, run before this check and without hypoxia or FLT1 values, showed the problem.
+Of the R1-selected barcodes, a median of **33% also carry a non-trophoblast lineage marker** (PTPRC, CD14,
+PECAM1, COL1A1, HBB), and only **65% are KRT7+**. The six STB markers are abundant ambient transcripts.
+
+**Rule.**
+
+- Barcodes: the R1 selection, **and** KRT7 detected, **and** none of the 5 lineage markers.
+- Covariates: as in R1, plus a library indicator for donors with two libraries.
+- The same gate, sign-flip test and random-set null as R1.
+
+| | Donors (≥ 30 barcodes) | Mean ρ | ρ > 0 | Sign-flip p | Random-set 95th pct | Meets both |
+|---|---|---|---|---|---|---|
+| **R1, pure trophoblast barcodes** | 19 (FLR has 23 barcodes) | **0.099** | **17/19** | **0.0006** | −0.025 (median −0.084; observed above all) | **yes** |
+| R2, pure (descriptive) | 19 | 0.217 | 18/19 | ≤ 1e-4 | 0.017 | — |
+
+**Reading (pre-stated).** The within-donor link **stands for marker-pure trophoblast barcodes**. It is weaker
+than in the marker-selected set (0.099 vs 0.137), so contamination inflated R1 somewhat, but it did not create it.
+
+Pure barcodes range from 49 to 2,536 per donor. The two negative donors are FVB and FVT, both controls.
