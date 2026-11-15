@@ -1,0 +1,41 @@
+{
+  "GSE44711": {
+    "diff_log2": 0.5945845778068557,
+    "se": 0.9036329612259636,
+    "p_one_sided_normal": 0.25527116712585496,
+    "median_PE": -5.170928282079663,
+    "median_control": -5.977701624584778,
+    "n": [
+      8,
+      8
+    ]
+  },
+  "GSE74341": {
+    "diff_log2": 2.4843,
+    "se": 0.7846198198581816,
+    "p_one_sided_normal": 0.0007720985603185682,
+    "median_PE": 2.8970000000000002,
+    "median_control": -0.079,
+    "n": [
+      7,
+      5
+    ]
+  },
+  "GSE66273": {
+    "diff_log2": 3.4361413108849996,
+    "se": 0.6795985309744361,
+    "p_one_sided_normal": 2.1392026605671077e-07,
+    "median_PE": 3.3832444300000004,
+    "median_control": -0.24575571000000096,
+    "n": [
+      12,
+      5
+    ]
+  },
+  "pooled_villous_descriptive": {
+    "diff_log2": 1.6719987679517943,
+    "CI_low": 0.5107948629829702,
+    "CI_high": 2.8332026729206183
+  },
+  "note": "Post hoc, descriptive. GSE74341 values are log2 ratios to a common pooled reference, so FLT1-PGF is a relative ratio; the PE-vs-control difference is still interpretable on the log2 scale."
+}
