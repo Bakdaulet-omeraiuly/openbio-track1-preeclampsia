@@ -1,0 +1,15 @@
+{
+  "log2_applied": false,
+  "genes_after_collapse": 23281,
+  "set_genes_measured": {
+    "hyp_only": 128,
+    "gly_only": 133,
+    "hyp_all": 192,
+    "B_winner": 45
+  },
+  "FLT1_present": true,
+  "n_early_PE": 49,
+  "n_early_control": 27,
+  "n_PE": 80,
+  "n_nonPE_IUGR": 14
+}
