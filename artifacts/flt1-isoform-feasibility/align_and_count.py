@@ -129,7 +129,7 @@ def feed_runs(work, runs, sink):
 def hisat2(work, reads, fasta=False, threads=6):
     """Start HISAT2; `reads` is a path, or "-" to read FASTQ from stdin."""
     command = [str(work / "env/bin/hisat2"), "-p", str(threads), "-x", str(work / "ref/grch37/genome"),
-               "--known-splicesite-infile", str(work / "ref/splicesites.txt"), "--no-unal"]
+               "--known-splicesite-infile", str(work / "ref/splicesites.txt"), "--no-unal", "--mm"]
     command += ["-f"] if fasta else []
     command += ["-U", str(reads)]
     return subprocess.Popen(command, stdin=subprocess.PIPE if reads == "-" else None,
@@ -140,6 +140,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--work", required=True, type=Path)
 parser.add_argument("--markers", action="store_true")
 parser.add_argument("--runs", nargs="*")
+parser.add_argument("--batch", type=int, default=10)
 args = parser.parse_args()
 work = args.work
 marker_ids, junctions, bodies = load_markers()
@@ -171,24 +172,29 @@ if args.markers:
     (HERE / "hisat2-marker-mappability.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
 else:
-    # One HISAT2 process for all runs: the 4 GB index is loaded once (8 GB RAM machine).
+    # Batches of runs share one HISAT2 process (index memory-mapped with --mm, so later batches reuse the
+    # page cache); per-run counts are written after every batch, so an interrupted job resumes.
     runs = args.runs or sorted(p.name.split(".")[0] for p in (work / "cand").glob("*.fastq.gz"))
-    process = hisat2(work, "-")
-    feeder = threading.Thread(target=feed_runs, args=(work, runs, process.stdin))
-    feeder.start()
-    tallies, _ = count_sam(process.stdout, marker_ids, junctions, bodies)
-    log = process.stderr.read()
-    process.wait()
-    feeder.join()
-    assert process.returncode == 0, log
-    (work / "logs" / "hisat2-cohort.log").write_text(log)
-    for run in runs:
-        tally = tallies.get(run, new_tally(marker_ids))
-        stage1 = json.loads((work / "logs" / f"{run}.json").read_text())
-        result = {"run": run, "total_reads": stage1["total_reads"], "candidate_reads": stage1["candidate_reads"],
-                  "hisat2_unique_counts_flank10": tally["counts"],
-                  "hisat2_unique_junction_counts_flank5": tally["flank5"],
-                  "exact_50mer_counts": stage1["exact_marker_counts"], "alignment_stats": tally["stats"]}
-        (work / "counts" / f"{run}.json").write_text(json.dumps(result, indent=2) + "\n")
-    print(log.strip())
-    print("runs written:", len(runs))
+    todo = [run for run in runs if not (work / "counts" / f"{run}.json").exists()]
+    for first in range(0, len(todo), args.batch):
+        batch = todo[first:first + args.batch]
+        process = hisat2(work, "-")
+        feeder = threading.Thread(target=feed_runs, args=(work, batch, process.stdin))
+        feeder.start()
+        tallies, _ = count_sam(process.stdout, marker_ids, junctions, bodies)
+        log = process.stderr.read()
+        process.wait()
+        feeder.join()
+        assert process.returncode == 0, log
+        with (work / "logs" / "hisat2-cohort.log").open("a") as handle:
+            handle.write(f"# batch {batch[0]}..{batch[-1]}\n{log}")
+        for run in batch:
+            tally = tallies.get(run, new_tally(marker_ids))
+            stage1 = json.loads((work / "logs" / f"{run}.json").read_text())
+            result = {"run": run, "total_reads": stage1["total_reads"], "candidate_reads": stage1["candidate_reads"],
+                      "hisat2_unique_counts_flank10": tally["counts"],
+                      "hisat2_unique_junction_counts_flank5": tally["flank5"],
+                      "exact_50mer_counts": stage1["exact_marker_counts"], "alignment_stats": tally["stats"]}
+            (work / "counts" / f"{run}.json").write_text(json.dumps(result, indent=2) + "\n")
+        print("batch done:", batch[0], "..", batch[-1], flush=True)
+    print("runs with counts:", len(list((work / "counts").glob("*.json"))))

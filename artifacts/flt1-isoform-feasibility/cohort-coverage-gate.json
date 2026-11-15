@@ -1,0 +1,93 @@
+{
+  "as_of": "2026-11-15",
+  "population": "58 disease donors (PE/IUGR labels not used for criteria 1-4)",
+  "criterion_1_primary_marker_unique_mappability": {
+    "fractions": {
+      "ENST00000541932_unique_junction_1": 1.0,
+      "ENST00000282397_unique_junction_1": 1.0,
+      "ENST00000282397_unique_junction_2": 1.0
+    },
+    "pass": true
+  },
+  "criterion_2_each_primary_junction_ge5": {
+    "donors_meeting": 57,
+    "fraction": 0.9828,
+    "threshold": 0.7,
+    "pass": true,
+    "per_junction_fraction_ge5": {
+      "ENST00000541932_unique_junction_1": 1.0,
+      "ENST00000282397_unique_junction_1": 0.9828,
+      "ENST00000282397_unique_junction_2": 1.0
+    }
+  },
+  "criterion_3_total_primary_junction_depth_ge20": {
+    "donors_meeting": 58,
+    "fraction": 1.0,
+    "threshold": 0.7,
+    "pass": true
+  },
+  "criterion_4_body_vs_junction_ratio_spearman": {
+    "rho": 0.8786,
+    "threshold": 0.7,
+    "pass": true
+  },
+  "criterion_5_usable_fraction_per_group": {
+    "groups": {
+      "IUGR_only": {
+        "donors": 18,
+        "usable": 17,
+        "fraction": 0.9444
+      },
+      "PE": {
+        "donors": 40,
+        "usable": 40,
+        "fraction": 1.0
+      }
+    },
+    "threshold": 0.6,
+    "pass": true
+  },
+  "coverage_summary_disease_donors": {
+    "ENST00000541932_unique_junction_1": {
+      "min": 117.0,
+      "q25": 550.5,
+      "median": 1042.5,
+      "q75": 1817.75,
+      "max": 4435.0
+    },
+    "ENST00000282397_unique_junction_1": {
+      "min": 3.0,
+      "q25": 23.5,
+      "median": 38.5,
+      "q75": 66.75,
+      "max": 145.0
+    },
+    "ENST00000282397_unique_junction_2": {
+      "min": 6.0,
+      "q25": 33.0,
+      "median": 51.5,
+      "q75": 98.5,
+      "max": 207.0
+    },
+    "ENST00000541932_terminal_body_1": {
+      "min": 638.0,
+      "q25": 3993.25,
+      "median": 6426.5,
+      "q75": 13774.5,
+      "max": 27626.0
+    },
+    "ENST00000282397_terminal_body_1": {
+      "min": 572.0,
+      "q25": 2315.0,
+      "median": 4073.0,
+      "q75": 6664.75,
+      "max": 14804.0
+    }
+  },
+  "strand_check_all_runs_unique_reads_in_flt1_span": {
+    "forward": 8081862,
+    "reverse": 5641,
+    "reverse_fraction": 0.0007
+  },
+  "gate_pass": true
+}
