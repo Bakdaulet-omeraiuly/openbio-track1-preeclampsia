@@ -757,3 +757,12 @@ Details: `artifacts/addendum-w/results.md`.
 - **X1 HIF2dep: not supported** (+0.03, p = 0.43). Generic hypoxia: −0.03.
 
 Details: `artifacts/addendum-x/results.md`.
+
+## Addendum Y (2026-11-15): placental FLT1 vs maternal disease (link 6)
+
+- **Commit.** Plan `37916b0`, committed before running.
+- **Y1** (within PE, GSE75010): no outcome survives Holm. The proteinuria p is 0.044 nominal, 0.17 after Holm.
+- **Y2** (PE vs hypertension alone, GSE303463): +0.32 SD, p = 0.093, 94.8th percentile. Not supported.
+- **Y3** (descriptive): FLT1 is +0.68 in hypertension alone vs normal.
+
+Details: `artifacts/addendum-y/results.md`.

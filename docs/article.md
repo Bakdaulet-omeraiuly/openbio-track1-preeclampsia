@@ -310,6 +310,20 @@ vascular malperfusion"; [GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.c
   - So poor blood supply goes with more FLT1 in two separate groups, but not with any low-oxygen gene program
     we measured. The first link of our chain is not supported in the form we proposed.
 
+### Does placental FLT1 track how sick the mother is? (planned, negative)
+
+The last link of the chain is that FLT1 from the placenta harms the mother's blood vessels. We cannot test harm
+itself with gene data, but we can ask whether placental FLT1 is higher when the mother is sicker.
+
+- Within 80 preeclampsia placentas, FLT1 rose slightly with blood pressure, protein in the urine and HELLP
+  syndrome, but none of these passed our planned statistical bar.
+- In an independent group, FLT1 was not clearly higher in preeclampsia than in high blood pressure without
+  preeclampsia (p = 0.09).
+- It was already higher in high blood pressure alone than in normal pregnancy.
+
+So in these data, placental FLT1 marks high-blood-pressure pregnancy in general, not the specific damage that
+defines preeclampsia. The harm itself is supported by earlier animal and clinical studies, not by our data.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.

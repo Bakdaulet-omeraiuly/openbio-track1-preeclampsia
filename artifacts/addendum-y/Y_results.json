@@ -1,0 +1,50 @@
+{
+  "Y1_GSE75010_within_PE": {
+    "max_systolic_BP": {
+      "partial_rho": 0.11281125651422333,
+      "n": 80,
+      "p_one_sided": 0.15954757543452422,
+      "holm_p": 0.31909515086904844,
+      "supported": false
+    },
+    "max_diastolic_BP": {
+      "partial_rho": 0.16361238908773437,
+      "n": 80,
+      "p_one_sided": 0.07350781041317916,
+      "holm_p": 0.2205234312395375,
+      "supported": false
+    },
+    "proteinuria_mode": {
+      "partial_rho": 0.19482769547531675,
+      "n": 78,
+      "p_one_sided": 0.04369653119397091,
+      "holm_p": 0.17478612477588365,
+      "supported": false
+    },
+    "HELLP": {
+      "partial_rho": 0.04930861401843865,
+      "n": 80,
+      "p_one_sided": 0.3320161078599514,
+      "holm_p": 0.3320161078599514,
+      "supported": false
+    }
+  },
+  "Y2_GSE303463_PE_vs_HTN": {
+    "coef_SD": 0.3240863357590319,
+    "se": 0.245018960077885,
+    "p_one_sided": 0.09296774656720941,
+    "n_PE": 76,
+    "n_HTN": 24,
+    "random_median": -0.06282775206831684,
+    "random_p95": 0.328657964370241,
+    "random_percentile": 94.8,
+    "supported": false
+  },
+  "Y3_GSE303463_HTN_vs_Normal_descriptive": {
+    "coef_SD": 0.6778298113850317,
+    "se": 0.21290071101228644,
+    "p_one_sided": 0.0007268179721844348,
+    "n_HTN": 24,
+    "n_Normal": 68
+  }
+}
