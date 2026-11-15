@@ -1,6 +1,9 @@
 """Addendum K, step 4: one-time Family A + B1 tests in GSE75010 (rules in docs/analysis-plan.md, Addendum K).
 
 Usage: python k_confirm_gse75010.py SERIES_MATRIX.txt GPL6244.txt
+Inputs:
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE75nnn/GSE75010/matrix/GSE75010_series_matrix.txt.gz (gunzip)
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6244&targ=self&form=text&view=data
 """
 
 import json
