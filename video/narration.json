@@ -89,7 +89,7 @@
    "Limits: small groups · tissue at delivery · one stem-cell line · association, not cause, in patients",
    "Next test: remove HIF-2 in term placental cells at low oxygen and measure released sFlt-1",
    "Code & data: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia",
-   "Narration: text-to-speech. Analysis, slides and script by the author."
+   "Narration: neural text-to-speech (Microsoft en-US-AvaNeural). Analysis, slides and script by the author."
   ],
   "text": "To sum up: a HIF two program links a cell experiment to F L T one in patients' placentas, and needs HIF two in placental cells. What switches it on in patients, and whether it explains the mother's illness, are not shown here. The decisive next test: remove HIF two in term placental cells at low oxygen and measure the s F L T one they release."
  }
