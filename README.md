@@ -49,6 +49,21 @@ jupyter nbconvert --to notebook --execute --inplace 12_selection_null_and_differ
 
 The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: later notebooks read result files written by earlier ones. Notebook 05 also downloads GSE114691 counts from GEO and a transcript-to-gene table from Ensembl GRCh37 BioMart.
 
+**External cohorts (Addenda K and L).** These scripts read public GEO files that are not in the datathon package:
+
+```bash
+bash artifacts/fetch_external_cohorts.sh external_cohorts   # ~260 MB; SHA-256 in artifacts/external_cohorts.sha256
+python artifacts/addendum-k/k_confirm_gse75010.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
+python artifacts/addendum-l/l1_hif2_program.py external_cohorts/GSE216799_raw_counts.tsv.gz external_cohorts/GSE216799_series_matrix.txt.gz
+python artifacts/addendum-l/l2_screen.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
+python artifacts/addendum-l/l3_confirm.py external_cohorts                 # pre-specified confirmation
+python artifacts/addendum-l/l4_calibration_posthoc.py external_cohorts     # post hoc checks (l4, l5, l6)
+python artifacts/addendum-l/l5_stb_adjustment_posthoc.py external_cohorts
+python artifacts/addendum-l/l6_deconvolution_posthoc.py external_cohorts
+```
+
+On 2026-11-15 we re-downloaded every file. Each one matched the checksums of the files we had analysed. Re-running K and L1–L6 on the fresh files reproduced every committed result file byte for byte. The FLT1 isoform analysis (J1/J2) re-processes raw SRA reads and needs HISAT2, samtools and sra-tools. Its steps are in `artifacts/flt1-isoform-feasibility/`.
+
 Reproducibility details:
 
 - Notebook files: `notebooks/01_…` to `12_…`, run in order (about 10–15 minutes in total on a laptop)
@@ -77,6 +92,9 @@ Reproducibility details:
 | `docs/analysis-plan.md` | Comparison, model, thresholds, and addenda |
 | `docs/hypothesis-card.md` | Our hypothesis and how to test it |
 | `docs/presentation-outline.md` | Video script |
+| `artifacts/addendum-k/` | Addendum K: seven-program mechanism screen and one-time GSE75010 confirmation |
+| `artifacts/addendum-l/` | Addendum L: HIF-2 program from GSE216799, screen, one-time confirmation in GSE35574/GSE24129/GSE147776, post hoc calibration and composition checks (`results.md`) |
+| `artifacts/fetch_external_cohorts.sh` | Downloads the GEO files used by Addenda K and L |
 | `artifacts/flt1-isoform-feasibility/` | FLT1 transcript/exon audit, processed-count diagnostics, SRA metadata, raw-reanalysis plan (Addendum J1), cohort marker counts, coverage gate and the pre-specified PE–FGR isoform contrast (null) |
 
 ## Key Findings
