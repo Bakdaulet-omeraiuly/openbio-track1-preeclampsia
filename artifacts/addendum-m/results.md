@@ -37,7 +37,7 @@ Per cohort:
   preterm controls in this pre-registered test.
   - Counting the earlier cohorts with preterm controls (GSE203507, GSE114691, GSE75010), five of
     the six such cohorts are clearly positive. The chorionic-plate cohort (GSE66273) is about zero.
-  - **The result is fragile.** In 3 of the 6 pre-specified sensitivity analyses, the 95% CI reaches or crosses
+  - **The result is fragile.** In 4 of the 6 pre-specified sensitivity analyses, the 95% CI reaches or crosses
     zero:
     - without GSE44711, the pooled estimate is +0.29 [−0.58, 1.16];
     - with the HELLP cases removed from GSE66273, it is +0.29 [−0.16, 0.74]. That non-HELLP subset is
