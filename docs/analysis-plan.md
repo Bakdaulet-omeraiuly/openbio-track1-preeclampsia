@@ -522,3 +522,5 @@ but not run, and the article is not changed.
   still be called a replication of association, not mechanism. Novelty is not claimed until the cohort's
   own paper (Leavey et al. 2016) has been checked for the same result.
 - 14 IUGR-only placentas make a null result for A4 and B1 underpowered, not a refutation.
+
+_Correction (added after the run): the heading time "07:50 EST" is a typo. The git timestamp of commit `167cddc` is authoritative for when this plan was committed; the screen and confirmation commits follow it._
