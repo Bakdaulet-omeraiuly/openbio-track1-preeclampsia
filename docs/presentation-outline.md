@@ -62,9 +62,9 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 >
 > One worry about tissue data is that it only reflects which cells are present. So we went down to single cells, in twenty more placentas. Inside individual trophoblast cells of the same donor, the alarm still tracked FLT1, beyond every random gene list — and it survived when we kept only unambiguously trophoblast cells. In intact tissue slices from the same placentas, never broken into cells, the link held too.
 >
-> **We want to be clear about what we did not show.** Preeclampsia never separated from growth restriction. The alarm did not track the mother's blood-flow measurements or how ill she was. And when we tested whether the program prefers HIF-2 over HIF-1, it preferred neither. So we have a strongly replicated association and one causal step in cultured cells — not a causal chain in patients.
+> **We want to be clear about what we did not show.** Preeclampsia never separated from growth restriction. The alarm did not track the mother's blood-flow measurements or how ill she was. In stem-cell-derived placental cells, removing HIF-2 erased FLT1 and the program; removing HIF-1 did not. That repeats a known result, in one cell line. So the links hold one by one, in different systems, but not yet as one causal chain in patients.
 >
-> **The decisive next test** is a wet-lab one: switch off HIF-2 genetically in placental cells from term pregnancies, at low oxygen, and measure sFlt-1 released into the medium. If the oxygen score stops tracking FLT1 in new data, we're wrong.
+> **The decisive next test** is a wet-lab one: switch off HIF-2 in cells from term placentas, at low oxygen, and measure released sFlt-1. If the oxygen score stops tracking FLT1 in new data, we're wrong.
 
 ## Final Slide (both on camera)
 

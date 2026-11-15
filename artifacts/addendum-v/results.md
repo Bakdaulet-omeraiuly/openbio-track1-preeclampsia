@@ -1,4 +1,4 @@
-# Addendum V results (2026-11-15): HIF-2, not HIF-1, drives FLT1 and the program in iPSC-derived syncytium
+# Addendum V results (2026-11-15): HIF-2, not HIF-1, is required for FLT1 and the program in iPSC-derived syncytium
 
 The plan (`f9939dc`) and amendments 1–2 (`e2d9103`, `54b72c8`) were committed before any count value was read.
 The amendments fixed only the column mapping, the file separator and the ID-to-symbol mapping. The script was
@@ -51,7 +51,28 @@ EPAS1-null cells are **more** syncytium-like, not less.
   required for FLT1 in trophoblast, possibly indirectly.** The two datasets come from different models, so this
   is not settled.
 
+## Prior report
+
+- Sasagawa et al. 2018 (Sci Rep; PMID 30478339) showed by siRNA in placental trophoblasts that HIF-2α, not
+  HIF-1α, mediates hypoxic FLT1 induction. For FLT1, V is therefore an **independent genetic confirmation**.
+- A 2021 study (Mol Hum Reprod; PMID 34665260) found HIF-1β (ARNT) essential for hypoxic FLT1 induction in
+  trophoblasts. Addendum T found no ARNT peak near FLT1 in BeWo, so "possibly indirect" stays a hypothesis.
+- The JAX GEO series (no linked paper) do not mention FLT1.
+- **Our additions:** the HIF2dep-program result and the double dissociation against canonical HIF-1 targets.
+
+## Descriptive, not pre-specified
+
+The data show a compensation pattern:
+
+- HIF1A-null raised FLT1 (+0.87) and the program (+0.40);
+- EPAS1-null raised Hallmark hypoxia slightly (+0.34).
+
 ## Limits
+
+- **Unit of replication.** All nulls and wild types come from **one parental iPSC line (KOLF2.2J, one male
+  donor)**. Replicates are clones and differentiations, not donors.
+- **Wild-type FLT1 induction.** Hypoxic induction of FLT1 was p = 0.07 in the EPAS1 study and p = 0.013 in the
+  HIF1A study. "About 12×" is the point estimate in both.
 
 - iPSC-derived "primitive syncytium" (day 6) is an early, embryonic-like model, not term villous STB.
 - The two isoforms come from two studies or batches. Each is compared with its own wild type, and the isoforms
@@ -59,4 +80,4 @@ EPAS1-null cells are **more** syncytium-like, not less.
 - HIF1A has n = 3 vs 3. Its FLT1 estimate points the other way (+0.87), so low power does not explain the
   null.
 - For EPAS1, three editing strategies agree; HIF1A has only one strategy (termination codon).
-- In culture this is a causal statement about gene requirement, not about direct binding.
+- In culture this is a causal statement about gene requirement (HIF-2α is *required for* FLT1 here), not about direct binding.

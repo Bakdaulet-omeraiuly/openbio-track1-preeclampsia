@@ -261,6 +261,33 @@ Results:
 
 These datasets are small, so these results support, but cannot settle, the main finding. Details: `artifacts/addendum-m/results.md`.
 
+### From tissue back to the oxygen sensor (planned tests, 15 November)
+
+We ran three more tests, each with its prediction written down before the data were opened.
+
+- **Does the HIF complex sit on these genes?** In trophoblast cells kept at 1% oxygen
+  ([GSE209936](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE209936)), a HIF protein (ARNT) was found
+  bound next to about a quarter of the HIF-2 program genes.
+  - That is 3.3 times more than for comparable genes, and the known low-oxygen genes passed the same check.
+  - It was **not** found next to FLT1 itself; the nearest site was 123,000 DNA letters away.
+- **Do those directly bound genes travel with FLT1 in real placentas?** Yes. Within each of 19 intact placentas,
+  tissue spots richer in these genes also carried more FLT1 (18 of 19 donors). Genes that HIF does not bind did
+  so too, so we cannot say which route connects them to FLT1.
+- **HIF-1 or HIF-2?** We used stem-cell-derived placental cells in which either the HIF-2α gene (EPAS1) or the
+  HIF-1α gene (HIF1A) had been switched off, grown at 3% oxygen
+  ([GSE288288](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE288288),
+  [GSE302997](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE302997)).
+  - **Without HIF-2α, FLT1 fell about 44-fold** and the HIF-2 program fell too, while the classic low-oxygen
+    genes did not change.
+  - **Without HIF-1α, the reverse happened:** classic low-oxygen genes fell, and FLT1 and the program did not.
+  - The HIF-2α-null cells were, if anything, *more* like mature placental cells, so the drop is not a failure to
+    develop.
+  - For FLT1, this confirms an earlier small-interfering-RNA study
+    ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)) with a different method. The program-wide
+    split between HIF-1 and HIF-2 is our addition.
+  - Caution: all of these cells come from one person's stem-cell line, in an early, embryo-like model, not from
+    term placentas.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
@@ -272,13 +299,13 @@ These datasets are small, so these results support, but cannot settle, the main 
 
 Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients and, with labour taken into account, in a third group of 157, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction. What may set preeclampsia apart is how strongly it is switched on, FLT1 also shares variation with the classic preeclampsia genes that the general low-oxygen signature does not capture; this pattern, built in one group of patients, held in the other, but whether it reflects a separate mechanism is unknown. A program of genes that depend on HIF-2 activity in trophoblasts also tracks FLT1 beyond the general low-oxygen signal in three further datasets. In those same datasets, however, the low-oxygen score was not clearly higher in preeclampsia than in controls, and preeclampsia still did not differ clearly from growth restriction. In three further small datasets with controls born at the same stage, planned in advance, the alarm was again higher in preeclampsia, but that result is fragile (it leans on one dataset and drops to +0.29 in two planned checks), and the alarm again tracked FLT1. In the third dataset, the alarm did not follow the mother's Doppler blood-flow measurements or clinical severity.
 
-**What is and is not new.** The low-oxygen → HIF-2 → FLT1 biology is known. Our main contributions are (1) a planned, multi-dataset replication of the low-oxygen–FLT1 link, with its weak points reported, and (2) linking a drug-defined trophoblast HIF-2 program to FLT1 in patients' placentas, and showing that the same genes also fall in an independent ARNT-knockdown experiment, though not yet that the program is HIF-2-specific or free of cell-mix effects. We do not claim a new mechanism of preeclampsia, or a pathway specific to it.
+**What is and is not new.** The low-oxygen → HIF-2 → FLT1 biology is known. Our main contributions are (1) a planned, multi-dataset replication of the low-oxygen–FLT1 link, with its weak points reported, and (2) linking a drug-defined trophoblast HIF-2 program to FLT1 in patients' placentas, and showing that the same genes also fall in an independent ARNT-knockdown experiment, (3) showing, with planned tests, that the link holds inside single trophoblast cells and in intact tissue of the same placentas, and (4) a genetic HIF-2-versus-HIF-1 split in stem-cell-derived placental cells, where HIF-2α loss removes FLT1 and the program and HIF-1α loss does not. For FLT1 that last point confirms Sasagawa et al. 2018. We do not claim a new mechanism of preeclampsia, or a pathway specific to it.
 
 **Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels. Growth-restricted placentas may share a weaker version of the same stress.
 
 Limitations: small control groups in the main dataset, bulk tissue that mixes cell types, delivery-related factors we could not measure (and no per-patient details for the second study), and gene activity that shows association, not cause. Several follow-up analyses were planned after we saw our first results; we labelled them as such, and wrote down our predictions for the second study before testing them.
 
-Next steps: (1) a larger cohort with growth-restriction-only placentas delivered preterm and with recorded labour, to settle the preeclampsia-versus-growth-restriction question; with 42 such placentas we still saw no clear difference; (2) stain the same placentas for HIF-2α and FLT1, and compare them with the mother's blood sFlt-1/PlGF ratio; (3) knock down EPAS1 (the HIF-2α gene) genetically in trophoblasts at low oxygen and sequence their RNA, to separate direct HIF-2 targets from effects on cell maturation. The HIF-2 program test proposed here earlier, following [Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1), has now been done (see "Which oxygen sensor?" above). The next version of that test should be pre-registered in a new cohort with a better estimate of cell make-up. If the low-oxygen score stops tracking FLT1, or is not higher in early preeclampsia than in matched preterm births in new data, our hypothesis is wrong.
+Next steps: (1) a larger cohort with growth-restriction-only placentas delivered preterm and with recorded labour, to settle the preeclampsia-versus-growth-restriction question; with 42 such placentas we still saw no clear difference; (2) stain the same placentas for HIF-2α and FLT1, and compare them with the mother's blood sFlt-1/PlGF ratio; (3) repeat the HIF-2α-versus-HIF-1α knockout in primary trophoblast from term placentas and measure released sFlt-1 protein. The stem-cell version is done (above), but it is one cell line in an early model. The HIF-2 program test proposed here earlier, following [Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1), has now been done (see "Which oxygen sensor?" above). The next version of that test should be pre-registered in a new cohort with a better estimate of cell make-up. If the low-oxygen score stops tracking FLT1, or is not higher in early preeclampsia than in matched preterm births in new data, our hypothesis is wrong.
 
 ## Data and Code
 
