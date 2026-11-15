@@ -294,3 +294,30 @@ Report the PE coefficient with 95% CI, and report whether villous-stress ranges 
 
 ### G3 (descriptive)
 Same as G1/G2 for the secondary (angiogenesis) response score; leave-one-donor-out range for G1.
+
+---
+
+## Addendum H (2026-11-14): selection-process null for the Addendum F module, written before running
+
+Concern (from review): gene–gene co-expression replicates across cohorts in general, so a module built
+around *any* gene might show a high partial correlation in another cohort. The random-gene-set null in V3
+does not repeat the selection step. Clarification: GSE203507 was not used to build the module, but it had
+been analysed extensively before; it is a previously studied cohort of different patients, not an
+unopened holdout.
+
+### H1. Anchor-gene null
+- Draw 300 "anchor" genes at random (seed 42) from genes that are (i) not in Hallmark HYPOXIA, (ii) not
+  FLT1, (iii) measured in both cohorts, and (iv) in the same expression decile (GSE114691 mean VST) as FLT1.
+- For each anchor, repeat Addendum F exactly: in GSE114691, residualise all genes and the anchor on the
+  hypoxia score (rank-based), take the 50 non-hypoxia genes with the highest partial correlation with the
+  anchor, then compute V1 in GSE203507 (partial Spearman(module, anchor | hypoxia), 25 preterm samples).
+- Report FLT1's percentile among the anchors. Interpretation fixed now:
+  - FLT1 ≥ 95th percentile → its module replicates unusually well;
+  - otherwise → the F1 result mainly reflects general co-expression reproducibility, and the claim is
+    limited to "FLT1 sits in a reproducible co-expression module (the canonical PE genes)".
+- Also report, for the same anchors, the V2-style PE − FGR-only module contrast (adjusted for hypoxia,
+  GA, sex) and FLT1's percentile there (descriptive).
+
+### H2. Wording corrections (no analysis)
+- The +1.07 offset in E1 is on the VST scale; it is not reported as a fold change.
+- "Hypoxia-independent" is replaced by "not explained by the Hallmark hypoxia score".
