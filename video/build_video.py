@@ -36,7 +36,7 @@ def _base(s):
         fig.text(0.05, 0.815, s["sub"], fontsize=22, color=MUTED, va="top")
     if s["id"] == "s01_title":
         fig.text(0.05, 0.60, "Placental gene activity · 10 patient groups · single cells · intact tissue · knockouts", fontsize=26, color=INK)
-        fig.text(0.05, 0.52, "Every test pre-registered; positives and negatives reported", fontsize=24, color=BLUE)
+        fig.text(0.05, 0.52, "Predictions registered before new-dataset tests; post hoc analyses labelled", fontsize=24, color=BLUE)
     return fig
 
 
