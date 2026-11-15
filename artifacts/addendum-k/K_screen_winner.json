@@ -1,0 +1,8 @@
+{
+  "winner": {
+    "program": "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY",
+    "direction": "PE lower",
+    "sign": -1,
+    "min_abs_t": 1.262459567276586
+  }
+}
