@@ -704,3 +704,15 @@ Details: `artifacts/addendum-r/results.md`.
   - R and S come from the same donors: two designs, one cohort.
 
 Details: `artifacts/addendum-s/results.md`.
+
+## Addendum T (2026-11-15): direct HIF binding at the program and at FLT1 (GSE209936 ARNT ChIP-seq)
+
+- **Commit.** The plan was committed before download (`9a1c812`).
+- **T0 positive control: passed.** Hypoxia genes are bound 34.5% vs 7.5%, p = 0.001.
+- **T1: supported.** HIF2dep genes are bound 24.4% vs 7.3% (expression-matched random sets), p = 0.001,
+  robust to the window size.
+- **T2 (descriptive).** FLT1 is not bound; the nearest peak is 123 kb away.
+- **Reading.** The program includes direct HIF targets. FLT1 may be an indirect target in trophoblast. The
+  isoform question (4b) stays untested.
+
+Details: `artifacts/addendum-t/results.md`.
