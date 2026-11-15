@@ -1,0 +1,8 @@
+analysis,outcome,model,n,n_PE,PE_coefficient_log2,CI_low,CI_high,p,detected_fraction
+"PRIMARY: junction ratio, PE (PE only + PE with IUGR) vs IUGR only",junction_ratio,PE + log_flt1 + hypoxia_score,58.0,40.0,-0.06332707002436144,-0.5242508747389004,0.39759673469017753,0.7877121943569251,
+Secondary: body-read ratio,body_ratio,PE + log_flt1 + hypoxia_score,58.0,40.0,0.06108421042299217,-0.3458934380207905,0.4680618588667748,0.7686238023842709,
+"Secondary: PE only vs IUGR only, junction ratio",junction_ratio,PE + log_flt1 + hypoxia_score,38.0,20.0,-0.2998638925677698,-0.8385835663556741,0.2388557812201345,0.2752898186236198,
+Descriptive: unadjusted junction ratio,junction_ratio,PE,58.0,40.0,0.28672663519640784,-0.18480693955405364,0.7582602099468694,0.23333953938327723,
+"Exploratory: ENST00000539099 not detectable, not modelled",,,,,,,,,0.0
+"Exploratory: ENST00000540678 not detectable, not modelled",,,,,,,,,0.0
+"Exploratory: ENST00000543394 not detectable, not modelled",,,,,,,,,0.0

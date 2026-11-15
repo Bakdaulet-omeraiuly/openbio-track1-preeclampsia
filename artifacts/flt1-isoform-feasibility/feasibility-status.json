@@ -5,7 +5,7 @@
   "annotation_structure_audit": "pass",
   "exact_50mer_uniqueness_against_grch37_cdna": "pass_for_all_predefined_markers",
   "splice_aware_genome_aligner_confirmation": "pass (HISAT2, full GRCh37; primary junction markers 31/31 unique and correct; sFlt1-14 body 0.868, canonical body 0.987) - see hisat2-marker-mappability.json",
-  "raw_donor_coverage_gate": "pending",
+  "raw_donor_coverage_gate": "pass (cohort-coverage-gate.json), evaluated before the clinical contrast",
   "group_blinded_raw_pilot": {
     "run": "SRR7188846",
     "group_revealed_after_scan": "Control",
@@ -33,8 +33,20 @@
     "numerator": "ENST00000541932 sFlt1-14 unique terminal junction",
     "denominator": "mean of two ENST00000282397 canonical-specific internal junction counts"
   },
-  "clinical_group_contrast_run": false,
-  "next_action": "Re-run align_and_count.py on the 79 candidate FASTQs (needs the HISAT2 GRCh37 index and more free RAM), then evaluate_gate.py; run primary_contrast.py only if the gate passes.",
+  "clinical_group_contrast_run": true,
+  "next_action": "None required for the submission. Descriptive only: both PE and IUGR-only have higher ratios than controls; not pre-specified, controls may differ in gestational age.",
   "cohort_stage1_stream_filter": "complete: 79/79 runs fetched, read counts equal official SRA spots, candidate reads extracted",
-  "cohort_alignment": "pending: single-pass HISAT2 run was stopped by the host for low memory (8 GB machine) after ~26/79 runs; no per-donor counts written yet"
+  "cohort_alignment": "complete: 79/79 runs, HISAT2 full GRCh37, unique alignments only (cohort-marker-counts.csv)",
+  "primary_result": {
+    "model": "junction_ratio ~ PE + log2(total_FLT1_CPM+1) + hypoxia_score, HC3",
+    "n": 58,
+    "n_PE": 40,
+    "PE_coefficient_log2": -0.063,
+    "CI95": [
+      -0.524,
+      0.398
+    ],
+    "p": 0.788,
+    "interpretation": "No detectable difference in sFlt1-14 : canonical Flt1 junction ratio between PE and IUGR-only placentas after adjusting for total FLT1 and hypoxia score."
+  }
 }
