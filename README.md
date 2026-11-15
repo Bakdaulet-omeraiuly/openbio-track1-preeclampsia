@@ -58,6 +58,10 @@ Hypothesis: [`docs/hypothesis-card.md`](docs/hypothesis-card.md).
 
 ## How to Run
 
+**One command:** `bash run_all.sh notebooks` reruns notebooks 01–12 and the summary figures in about 10 minutes.
+`bash run_all.sh` also downloads every public dataset and reruns every addendum (about 1–2 hours). The steps
+below are the same commands, written out.
+
 ```bash
 git clone https://github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia.git
 cd openbio-track1-preeclampsia

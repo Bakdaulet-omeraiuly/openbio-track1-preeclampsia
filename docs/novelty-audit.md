@@ -98,3 +98,39 @@ regulator:
   then re-test the knockdown-defined program against FLT1 in a new, pre-registered cohort.
 - **Tissue test:** spatial or single-nucleus data showing the program and FLT1 co-vary *within*
   syncytiotrophoblast nuclei, not only across tissue samples.
+
+## Update after Addenda P–Y and the final review (2026-11-15, afternoon)
+
+**Replication.**
+
+- The hypoxia–FLT1 association within PE now covers **10 bulk cohorts**, 9 of them pre-registered (P added
+  GSE186257, ρ 0.69). The pooled estimates are 0.47–0.69.
+- It also holds within donor in pure single trophoblast cells (R: 17/19) and in intact, composition-adjusted
+  Visium tissue (S: 18/19), in one cohort (GSE319236). This makes cell mix and dissociation stress unlikely as the
+  whole explanation; it does not exclude them.
+- GSE319236's authors already reported hypoxia signals in PE. The within-placenta test is our addition.
+
+**The possibly-new finding (section 3) after review:**
+
+- L-C4 holds when adjusted for diagnosis (0.35 [0.13, 0.53]) and within PE only (0.36 [0.03, 0.62]) (post hoc
+  l8).
+- It is attenuated to 0.20 with GA, sex, labour and batch in GSE35574.
+- P gives 0.40, but with weaker support: n = 34 including 8 SGA-only, 83rd percentile of random sets, PE-only
+  0.26.
+- The same program falls with EPAS1 knockout in iPSC syncytium (V).
+- **This pairing, a perturbation-defined trophoblast program linked to FLT1 in patients and genetically HIF-2
+  dependent in a trophoblast model, remains the most plausible new contribution.** It joins evidence from
+  different systems, so it is not causal evidence in patients.
+
+**HIF-2 vs HIF-1 (V): known for FLT1.**
+
+- Sasagawa et al. 2018 (siRNA) and **Sasagawa & Shibuya 2025** (belzutifan in stem-cell-derived
+  syncytiotrophoblast) already showed that HIF-2 drives hypoxic FLT1/sFLT1.
+- V confirms this with genetic nulls. The program-level result is new.
+- The HIF1A comparison comes from a separate study (n = 3). "No such drop" is not proof of no HIF-1 effect.
+
+**Negatives.**
+
+- No adjusted association between malperfusion pathology and the generic hypoxia score (W, X; and Doppler in N).
+- No clear association between placental FLT1 RNA and maternal severity (Y).
+- FLT1 was higher with malperfusion lesions (pre-registered in ELGAN).

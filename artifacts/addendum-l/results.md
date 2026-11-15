@@ -170,3 +170,18 @@ against term controls. This is an untested explanation.
   - Repeating C4 in a new cohort, pre-registered, with a better composition covariate, e.g.
     deconvolution against a placental single-cell reference. The post hoc marker check above is not
     that test.
+
+
+## Post hoc l8: does diagnosis explain L-C4? (`l8_diagnosis_sensitivity_posthoc.py`, committed before running; reviewer request)
+
+| Sensitivity | Pooled partial ρ [95% CI] | p (one-sided) | Per cohort (GSE35574 / GSE24129 / GSE147776) |
+|---|---|---|---|
+| Baseline L-C4 (PE + FGR-only) | 0.39 [0.19, 0.57] | 0.0002 | 0.34 / 0.44 / 0.49 |
+| (a) + PE indicator (diagnosis-adjusted) | **0.35 [0.13, 0.53]** | 0.001 | 0.32 / 0.14 / 0.53 |
+| (b) PE only (n = 19 / 8 / 13) | **0.36 [0.03, 0.62]** | 0.018 | 0.36 / 0.10 / 0.48 |
+| (c) FGR-only only (n = 27 / 8 / 7) | 0.31 [−0.02, 0.58] | 0.031 | — |
+| (d) GSE35574 + PE, GA, sex, labour, batch | 0.20 (from 0.34 on the same set) | — | — |
+
+**Reading.** The link is not explained by diagnosis-group differences: it holds when diagnosis is adjusted for,
+and within PE alone. It is attenuated, though still positive, when GA, sex, labour and batch are added in the one
+cohort that records them. This is post hoc and can only limit the claim.

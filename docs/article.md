@@ -20,8 +20,8 @@ studied by different research teams.
   general low-oxygen alarm**.
   - We tested this in three patient groups we had never opened, with the prediction written down first.
   - It beat all 1,000 random gene lists.
-- The same gene program falls when the HIF-2α gene is removed in stem-cell-derived placental cells, and HIF-1α
-  removal does not do this.
+- The same gene program falls when the HIF-2α gene is removed in stem-cell-derived placental cells. No such drop
+  was seen when HIF-1α was removed, in a separate study.
 - Connecting a cell-experiment program to FLT1 in patients was not found in our targeted literature search.
 - **Limit:** the two kinds of evidence come from different systems, so this does not show that the program
   causes FLT1 in patients.
@@ -142,6 +142,10 @@ We also built a sharper gene list from a published experiment: the 100 genes tha
 HIF-2 in placental cells. In three patient groups we had never opened, those genes tracked FLT1 **beyond** the
 general alarm (0.39, interval 0.19 to 0.57), more than all 1,000 random gene lists.
 
+In a check added later, the result held after accounting for diagnosis (0.35) and within preeclampsia alone
+(0.36). It weakened (0.34 to 0.20) when delivery week, sex, labour and batch were added in the one group that
+records them.
+
 A fourth RNA-sequencing group gave 0.40, but this is weaker support:
 
 - the test used 34 placentas (26 preeclampsia plus 8 small-for-age babies, which is not the same as confirmed
@@ -180,12 +184,13 @@ We next tested which of the two HIF sensors is needed.
   ([GSE209936](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE209936)). It was **not** found next to FLT1
   itself, so FLT1 may be switched on indirectly.
 - **Only HIF-2 is needed for FLT1.** In stem-cell-derived placental cells grown at 3% oxygen, removing the HIF-2α
-  gene **cut FLT1 about 44-fold** and lowered the program. Removing HIF-1α did neither. Instead, it lowered the
-  classic low-oxygen genes.
+  gene **cut FLT1 about 44-fold** and lowered the program. In a separate study of the same model, removing HIF-1α
+  showed no such drop, though only 3 cultures per group were tested; it lowered the classic low-oxygen genes
+  instead.
   - The cells without HIF-2α were, if anything, *more* mature placental cells, so the drop is not a failure to
     develop.
-  - For FLT1 this confirms an earlier study that used a different method
-    ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)).
+  - For FLT1 this confirms earlier studies that used other methods
+    ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1); [Sasagawa & Shibuya 2025](https://doi.org/10.1016/j.yexcr.2025.114773)).
   - All these cells come from **one person's stem-cell line**, in an early, embryo-like model.
 
 ![Six dot panels: in HIF-2α-removed cells FLT1 and the HIF-2 program fall while classic low-oxygen genes do not; in HIF-1α-removed cells the opposite.](../figures/fig19_hif2_vs_hif1.png)

@@ -1,0 +1,96 @@
+[
+ {
+  "id": "s01_title",
+  "title": "A Low-Oxygen Alarm in the Preeclampsia Placenta",
+  "sub": "Team 404: Team Not Found  ·  Bakdaulet Omertayev  ·  OpenBio 2026 Datathon, Track 1",
+  "fig": null,
+  "text": "A low-oxygen alarm in the preeclampsia placenta. The key new result: a gene program defined by blocking the H I F two sensor in placental cells tracks F L T one, the gene behind the clinical blood test, in patients' placentas."
+ },
+ {
+  "id": "s02_question",
+  "title": "The textbook chain, turned into six testable questions",
+  "sub": null,
+  "fig": null,
+  "bullets": [
+   "Poor blood supply → low oxygen → HIF sensor → FLT1 → sFlt-1 → harm to the mother",
+   "1  Alarm higher with pathology signs of poor blood supply?",
+   "2  Alarm higher in early preeclampsia than in same-stage births?",
+   "3  Does HIF drive the program genes in placental cells?",
+   "4  Is it HIF-2, not HIF-1, that FLT1 needs?",
+   "5  Do the alarm and FLT1 rise together in placentas?",
+   "6  Does placental FLT1 track how sick the mother is?"
+  ],
+  "text": "Preeclampsia is a dangerous rise in blood pressure in pregnancy, cured only by delivering the placenta. The textbook chain: poor blood supply starves the placenta of oxygen, the sensor HIF switches on the gene F L T one, and its protein, measured in the clinical blood test, harms the mother's vessels. That chain was turned into six testable questions."
+ },
+ {
+  "id": "s03_data",
+  "title": "Data and rigor",
+  "sub": "30 placentas: 15 early preeclampsia · 5 growth-restricted · 5 healthy early · 5 healthy term",
+  "fig": "fig2_volcano.png",
+  "text": "The main data are R N A sequencing of thirty placentas, with preeclampsia compared to healthy placentas delivered at the same stage. With cut-offs fixed in advance, four hundred and twenty-four genes differed, and two hundred and seven survived every robustness check; F L T one was eight times higher. Before opening each new dataset, the prediction was committed to the public repository, and every gene score was compared with a thousand random gene lists."
+ },
+ {
+  "id": "s04_sugar",
+  "title": "The 'sugar' signal is really a low-oxygen signal",
+  "sub": null,
+  "fig": "fig6_group_contrasts.png",
+  "text": "A twenty twenty-three study called some early preeclampsia placentas glycolytic, meaning sugar-burning. Splitting the sugar genes from the low-oxygen genes showed that only the low-oxygen genes were raised, beyond all random gene lists. It is a low-oxygen alarm. It was higher than in same-stage births in five of six patient groups, but that result is fragile."
+ },
+ {
+  "id": "s05_headline",
+  "title": "The alarm rises with FLT1 in all 10 patient groups",
+  "sub": "Headline result",
+  "fig": "headline.png",
+  "text": "The strongest result. Within preeclampsia, placentas with a louder alarm make more F L T one. This held in all ten patient groups tested, nine of them with the prediction written down before the data were opened. F L T one is not on the alarm gene list, so this is not a built-in overlap."
+ },
+ {
+  "id": "s07_novel",
+  "title": "NEW: a HIF-2 drug program tracks FLT1 in patients",
+  "sub": "Our most novel finding",
+  "fig": null,
+  "text": "Now the most novel finding, in three steps. First, how the program was built: the hundred genes that fall most when the drug P T twenty-three eighty-five blocks HIF two in low-oxygen placental cells. Second, how it was tested: in three patient groups never opened before, with the prediction written down first. The program tracked F L T one beyond the general alarm, and beat all one thousand random gene lists. It held after accounting for diagnosis, and within preeclampsia alone. It was weaker with all covariates, and in a fourth group. Third, what it does not prove: that the program causes F L T one in patients, or that it is specific to preeclampsia.",
+  "bullets": [
+   "BUILT: the 100 genes that fall most when the drug PT2385 blocks HIF-2 in hypoxic placental cells (GSE216799)",
+   "TESTED: in 3 patient groups never opened before, prediction committed first. The program tracks FLT1 beyond the general alarm: 0.39 [0.19, 0.57], above all 1,000 random gene lists",
+   "ROBUST: holds after adjusting for diagnosis (0.35) and within preeclampsia only (0.36); weaker with full covariates (0.20) and in a 4th group",
+   "DOES NOT PROVE: that the program causes FLT1 in patients, or that it is specific to preeclampsia"
+  ]
+ },
+ {
+  "id": "s08_hif2",
+  "title": "The same program depends on HIF-2",
+  "sub": "Stem-cell-derived placental cells, 3% oxygen (one cell line)",
+  "fig": "fig19_hif2_vs_hif1.png",
+  "text": "And the same program depends on HIF two genetically. In stem-cell-derived placental cells at low oxygen, removing HIF two lowered the program and cut F L T one about forty-fold. In a separate study of the same model, removing HIF one showed no such drop, though only three cultures per group were tested. So two independent kinds of evidence point to the same HIF two program. For F L T one itself, this confirms earlier studies, in one cell line."
+ },
+ {
+  "id": "s06_within",
+  "title": "Inside one placenta: single cells and intact tissue",
+  "sub": null,
+  "fig": "fig18_within_placenta.png",
+  "text": "A piece of placenta mixes many cell types. So the test was repeated inside single placentas. Among single trophoblast cells, and in intact tissue slices never broken into cells, spots with more alarm carried more F L T one, in seventeen and eighteen of nineteen placentas. That makes cell mix and handling stress unlikely as the whole explanation."
+ },
+ {
+  "id": "s09_negatives",
+  "title": "What did not hold up",
+  "sub": null,
+  "fig": "fig20_chain_evidence.png",
+  "text": "Now the negatives, stated openly. In two pathology cohorts, no association was found between signs of poor blood supply and the general alarm, although F L T one itself was higher. Placental F L T one did not track how sick the mother was. And preeclampsia differed from growth restriction only in the main dataset. No association found is not proof of none."
+ },
+ {
+  "id": "s10_end",
+  "title": "Hypothesis, limits and the next test",
+  "sub": null,
+  "fig": null,
+  "bullets": [
+   "NEW: a HIF-2 drug-defined program tracks FLT1 in patients' placentas (3 untouched cohorts) and needs HIF-2 genetically in placental cells",
+   "Hypothesis: in a subset of early preeclampsia (and in growth restriction), placental cells run a HIF-2-dependent program that keeps FLT1 high",
+   "Strong: the middle of the chain. Not shown here: what switches it on in patients, and whether it explains the mother's illness",
+   "Limits: small groups · tissue at delivery · one stem-cell line · association, not cause, in patients",
+   "Next test: remove HIF-2 in term placental cells at low oxygen and measure released sFlt-1",
+   "Code & data: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia",
+   "Narration: text-to-speech. Analysis, slides and script by the author."
+  ],
+  "text": "To sum up: a HIF two program links a cell experiment to F L T one in patients' placentas, and needs HIF two in placental cells. What switches it on in patients, and whether it explains the mother's illness, are not shown here. The decisive next test: remove HIF two in term placental cells at low oxygen and measure the s F L T one they release."
+ }
+]

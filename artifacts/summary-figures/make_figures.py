@@ -26,13 +26,24 @@ def fisher_ci(r, n):
 
 
 # ---- fig17: hypoxia-FLT1 coupling within PE across 10 bulk cohorts
-cohorts = [  # (label, rho, n, pre-registered?)  values from the committed results (see hypothesis card)
-    ("GSE203507 (discovery)", 0.78, 15, False), ("GSE114691", 0.59, 40, True), ("GSE75010", 0.58, 80, True),
-    ("GSE35574", 0.65, 19, True), ("GSE24129", 0.62, 8, True), ("GSE147776", 0.56, 13, True),
-    ("GSE44711", 0.61, 8, True), ("GSE74341", 0.68, 7, True), ("GSE66273 (chorionic plate)", 0.26, 12, True),
-    ("GSE186257", 0.69, 26, True)]
+# All values are read from committed result files (no hand-typed numbers).
+B2 = pd.read_csv(ROOT / "notebooks/results/B2_flt1.csv")
+C1 = pd.read_csv(ROOT / "notebooks/results/C1_predictions.csv")
+K = pd.read_csv(ROOT / "artifacts/addendum-k/K_gse75010_results.csv")
 L = json.load(open(ROOT / "artifacts/addendum-l/L3_confirmation.json"))["main"]["per_cohort"]
-assert abs(L["GSE35574"]["C3_rho_n"][0] - 0.65) < 0.01
+M = json.load(open(ROOT / "artifacts/addendum-m/M_confirmation.json"))["per_cohort"]
+P = json.load(open(ROOT / "artifacts/addendum-p/P_results.json"))["P2"]
+b2 = B2[B2.set.str.startswith("within PE")].iloc[0]
+c1 = C1[C1.prediction.str.contains("FLT1")].iloc[0]
+k = K[K.test.str.startswith("A3")].iloc[0]
+cohorts = [("GSE203507 (discovery)", float(b2.rho), 15, False),
+           ("GSE114691", float(c1.estimate), 40, True),
+           ("GSE75010", float(k.estimate), int(k.n), True)]
+cohorts += [(c, float(L[c]["C3_rho_n"][0]), int(L[c]["C3_rho_n"][1]), True) for c in ("GSE35574", "GSE24129", "GSE147776")]
+cohorts += [(c + (" (chorionic plate)" if c == "GSE66273" else ""), float(M[c]["M2_rho_n"][0]), int(M[c]["M2_rho_n"][1]), True)
+            for c in ("GSE44711", "GSE74341", "GSE66273")]
+cohorts += [("GSE186257", float(P["rho"]), int(P["n"]), True)]
+assert len(cohorts) == 10 and all(r > 0 for _, r, _, _ in cohorts)
 fig, ax = plt.subplots(figsize=(8.6, 5.4))
 for i, (lab, r, n, pre) in enumerate(cohorts[::-1]):
     lo, hi = fisher_ci(r, n)
@@ -93,7 +104,7 @@ for i, panel in enumerate(["HIF-2α (EPAS1) removed", "HIF-1α (HIF1A) removed"]
         if i == 0: ax.set_title(lab, fontsize=10.5, color=INK)
         if j == 0: ax.set_ylabel(panel, fontsize=10, color=INK)
         ax.grid(axis="y", color=GRID, lw=0.8); ax.set_axisbelow(True)
-fig.suptitle("At low oxygen, removing HIF-2 erases FLT1; removing HIF-1 does not", x=0.02, ha="left", fontsize=12.5, color=INK)
+fig.suptitle("At low oxygen, removing HIF-2 erases FLT1; removing HIF-1 showed no such drop", x=0.02, ha="left", fontsize=12.5, color=INK)
 fig.text(0.02, 0.005, "Stem-cell-derived placental cells (one cell line), 3% oxygen; each dot is one culture. Data: GSE288288, GSE302997.\nScores are standardised within each study, so compare within a row only.", fontsize=8, color=MUTED)
 fig.tight_layout(rect=(0, 0.05, 1, 0.95)); fig.savefig(FIG / "fig19_hif2_vs_hif1.png", dpi=200); plt.close(fig)
 

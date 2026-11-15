@@ -7,3 +7,4 @@ __pycache__/
 data_external/*.gmt
 data_external/*.tsv
 data_external/*.txt.gz
+data_cache/

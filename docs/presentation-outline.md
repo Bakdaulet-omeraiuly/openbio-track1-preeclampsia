@@ -1,5 +1,7 @@
 # Presentation Script (5:00 max)
 
+> **Final video:** an animated slide video, rebuilt by `video/build_video.py` from `video/narration.json` and the repo figures. Its narration is text-to-speech, and this is disclosed on the last slide. The author appears on camera at the start and the end (`video/intro.mov`, `video/outro.mov`). The script below is the human-read version, kept for reference.
+
 **Speaker:** Bakdaulet Omertayev (team 404: Team Not Found, one-person team), on camera at the start and the end.
 
 The spoken text below is about 570 words, roughly 3:45 at 155 words per minute. That leaves time to pause on each
