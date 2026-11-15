@@ -1,0 +1,84 @@
+{
+  "primary_singletons": {
+    "hif2dep": {
+      "coef": 0.029889821424004648,
+      "se": 0.18021901747374847,
+      "p_one_sided": 0.43413641234414135,
+      "n_infarct": 40,
+      "n_none": 163,
+      "random_median": -0.060944877878764875,
+      "random_p95": -0.007241278402159327,
+      "random_percentile": 99.8,
+      "holm_p": 0.43413641234414135,
+      "supported": false
+    },
+    "hyp_only": {
+      "coef": -0.02752579372461439,
+      "se": 0.18105115052902696,
+      "p_one_sided": 0.5604196422080396,
+      "n_infarct": 40,
+      "n_none": 163,
+      "random_median": -0.07028332539333959,
+      "random_p95": -0.030829382107304258,
+      "random_percentile": 96.7
+    },
+    "FLT1": {
+      "coef": 0.4175802204459568,
+      "se": 0.1640528804758267,
+      "p_one_sided": 0.005457629379389206,
+      "n_infarct": 40,
+      "n_none": 163,
+      "random_median": -0.1006926244400267,
+      "random_p95": 0.13290166116321722,
+      "random_percentile": 100.0,
+      "holm_p": 0.010915258758778412,
+      "supported": true
+    }
+  },
+  "sens_a_all_births_cluster_by_mother": {
+    "hif2dep": {
+      "coef": -0.07297737252082995,
+      "se": 0.14347242646719433,
+      "p_one_sided": 0.694501512400525,
+      "n_infarct": 55,
+      "n_none": 285
+    },
+    "hyp_only": {
+      "coef": -0.14620265985825404,
+      "se": 0.1448103809187016,
+      "p_one_sided": 0.8436599892785139,
+      "n_infarct": 55,
+      "n_none": 285
+    },
+    "FLT1": {
+      "coef": 0.3102776527795438,
+      "se": 0.1548333444454586,
+      "p_one_sided": 0.02253792556223644,
+      "n_infarct": 55,
+      "n_none": 285
+    }
+  },
+  "sens_b_no_inflammation_covariates": {
+    "hif2dep": {
+      "coef": 0.06056861553706419,
+      "se": 0.18168293748827855,
+      "p_one_sided": 0.36942547837638917,
+      "n_infarct": 40,
+      "n_none": 163
+    },
+    "hyp_only": {
+      "coef": -0.00917287544753935,
+      "se": 0.1801208501355636,
+      "p_one_sided": 0.5203078470745457,
+      "n_infarct": 40,
+      "n_none": 163
+    },
+    "FLT1": {
+      "coef": 0.46485812932227166,
+      "se": 0.17445722804967517,
+      "p_one_sided": 0.0038540367182207103,
+      "n_infarct": 40,
+      "n_none": 163
+    }
+  }
+}

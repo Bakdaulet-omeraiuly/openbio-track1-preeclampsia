@@ -749,3 +749,11 @@ Details: `artifacts/addendum-v/results.md`.
   percentile of decile-matched genes. A lead.
 
 Details: `artifacts/addendum-w/results.md`.
+
+## Addendum X (2026-11-15): pre-registered replication in ELGAN (placental infarction)
+
+- **Commits.** Plan `dd8b1cf`; amendment 1 (mRNA libraries only; the run had stopped at loading) `20ed690`.
+- **X2 FLT1: supported** (+0.42 SD, Holm 0.011, above all random genes).
+- **X1 HIF2dep: not supported** (+0.03, p = 0.43). Generic hypoxia: −0.03.
+
+Details: `artifacts/addendum-x/results.md`.

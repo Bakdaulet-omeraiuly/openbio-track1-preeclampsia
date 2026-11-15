@@ -302,7 +302,13 @@ vascular malperfusion"; [GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.c
   - In a check we added afterwards, this was larger than for any of 1,000 random gene lists (HIF-2 program), and
     larger than for 98.6% of similar genes (FLT1).
   - So poor blood supply seems to go with the HIF-2/FLT1 side of the response, not with the general alarm.
-  - That was not our planned test, so it needs repeating in another group of placentas before it counts.
+  - That was not our planned test, so we repeated it, planned in advance, in an independent group of 203 placentas
+    from extremely preterm births ([ELGAN, GSE154829](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154829)),
+    using placental infarcts (dead patches caused by poor blood supply).
+  - **FLT1 was again higher** with infarcts, beyond all random genes. The **HIF-2 program was not**, and neither
+    was the general alarm.
+  - So poor blood supply goes with more FLT1 in two separate groups, but not with any low-oxygen gene program
+    we measured. The first link of our chain is not supported in the form we proposed.
 
 ## Unanswered Questions
 
