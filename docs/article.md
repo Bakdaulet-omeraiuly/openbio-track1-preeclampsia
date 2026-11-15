@@ -238,7 +238,7 @@ Most controls in the Addendum L datasets were born at term, so the low-oxygen sc
 Results:
 
 - **The low-oxygen score was higher in preeclampsia** (pooled +0.67 standard deviations, interval 0.06 to 1.28; it survived correction for the two planned tests).
-  - **Caution, the result is fragile.** It rests mostly on the largest villous dataset (+1.05). Without that dataset the estimate was +0.29 (interval −0.58 to 1.16). It was also +0.29 (−0.16 to 0.74) when the HELLP cases were removed from the chorionic-plate dataset. In three of the six checks we planned in advance, the interval reached or crossed zero.
+  - **Caution, the result is fragile.** It rests mostly on the largest villous dataset (+1.05). Without that dataset the estimate was +0.29 (interval −0.58 to 1.16). It was also +0.29 (−0.16 to 0.74) when the HELLP cases were removed from the chorionic-plate dataset. In four of the six checks we planned in advance, the interval reached or crossed zero.
   - The chorionic-plate dataset showed almost no difference (+0.07).
   - In five of our six datasets with preterm controls the difference clearly points the same way; the chorionic-plate dataset shows about zero.
 - **The low-oxygen score again tracked FLT1 within preeclampsia** (pooled correlation 0.47, interval 0.05 to 0.75). Pooled estimates range from 0.47 to 0.62 across our planned tests. Counting signs only, the link is positive in all nine datasets we have tested, although in some the correlation is weak (0.26 in the chorionic-plate dataset).
