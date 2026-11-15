@@ -188,6 +188,21 @@ That test had the same rule: before comparing any groups, the reads had to pass 
 
 Following our rule, we did not run the comparison, and we did not look at the group ratios. The higher sFlt1-14 share in disease therefore stays an untested observation, and a question for a cohort with deeper or longer sequencing reads.
 
+### Does the alarm track how sick the mother is? (exploratory, mostly negative)
+
+The third dataset also records clinical measurements. We wrote down predictions before looking:
+
+- a louder alarm with worse blood flow to the placenta, measured by uterine-artery Doppler;
+- a louder alarm with higher blood pressure, smaller babies, smaller placentas and HELLP syndrome.
+
+**None of these held.**
+
+- The alarm did not track uterine-artery Doppler (correlation −0.01, 52 pregnancies).
+- Within preeclampsia it did not clearly track any severity measure.
+- The alarm was raised in late-onset as well as early-onset preeclampsia (+0.16 and +0.23 against controls born at the same stage). The early-onset rise was somewhat larger, but not clearly so.
+
+We had already opened this dataset for the earlier test, so these results are exploratory. They suggest that the alarm reflects the placenta's cell state, tied to FLT1, more than how ill the mother is. Details: `artifacts/addendum-n/results.md`.
+
 ### Which oxygen sensor? A test in three more datasets (planned)
 
 Experiments in trophoblast cells show that low oxygen raises FLT1 mainly through HIF-2α, not HIF-1α ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)). The textbook low-oxygen gene list we used was not built from placental cells. So we asked whether trophoblast's own HIF-2 response explains some of the FLT1 variation that the general list misses.

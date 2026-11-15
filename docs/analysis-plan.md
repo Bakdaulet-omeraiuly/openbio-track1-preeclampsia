@@ -630,3 +630,8 @@ GSE74341 and GSE66273 (chorionic plate, with a pre-specified leave-it-out sensit
   - M1: hyp_only, PE vs preterm controls.
   - M2: hyp_all–FLT1 rho within PE.
 - **Descriptive:** M3, the HIF2dep partial rho within PE.
+
+## Addendum N (2026-11-15): clinical anchors in GSE75010, exploratory
+
+Plan and script: `artifacts/addendum-n/` (`494bde1`, committed before running). Results:
+`artifacts/addendum-n/results.md`. The Doppler and severity associations were null.

@@ -1,0 +1,76 @@
+{
+  "N1_early": {
+    "estimate": 0.23407333080215906,
+    "CI_low": 0.062019717655928286,
+    "CI_high": 0.40612694394838983,
+    "p_two_sided": 0.008367412611265848,
+    "n_PE": 49,
+    "n_control": 27
+  },
+  "N1_late": {
+    "estimate": 0.16494160113633405,
+    "CI_low": 0.019164245499958044,
+    "CI_high": 0.31071895677271005,
+    "p_two_sided": 0.027228870642064786,
+    "n_PE": 31,
+    "n_control": 36
+  },
+  "N1_interaction_PE_x_early": {
+    "estimate": 0.17279728191536464,
+    "CI_low": -0.02665048622850158,
+    "CI_high": 0.37224505005923086,
+    "p_two_sided": 0.08893292600146543
+  },
+  "N2_hyp_only_vs_uterinePI": {
+    "rho": -0.0109280286860753,
+    "n": 52,
+    "p_one_sided": 0.5306443769912385,
+    "predicted_sign": 1,
+    "holm_p": 1.0
+  },
+  "N2s_FLT1_vs_uterinePI": {
+    "rho": 0.1853496115427303,
+    "n": 52,
+    "p_one_sided": 0.09416821170416688,
+    "predicted_sign": 1
+  },
+  "N2s_hyp_only_vs_umbilicalPI": {
+    "rho": 0.17181696284080575,
+    "n": 92,
+    "p_one_sided": 0.05074412404541821,
+    "predicted_sign": 1
+  },
+  "N2s_uPI_by_group_n": {
+    "PE": 37,
+    "non-PE": 15
+  },
+  "N3_sbp": {
+    "rho": 0.12048828228220425,
+    "n": 80,
+    "p_one_sided": 0.14352779297678211,
+    "predicted_sign": 1,
+    "holm_p": 0.5741111719071285
+  },
+  "N3_newborn_weight_z": {
+    "rho": 0.009212376933895922,
+    "n": 80,
+    "p_one_sided": 0.5323199336292508,
+    "predicted_sign": -1,
+    "holm_p": 1.0
+  },
+  "N3_placental_weight_z": {
+    "rho": 0.05297369061113027,
+    "n": 77,
+    "p_one_sided": 0.6763659279119423,
+    "predicted_sign": -1,
+    "holm_p": 1.0
+  },
+  "N3_hellp": {
+    "rho": 0.16154843109226927,
+    "n": 80,
+    "p_one_sided": 0.07612710776188501,
+    "predicted_sign": 1,
+    "holm_p": 0.3806355388094251
+  },
+  "exploratory": true
+}
