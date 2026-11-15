@@ -156,15 +156,16 @@ The outcome was the ratio of sFlt1-14 to the membrane form. We adjusted for tota
 
 This fits the picture above: the FLT1 machinery looks shared by the two conditions. It also fits blood measurements of this protein, which are raised in early preeclampsia and in growth restriction ([Palmer et al. 2016](https://doi.org/10.1080/14767058.2016.1182975)).
 
-Three limits:
+In these placentas, sFlt1-14 junction reads outnumbered membrane-form junction reads by roughly 20 to 1, in line with earlier reports that it dominates in the placenta.
+
+Two limits:
 
 - These are RNA counts, not protein released into the blood.
 - The reads are short (50 letters), so three rarer FLT1 versions could not be measured.
-- In these placentas, sFlt1-14 junction reads outnumbered membrane-form junction reads by roughly 20 to 1, in line with earlier reports that it dominates in the placenta.
 
 We also noticed something we had not planned to look at: in the 79-placenta study, both preeclampsia and growth-restricted placentas had a higher sFlt1-14 share than healthy early births. Because we saw this only after looking, we wrote a separate test in advance and ran it in our main dataset, whose preterm controls were delivered at the same stage of pregnancy.
 
-That test had the same rule: before comparing any groups, the reads had to pass a quality check. **They did not.** The two ways of measuring the ratio, junction reads and reads inside the unique exon, agreed less closely than the bar we had set (0.68 against 0.70). This dataset had about four times fewer sFlt1-14 junction reads per placenta, and at that depth the two measures became too noisy.
+That test had the same rule: before comparing any groups, the reads had to pass a quality check. **They did not.** The two ways of measuring the ratio, junction reads and reads inside the unique exon, agreed less closely than the bar we had set (0.68 against 0.70). This dataset had about four times fewer sFlt1-14 junction reads per placenta, which is the likely reason, although we did not test it.
 
 Following our rule, we did not run the comparison, and we did not look at the group ratios. The higher sFlt1-14 share in disease therefore stays an untested observation, and a question for a cohort with deeper or longer sequencing reads.
 
@@ -183,7 +184,7 @@ Our results suggest that the strongest metabolic signal in early-preeclampsia pl
 
 Limitations: small control groups in the main dataset, bulk tissue that mixes cell types, delivery-related factors we could not measure (and no per-patient details for the second study), and gene activity that shows association, not cause. Several follow-up analyses were planned after we saw our first results; we labelled them as such, and wrote down our predictions for the second study before testing them.
 
-Next steps: (1) a third cohort with recorded delivery mode, to settle the preeclampsia-versus-growth-restriction question; (2) stain the same placentas for the HIF protein and FLT1 and compare with the mother's blood sFlt-1/PlGF ratio; (3) grow trophoblast cells at low versus normal oxygen with and without HIF and check whether the low-oxygen genes and FLT1 rise together. In trophoblasts, low oxygen raises FLT1 through HIF-2α rather than HIF-1α ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)), while the textbook gene list we used is weighted toward HIF-1 targets. A pre-registered test of whether a HIF-2 target program accounts for the FLT1 variation that our low-oxygen score leaves unexplained is therefore a natural next step. Public trophoblast hypoxia experiments could show whether the FLT1-linked "Blue-type" genes respond to oxygen at all. If the low-oxygen score stops tracking FLT1, or is not higher in preeclampsia in new data, our hypothesis is wrong.
+Next steps: (1) a third cohort with recorded delivery mode, to settle the preeclampsia-versus-growth-restriction question; (2) stain the same placentas for the HIF protein and FLT1 and compare with the mother's blood sFlt-1/PlGF ratio; (3) grow trophoblast cells at low versus normal oxygen with and without HIF and check whether the low-oxygen genes and FLT1 rise together. In trophoblasts, low oxygen raises FLT1 through HIF-2α rather than HIF-1α ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)). A pre-registered test of whether a HIF-2 target program, rather than the general low-oxygen list we used, accounts for the FLT1 variation that our low-oxygen score leaves unexplained is therefore a natural next step. Public trophoblast hypoxia experiments could show whether the FLT1-linked "Blue-type" genes respond to oxygen at all. If the low-oxygen score stops tracking FLT1, or is not higher in preeclampsia in new data, our hypothesis is wrong.
 
 ## Data and Code
 
@@ -192,6 +193,7 @@ Next steps: (1) a third cohort with recorded delivery mode, to settle the preecl
 - Replication cohort: [GSE114691](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691) (Awamleh et al. 2019); transcript-to-gene map from [Ensembl GRCh37 BioMart](https://grch37.ensembl.org/biomart/martview)
 - Single-cell pseudobulk: Admati/Skarbianskis et al. 2023, [figshare](https://figshare.com/articles/dataset/Placenta_PE_single_cell_RNAseq_dataset_Admati_Skarbianskis_et_al_/23264102) (CC BY 4.0)
 - Gene browser: [Zeisel lab placenta browser](https://storage.googleapis.com/www_zeisellab/PE_web/pe_web_test_v1.html)
+- Raw reads for the FLT1 transcript-form analysis: SRA [SRP148556](https://www.ncbi.nlm.nih.gov/sra?term=SRP148556) (GSE114691) and BioProject [PRJNA841082](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA841082) (GSE203507); pipeline, counts and gates in `artifacts/flt1-isoform-feasibility/`
 - Gene lists: MSigDB Hallmark v2024.1 ([GSEA-MSigDB](https://www.gsea-msigdb.org/gsea/msigdb))
 
 ## Acknowledgements

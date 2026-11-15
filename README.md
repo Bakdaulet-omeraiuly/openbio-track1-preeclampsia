@@ -54,7 +54,7 @@ Reproducibility details:
 - Notebook files: `notebooks/01_…` to `12_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–J1 before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–J2 before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 

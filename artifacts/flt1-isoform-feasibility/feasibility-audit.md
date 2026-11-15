@@ -210,5 +210,5 @@ failure technically after seeing it.
 
 **Conclusion.** The available 50-nt single-end GSE203507 data do not support a reliable test of
 isoform composition. The higher sFlt1-14 : canonical ratio seen in GSE114691 disease groups relative to
-controls therefore remains **descriptive and untested**. GSE114691 controls also delivered preterm, so
-that pattern is not explained simply by term-versus-preterm delivery. It is still not a finding.
+controls therefore remains **descriptive and untested**. GSE114691 has no per-donor gestational age, and its controls
+laboured, so gestational age and labour remain possible explanations. It is not a finding.

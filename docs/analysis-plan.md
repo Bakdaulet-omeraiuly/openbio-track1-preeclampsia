@@ -433,3 +433,9 @@ Implementation details and compute constraints are frozen in
 The local execution protocol (Addendum J1) was committed before any cohort run was processed. It is
 recorded in `artifacts/flt1-isoform-feasibility/raw-reanalysis-plan.md`, commit `d90d8ce`. The gate passed,
 and the result of the primary contrast was null. See `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
+
+### Addendum J2 pointer (2026-11-15)
+
+Addendum J2, the GSE203507 disease-versus-preterm-control isoform replication, was committed (`cec7e47`)
+before any GSE203507 read was fetched. Its blinded coverage gate failed on criterion 4 (rho 0.677 < 0.70),
+so the contrast was not run. See `artifacts/flt1-isoform-feasibility/feasibility-audit.md`.
