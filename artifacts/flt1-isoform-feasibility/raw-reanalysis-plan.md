@@ -71,3 +71,47 @@ MD5 checksums, run-level logs and resumable outputs.
 The pure-Python exact-marker scanner took roughly 14 minutes for a 41.2-million-read pilot and is retained
 only for audit/pilot reproduction. Cohort-scale production should use a compiled splice-aware aligner and
 compiled junction counter on external storage/compute.
+
+## Addendum J1: local execution protocol (written 2026-11-15, before any cohort run was processed)
+
+No external compute is available before the submission deadline, so the cohort scan is executed on the
+local 8 GB machine. The scientific targets, the feasibility gate thresholds, the primary outcome and the
+primary model above are **unchanged**. The following execution details differ from the text above and are
+fixed here before any donor other than the group-blinded technical pilot (`SRR7188846`) has been processed.
+
+1. **Data source.** Runs are fetched as NCBI SRA objects (`sra-pub-run-odp`, same `SRR` accessions as the
+   ENA manifest) because measured throughput from ENA was about 2 MB/s versus about 16 MB/s from NCBI.
+   Each run is dumped with `fastq-dump -Z`, processed, and deleted. Integrity check: the dumped read count
+   must equal the official `spots` value in `sra-sample-manifest.csv`; a run that fails is re-fetched and is
+   not used until it passes.
+2. **Candidate extraction.** A compiled single-pass filter (`flt1_stream_filter.c`) keeps every read that
+   shares at least one exact 20-mer (either strand) with the cDNA of any of the five annotated FLT1
+   transcripts. It also re-counts the exact marker 50-mers of the pilot scanner. Validation already done:
+   on `SRR7188846` it reproduced the pilot exactly (41,160,188 reads; 101, 4, 7, 854, 752).
+   Limitation: a read with so many mismatches that no 20-mer matches FLT1 cDNA is not extracted; this can
+   only lower FLT1 counts and applies identically to every donor.
+3. **Aligner.** STAR needs about 32 GB RAM for a human genome index, so `sjdbOverhang=49` is not applicable.
+   Candidate reads are aligned to the **full GRCh37 genome** with HISAT2 (prebuilt `grch37` index, default
+   scoring) with known splice sites from Ensembl GRCh37 release 87 GTF. Reads therefore still compete
+   against every genomic locus; uniqueness is not assessed against FLT1 alone.
+4. **Counting rules (primary).** A read counts for a junction marker if it is uniquely aligned (`NH:i:1`),
+   its CIGAR contains an intron whose coordinates equal the marker intron exactly, and it has at least
+   10 aligned bases on each side of that intron (the same flank as the pilot's exact 50-mers). A read counts
+   for a terminal-body marker if it is uniquely aligned, unspliced and its aligned span lies entirely inside
+   the marker interval. Sensitivity only: minimum flank 5; exact-50-mer counts from step 2.
+5. **Aligner mappability confirmation (gate criterion 1).** Every pre-specified exact-unique marker 50-mer
+   is aligned as a synthetic read. A primary marker passes if at least 90% of its 50-mers align uniquely to
+   the expected junction or body interval.
+6. **Body-ratio definition (gate criterion 4).** Length-normalised body ratio =
+   `log2((sFlt1-14 body reads / 518 + pseudo) / (canonical body reads / 2733 + pseudo))`, with effective
+   lengths = interval length − 49 and pseudo = 0.5 divided by the respective effective length. Junction
+   ratio is the primary outcome formula. Spearman rho is computed over the 58 disease donors.
+7. **Gate population and order.** All 79 runs are processed. Gate criteria 2–4 are evaluated on the 58
+   disease donors without using PE/IUGR labels; criterion 5 uses labels only to count usable donors per
+   group. "Usable" = meets the per-donor conditions of criteria 2 and 3. The PE coefficient, group means of
+   the ratio, or any plot of the ratio by group are not computed or viewed unless every criterion passes.
+8. **If the gate fails**, the pre-specified closing statement above is reported, together with the coverage
+   table. No relaxed threshold is substituted afterwards.
+9. **Covariates for the primary model (only if the gate passes).** `total_FLT1_CPM` = gene-level FLT1 CPM
+   from the processed GSE114691 matrices; `hypoxia_score` = the same hypoxia score already used for
+   GSE114691 in notebooks 05/08, unchanged.
