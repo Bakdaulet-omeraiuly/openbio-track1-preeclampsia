@@ -79,11 +79,11 @@ perturbation-defined HIF-2 program. Absence from a targeted search is not proof 
 ## Update after Addendum O (same day)
 
 - **Regulator, partly addressed.**
-  - The PT2385-defined program also falls with genetic ARNT knockdown, in a different lab and at a different gestational stage (O1). So it is HIF-complex-dependent, not a drug artefact.
+  - The PT2385-defined program was also lowered when ARNT expression was reduced by shRNA, in a different lab and at a different gestational stage (O1). This is agreement between two independent perturbations. It does not exclude every drug off-target effect, because ARNT partners and differentiation are not separated.
   - It is not shown to be HIF-2α-specific: ARNT also partners HIF-1α and AhR, and EPAS1 mRNA rose.
-  - The regulator → FLT1 step was not testable, because hypoxia lowers FLT1 in those cells.
+  - FLT1 was measured after ARNT knockdown, but its fall was not consistent across donors. This limits the claim; hypoxia also lowers FLT1 in those cells.
 - **Cell state, not resolved.** The within-STB link was the same direction but not significant (O2: 0.26 [−0.14, 0.59]).
-- **The claim is not upgraded.** It is still an association in patients, now with a genetically supported regulator dependence of the program itself.
+- **The claim is not upgraded.** Suggested wording: "A trophoblast program defined by PT2385, and also lowered in an independent ARNT-knockdown experiment, is associated with FLT1 expression in clinical placentas. Its HIF-2 specificity and its independence from cell state are not established."
 
 ## What would raise the novelty
 

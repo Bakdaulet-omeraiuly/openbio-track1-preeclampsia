@@ -24,15 +24,15 @@ scrambled shRNA, at 2% or 20% O2. Δ means shARNT minus scramble within a donor,
 
 ## Amendment, after the run: a sample-label conflict
 
-- **The conflict.** In donor 630P, the two normoxia arrays (GSM2139927 and GSM2139930) have titles
+- **The conflict.** In donor 630P, the two normoxia arrays (GSM2139930 and GSM2139932; an earlier version of this file mistyped them as GSM2139927/GSM2139930. GSM2139927 is the 630P hypoxia scramble array, whose labels agree) have titles
   (Scramble / shARNT) that contradict their `treatment` field. The script used `treatment`.
-- **ARNT expression sides with the titles.** Under the `treatment` labels, 630P's "shARNT" array had
+- **ARNT expression supports the titles, but does not prove them.** We have no confirmation from the authors, so both versions are kept and the title-label numbers are a sensitivity analysis under the alternative labelling. Under the `treatment` labels, 630P's "shARNT" array had
   *higher* ARNT (Δ +1.82), while every other donor had a lower one (−1.3 to −2.1).
 - **The rerun** (`o1_amendment_title_labels.py` → `O1_results_title_labels.json`) uses the titles.
 - **Effect.** The hypoxia pairs are identical under both rules, so the primary result, the gate, the
   positive control and the calibration are unchanged. Only the normoxia numbers change:
 
-| | `treatment` labels (as run) | title labels (correct by ARNT) |
+| | `treatment` labels (as run, primary) | title labels (sensitivity; supported by ARNT expression) |
 |---|---|---|
 | HIF2dep Δ at 20% O2 | −0.52 | **−0.85** |
 | Specificity (Δ at 2% − Δ at 20%) | −0.63 | **−0.30** |
@@ -51,22 +51,24 @@ In the scramble arm, 2% vs 20% O2 changed the scores as follows:
 | hyp_all | +0.22 | rises in 5/5 donors |
 | FLT1 | **−1.31** | falls in 4/5 donors |
 
-In these first-trimester cells, low oxygen does not raise FLT1. That explains why the FLT1 response to ARNT
-knockdown could not be tested meaningfully here.
+In these first-trimester cells, low oxygen does not raise FLT1. FLT1 itself was measured after ARNT knockdown, and the change was inconsistent across donors. So this system gave **no support for a consistent FLT1 fall after ARNT knockdown**. That limits the conclusion; the low-oxygen pattern above is a possible reason.
 
 ## What O1 shows and does not show
 
-- **Shows.** The genes lowered by the drug PT2385 in term cytotrophoblasts also fall with genetic knockdown of
-  ARNT (HIF-1β) in first-trimester cytotrophoblasts. This is a different lab, a different perturbation and
-  a different gestational stage. The drop is in 5/5 donors and beyond all random gene sets. The program is
-  therefore **ARNT-dependent**, so it is not a drug artefact.
+- **Shows.** The genes lowered by the drug PT2385 in term cytotrophoblasts were also lowered when ARNT
+  (HIF-1β) expression was reduced by shRNA in first-trimester cytotrophoblasts. This is a different lab, a
+  different perturbation and a different gestational stage. The drop was in 5/5 donors and beyond all random
+  gene sets. This is **agreement between two independent perturbations**.
+- **Not shown.** That every drug off-target effect is excluded. ARNT has other partners (HIF-1α, AhR), and
+  both perturbations also change differentiation. The pre-written reading label in `o1_arnt.py` ("depends on
+  the HIF complex genetically") is stronger than this, and we do not use it as the conclusion.
 - **Does not show:**
-  - HIF-2α specificity. ARNT also partners HIF-1α and AhR, and EPAS1 mRNA rose with the knockdown (+1.25).
-  - That the dependence is oxygen-specific (see the amendment).
-  - That the regulator → FLT1 step holds in this system. FLT1 did not respond consistently, and hypoxia
-    lowered FLT1 here.
-  - Independence from cell state. Wakeland et al. report that ARNT knockdown blocks hypoxia-driven EVT
-    differentiation.
+  - HIF-2α specificity: EPAS1 mRNA rose with the knockdown (+1.25).
+  - That the dependence is oxygen-specific (see the sensitivity analysis).
+  - A consistent FLT1 fall after ARNT knockdown. FLT1 was measured, but the change was inconsistent across
+    donors, so this result limits the conclusion.
+  - Independence from cell state: Wakeland et al. link HIF to trophoblast differentiation.
+- **Method note.** The knockdown is shRNA-mediated, not a gene knockout.
 
 ## Companion test O2, by the second session (`artifacts/addendum-o2/`)
 
