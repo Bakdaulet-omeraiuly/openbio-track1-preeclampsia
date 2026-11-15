@@ -73,8 +73,9 @@ So C4 is not simply the Blue-type module again.
 before running, `ba1135a`).** The covariate is the datathon marker matrix's syncytiotrophoblast class
 (CGA, CGB, ERVW-1, PSG1). None of these are HIF2dep genes. CGB uses a fixed alias rule
 (CGB/CGB3/CGB5/CGB8), and GSE35574 has no ERVW-1 probe, so only 3 to 4 genes are available. The
-baseline reproduced L3 exactly (0.34 / 0.44 / 0.49, pooled 0.39). Pooled intervals use n − 3 − k
-weights.
+baseline reproduced L3 exactly (0.34 / 0.44 / 0.49, pooled 0.39). Adjusted pooled intervals use
+n − 3 − k weights, where k counts covariates beyond hyp_all; the baseline keeps n − 3, as in L3. The EVT
+score has 3 markers on GPL6244, which has no ITGA1.
 
 | Adjustment (PE + FGR-only) | Pooled partial rho [95% CI] | Per cohort |
 |---|---|---|
@@ -84,8 +85,16 @@ weights.
 
 - **Calibration under the same adjustment:** observed 0.43 (79 common genes); random-set median −0.38;
   95th percentile −0.15; empirical p = 0.001.
+  The random pool here also excludes the STB/EVT markers and CGB aliases. The same seed therefore
+  gives slightly different draws from L4, despite the script docstring's "same 1,000 draws".
 - **The STB score correlates with FLT1** (rho 0.30 to 0.43) **but inconsistently with HIF2dep** (−0.05,
   0.36, 0.35).
+- **Where the check has leverage.** In GSE35574, 46 of the 82 disease placentas, the STB score is
+  unrelated to HIF2dep (rho −0.05), so adjusting for it could not move C4 there. That may be a poor
+  proxy on GPL6102, which has only CGA, CGB5/CGB8 and PSG1, or HIF2dep may not be STB-driven in bulk
+  tissue; the data cannot tell these apart. In the two small cohorts where the STB score does track
+  HIF2dep, C4 moved 0.44 → 0.31 (GSE24129, n = 16) and 0.49 → 0.52 (GSE147776, n = 20).
+  "Unchanged" therefore describes the pooled value, not every cohort.
 - **Reading, by the rule fixed before the run:** C4 is *not explained by this STB marker score*. That
   is not the same as "free of composition", because 3 to 4 markers are a coarse proxy. STB content
   could also be a mediator rather than a confounder, since HIF-2 is reported to impair

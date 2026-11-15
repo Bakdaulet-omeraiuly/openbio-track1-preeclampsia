@@ -199,7 +199,7 @@ Experiments in trophoblast cells show that low oxygen raises FLT1 mainly through
 - **The genes lowered by HIF-2 blockade tracked FLT1** beyond the general low-oxygen score in every new dataset. The pooled partial correlation was 0.39 (95% interval 0.19 to 0.57; it survived correction for multiple tests).
 - After seeing this, we compared it with 1,000 random gene sets of similar activity. Every random set did worse, so this is not generic co-expression.
 - The program overlaps only partly with the preeclampsia gene group described above: 8 of 100 genes in common.
-- Also after seeing the result, we added the four standard syncytiotrophoblast marker genes (hCG α and β, syncytin-1, PSG1) as an extra adjustment. The link did not shrink (0.39, interval 0.18 to 0.57). With only three or four marker genes this is a rough check, not proof that cell make-up plays no part.
+- Also after seeing the result, we added the four standard syncytiotrophoblast marker genes (hCG α and β, syncytin-1, PSG1) as an extra adjustment. The link did not shrink (0.39, interval 0.18 to 0.57). With only three or four marker genes this is a rough check, and it is weakest in the largest dataset, where the marker score was unrelated to the program. It is not proof that cell make-up plays no part.
 - **The general low-oxygen score again tracked FLT1 within preeclampsia** (pooled correlation 0.62).
 - **Two predictions failed.**
   - The low-oxygen score was not clearly higher in preeclampsia than in controls. In the largest new dataset it was lower. There, almost all controls were born at term, while the preeclampsia placentas were born earlier. This is a possible but untested reason.
