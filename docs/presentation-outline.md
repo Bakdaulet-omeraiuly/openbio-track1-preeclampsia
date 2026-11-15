@@ -1,6 +1,6 @@
 # Presentation Script (5:00 max)
 
-Two speakers: **A** and **B**. Every member must appear or speak. Times are cumulative. Speak slowly; this script is ~760 words, about 5:00 — trim Slide 9 if over time at a calm pace.
+Two speakers: **A** and **B**. Every member must appear or speak. Times are cumulative. Speak slowly; this script is ~770 spoken words, about 5:00 at 155 words per minute — rehearse with a timer at a calm pace.
 
 ---
 
@@ -56,7 +56,7 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 **Slide 9: single-cell + browser (fig5 + browser table)** — Speaker A
 
-> Inside trophoblast cells from the independent study, the oxygen score is higher in early preeclampsia — suggestive, with only 3 controls. In the gene browser, FLT1 and leptin sit mainly in syncytiotrophoblast; other alarm genes like NDRG1 and P4HA1 are active across all trophoblast.
+> Inside trophoblast cells from the independent study, the oxygen score is higher in early preeclampsia — suggestive, with only 3 controls.
 
 ## Discussion (3:45 to 5:00) — Speaker B
 
