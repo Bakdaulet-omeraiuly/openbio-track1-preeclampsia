@@ -615,3 +615,7 @@ trailing letters from `Sample id`, does not work for this file: most `Sample id`
 barcodes. The repeats are instead marked by a `.rep` suffix on `!Sample_title`. There are 8 such arrays,
 which matches the series description. The rule is therefore: base id = `!Sample_title` without `.rep`,
 giving 86 placentas. This was found from metadata lines only, before any expression value was read.
+
+### Addendum L outcome pointer
+
+Results, post hoc calibration and disclosures: `artifacts/addendum-l/results.md`.

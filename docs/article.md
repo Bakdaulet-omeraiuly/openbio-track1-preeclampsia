@@ -188,6 +188,24 @@ That test had the same rule: before comparing any groups, the reads had to pass 
 
 Following our rule, we did not run the comparison, and we did not look at the group ratios. The higher sFlt1-14 share in disease therefore stays an untested observation, and a question for a cohort with deeper or longer sequencing reads.
 
+### Which oxygen sensor? A test in three more datasets (planned)
+
+Experiments in trophoblast cells show that low oxygen raises FLT1 mainly through HIF-2α, not HIF-1α ([Sasagawa et al. 2018](https://doi.org/10.1038/s41598-018-35745-1)). The textbook low-oxygen gene list we used was not built from placental cells. So we asked whether trophoblast's own HIF-2 response explains some of the FLT1 variation that the general list misses.
+
+**Defining the program.** We used a public experiment in which placental cytotrophoblasts were kept at low oxygen with or without PT2385, a drug that blocks HIF-2 ([GSE216799](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE216799); 3 placentas). The drug lowered FLT1 about 3.8-fold. We took the 100 genes it lowered most, excluding FLT1 and every gene on the general low-oxygen list.
+
+**Testing it.** We wrote the test down in advance. We first screened it in the three datasets above, where it passed. We then ran it once in three datasets we had never used: 138 placentas, including 40 with preeclampsia and 42 with growth restriction alone ([GSE35574](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE35574), [GSE24129](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24129), [GSE147776](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147776)).
+
+- **The genes lowered by HIF-2 blockade tracked FLT1** beyond the general low-oxygen score in every new dataset. The pooled partial correlation was 0.39 (95% interval 0.19 to 0.57; it survived correction for multiple tests).
+- After seeing this, we compared it with 1,000 random gene sets of similar activity. Every random set did worse, so this is not generic co-expression.
+- The program overlaps only partly with the preeclampsia gene group described above: 8 of 100 genes in common.
+- **The general low-oxygen score again tracked FLT1 within preeclampsia** (pooled correlation 0.62).
+- **Two predictions failed.**
+  - The low-oxygen score was not clearly higher in preeclampsia than in controls. In the largest new dataset it was lower. There, almost all controls were born at term, while the preeclampsia placentas were born earlier. This is a possible but untested reason.
+  - Preeclampsia again did not clearly differ from growth restriction alone, now with 42 growth-restricted placentas: −0.19 standard deviations, interval −0.56 to 0.19.
+
+**What this means.** A trophoblast program that depends on HIF-2 activity moves with placental FLT1 in six groups of patients. In the three groups opened only for this test, that link was planned in advance. This is consistent with the cell experiments, but it is not proof that HIF-2 drives FLT1 in pregnant women. Four days of the drug may also change how the cells mature, and the program includes some syncytiotrophoblast genes, so differences in cell make-up remain a possible explanation. Details: `artifacts/addendum-l/results.md`.
+
 ## Unanswered Questions
 
 - **Why only some placentas?** About 6 of 15 preeclampsia placentas carry most of the signal. Among the 15, the score did not clearly follow blood pressure, birthweight or delivery week.
@@ -197,7 +215,7 @@ Following our rule, we did not run the comparison, and we did not look at the gr
 
 ## Conclusions, Limitations and Next Steps
 
-Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients and, with labour taken into account, in a third group of 157, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction. What may set preeclampsia apart is how strongly it is switched on, FLT1 also shares variation with the classic preeclampsia genes that the general low-oxygen signature does not capture; this pattern, built in one group of patients, held in the other, but whether it reflects a separate mechanism is unknown.
+Our results suggest that the strongest metabolic signal in early-preeclampsia placentas is a low-oxygen (HIF-type) alarm, not a separate shift in sugar metabolism. It holds up against placentas delivered at the same stage, it is larger than for random genes, it repeats in a second group of 79 patients and, with labour taken into account, in a third group of 157, it appears inside trophoblast cells in a separate single-cell study, and it rises with FLT1 in all three datasets. The machinery that links it to FLT1 appears to be shared with growth restriction. What may set preeclampsia apart is how strongly it is switched on, FLT1 also shares variation with the classic preeclampsia genes that the general low-oxygen signature does not capture; this pattern, built in one group of patients, held in the other, but whether it reflects a separate mechanism is unknown. A program of genes that depend on HIF-2 activity in trophoblasts also tracks FLT1 beyond the general low-oxygen signal in three further datasets. In those same datasets, however, the low-oxygen score was not clearly higher in preeclampsia than in controls, and preeclampsia still did not differ clearly from growth restriction.
 
 **Our hypothesis:** in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the sFlt-1 excess that harms the mother's blood vessels. Growth-restricted placentas may share a weaker version of the same stress.
 
@@ -213,6 +231,7 @@ Next steps: (1) a third cohort with recorded delivery mode, to settle the preecl
 - Single-cell pseudobulk: Admati/Skarbianskis et al. 2023, [figshare](https://figshare.com/articles/dataset/Placenta_PE_single_cell_RNAseq_dataset_Admati_Skarbianskis_et_al_/23264102) (CC BY 4.0)
 - Gene browser: [Zeisel lab placenta browser](https://storage.googleapis.com/www_zeisellab/PE_web/pe_web_test_v1.html)
 - Third cohort (Addendum K): [GSE75010](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75010) (Leavey et al. 2016), GPL6244 annotation; code and results in `artifacts/addendum-k/`
+- Addendum L: [GSE216799](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE216799), [GSE35574](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE35574), [GSE24129](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24129), [GSE147776](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE147776); code and results in `artifacts/addendum-l/`
 - Raw reads for the FLT1 transcript-form analysis: SRA [SRP148556](https://www.ncbi.nlm.nih.gov/sra?term=SRP148556) (GSE114691) and BioProject [PRJNA841082](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA841082) (GSE203507); pipeline, counts and gates in `artifacts/flt1-isoform-feasibility/`
 - Gene lists: MSigDB Hallmark v2024.1 ([GSEA-MSigDB](https://www.gsea-msigdb.org/gsea/msigdb))
 
