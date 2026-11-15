@@ -619,3 +619,14 @@ giving 86 placentas. This was found from metadata lines only, before any express
 ### Addendum L outcome pointer
 
 Results, post hoc calibration and disclosures: `artifacts/addendum-l/results.md`.
+
+## Addendum M (2026-11-15): hypoxia program against GA-matched preterm controls in three untouched cohorts
+
+The plan and the confirmation script were committed before any expression value was downloaded (`0b12ad5`):
+`artifacts/addendum-m/plan.md` and `artifacts/addendum-m/m_confirm.py`. The cohorts are GSE44711,
+GSE74341 and GSE66273 (chorionic plate, with a pre-specified leave-it-out sensitivity).
+
+- **Confirmatory, Holm across the two:**
+  - M1: hyp_only, PE vs preterm controls.
+  - M2: hyp_all–FLT1 rho within PE.
+- **Descriptive:** M3, the HIF2dep partial rho within PE.
