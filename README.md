@@ -23,17 +23,17 @@ malperfusion → placental hypoxia program → HIF → FLT1 (sFlt-1) → materna
 
 ## Results at a Glance
 
-Every row below was a pre-registered test, with its plan committed before the data were opened, unless marked
-*post hoc*.
+Rows from Addendum C onward were pre-registered, with the plan committed before the data were opened. Rows from
+the main dataset (notebooks 01–03) were partly planned after the first results. Post hoc steps are marked.
 
 | Link | Result | Where |
 |---|---|---|
-| "Glycolytic" signal = hypoxia program | Hypoxia-only genes up in EOPE vs preterm controls; glycolysis-only genes not; beats 1,000 random sets | notebooks 01–03 |
+| "Glycolytic" signal = hypoxia program (post hoc split) | Hypoxia-only genes up in EOPE vs preterm controls; glycolysis-only genes not; beats 1,000 random sets | notebooks 01–03 |
 | EOPE > GA-matched preterm controls | 5 of 6 cohorts; **fragile** in the pooled small cohorts (Addendum M) | 05, K, M |
 | Specific to PE vs growth restriction? | **No** (−0.19 SD [−0.56, 0.19], 42 FGR placentas) | L |
 | Hypoxia ↔ FLT1 within PE | **10/10 cohorts**, 9 pre-registered; pooled 0.47–0.69 (**headline figure**) | C, K, L, M, P |
 | HIF-2 program ↔ FLT1 beyond generic hypoxia | 0.39 [0.19, 0.57] in 3 untouched cohorts; replicated (0.40) | L, P |
-| Within one placenta: single cells | 17/19 donors, pure trophoblast barcodes, above all random sets | R |
+| Within one placenta: single cells | 19/20 donors pre-registered; 17/19 with the post hoc purity filter; above all random sets | R |
 | Within one placenta: intact tissue | 18/19 donors, composition-adjusted, 99.9th percentile | S |
 | HIF binds the program (ChIP) | 24% vs 7% expected; **FLT1 itself not bound** | T |
 | HIF-2 vs HIF-1 (iPSC syncytium, 3% O2) | EPAS1-null: FLT1 −5.5 log2, program down; HIF1A-null: neither (confirms Sasagawa 2018 for FLT1) | V |
@@ -90,6 +90,23 @@ python artifacts/addendum-l/l3_confirm.py external_cohorts                 # pre
 python artifacts/addendum-l/l4_calibration_posthoc.py external_cohorts     # post hoc checks (l4, l5, l6)
 python artifacts/addendum-l/l5_stb_adjustment_posthoc.py external_cohorts
 python artifacts/addendum-l/l6_deconvolution_posthoc.py external_cohorts
+```
+
+**Addenda M–Q.**
+
+- M, N and O1 use files from `fetch_external_cohorts.sh`.
+- P and Q need one GEO supplementary file each: GSE186257 normalised counts, and GSE324038 RSEM counts. The
+  URLs are in each `plan.md`.
+- O2 uses the datathon pseudobulk.
+
+```bash
+python artifacts/addendum-m/m_confirm.py external_cohorts
+python artifacts/addendum-m/m4_flt1_pgf_posthoc.py external_cohorts
+python artifacts/addendum-n/n_explore.py external_cohorts/GSE75010_series_matrix.txt external_cohorts/GPL6244.txt
+python artifacts/addendum-o/o1_arnt.py external_cohorts/GSE80995_series_matrix.txt.gz external_cohorts/GPL10558.txt
+python artifacts/addendum-o2/o2_within_celltype.py
+python artifacts/addendum-p/p_confirm.py GSE186257_series_matrix.txt.gz GSE186257_Plac_samples_DESEq2_norm_filtered.txt.gz
+python artifacts/addendum-q/q_hif1_vs_hif2.py GSE324038_Project_Knm32.rsem_genes_expected_count.txt.gz
 ```
 
 **Addenda R–Y (single-cell, spatial, ChIP, knockouts, pathology, maternal disease).** Each script has a

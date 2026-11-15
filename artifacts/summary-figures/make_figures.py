@@ -41,9 +41,11 @@ for i, (lab, r, n, pre) in enumerate(cohorts[::-1]):
     ax.text(1.04, i, f"n = {n}", va="center", fontsize=9, color=MUTED)
 ax.axvline(0, color=MUTED, lw=1)
 ax.set_yticks(range(len(cohorts))); ax.set_yticklabels([c[0] for c in cohorts[::-1]])
-ax.set_xlim(-0.6, 1.0); ax.set_xlabel("Correlation of low-oxygen score with FLT1 within preeclampsia (Spearman, 95% CI)")
+ax.set_xlim(-0.6, 1.0)
+ax.set_xlabel("How closely the low-oxygen alarm and FLT1 rise together in preeclampsia placentas\n(0 = not at all, 1 = perfectly; bars show the range of plausible values)")
+ax.set_ylabel("Patient group (public dataset ID)")
 fig.suptitle("The low-oxygen alarm rises with FLT1 in all 10 patient groups", x=0.02, ha="left", fontsize=12.5, color=INK)
-fig.text(0.02, 0.01, "Filled: prediction written down before the data were opened. Open: discovery group. Bars: 95% CI (Fisher).", fontsize=8.5, color=MUTED)
+fig.text(0.02, 0.01, "Filled dots: prediction written down before the data were opened. Open: where we first saw it. Small groups have wide bars.", fontsize=8.5, color=MUTED)
 ax.grid(axis="x", color=GRID, lw=0.8); ax.set_axisbelow(True)
 fig.tight_layout(rect=(0, 0.04, 1, 0.95)); fig.savefig(FIG / "fig17_coupling_across_cohorts.png", dpi=200)
 fig.savefig(FIG / "headline.png", dpi=200); plt.close(fig)  # headline = the single most important finding

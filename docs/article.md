@@ -12,6 +12,7 @@ studied by different research teams.
 - 1 means a perfect ranking match, and 0 means no relation.
 - Nine groups were tested with the prediction written down before the data were opened (filled dots).
 - All ten are positive. The combined estimates in the planned tests were 0.47–0.69.
+- In four small groups the interval crosses zero on its own; the pattern across groups carries the evidence.
 
 ## Introduction
 
@@ -51,7 +52,17 @@ We then tested every main claim in **other, independent public datasets**:
 - stem-cell experiments in which HIF genes were switched off;
 - two cohorts with placental pathology.
 
+**Main-dataset results.**
+
+- Gene by gene, 424 genes differed at least two-fold between preeclampsia and same-stage healthy placentas
+  (adjusted p < 0.05), and 207 survived every robustness check.
+- FLT1 was about 8 times higher and leptin about 60 times higher.
+- In a public single-cell browser, FLT1 and leptin sat mainly in syncytiotrophoblast: the "trophoblast" cells
+  that line the placenta's surface and exchange material with the mother's blood.
+
 **Before opening each new dataset, we committed our prediction, test and pass rule to the public repository.**
+Some follow-ups in the main dataset, including the sugar/oxygen split below, were planned only after we saw the
+first results, and we label them as such.
 We report every result, including failures. As a check against "any gene list would do", each gene-score result
 is compared with 1,000 random gene lists of similar activity.
 
@@ -89,9 +100,14 @@ Figure 3. Low-oxygen score for each placenta in our main dataset (left) and in a
 
 The alarm was higher in early preeclampsia than in births at the same stage in **five of six** patient groups
 where such a comparison was possible. In three small groups tested with a written-down plan, the combined
-difference was clear but **fragile**: it depended on one dataset. When the comparison group was mostly
-full-term births, the difference disappeared. **It was never clearly higher in preeclampsia than in growth
-restriction alone**, so the alarm is shared with small-baby pregnancies rather than specific to preeclampsia.
+difference was clear but **fragile**: it depended on one dataset. In groups whose controls were mostly full-term
+births it was not higher; we did not test why.
+
+**Preeclampsia vs growth restriction.**
+
+- In our main dataset the alarm was also higher in preeclampsia than in growth restriction alone.
+- **That did not repeat in any later group,** including one with 42 growth-restricted placentas.
+- So the alarm looks shared with small-baby pregnancies rather than specific to preeclampsia.
 
 ### The alarm tracks FLT1 everywhere we looked
 
@@ -109,7 +125,8 @@ general alarm (0.39, interval 0.19 to 0.57), more than all 1,000 random gene lis
 
 A piece of placenta mixes many cell types. So two placentas could differ simply because one has more of the
 cells that make both the alarm genes and FLT1. To rule this out, we compared within each of 20 placentas from a
-new study ([GSE319236](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE319236)), using two designs:
+new study ([GSE319236](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE319236)), using two designs. Its
+authors had already reported hypoxia signals in preeclampsia; what we add is the within-placenta test.
 
 - **Single cells.** Among unambiguous trophoblast cells, those with more alarm carried more FLT1 in **17 of 19
   placentas**. This was beyond all random gene lists, and it held after we removed cells contaminated by other
@@ -150,17 +167,17 @@ Each dot is one culture, and the black lines are averages. Data: GSE288288, GSE3
 
 ### What did not hold up
 
-- **Poor blood supply did not switch on the general alarm.** In 168 placentas with pathologist-recorded poor
-  maternal blood supply ([GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303463)), and in
+- **Poor blood supply did not switch on the general alarm.** In 168 placentas examined by pathologists,
+  49 with signs of poor maternal blood supply ([GSE303463](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE303463)), and in
   extremely premature placentas with infarcts (dead patches from poor blood supply;
   [GSE154829](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154829)), the general alarm was not higher.
   It also did not track blood-flow scans of the mother's uterine arteries.
   - What *was* higher, in both groups, was **FLT1** itself. In the infarct group this was a test planned in
     advance, and FLT1 beat all random genes.
 - **Placental FLT1 did not track how sick the mother was.** Within preeclampsia, FLT1 rose only slightly with
-  blood pressure, urine protein or HELLP syndrome, and none passed our bar. FLT1 was already higher in high blood
+  blood pressure, urine protein or HELLP syndrome (a severe form with liver damage and low platelets), and none passed our bar. FLT1 was already higher in high blood
   pressure **without** preeclampsia.
-- **Preeclampsia never separated from growth restriction** (see above).
+- **Preeclampsia did not separate from growth restriction** beyond our main dataset (see above).
 
 ![Six-row summary: links 3, 4 and 5 supported, link 2 supported but fragile, links 1 and 6 not supported.](../figures/fig20_chain_evidence.png)
 
@@ -178,7 +195,7 @@ Figure 6. The six links of the textbook chain and what our tests showed for each
 
 **What held up.** The middle of the chain is strong:
 
-- In placental cells, HIF-2 runs a program of genes, binds many of them, and is needed for FLT1.
+- In placental cells, HIF-2 is needed for a program of genes and for FLT1, and a HIF protein binds many of the program genes.
 - In patients' placentas, that program rises and falls with FLT1 in every group we examined, inside single cells
   and in intact tissue.
 

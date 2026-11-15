@@ -2,7 +2,7 @@
 
 **Speaker:** Bakdaulet Omertayev (team 404: Team Not Found, one-person team), on camera at the start and the end.
 
-The spoken text below is about 480 words, roughly 3:15 at 155 words per minute. That leaves time to pause on each
+The spoken text below is about 570 words, roughly 3:45 at 155 words per minute. That leaves time to pause on each
 figure. Times are cumulative. Rehearse once with a timer.
 
 ---
@@ -24,9 +24,17 @@ figure. Times are cumulative. Rehearse once with a timer.
 
 **Slide 2: data — 30 main placentas; then 10 patient groups, single-cell, intact tissue, ChIP, knockouts, pathology**
 
-> My main dataset is RNA sequencing of 30 placentas. Preeclampsia forces early delivery, so I compared
-> preeclampsia with healthy placentas delivered at the same stage, adjusting for delivery week and the baby's sex.
-> Each pregnancy counts once.
+> My main dataset is RNA sequencing of 30 placentas: 15 early preeclampsia, 5 growth-restricted, 5 healthy
+> early births and 5 healthy term births. Preeclampsia forces early delivery, so I compared preeclampsia with the
+> healthy placentas delivered at the same stage, adjusting for the baby's sex and, in a sensitivity check, the
+> delivery week. Each pregnancy counts once.
+>
+> **Slide 2b: PCA (fig1) and volcano (fig2)**
+>
+> On a map of overall gene activity, preeclampsia placentas spread away from both healthy groups. With cut-offs
+> fixed in advance — adjusted p below 0.05 and at least two-fold — 424 genes differed, and 207 survived every
+> robustness check. FLT1 was eight times higher, leptin sixty. In the public single-cell browser, both sit mainly
+> in syncytiotrophoblast, the placenta's surface layer.
 >
 > **Slide 3: git history — "plan committed before data"**
 >
@@ -62,7 +70,7 @@ figure. Times are cumulative. Rehearse once with a timer.
 
 > Now the honest part. Poor blood supply, judged by a pathologist in two separate cohorts, did not switch on
 > the general alarm — although FLT1 itself was higher. Placental FLT1 did not track how sick the mother was.
-> And preeclampsia never separated from growth restriction.
+> And preeclampsia was higher than growth restriction only in my main dataset — never again in later groups.
 
 ## Discussion (3:45 to 5:00)
 
