@@ -1,0 +1,40 @@
+study	gsm	title	cell_line	gene	strategy	model	condition
+GSE288288	GSM8763638	PrS-MOK20012W-A03-hyp	MOK20012W-A03	EPAS1	Full coding length	primitive syncytium	hypoxia
+GSE288288	GSM8763639	PrS-MOK20012W-B01-hyp	MOK20012W-B01	EPAS1	Full coding length	primitive syncytium	hypoxia
+GSE288288	GSM8763640	PrS-MOK20012W-B02-hyp	MOK20012W-B02	EPAS1	Full coding length	primitive syncytium	hypoxia
+GSE288288	GSM8763641	PrS-MOK20012C-E06-hyp	MOK20012C-E06	EPAS1	Critical exon	primitive syncytium	hypoxia
+GSE288288	GSM8763642	PrS-MOK20012C-G07-hyp	MOK20012C-G07	EPAS1	Critical exon	primitive syncytium	hypoxia
+GSE288288	GSM8763643	PrS-MOK20012C-H06-hyp	MOK20012C-H06	EPAS1	Critical exon	primitive syncytium	hypoxia
+GSE288288	GSM8763644	PrS-MOK20012P-A09-hyp	MOK20012P-A09	EPAS1	Termination codon	primitive syncytium	hypoxia
+GSE288288	GSM8763645	PrS-MOK20012P-D10-hyp	MOK20012P-D10	EPAS1	Termination codon	primitive syncytium	hypoxia
+GSE288288	GSM8763646	PrS-MOK20012P-G09-hyp	MOK20012P-G09	EPAS1	Termination codon	primitive syncytium	hypoxia
+GSE288288	GSM8763647	PrS-MOK20012-WT1-hyp	MOK20012-WT1	Not applicable	Not Applicable	primitive syncytium	hypoxia
+GSE288288	GSM8763648	PrS-MOK20012-WT2-hyp	MOK20012-WT2	Not applicable	Not Applicable	primitive syncytium	hypoxia
+GSE288288	GSM8763649	PrS-MOK20012-WT3-hyp	MOK20012-WT3	Not applicable	Not Applicable	primitive syncytium	hypoxia
+GSE288288	GSM8763650	PrS-MOK20012W-A03-nor	MOK20012W-A03	EPAS1	Full coding length	primitive syncytium	normoxia
+GSE288288	GSM8763651	PrS-MOK20012W-B01-nor	MOK20012W-B01	EPAS1	Full coding length	primitive syncytium	normoxia
+GSE288288	GSM8763652	PrS-MOK20012W-B02-nor	MOK20012W-B02	EPAS1	Full coding length	primitive syncytium	normoxia
+GSE288288	GSM8763653	PrS-MOK20012C-E06-nor	MOK20012C-E06	EPAS1	Critical exon	primitive syncytium	normoxia
+GSE288288	GSM8763654	PrS-MOK20012C-G07-nor	MOK20012C-G07	EPAS1	Critical exon	primitive syncytium	normoxia
+GSE288288	GSM8763655	PrS-MOK20012C-H06-nor	MOK20012C-H06	EPAS1	Critical exon	primitive syncytium	normoxia
+GSE288288	GSM8763656	PrS-MOK20012P-A09-nor	MOK20012P-A09	EPAS1	Termination codon	primitive syncytium	normoxia
+GSE288288	GSM8763657	PrS-MOK20012P-D10-nor	MOK20012P-D10	EPAS1	Termination codon	primitive syncytium	normoxia
+GSE288288	GSM8763658	PrS-MOK20012P-G09-nor	MOK20012P-G09	EPAS1	Termination codon	primitive syncytium	normoxia
+GSE288288	GSM8763659	PrS-MOK20012-WT1-nor	MOK20012-WT1	Not applicable	Not Applicable	primitive syncytium	normoxia
+GSE288288	GSM8763660	PrS-MOK20012-WT2-nor	MOK20012-WT2	Not applicable	Not Applicable	primitive syncytium	normoxia
+GSE288288	GSM8763661	PrS-MOK20012-WT3-nor	MOK20012-WT3	Not applicable	Not Applicable	primitive syncytium	normoxia
+GSE302997	GSM9115376	PrS-MOK20062_101_98-WT1-nor, WT	MOK20062_101_98-WT1	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115377	PrS-MOK20062_101_98-WT2-nor, WT	MOK20062_101_98-WT2	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115378	PrS-MOK20062_101_98-WT3-nor, WT	MOK20062_101_98-WT3	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115379	PrS-MOK20105P-A04-nor, KO	MOK20105P-A04	HIF1A	Termination codon	primitive syncytium	normoxia
+GSE302997	GSM9115380	PrS-MOK20105P-A05-nor, KO	MOK20105P-A05	HIF1A	Termination codon	primitive syncytium	normoxia
+GSE302997	GSM9115381	PrS-MOK20105P-A06-nor, KO	MOK20105P-A06	HIF1A	Termination codon	primitive syncytium	normoxia
+GSE302997	GSM9115385	PrS-MOK20105_125-WT1-nor, WT	MOK20105_125-WT1	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115386	PrS-MOK20105_125-WT2-nor, WT	MOK20105_125-WT2	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115387	PrS-MOK20105_125-WT3-nor, WT	MOK20105_125-WT3	Not applicable	Not applicable	primitive syncytium	normoxia
+GSE302997	GSM9115388	PrS-MOK20105P-A04-hyp, KO	MOK20105P-A04	HIF1A	Termination codon	primitive syncytium	hypoxia
+GSE302997	GSM9115389	PrS-MOK20105P-A05-hyp, KO	MOK20105P-A05	HIF1A	Termination codon	primitive syncytium	hypoxia
+GSE302997	GSM9115390	PrS-MOK20105P-A06-hyp, KO	MOK20105P-A06	HIF1A	Termination codon	primitive syncytium	hypoxia
+GSE302997	GSM9115400	PrS-MOK20105_125_98_101-WT1-hyp, WT	MOK20105_125_98_101-WT1	Not applicable	Not applicable	primitive syncytium	hypoxia
+GSE302997	GSM9115401	PrS-MOK20105_125_98_101-WT2-hyp, WT	MOK20105_125_98_101-WT2	Not applicable	Not applicable	primitive syncytium	hypoxia
+GSE302997	GSM9115402	PrS-MOK20105_125_98_101-WT3-hyp, WT	MOK20105_125_98_101-WT3	Not applicable	Not applicable	primitive syncytium	hypoxia
