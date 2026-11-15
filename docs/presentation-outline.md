@@ -1,6 +1,6 @@
 # Presentation Script (5:00 max)
 
-Two speakers: **A** and **B**. Every member must appear or speak. Times are cumulative. Speak slowly; this script is ~650 words, about 4:40 at a calm pace.
+Two speakers: **A** and **B**. Every member must appear or speak. Times are cumulative. Speak slowly; this script is ~760 words, about 5:00 — trim Slide 9 if over time at a calm pace.
 
 ---
 
@@ -14,7 +14,7 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 >
 > We asked: does that signal hold up against the right controls, is it specific to preeclampsia, is it really about sugar or about oxygen, and which cells carry it?
 >
-> Data: RNA sequencing of 30 placentas (GSE203507), plus an independent single-cell study of 26 pregnancies.
+> Data: RNA sequencing of 30 placentas (GSE203507), an independent single-cell study of 26 pregnancies, and two more patient groups of 79 and 157 placentas.
 
 ## Methodology (0:45 to 1:45) — Speaker B
 
@@ -46,9 +46,13 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 > Thirty placentas could be a fluke, so we wrote down six predictions and tested them in 79 different patients. The oxygen alarm was again higher in early preeclampsia, again beat random gene lists, and sugar-only genes actually fell. One prediction failed: preeclampsia versus growth restriction alone pointed the same way but wasn't clear — growth-restricted placentas show a weaker version too. We report that as not replicated.
 
+**Slide 7b: third cohort table (GSE75010)** — Speaker B
+
+> Then we committed four more predictions and opened a third group we had never touched: 157 placentas on a different technology, with labour recorded. The oxygen alarm was again higher in early preeclampsia than in other preterm births, after adjusting for attempted labour. The alarm again tracked FLT1. And preeclampsia again did not clearly differ from growth restriction. Labour is only partly settled, because most controls laboured and most preeclampsia pregnancies did not.
+
 **Slide 8: FLT1 link (fig8)** — Speaker A
 
-> The alarm rises with FLT1, the gene for sFlt-1 — the protein measured in the clinical preeclampsia blood test. FLT1 is not on the oxygen list, and the link repeats in all three datasets — including inside syncytiotrophoblast cells of preeclampsia donors alone.
+> The alarm rises with FLT1, the gene for sFlt-1 — the protein measured in the clinical preeclampsia blood test. FLT1 is not on the oxygen list, and the link repeats in every dataset we tested — including inside syncytiotrophoblast cells of preeclampsia donors alone.
 
 **Slide 9: single-cell + browser (fig5 + browser table)** — Speaker A
 
@@ -58,12 +62,12 @@ Two speakers: **A** and **B**. Every member must appear or speak. Times are cumu
 
 **Slide 10: hypothesis**
 
-> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction uses the same oxygen-to-FLT1 machinery. Preeclampsia seems to switch on more of it. FLT1 also moves with the classic preeclampsia genes in a way the oxygen signature doesn't capture — a lead, not a mechanism.
+> Our hypothesis: in a subset of early preeclampsia, trophoblast cells sense low oxygen and switch on a HIF-driven program that includes FLT1, feeding the excess sFlt-1 that damages the mother's blood vessels. Growth restriction uses the same oxygen-to-FLT1 machinery. Even when we counted the RNA reads for sFlt1-14, the placental form of sFlt-1, its share did not differ between preeclampsia and growth restriction. FLT1 also moves with the classic preeclampsia genes in a way the oxygen signature doesn't capture — a lead, not a mechanism.
 >
-> **Limitations:** only 5 preterm controls in our main data and 3 single-cell controls; no per-patient details in the second study; bulk tissue mixes cell types; labour and delivery type were not recorded; and the maternal-side tissue shows a similar signal, so we cannot call it purely placental. This is association, not cause.
+> **Limitations:** only 5 preterm controls in our main data and 3 single-cell controls; no per-patient details in the second study; bulk tissue mixes cell types; labour only partly controlled; and the maternal-side tissue shows a similar signal, so we cannot call it purely placental. This is association, not cause.
 >
-> **To test it:** a third cohort with recorded delivery mode, to settle preeclampsia versus growth restriction; stain these placentas for HIF and FLT1 and compare with the mother's sFlt-1/PlGF ratio; and grow trophoblast at low oxygen with and without HIF. If the oxygen score stops tracking FLT1 in new data, we're wrong.
+> **To test it:** a cohort with many growth-restricted placentas, to settle preeclampsia versus growth restriction; test whether HIF-2, which drives FLT1 in trophoblast, explains the rest of FLT1; stain these placentas for HIF and FLT1 and compare with the mother's sFlt-1/PlGF ratio; and grow trophoblast at low oxygen with and without HIF. If the oxygen score stops tracking FLT1 in new data, we're wrong.
 
 ## Final Slide (both on camera)
 
-Team names · Data: GSE203507 (Ackerman et al. 2023), GSE114691 (Awamleh et al. 2019), Admati/Skarbianskis et al. 2023 · Repository: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
+Team names · Data: GSE203507 (Ackerman et al. 2023), GSE114691 (Awamleh et al. 2019), GSE75010 (Leavey et al. 2016), Admati/Skarbianskis et al. 2023 · Repository: github.com/Bakdaulet-omeraiuly/openbio-track1-preeclampsia
