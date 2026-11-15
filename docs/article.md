@@ -1,6 +1,6 @@
 # A Low-Oxygen Alarm in the Preeclampsia Placenta
 
-**In three separate groups of patients, a subset of early-preeclampsia placentas switch on genes that respond to low oxygen, and the alarm rises together with the gene behind the main blood test for the disease.**
+**A subset of early-preeclampsia placentas switch on genes that respond to low oxygen — in five of the six patient groups we could compare against births at the same stage — and in all ten groups we examined, that alarm rises together with the gene behind the main blood test for the disease.**
 
 By [Team member 1] and [Team member 2]
 
@@ -236,7 +236,7 @@ Figure 11. Left: the link between the genes lowered by HIF-2 blockade and FLT1, 
 
 **How new is this?** The HIF-2 → FLT1 link in trophoblast cells is already known (Sasagawa et al. 2018). The drug experiment we used matches the design of a published study, which also found that PT2385 changes how the cells mature ([Colson et al. 2023](https://doi.org/10.1161/HYPERTENSIONAHA.122.20739)). What we could not find in a targeted PubMed search was any study that took the genes this drug lowers and tested them against FLT1 in patients' placentas. That link, tested across several datasets and planned in advance, is the new part of our work. It is an association, not a new mechanism. Details: `docs/novelty-audit.md`.
 
-**What this means.** The genes that HIF-2 blockade lowers in trophoblast cells move with placental FLT1 in six groups of patients. In the three groups opened only for this test, that link was planned in advance. This is consistent with the cell experiments, but it is not proof that HIF-2 drives FLT1 in pregnant women. Four days of the drug may also change how the cells mature, and the program includes some syncytiotrophoblast genes. Two rough cell-mix adjustments did not explain the pooled link, but in one small dataset they did, so differences in cell make-up remain possible. Details: `artifacts/addendum-l/results.md`.
+**What this means.** The genes that HIF-2 blockade lowers in trophoblast cells move with placental FLT1 in seven groups of patients. In the four groups opened only for this test, that link was planned in advance. This is consistent with the cell experiments, but it is not proof that HIF-2 drives FLT1 in pregnant women. Four days of the drug may also change how the cells mature, and the program includes some syncytiotrophoblast genes. Two rough cell-mix adjustments did not explain the pooled link, but in one small dataset they did, so differences in cell make-up remain possible. Details: `artifacts/addendum-l/results.md`.
 
 ### Three more small datasets with matched preterm controls (planned)
 
