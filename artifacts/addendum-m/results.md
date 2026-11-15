@@ -35,14 +35,19 @@ Per cohort:
 
 - **M1 is supported.** Early-onset or preterm PE placentas have a higher hypoxia-only score than GA-matched or
   preterm controls in this pre-registered test.
-  - Counting the earlier cohorts with preterm controls (GSE203507, GSE114691, GSE75010), the direction is
-    positive in all six such cohorts. It is significant pooled, but not in every single small cohort.
-  - The result **leans on GSE44711.** Without it, the pooled estimate is +0.29 with a CI that includes zero.
+  - Counting the earlier cohorts with preterm controls (GSE203507, GSE114691, GSE75010), five of
+    the six such cohorts are clearly positive. The chorionic-plate cohort (GSE66273) is about zero.
+  - **The result is fragile.** It fails two of the pre-specified sensitivity analyses:
+    - without GSE44711, the pooled estimate is +0.29 [−0.58, 1.16];
+    - with the HELLP cases removed from GSE66273, it is +0.29 [−0.16, 0.74]. That non-HELLP subset is
+      about zero and carries much of the fixed-effect weight.
   - The chorionic-plate cohort (GSE66273) shows almost no difference.
   - With 27 PE vs 18 controls, the CI is wide (0.06 to 1.28 SD).
   - This does **not** test why L-C2 failed against term controls. That explanation stays untested.
 - **M2 is supported.** The hypoxia score tracks FLT1 within PE in three more independent cohorts. Together with
-  Addenda C, K and L, the coupling has now been tested in **nine bulk cohorts** and is positive in every one.
+  Addenda C, K and L, the sign is positive in all nine bulk cohorts tested. This count includes the discovery
+  cohort and a weak ρ = 0.26 (n = 12) in GSE66273, so the pooled estimates (here 0.47 [0.05, 0.75]) are the
+  better summary.
 - **M3 is descriptive.** Its estimate (0.45) is close to L-C4 (0.39), but PE-only and small. It cannot confirm L-C4.
 
 ## Post hoc, descriptive (proposed after the data were opened): placental FLT1:PGF log2 ratio
@@ -60,10 +65,11 @@ sex in GSE66273.
 **Reading.** This is a sanity check that the cohorts carry the known PE placental signature: FLT1 up and PGF down.
 It is *not* a confirmatory test.
 
-- The ratio is strongly raised in the chorionic-plate cohort, where the hypoxia score is not.
-- So the null M1 there is not simply "the tissue shows nothing". In that cohort the clinical-marker signal is
-  present without the hypoxia program, which fits our earlier finding that only a subset of PE placentas carry
-  it. This is an untested reading.
+- The ordering is the **inverse** of M1:
+  - GSE44711 drives M1 but shows the weakest ratio difference (+0.59, SE 0.90);
+  - GSE66273 shows no hypoxia difference but the strongest ratio difference (+3.44).
+- Across these small cohorts, the hypoxia score and the FLT1:PGF ratio therefore do not rank cohorts the same way.
+  We do not interpret this further.
 
 ## Processing disclosures
 
@@ -73,5 +79,5 @@ It is *not* a confirmatory test.
   (already on a log scale).
 - GSE74341 values are log2(sample/pooled reference). Every array was asserted to have Cy3 = sample, so there are
   no dye swaps.
-- File checksums for the downloaded matrices and GPL tables were recorded locally at download. The URLs are in
-  the script header.
+- The SHA-256 checksums of the downloaded matrices and GPL tables are in `inputs.sha256`. The URLs are in the
+  script header.
