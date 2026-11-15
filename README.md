@@ -22,6 +22,7 @@ Do hypoxia and glycolysis gene-activity signals in early-onset preeclampsia (EOP
 - [x] Admati/Skarbianskis single-cell pseudobulk files (optional extension)
 - [x] GSE203507 decidua basalis bulk RNA-seq (optional extension)
 - [x] Other public data: GSE114691 villous RNA-seq, 79 placentas ([GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114691)), used for replication
+- [x] Other public data: GSE294617 CTB→EVT differentiation reference (CPM; Yong et al. 2025), used descriptively
 - [x] Other public data: MSigDB Hallmark gene sets v2024.1 (HYPOXIA, GLYCOLYSIS), downloaded by the notebook from the [Broad data server](https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2024.1.Hs/)
 
 ## How to Run
@@ -42,16 +43,17 @@ jupyter nbconvert --to notebook --execute --inplace 08_coupling_PE_vs_FGR.ipynb
 jupyter nbconvert --to notebook --execute --inplace 09_hypoxia_independent_flt1_program.ipynb
 jupyter nbconvert --to notebook --execute --inplace 10_villous_to_decidua.ipynb
 jupyter nbconvert --to notebook --execute --inplace 11_anchor_gene_null.ipynb
+jupyter nbconvert --to notebook --execute --inplace 12_selection_null_and_differentiation.ipynb
 ```
 
 The first notebook clones the official datathon data package at a **pinned commit** (`fb751e9`) next to this repository and downloads the Hallmark gene sets, so no data files need to be copied by hand. Run the notebooks in order: later notebooks read result files written by earlier ones. Notebook 05 also downloads GSE114691 counts from GEO and a transcript-to-gene table from Ensembl GRCh37 BioMart.
 
 Reproducibility details:
 
-- Notebook files: `notebooks/01_…` to `11_…`, run in order (about 10–15 minutes in total on a laptop)
+- Notebook files: `notebooks/01_…` to `12_…`, run in order (about 10–15 minutes in total on a laptop)
 - Where we ran it: our own computer (macOS, Python 3.13, packages pinned in `requirements.txt`)
 - Random seeds: `numpy` seed 42 (random gene sets, notebook 03); PyDESeq2 is deterministic
-- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–H before they were run (see git history of `docs/analysis-plan.md`)
+- Analysis plan committed **before** tests were run; follow-up analyses registered as Addenda A–I before they were run (see git history of `docs/analysis-plan.md`)
 
 ## Files
 
@@ -67,6 +69,7 @@ Reproducibility details:
 | `notebooks/09_hypoxia_independent_flt1_program.ipynb` | Addendum F: FLT1 co-expression module beyond the Hallmark hypoxia score, built in GSE114691 and tested in GSE203507 |
 | `notebooks/10_villous_to_decidua.ipynb` | Addendum G: paired villous stress vs decidual (maternal-side) inflammatory response; negative result |
 | `notebooks/11_anchor_gene_null.ipynb` | Addendum H: selection-process null (same procedure for 300 random anchor genes) |
+| `notebooks/12_selection_null_and_differentiation.ipynb` | Addendum I: residual-permutation selection null; normal CTB→EVT differentiation reference (GSE294617) |
 | `notebooks/results/` | All result tables (DE results, robust hits, scores, contrasts, browser lookups) |
 | `figures/` | Exported graphs, including `headline.png` |
 | `docs/article.md` | Science communication article |
@@ -88,7 +91,7 @@ Reproducibility details:
 
 ## Limitations
 
-5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–H were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
+5 preterm controls and 5 FGR-only placentas; 3 early control donors in the single-cell data. Bulk tissue mixes cell types and our deconvolution is approximate. Labour and delivery mode (possible acute hypoxia) are not recorded for the bulk samples. A similar signal in decidua means we cannot call it villus-specific. The replication cohort has no public per-sample covariates (GA, sex, delivery mode), its controls laboured, and it was also used by Ackerman et al. for module discovery. Expression data show association, not cause. Addenda A–I were planned after seeing earlier results and are labelled as such. Gene-browser plots are from a different study and are used as context only; we read the condition legend (early/late, control/PE) from the browser's legend bars.
 
 ## Presentation
 
@@ -104,6 +107,7 @@ Video link: [add your unlisted YouTube link]
 - Leavey K et al. (2016) Hypertension 68:137–47. [doi:10.1161/HYPERTENSIONAHA.116.07293](https://doi.org/10.1161/HYPERTENSIONAHA.116.07293)
 - Zhao J et al. (2020) FASEB BioAdv 3:23–35. [doi:10.1096/fba.2020-00057](https://doi.org/10.1096/fba.2020-00057)
 - Iriyama T et al. (2015) Hypertension 65:1307–15. [doi:10.1161/HYPERTENSIONAHA.115.05314](https://doi.org/10.1161/HYPERTENSIONAHA.115.05314)
+- Yong Q et al. (2025) Mol Hum Reprod 31(3). [doi:10.1093/molehr/gaaf031](https://doi.org/10.1093/molehr/gaaf031) (GSE294617)
 - Campbell KA et al. (2023) Commun Biol 6:264. [doi:10.1038/s42003-023-04623-6](https://doi.org/10.1038/s42003-023-04623-6)
 - Gerber HP et al. (1997) J Biol Chem 272:23659–67. [doi:10.1074/jbc.272.38.23659](https://doi.org/10.1074/jbc.272.38.23659)
 - Maynard SE et al. (2003) J Clin Invest 111:649–58. [doi:10.1172/JCI17189](https://doi.org/10.1172/JCI17189)
